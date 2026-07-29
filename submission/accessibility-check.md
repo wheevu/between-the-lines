@@ -1,6 +1,6 @@
 # Accessibility implementation check
 
-Checked: 24 July 2026
+Checked: 30 July 2026
 
 This is a developer check of the current interface. It does not replace testing
 with disabled readers or establish equivalent UX for everyone.
@@ -23,7 +23,7 @@ with disabled readers or establish equivalent UX for everyone.
 - One Playwright journey starts with the keyboard, focuses the skip link, and
   verifies focus reaches the main region.
 
-The component suite contains 12 tests and the browser suite contains six
+The component suite contains 17 tests and the browser suite contains eight
 journeys after this pass.
 
 ## Contrast probe
@@ -50,4 +50,3 @@ audit. Disabled buttons are not included in this contrast claim.
 - zoom and reflow review at 200% and 400%;
 - evaluation with at least one reader who uses assistive technology;
 - captions and legible on-screen text in the two-minute submission video.
-

@@ -72,7 +72,7 @@ assign truth scores to articles or trust scores to publishers.
 ### Engineering evidence
 
 - The URL-first single-target critical path passes backend, component, type,
-  production-build, and seven browser-journey checks.
+  production-build, and eight browser-journey checks.
 - Six recent general-news articles produced 21 frozen, source-grounded claim
   candidates across English, Vietnamese, and Korean; all 21 have author review,
   and every article has an acceptable candidate in its top three.
