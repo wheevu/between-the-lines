@@ -229,7 +229,7 @@ not as justification for the current architecture.
 
 - Backend: 221 passing tests.
 - UI components: 17 passing tests.
-- Browser journeys: 7 passing tests, including a keyboard skip-link and focus
+- Browser journeys: 8 passing tests, including a keyboard skip-link and focus
   path.
 - Python lint, Svelte type checking, production build, Python dependency
   consistency, and production npm audit pass.

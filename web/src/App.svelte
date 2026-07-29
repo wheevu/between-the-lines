@@ -40,6 +40,7 @@
   let reviewerRole: ReviewerRole = "unspecified";
   let traceStartState: "idle" | "starting" | "error" = "idle";
   let traceStartError = "";
+  let showClaimTraceNotice = false;
 
   $: viewAnnouncement =
     state.kind === "results"
@@ -59,7 +60,7 @@
     const factCheckId = params.get("fact_check");
     if (factCheckId) {
       if (!isReviewer) {
-        errorMessage = "Claim Trace is still limited to evaluation reviewers.";
+        showClaimTraceNotice = true;
         clearAnalysisUrl();
         return;
       }
@@ -90,6 +91,7 @@
     activeController?.abort();
     activeController = new AbortController();
     errorMessage = "";
+    showClaimTraceNotice = false;
     feedbackByFlag = {};
     feedbackState = {};
     traceStartState = "idle";
@@ -164,6 +166,7 @@
     activeController = null;
     draft = { ...emptyDraft };
     errorMessage = "";
+    showClaimTraceNotice = false;
     feedbackByFlag = {};
     feedbackState = {};
     traceStartState = "idle";
@@ -250,6 +253,14 @@
   </header>
 
   {#if state.kind === "input"}
+    {#if showClaimTraceNotice}
+      <div class="form-error" role="alert">
+        <div>
+          <strong>Claim Trace is still in reviewer testing.</strong>
+          <p>Open the reviewer link you were given, or keep using the translation reader.</p>
+        </div>
+      </div>
+    {/if}
     <ArticleForm
       {draft}
       {errorMessage}

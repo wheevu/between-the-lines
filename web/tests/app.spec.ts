@@ -184,6 +184,22 @@ test("restores a completed analysis from its URL", async ({ page }) => {
   await expect(page.getByRole("button", { name: "Choose a claim to trace" })).toHaveCount(0);
 });
 
+test("rejects direct Claim Trace links outside reviewer mode", async ({ page }) => {
+  let factCheckReads = 0;
+  await page.route("**/api/fact-checks/fact-check-saved", async (route) => {
+    factCheckReads += 1;
+    await route.fulfill({ status: 500 });
+  });
+
+  await page.goto("/?fact_check=fact-check-saved");
+
+  await expect(page.getByRole("alert")).toContainText(
+    "Claim Trace is still in reviewer testing."
+  );
+  await expect(page).not.toHaveURL(/fact_check=/);
+  expect(factCheckReads).toBe(0);
+});
+
 test("starts Claim Trace from a completed translation", async ({ page }) => {
   const factCheck = {
     id: "fact-check-new",
