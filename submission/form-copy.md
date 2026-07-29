@@ -8,7 +8,7 @@ instructions.
 
 **Between the Lines: Multilingual News, Meaning, and Evidence**
 
-## Project description — 135 words
+## Project description — 143 words
 
 People who read news across Vietnamese, English, and Korean can miss changes in
 attribution, certainty, dates, and numbers because fluent translation can hide
@@ -22,8 +22,9 @@ reviewers keep control: no claim is preselected, exact excerpts and limitations
 remain visible, and insufficient evidence produces abstention. Cloud models
 handle contextual translation, query generation, and evidence comparison;
 local processing handles bounded extraction, duplicate grouping, and evidence
-ranking. Evaluation uses balanced tri-language news, bilingual feedback, and
-independently adjudicated evidence.
+ranking. Evaluation is designed around balanced tri-language news and requires
+bilingual feedback and independent evidence adjudication before factual results
+are released.
 
 ## Evidence references for the problem statement
 

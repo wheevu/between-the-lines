@@ -1,6 +1,6 @@
 # Intel Vietnam AI Impact Festival 2026 requirements
 
-Checked: 24 July 2026
+Checked: 30 July 2026
 
 ## Authoritative entry information
 
@@ -20,7 +20,7 @@ For the student category, an entrant must:
 - provide a two-minute video or vlog;
 - provide the requested consent form with an authorized signature.
 
-The form currently requires a Google sign-in. Its consent template and any
+The form still requires a Google sign-in. Its consent template and any
 upload-specific restrictions must be checked by the entrant while signed in;
 they are not visible on the public organizer page.
 
