@@ -1,0 +1,802 @@
+{
+  "schema_version": 1,
+  "selection_sha256": "207dbd6ecf12bc35689c848aaff1e6e7b921b5c306a1ca810fd9ff890c1dc749",
+  "purpose": "Author/AI-assisted exploratory evidence labels for exercising the fact-check workflow. This is not independent gold and must not be used to report system accuracy.",
+  "review": {
+    "reviewer_role": "author-ai-assisted",
+    "checked_at": "2026-07-24T16:00:00+07:00",
+    "limitations": [
+      "The project author selected and interpreted the evidence with AI assistance.",
+      "Several reports repeat agency statements and are not fully independent primary investigations.",
+      "Dynamic social-media counts and unauthenticated screenshots are treated conservatively.",
+      "Independent adjudicators must still review the frozen claims before system accuracy is reported."
+    ]
+  },
+  "sources": [
+    {
+      "id": "yna-apr27",
+      "url": "https://en.yna.co.kr/view/AEN20260427007500315",
+      "publisher": "Yonhap News Agency",
+      "language": "en",
+      "published_at": "2026-04-27",
+      "excerpt": "NewJeans is preparing to resume musical activities, its agency ADOR said Monday.",
+      "lineage": "Agency statement reported by a national news agency."
+    },
+    {
+      "id": "joongang-apr27",
+      "url": "https://www.koreajoongangdaily.com/entertainment/newjeans-comeback-rumors-pick-up-steam-as-ador-confirms-preproduction-in-copenhagen/12558111",
+      "publisher": "Korea JoongAng Daily",
+      "language": "en",
+      "published_at": "2026-04-27",
+      "excerpt": "NewJeans' visit to Copenhagen is a part of the group's preproduction, intended to embrace the group's new musical journey.",
+      "lineage": "Separate publisher reporting the same attributed agency statement."
+    },
+    {
+      "id": "mk-may7",
+      "url": "https://www.mk.co.kr/en/entertain/12038871",
+      "publisher": "Maeil Business Newspaper",
+      "language": "en",
+      "published_at": "2026-05-07",
+      "excerpt": "We are continuing to discuss internally regarding future activities.",
+      "lineage": "Direct response from ADOR to MK Sports."
+    },
+    {
+      "id": "chosun-may7",
+      "url": "https://biz.chosun.com/en/en-entertainment/2026/05/07/OB2XUCAAAVERHG5UJDNTANZPSI/?outputType=amp",
+      "publisher": "ChosunBiz",
+      "language": "en",
+      "published_at": "2026-05-07",
+      "excerpt": "ADOR told OSEN on the 7th that internal discussions are ongoing regarding Min-ji's activities.",
+      "lineage": "OSEN report republished by a separate news host."
+    },
+    {
+      "id": "yna-lawsuit-dec30",
+      "url": "https://en.yna.co.kr/view/AEN20251230010000315",
+      "publisher": "Yonhap News Agency",
+      "language": "en",
+      "published_at": "2025-12-30",
+      "excerpt": "ADOR has filed a suit against Danielle, a family member and former chief executive Min Hee-jin seeking around 43.1 billion won.",
+      "lineage": "National news agency report on the court filing."
+    },
+    {
+      "id": "kbs-lawsuit-dec30",
+      "url": "https://world.kbs.co.kr/service/news_view.htm?Seq_Code=198499&lang=e",
+      "publisher": "KBS World",
+      "language": "en",
+      "published_at": "2025-12-30",
+      "excerpt": "ADOR has filed a damages lawsuit worth approximately 43 billion won against Danielle, a family member, and former ADOR CEO Min Hee-jin.",
+      "lineage": "Public broadcaster report on the court filing."
+    },
+    {
+      "id": "sbs-lawsuit-dec31",
+      "url": "https://news.sbs.co.kr/news/endPagePrintPopup.do?news_id=N1008388308",
+      "publisher": "SBS News",
+      "language": "en",
+      "published_at": "2025-12-31",
+      "excerpt": "On the 30th, ADOR filed a civil suit against DANIELLE, one family member, and former ADOR CEO Min Hee-jin.",
+      "lineage": "Separate broadcaster report specifying the filing date."
+    },
+    {
+      "id": "howsweet-complaint",
+      "url": "https://www.musicbusinessworldwide.com/files/2026/05/HYBE-lawsuit.pdf",
+      "publisher": "U.S. District Court complaint",
+      "language": "en",
+      "published_at": "2026-05-07",
+      "excerpt": "Both works contain a topline that includes an approximately eight-bar, 31-note melodic sequence.",
+      "lineage": "Primary legal complaint; establishes what was alleged, not whether infringement occurred."
+    },
+    {
+      "id": "legalclarity-howsweet",
+      "url": "https://legalclarity.org/bell-rodriguez-music-lawsuit-over-newjeans-how-sweet/",
+      "publisher": "LegalClarity",
+      "language": "en",
+      "published_at": "2026-06-28",
+      "excerpt": "Both songs share the same time signature, the same key, and a roughly eight-bar, 31-note melodic sequence.",
+      "lineage": "Legal explainer independently summarizing the filed allegations."
+    },
+    {
+      "id": "yna-jul22",
+      "url": "https://en.yna.co.kr/view/AEN20260722001951315",
+      "publisher": "Yonhap News Agency",
+      "language": "en",
+      "published_at": "2026-07-22",
+      "excerpt": "NewJeans released a surprise video and photos featuring four members, including Minji, on the fourth anniversary.",
+      "lineage": "National news agency report based on the released media and agency response."
+    },
+    {
+      "id": "soompi-jul22",
+      "url": "https://www.soompi.com/article/1856451wpp/watch-newjeans-announces-return-as-4-member-group-with-2026-summer-of-newjeans-films",
+      "publisher": "Soompi",
+      "language": "en",
+      "published_at": "2026-07-21",
+      "excerpt": "On July 22 at midnight KST, NewJeans surprised fans with several 2026 Summer of NewJeans films and photos.",
+      "lineage": "Entertainment publication independently documenting the timestamped release."
+    },
+    {
+      "id": "yna-dec29",
+      "url": "https://en.yna.co.kr/view/AEN20251229005500315",
+      "publisher": "Yonhap News Agency",
+      "language": "en",
+      "published_at": "2025-12-29",
+      "excerpt": "Danielle has been notified of the termination of her contract.",
+      "lineage": "National news agency reporting ADOR's announcement."
+    },
+    {
+      "id": "kbs-dec29",
+      "url": "https://world.kbs.co.kr/service/news_view.htm?Seq_Code=198456&lang=e",
+      "publisher": "KBS World",
+      "language": "en",
+      "published_at": "2025-12-29",
+      "excerpt": "ADOR has terminated its exclusive contract with band member Danielle.",
+      "lineage": "Public broadcaster separately reporting ADOR's announcement."
+    },
+    {
+      "id": "laodong-jul23",
+      "url": "https://news.laodong.vn/van-hoa-giai-tri/thach-thuc-cua-newjeans-khi-tro-lai-voi-4-thanh-vien-ma-khong-co-danielle-1739349.ldo",
+      "publisher": "Lao Dong",
+      "language": "vi",
+      "published_at": "2026-07-23",
+      "excerpt": "Sau một ngày, 8 bài đăng trên tài khoản Instagram chính thức của NewJeans đã vượt 9,5 triệu lượt thích.",
+      "lineage": "Vietnamese publisher's observation of dynamic social metrics."
+    },
+    {
+      "id": "mydaily-jul23",
+      "url": "https://v.daum.net/v/20260723010450655",
+      "publisher": "MyDaily",
+      "language": "ko",
+      "published_at": "2026-07-23",
+      "excerpt": "8개 게시물의 좋아요는 954만 개를 돌파했고, 댓글 또한 10만개를 넘어섰다.",
+      "lineage": "Korean entertainment report independently recording the same dynamic counts."
+    },
+    {
+      "id": "mk-park-jul22",
+      "url": "https://www.mk.co.kr/en/hot-issues/12104314",
+      "publisher": "Maeil Business Newspaper",
+      "language": "en",
+      "published_at": "2026-07-22",
+      "excerpt": "Film poster designer Park Si-young criticized NewJeans' new content as a four-member group.",
+      "lineage": "Publisher report quoting the named designer's public criticism."
+    },
+    {
+      "id": "khan-park-jul22",
+      "url": "https://sports.khan.co.kr/en/article/202607221023007",
+      "publisher": "Sports Kyunghyang",
+      "language": "en",
+      "published_at": "2026-07-22",
+      "excerpt": "Film poster designer Park Si-Young unleashed harsh criticism over the special content marking NewJeans' fourth debut anniversary.",
+      "lineage": "Separate publisher reporting the same public criticism."
+    },
+    {
+      "id": "yna-nov29-2024",
+      "url": "https://en.yna.co.kr/view/AEN20241129003800315",
+      "publisher": "Yonhap News Agency",
+      "language": "en",
+      "published_at": "2024-11-29",
+      "excerpt": "The five-member act declared they would terminate their contracts with ADOR, citing alleged contract breaches.",
+      "lineage": "National news agency report of the members' press conference."
+    },
+    {
+      "id": "soompi-statement-nov29",
+      "url": "https://www.soompi.com/article/1707027wpp/newjeans-releases-official-statement-following-announcement-of-contract-termination-with-ador%26quot",
+      "publisher": "Soompi",
+      "language": "en",
+      "published_at": "2024-11-29",
+      "excerpt": "As of November 29, 2024, the five of us have terminated our exclusive contract with ADOR.",
+      "lineage": "English publication reproducing the members' official statement."
+    },
+    {
+      "id": "koreatimes-dec29",
+      "url": "https://www.koreatimes.co.kr/entertainment/k-pop/20251229/newjeans-full-group-return-derailed-as-ador-ends-danielles-contract",
+      "publisher": "The Korea Times",
+      "language": "en",
+      "published_at": "2025-12-29",
+      "excerpt": "With Hanni's comeback now confirmed, Danielle's removal and Minji's unresolved status leave the group facing a fragmented return.",
+      "lineage": "Independent newspaper chronology of the member-by-member return decisions."
+    },
+    {
+      "id": "yna-nov12",
+      "url": "https://en.yna.co.kr/view/AEN20251112009251320",
+      "publisher": "Yonhap News Agency",
+      "language": "en",
+      "published_at": "2025-11-12",
+      "excerpt": "ADOR said Wednesday two members, Haerin and Hyein, will return to the company.",
+      "lineage": "National news agency report of ADOR's November confirmation."
+    },
+    {
+      "id": "soompi-may7",
+      "url": "https://www.soompi.com/article/1838786wpp/ador-briefly-comments-on-rumors-of-newjeans-minjis-return",
+      "publisher": "Soompi",
+      "language": "en",
+      "published_at": "2026-05-07",
+      "excerpt": "Danielle has been notified of the termination of her exclusive contract, while Minji's return is still under discussion.",
+      "lineage": "Entertainment publication quoting an agency status update."
+    },
+    {
+      "id": "joongang-hearing-may14",
+      "url": "https://www.koreajoongangdaily.com/korea/first-hearing-in-adors-lawsuit-against-min-hee-jin-ex-newjeans-member-danielle-to-begin/12578700",
+      "publisher": "Korea JoongAng Daily",
+      "language": "en",
+      "published_at": "2026-05-14",
+      "excerpt": "The first hearing in ADOR's 43.1 billion won damages lawsuit is set to begin on Thursday.",
+      "lineage": "Court-hearing preview by a national newspaper."
+    },
+    {
+      "id": "chosun-hearing-may14",
+      "url": "https://biz.chosun.com/en/en-society/2026/05/14/OEG3Y3SU3RAMDLXAWAET7GROVU/?outputType=amp",
+      "publisher": "ChosunBiz",
+      "language": "en",
+      "published_at": "2026-05-14",
+      "excerpt": "In the first hearing of ADOR's 43.1 billion won damages lawsuit, only the representatives of both sides attended.",
+      "lineage": "Separate court report confirming the hearing and attendance."
+    },
+    {
+      "id": "newsen-hearing-may14",
+      "url": "https://v.daum.net/v/20260514151452298",
+      "publisher": "NewsEn",
+      "language": "ko",
+      "published_at": "2026-05-14",
+      "excerpt": "민 전 대표와 다니엘은 법정에 출석하지 않을 것으로 알려졌다.",
+      "lineage": "Korean report stating the expected nonappearance before the hearing."
+    },
+    {
+      "id": "joongang-noappearance-may14",
+      "url": "https://www.koreajoongangdaily.com/korea/first-hearing-in-adors-lawsuit-against-min-hee-jin-ex-newjeans-member-danielle-to-begin/12578700",
+      "publisher": "Korea JoongAng Daily",
+      "language": "en",
+      "published_at": "2026-05-14",
+      "excerpt": "Neither former ADOR CEO Min nor Danielle is expected to appear in court in person, according to the legal representatives.",
+      "lineage": "Court-hearing preview explicitly attributing the expected nonappearance."
+    },
+    {
+      "id": "yna-bubblegum",
+      "url": "https://en.yna.co.kr/view/AEN20240718008000315",
+      "publisher": "Yonhap News Agency",
+      "language": "en",
+      "published_at": "2024-07-18",
+      "excerpt": "Shakatak formally claimed that Bubble Gum copied its 1981 song Easier Said Than Done.",
+      "lineage": "National news agency report of Shakatak's allegation."
+    },
+    {
+      "id": "koreatimes-bubblegum",
+      "url": "https://www.koreatimes.co.kr/entertainment/20240718/newjeans-agency-refutes-plagiarism-allegations-by-shakatak-over-bubble-gum",
+      "publisher": "The Korea Times",
+      "language": "en",
+      "published_at": "2024-07-18",
+      "excerpt": "NewJeans' Bubble Gum faces accusations of plagiarizing Shakatak's Easier Said Than Done.",
+      "lineage": "Separate newspaper report on the allegation and response."
+    },
+    {
+      "id": "newsis-court-mar8",
+      "url": "https://www.newsis.com/view/NISX20260308_0003539403",
+      "publisher": "Newsis",
+      "language": "ko",
+      "published_at": "2026-03-08",
+      "excerpt": "어도어와 뉴진스 멤버 건 전속계약이 2029년 7월31일까지 유효함을 재확인했다.",
+      "lineage": "Korean news agency report specifying the contract end date."
+    },
+    {
+      "id": "koreatimes-court-oct30",
+      "url": "https://www.koreatimes.co.kr/entertainment/k-pop/20251030/court-rules-newjeans-must-stay-with-ador-until-2029",
+      "publisher": "The Korea Times",
+      "language": "en",
+      "published_at": "2025-10-30",
+      "excerpt": "The Seoul Central District Court ruled that NewJeans must honor their exclusive contract with Ador until 2029.",
+      "lineage": "Independent newspaper report of the first-instance ruling."
+    },
+    {
+      "id": "joongang-no-appeal",
+      "url": "https://www.koreajoongangdaily.com/entertainment/newjeans-members-decide-against-appealing-courts-contract-ruling/12253476",
+      "publisher": "Korea JoongAng Daily",
+      "language": "en",
+      "published_at": "2025-11-14",
+      "excerpt": "All five members have chosen not to appeal a Seoul court's upholding of their exclusive contracts.",
+      "lineage": "National newspaper report after the appeal deadline."
+    },
+    {
+      "id": "nocut-no-appeal",
+      "url": "https://www.nocutnews.co.kr/news/6481660",
+      "publisher": "NoCut News",
+      "language": "ko",
+      "published_at": "2026-03-09",
+      "excerpt": "뉴진스는 멤버 전원 항소장을 제출하지 않아 1심이 확정됐다.",
+      "lineage": "Separate Korean report confirming no appeal was filed."
+    },
+    {
+      "id": "mk-copenhagen-apr13",
+      "url": "https://www.mk.co.kr/en/musics/12015870",
+      "publisher": "Maeil Business Newspaper",
+      "language": "en",
+      "published_at": "2026-04-13",
+      "excerpt": "It is true that NewJeans members visited Copenhagen, Denmark with their staff.",
+      "lineage": "Direct ADOR confirmation reported by a Korean newspaper."
+    },
+    {
+      "id": "chosun-copenhagen-apr14",
+      "url": "https://biz.chosun.com/en/en-entertainment/2026/04/14/FYK3PJNV55DM3HKNFOYMBTEQ7Y/?outputType=amp",
+      "publisher": "ChosunBiz",
+      "language": "en",
+      "published_at": "2026-04-14",
+      "excerpt": "It is true that NewJeans members visited Copenhagen, Denmark, together with staff.",
+      "lineage": "Separate publisher reporting ADOR's visit confirmation."
+    },
+    {
+      "id": "insight-reservation-apr26",
+      "url": "https://web.insight.co.kr/news/551730",
+      "publisher": "Insight",
+      "language": "ko",
+      "published_at": "2026-04-26",
+      "excerpt": "13일부터 16일까지 'ADOR/LL'이라는 이름으로 예약이 잡혀 있다.",
+      "lineage": "Report based on a circulating reservation image whose authenticity was not established."
+    },
+    {
+      "id": "starnews-reservation-apr27",
+      "url": "https://www.starnewskorea.com/en/music/2026/04/27/2026042711362366498",
+      "publisher": "StarNews",
+      "language": "en",
+      "published_at": "2026-04-27",
+      "excerpt": "ADOR has not provided a clear stance regarding whether the studio was used.",
+      "lineage": "Follow-up report noting that the agency did not authenticate or confirm studio use."
+    },
+    {
+      "id": "mbw-eta-jul8",
+      "url": "https://www.musicbusinessworldwide.com/newjeans-hybe-ador-face-lawsuit-from-us-music-publisher-over-eta-copyright-claim/",
+      "publisher": "Music Business Worldwide",
+      "language": "en",
+      "published_at": "2026-07-08",
+      "excerpt": "All Surface Publishing alleges that ETA copied a combination of musical elements from Samir's Theme, a 2005 track by DJ Debonair Samir.",
+      "lineage": "Music-industry publication reporting the filed copyright allegation."
+    },
+    {
+      "id": "zapzee-eta-jul9",
+      "url": "https://zapzee.net/2026/07/09/newjeans-sued-over-eta-plagiarism/",
+      "publisher": "Zapzee",
+      "language": "en",
+      "published_at": "2026-07-09",
+      "excerpt": "All Surface claims ETA copied from Samir's Theme, a 2005 track by Baltimore club producer DJ Debonair Samir.",
+      "lineage": "Separate entertainment publisher reporting the allegation and release year."
+    },
+    {
+      "id": "mbc-anniversary-jul22",
+      "url": "https://enews.imbc.com/News/RetrieveNewsInfo/512260",
+      "publisher": "MBC Entertainment",
+      "language": "ko",
+      "published_at": "2026-07-22",
+      "excerpt": "어도어는 22일 0시 뉴진스 데뷔 4주년 기념 스페셜 필름을 공개했다.",
+      "lineage": "Broadcaster report of the timestamped official release and agency explanation."
+    },
+    {
+      "id": "edaily-anniversary-jul22",
+      "url": "https://en.edaily.co.kr/news/eda202607225103/",
+      "publisher": "Edaily",
+      "language": "en",
+      "published_at": "2026-07-22",
+      "excerpt": "ADOR released a video on the 22nd to commemorate the fourth anniversary of NewJeans' debut.",
+      "lineage": "Separate Korean business-news publisher reporting the release."
+    },
+    {
+      "id": "billboardph-anniversary-jul21",
+      "url": "https://billboardphilippines.com/music/news/newjeans-4th-anniversary-special-film-series/",
+      "publisher": "Billboard Philippines",
+      "language": "en",
+      "published_at": "2026-07-21",
+      "excerpt": "ADOR described the project as created from the members' shared wish to celebrate their fourth anniversary together with fans.",
+      "lineage": "Licensed music publication reporting ADOR's explanation."
+    },
+    {
+      "id": "newsis-lawsuit-dec31",
+      "url": "https://www.newsis.com/view/NISX20251231_0003461766",
+      "publisher": "Newsis",
+      "language": "ko",
+      "published_at": "2025-12-31",
+      "excerpt": "어도어는 지난 29일 다니엘과의 전속계약을 해지하고 이번 소송을 제기했다.",
+      "lineage": "Korean news agency report whose filing-date wording conflicts with Dec. 30 reports."
+    },
+    {
+      "id": "yna-lawsuit-date-dec30",
+      "url": "https://en.yna.co.kr/view/AEN20251230010000315",
+      "publisher": "Yonhap News Agency",
+      "language": "en",
+      "published_at": "2025-12-30",
+      "excerpt": "The suit comes a day after ADOR said it had delivered notice of contract termination to Danielle.",
+      "lineage": "National news agency chronology placing the filing after the December 29 termination."
+    },
+    {
+      "id": "edaily-minji-jul22",
+      "url": "https://en.edaily.co.kr/news/eda202607225103/",
+      "publisher": "Edaily",
+      "language": "en",
+      "published_at": "2026-07-22",
+      "excerpt": "Minji's return to NewJeans has not yet been finalized.",
+      "lineage": "Agency-status report distinguishing media appearance from confirmed return."
+    },
+    {
+      "id": "musictimes-plans-jul22",
+      "url": "https://www.musictimes.com/articles/112356/20260722/newjeans-marks-4th-anniversary-new-videos-future-activities-await-talks-label.htm",
+      "publisher": "Music Times",
+      "language": "en",
+      "published_at": "2026-07-22",
+      "excerpt": "Updates on future activities will be shared once discussions with the members are concluded.",
+      "lineage": "Separate entertainment publisher reporting ADOR's statement."
+    },
+    {
+      "id": "thestandard-plans-jul22",
+      "url": "https://www.thestandard.com.hk/gossip/article/338029/NewJeans-marks-fourth-anniversary-amid-comeback-speculation",
+      "publisher": "The Standard",
+      "language": "en",
+      "published_at": "2026-07-22",
+      "excerpt": "Specific plans and the direction of future activities would be announced after further discussions with the members.",
+      "lineage": "Independent newspaper report of ADOR's future-plans statement."
+    },
+    {
+      "id": "mbc-members-wish-jul22",
+      "url": "https://enews.imbc.com/News/RetrieveNewsInfo/512260",
+      "publisher": "MBC Entertainment",
+      "language": "ko",
+      "published_at": "2026-07-22",
+      "excerpt": "팬분들과 데뷔일을 함께 축하하고 싶은 멤버들의 마음을 모았다.",
+      "lineage": "Broadcaster report preserving ADOR's wording about the members' wish."
+    }
+  ],
+  "claims": [
+    {
+      "candidate_id": "claim-601c280561a5",
+      "pilot": {
+        "expected_status": "supported",
+        "confidence": "high",
+        "supports": ["yna-apr27", "joongang-apr27"],
+        "disputes": [],
+        "context": [],
+        "rationale": "Two publishers quote ADOR announcing preparations to resume music activities on April 27.",
+        "search_notes": ""
+      }
+    },
+    {
+      "candidate_id": "claim-700a7c566204",
+      "pilot": {
+        "expected_status": "supported",
+        "confidence": "high",
+        "supports": ["yna-apr27", "joongang-apr27"],
+        "disputes": [],
+        "context": [],
+        "rationale": "Both reports attribute the Copenhagen pre-production description directly to ADOR.",
+        "search_notes": ""
+      }
+    },
+    {
+      "candidate_id": "claim-aa9ff2381fcc",
+      "pilot": {
+        "expected_status": "supported",
+        "confidence": "high",
+        "supports": ["mk-may7", "chosun-may7"],
+        "disputes": [],
+        "context": [],
+        "rationale": "Separate reports record ADOR's May 7 statement that internal discussions were continuing.",
+        "search_notes": ""
+      }
+    },
+    {
+      "candidate_id": "claim-be18649b95a1",
+      "pilot": {
+        "expected_status": "supported",
+        "confidence": "high",
+        "supports": ["yna-lawsuit-dec30", "kbs-lawsuit-dec30"],
+        "disputes": [],
+        "context": [],
+        "rationale": "A news agency and public broadcaster agree on the amount and three named defendant groups.",
+        "search_notes": ""
+      }
+    },
+    {
+      "candidate_id": "claim-a5f792a651c0",
+      "pilot": {
+        "expected_status": "supported",
+        "confidence": "high",
+        "supports": ["howsweet-complaint", "legalclarity-howsweet"],
+        "disputes": [],
+        "context": [],
+        "rationale": "The legal filing and an independent legal summary establish that these similarities were alleged; they do not prove plagiarism.",
+        "search_notes": ""
+      }
+    },
+    {
+      "candidate_id": "claim-7e76f85073e2",
+      "pilot": {
+        "expected_status": "supported",
+        "confidence": "high",
+        "supports": ["yna-jul22", "soompi-jul22"],
+        "disputes": [],
+        "context": [],
+        "rationale": "Two timestamped reports document the four-member anniversary video and photos on July 22.",
+        "search_notes": ""
+      }
+    },
+    {
+      "candidate_id": "claim-d84bec51e2df",
+      "pilot": {
+        "expected_status": "supported",
+        "confidence": "high",
+        "supports": ["yna-dec29", "kbs-dec29"],
+        "disputes": [],
+        "context": [],
+        "rationale": "A news agency and public broadcaster report ADOR's termination announcement.",
+        "search_notes": ""
+      }
+    },
+    {
+      "candidate_id": "claim-c5f4cb78e424",
+      "pilot": {
+        "expected_status": "supported",
+        "confidence": "medium",
+        "supports": ["laodong-jul23", "mydaily-jul23"],
+        "disputes": [],
+        "context": [],
+        "rationale": "Vietnamese and Korean reports independently recorded matching one-day Instagram counts, but the underlying metrics are dynamic.",
+        "search_notes": ""
+      }
+    },
+    {
+      "candidate_id": "claim-d1a5e6ffb8b7",
+      "pilot": {
+        "expected_status": "supported",
+        "confidence": "high",
+        "supports": ["yna-dec29", "kbs-lawsuit-dec30"],
+        "disputes": [],
+        "context": [],
+        "rationale": "The December termination announcement and subsequent damages filing are documented by separate outlets.",
+        "search_notes": ""
+      }
+    },
+    {
+      "candidate_id": "claim-80bead3c29c1",
+      "pilot": {
+        "expected_status": "supported",
+        "confidence": "medium",
+        "supports": ["mk-park-jul22", "khan-park-jul22"],
+        "disputes": [],
+        "context": [],
+        "rationale": "Two publishers report the named designer's public criticism; this verifies the attribution, not the subjective judgment.",
+        "search_notes": ""
+      }
+    },
+    {
+      "candidate_id": "claim-ffbd1712c2c9",
+      "pilot": {
+        "expected_status": "supported",
+        "confidence": "medium",
+        "supports": ["yna-lawsuit-dec30", "kbs-lawsuit-dec30"],
+        "disputes": [],
+        "context": [],
+        "rationale": "Both sources support the roughly 43 billion won filing. The dollar conversion varies with exchange rate, so $31 million is approximate.",
+        "search_notes": ""
+      }
+    },
+    {
+      "candidate_id": "claim-756550d94efe",
+      "pilot": {
+        "expected_status": "disputed",
+        "confidence": "high",
+        "supports": [],
+        "disputes": ["yna-jul22", "edaily-minji-jul22"],
+        "context": ["soompi-may7"],
+        "rationale": "Minji appeared in anniversary content, but two July 22 reports explicitly say her return was not confirmed.",
+        "search_notes": ""
+      }
+    },
+    {
+      "candidate_id": "claim-e21253f673a1",
+      "pilot": {
+        "expected_status": "supported",
+        "confidence": "high",
+        "supports": ["yna-nov29-2024", "soompi-statement-nov29"],
+        "disputes": [],
+        "context": [],
+        "rationale": "The press-conference report and members' statement agree on the November 2024 notification and alleged breaches.",
+        "search_notes": ""
+      }
+    },
+    {
+      "candidate_id": "claim-f518f5e900b7",
+      "pilot": {
+        "expected_status": "mixed",
+        "confidence": "high",
+        "supports": ["yna-nov12", "koreatimes-dec29"],
+        "disputes": ["yna-dec29", "kbs-dec29"],
+        "context": [],
+        "rationale": "Haerin and Hyein were confirmed in November and Danielle was terminated in December, but Hanni's confirmation came in December, not November.",
+        "search_notes": ""
+      }
+    },
+    {
+      "candidate_id": "claim-192d0b995f63",
+      "pilot": {
+        "expected_status": "supported",
+        "confidence": "high",
+        "supports": ["yna-apr27", "joongang-apr27"],
+        "disputes": [],
+        "context": [],
+        "rationale": "Two April 27 reports quote ADOR describing the Copenhagen visit as pre-production for a new musical journey.",
+        "search_notes": ""
+      }
+    },
+    {
+      "candidate_id": "claim-f3c94b8905c8",
+      "pilot": {
+        "expected_status": "supported",
+        "confidence": "high",
+        "supports": ["joongang-hearing-may14", "chosun-hearing-may14"],
+        "disputes": [],
+        "context": ["yna-lawsuit-dec30"],
+        "rationale": "Two court reports agree on the 43.1 billion won action and Thursday hearing; the dollar figure is a dated conversion.",
+        "search_notes": ""
+      }
+    },
+    {
+      "candidate_id": "claim-9402ec78844a",
+      "pilot": {
+        "expected_status": "supported",
+        "confidence": "medium",
+        "supports": ["joongang-noappearance-may14", "newsen-hearing-may14"],
+        "disputes": [],
+        "context": ["chosun-hearing-may14"],
+        "rationale": "Two previews said the defendants were not expected in person, and the later hearing report confirms only representatives attended.",
+        "search_notes": ""
+      }
+    },
+    {
+      "candidate_id": "claim-8cdb305ec75a",
+      "pilot": {
+        "expected_status": "supported",
+        "confidence": "high",
+        "supports": ["yna-bubblegum", "koreatimes-bubblegum"],
+        "disputes": [],
+        "context": [],
+        "rationale": "Two outlets document that Shakatak made the allegation in 2024; the label disputed it.",
+        "search_notes": ""
+      }
+    },
+    {
+      "candidate_id": "claim-e3e622b46bfc",
+      "pilot": {
+        "expected_status": "supported",
+        "confidence": "high",
+        "supports": ["yna-nov29-2024", "soompi-statement-nov29"],
+        "disputes": [],
+        "context": [],
+        "rationale": "The contemporaneous report and official member statement agree on the November 2024 termination notice.",
+        "search_notes": ""
+      }
+    },
+    {
+      "candidate_id": "claim-f7d581a9cd99",
+      "pilot": {
+        "expected_status": "supported",
+        "confidence": "high",
+        "supports": ["musictimes-plans-jul22", "thestandard-plans-jul22"],
+        "disputes": [],
+        "context": ["yna-jul22"],
+        "rationale": "Separate reports quote ADOR calling the video commemorative and postponing detailed plans until talks conclude.",
+        "search_notes": ""
+      }
+    },
+    {
+      "candidate_id": "claim-9166f6a65470",
+      "pilot": {
+        "expected_status": "mixed",
+        "confidence": "high",
+        "supports": ["yna-lawsuit-dec30", "kbs-lawsuit-dec30"],
+        "disputes": ["yna-lawsuit-date-dec30", "sbs-lawsuit-dec31"],
+        "context": ["newsis-court-mar8"],
+        "rationale": "The amount and parties are supported, but reports place the filing on December 30, not early February as the relative-date phrase implies.",
+        "search_notes": ""
+      }
+    },
+    {
+      "candidate_id": "claim-55adcf7fd9c4",
+      "pilot": {
+        "expected_status": "supported",
+        "confidence": "high",
+        "supports": ["newsis-court-mar8", "koreatimes-court-oct30"],
+        "disputes": [],
+        "context": [],
+        "rationale": "The ruling and contract duration through 2029 are independently reported; Newsis supplies the exact July 31 date.",
+        "search_notes": ""
+      }
+    },
+    {
+      "candidate_id": "claim-254f9658a0e6",
+      "pilot": {
+        "expected_status": "insufficient",
+        "confidence": "high",
+        "supports": [],
+        "disputes": [],
+        "context": ["insight-reservation-apr26", "starnews-reservation-apr27"],
+        "rationale": "A circulating reservation image is not authenticated, reported date ranges conflict, and ADOR did not confirm studio use.",
+        "search_notes": "Searched Korean and English reports, the claimed studio-reservation wording, ADOR statements, and follow-up coverage. No authenticated booking record or primary confirmation was found."
+      }
+    },
+    {
+      "candidate_id": "claim-1b13d6fdb23e",
+      "pilot": {
+        "expected_status": "supported",
+        "confidence": "high",
+        "supports": ["mk-copenhagen-apr13", "chosun-copenhagen-apr14"],
+        "disputes": [],
+        "context": [],
+        "rationale": "Two publishers quote ADOR directly confirming the members' Copenhagen visit with staff.",
+        "search_notes": ""
+      }
+    },
+    {
+      "candidate_id": "claim-642dafaf6663",
+      "pilot": {
+        "expected_status": "mixed",
+        "confidence": "medium",
+        "supports": ["yna-dec29", "newsis-lawsuit-dec31"],
+        "disputes": ["yna-lawsuit-date-dec30", "sbs-lawsuit-dec31"],
+        "context": ["kbs-lawsuit-dec30"],
+        "rationale": "The termination date and 43.1 billion won suit are supported, but publishers conflict on whether the suit was filed December 29 or 30.",
+        "search_notes": ""
+      }
+    },
+    {
+      "candidate_id": "claim-be521855ac6f",
+      "pilot": {
+        "expected_status": "supported",
+        "confidence": "high",
+        "supports": ["joongang-no-appeal", "nocut-no-appeal"],
+        "disputes": [],
+        "context": ["koreatimes-court-oct30"],
+        "rationale": "Two reports confirm all members let the appeal deadline pass after losing the October first-instance case.",
+        "search_notes": ""
+      }
+    },
+    {
+      "candidate_id": "claim-e372a663a6ac",
+      "pilot": {
+        "expected_status": "supported",
+        "confidence": "high",
+        "supports": ["mbw-eta-jul8", "zapzee-eta-jul9"],
+        "disputes": [],
+        "context": [],
+        "rationale": "Two publications identify All Surface Publishing and accurately frame copying as the plaintiff's allegation.",
+        "search_notes": ""
+      }
+    },
+    {
+      "candidate_id": "claim-27aca2305448",
+      "pilot": {
+        "expected_status": "supported",
+        "confidence": "high",
+        "supports": ["mbw-eta-jul8", "zapzee-eta-jul9"],
+        "disputes": [],
+        "context": [],
+        "rationale": "Both sources identify Samir's Theme as DJ Debonair Samir's 2005 track.",
+        "search_notes": ""
+      }
+    },
+    {
+      "candidate_id": "claim-eaa929b8bf44",
+      "pilot": {
+        "expected_status": "supported",
+        "confidence": "high",
+        "supports": ["mbc-anniversary-jul22", "edaily-anniversary-jul22"],
+        "disputes": [],
+        "context": [],
+        "rationale": "Two Korean publishers document ADOR's anniversary film release on July 22.",
+        "search_notes": ""
+      }
+    },
+    {
+      "candidate_id": "claim-8586ef86a6a8",
+      "pilot": {
+        "expected_status": "supported",
+        "confidence": "medium",
+        "supports": ["billboardph-anniversary-jul21", "mbc-members-wish-jul22"],
+        "disputes": [],
+        "context": ["mbc-anniversary-jul22"],
+        "rationale": "Two reports attribute the fan-celebration purpose to ADOR; one preserves the members' shared-wish wording.",
+        "search_notes": ""
+      }
+    }
+  ]
+}

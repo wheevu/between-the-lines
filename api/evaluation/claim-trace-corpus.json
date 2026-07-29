@@ -1,0 +1,1060 @@
+{
+  "schema_version": 1,
+  "prepared": "2026-07-24",
+  "purpose": "A frozen, multilingual benchmark for evaluating whether Claim Trace preserves meaning, separates source lineages, and exposes uncertainty across Vietnamese, English, and Korean news.",
+  "window": {
+    "start": "2026-01-24",
+    "end": "2026-07-24"
+  },
+  "design": {
+    "topics": [
+      "public_policy",
+      "health",
+      "science_climate",
+      "technology_economy",
+      "education_society",
+      "culture_sports"
+    ],
+    "events": 12,
+    "articles": 36,
+    "trace_cases": 24,
+    "languages": [
+      "vi",
+      "en",
+      "ko"
+    ]
+  },
+  "selection_rules": [
+    "Exactly two events per topic and one article per language for each event.",
+    "Every article was published during the frozen six-month window.",
+    "Each event includes at least one claim with concrete entities, dates, numbers, attribution, legal state, or forecast modality.",
+    "The set mixes clean agreement with evolving, localized, syndicated, and uncertainty-rich reporting.",
+    "The manifest stores metadata and test claims, not copyrighted article bodies.",
+    "A matching article is evidence only when it supports the same proposition; topical similarity is not enough."
+  ],
+  "events": [
+    {
+      "id": "korea-ai-basic-act-implementation",
+      "topic": "public_policy",
+      "profile": "challenging",
+      "event_date": "2026-01-22",
+      "selection_reason": "Tests legal-state wording, post-implementation updates, and whether the system distinguishes a law taking effect from later compliance activity.",
+      "primary_facts": [
+        "South Korea's AI Basic Act took effect in January 2026.",
+        "The framework includes transparency or labeling duties for some AI-generated content.",
+        "Later reporting described the kinds of implementation questions companies submitted."
+      ],
+      "edge_tags": [
+        "legal_state",
+        "temporal_update",
+        "scope",
+        "numeric_precision"
+      ],
+      "trace_cases": [
+        {
+          "id": "korea-ai-act-en-core",
+          "seed_language": "en",
+          "seed_claim": "South Korea's comprehensive AI legal framework took effect in January 2026.",
+          "expected_focus": [
+            "effective_date",
+            "legal_state",
+            "country_scope"
+          ]
+        },
+        {
+          "id": "korea-ai-act-vi-labeling",
+          "seed_language": "vi",
+          "seed_claim": "Luật AI của Hàn Quốc đặt ra nghĩa vụ minh bạch hoặc ghi nhãn đối với một số nội dung do AI tạo ra.",
+          "expected_focus": [
+            "obligation_scope",
+            "attribution",
+            "implementation_update"
+          ]
+        }
+      ],
+      "articles": [
+        {
+          "id": "korea-ai-act-en-msit",
+          "source_language": "en",
+          "publisher": "Korea.net",
+          "published": "2026-02-25",
+          "title": "The AI Basic Act Comes into Force to Lay the Foundation for Korea to Become an AI G3",
+          "url": "https://www.korea.net/Government/Briefing-Room/Press-Releases/view?articleId=8554&type=O",
+          "source_type": "primary",
+          "credited_origin": null,
+          "edge_tags": [
+            "legal_state",
+            "scope"
+          ]
+        },
+        {
+          "id": "korea-ai-act-vi-moj",
+          "source_language": "vi",
+          "publisher": "Vietnam Ministry of Justice",
+          "published": "2026-01-30",
+          "title": "Hàn Quốc tiên phong ban hành luật sử dụng AI an toàn",
+          "url": "https://cntt.moj.gov.vn/portal/tin-tuc/chi-tiet/han-quoc-tien-phong-ban-hanh-luat-su-dung-ai-an-toan-tcsrtzda49.html?handler=ThongKeTruyCap",
+          "source_type": "official_analysis",
+          "credited_origin": null,
+          "edge_tags": [
+            "legal_state",
+            "translation_scope"
+          ]
+        },
+        {
+          "id": "korea-ai-act-ko-yonhap",
+          "source_language": "ko",
+          "publisher": "Yonhap News Agency",
+          "published": "2026-02-03",
+          "title": "AI기본법 상담 열흘, 기업 질문 절반이 'AI 생성물 표시'",
+          "url": "https://www.yna.co.kr/view/AKR20260203053900017",
+          "source_type": "wire",
+          "credited_origin": null,
+          "edge_tags": [
+            "temporal_update",
+            "numeric_precision"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "vietnam-ai-law-effective",
+      "topic": "public_policy",
+      "profile": "clean",
+      "event_date": "2026-03-01",
+      "selection_reason": "Tests a shared effective-date claim while retaining the distinction between enacted law, implementation guidance, and journalistic description.",
+      "primary_facts": [
+        "Vietnam's Law on Artificial Intelligence took effect on March 1, 2026.",
+        "The law uses a risk-based regulatory approach.",
+        "Human responsibility remains central to consequential decisions."
+      ],
+      "edge_tags": [
+        "legal_state",
+        "date",
+        "attribution"
+      ],
+      "trace_cases": [
+        {
+          "id": "vietnam-ai-law-ko-core",
+          "seed_language": "ko",
+          "seed_claim": "베트남 인공지능법은 2026년 3월 1일부터 시행됐다.",
+          "expected_focus": [
+            "effective_date",
+            "legal_state"
+          ]
+        },
+        {
+          "id": "vietnam-ai-law-en-human",
+          "seed_language": "en",
+          "seed_claim": "Vietnam's AI law keeps final responsibility for consequential decisions with people.",
+          "expected_focus": [
+            "human_responsibility",
+            "scope",
+            "attribution"
+          ]
+        }
+      ],
+      "articles": [
+        {
+          "id": "vietnam-ai-law-en-st",
+          "source_language": "en",
+          "publisher": "The Straits Times",
+          "published": "2026-03-01",
+          "title": "Vietnam AI law takes effect, first in South-east Asia",
+          "url": "https://www.straitstimes.com/asia/se-asia/vietnam-ai-law-takes-effect-first-in-south-east-asia",
+          "source_type": "independent",
+          "credited_origin": null,
+          "edge_tags": [
+            "legal_state",
+            "regional_superlative"
+          ]
+        },
+        {
+          "id": "vietnam-ai-law-vi-mst",
+          "source_language": "vi",
+          "publisher": "Vietnam Ministry of Science and Technology",
+          "published": "2026-03-01",
+          "title": "Luật Trí tuệ nhân tạo chính thức có hiệu lực từ 1/3",
+          "url": "https://mst.gov.vn/ai-la-cong-cu-ho-tro-quyet-dinh-cuoi-cung-van-la-con-nguoi-19726030111172663.htm",
+          "source_type": "primary",
+          "credited_origin": null,
+          "edge_tags": [
+            "legal_state",
+            "human_responsibility"
+          ]
+        },
+        {
+          "id": "vietnam-ai-law-ko-yonhap",
+          "source_language": "ko",
+          "publisher": "Yonhap News Agency",
+          "published": "2026-03-01",
+          "title": "베트남, 동남아 첫 '포괄적 AI 규제법' 시행…콘텐츠에 워터마크",
+          "url": "https://www.yna.co.kr/amp/view/AKR20260301033200084",
+          "source_type": "wire",
+          "credited_origin": null,
+          "edge_tags": [
+            "legal_state",
+            "scope"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nipah-india-outbreak",
+      "topic": "health",
+      "profile": "challenging",
+      "event_date": "2026-01-26",
+      "selection_reason": "Tests a developing health story where early and later reports differ on case counts and where containment language must retain attribution and time.",
+      "primary_facts": [
+        "India reported a Nipah virus outbreak in West Bengal.",
+        "Later reporting said two cases were confirmed and contacts tested negative.",
+        "Public-risk language was attributed to health authorities or WHO rather than asserted as timeless fact."
+      ],
+      "edge_tags": [
+        "temporal_update",
+        "numeric_precision",
+        "attribution",
+        "health_uncertainty"
+      ],
+      "trace_cases": [
+        {
+          "id": "nipah-vi-case-count",
+          "seed_language": "vi",
+          "seed_claim": "WHO cho biết ổ dịch Nipah tại Ấn Độ không có dấu hiệu lan rộng.",
+          "expected_focus": [
+            "attribution",
+            "assessment_date",
+            "uncertainty"
+          ]
+        },
+        {
+          "id": "nipah-ko-early-count",
+          "seed_language": "ko",
+          "seed_claim": "인도 동부 니파바이러스 발생과 관련해 초기 보도와 후속 보도의 확진자 수가 달랐다.",
+          "expected_focus": [
+            "temporal_update",
+            "case_count",
+            "source_timing"
+          ]
+        }
+      ],
+      "articles": [
+        {
+          "id": "nipah-en-ap",
+          "source_language": "en",
+          "publisher": "Associated Press",
+          "published": "2026-01-28",
+          "title": "India says it has contained Nipah virus outbreak as some Asian countries ramp up health screenings",
+          "url": "https://apnews.com/article/166df6c637780b99ede380bf4ddccfcc",
+          "source_type": "wire",
+          "credited_origin": null,
+          "edge_tags": [
+            "attribution",
+            "numeric_precision"
+          ]
+        },
+        {
+          "id": "nipah-vi-vnexpress",
+          "source_language": "vi",
+          "publisher": "VnExpress",
+          "published": "2026-01-31",
+          "title": "WHO nói virus Nipah không có dấu hiệu lan rộng",
+          "url": "https://vnexpress.net/who-noi-virus-nipah-khong-co-dau-hieu-lan-rong-5012181.html",
+          "source_type": "independent",
+          "credited_origin": "World Health Organization",
+          "edge_tags": [
+            "attribution",
+            "certainty"
+          ]
+        },
+        {
+          "id": "nipah-ko-mbc",
+          "source_language": "ko",
+          "publisher": "MBC",
+          "published": "2026-01-26",
+          "title": "'치사율 75%' 바이러스 인도 동부서 확산 조짐",
+          "url": "https://imnews.imbc.com/replay/2026/nwtoday/article/6796201_37012.html",
+          "source_type": "independent",
+          "credited_origin": null,
+          "edge_tags": [
+            "early_report",
+            "numeric_precision",
+            "headline_certainty"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hantavirus-cruise-ship",
+      "topic": "health",
+      "profile": "clean",
+      "event_date": "2026-05-03",
+      "selection_reason": "Tests whether stable shared facts remain visible while changing case counts and risk assessments are shown as dated updates.",
+      "primary_facts": [
+        "A Hantavirus cluster was reported aboard the MV Hondius cruise ship.",
+        "Health authorities assessed risk to the wider public as low.",
+        "Case and death counts changed across reports published on different dates."
+      ],
+      "edge_tags": [
+        "temporal_update",
+        "numeric_precision",
+        "risk_level",
+        "attribution"
+      ],
+      "trace_cases": [
+        {
+          "id": "hanta-en-risk",
+          "seed_language": "en",
+          "seed_claim": "WHO assessed the risk to the wider public from the MV Hondius Hantavirus cluster as low.",
+          "expected_focus": [
+            "attribution",
+            "population_scope",
+            "risk_level"
+          ]
+        },
+        {
+          "id": "hanta-vi-count",
+          "seed_language": "vi",
+          "seed_claim": "Các bản tin về ổ dịch trên tàu MV Hondius nêu số ca theo những mốc thời gian khác nhau.",
+          "expected_focus": [
+            "temporal_update",
+            "case_count",
+            "publication_date"
+          ]
+        }
+      ],
+      "articles": [
+        {
+          "id": "hanta-en-reuters-koreatimes",
+          "source_language": "en",
+          "publisher": "The Korea Times",
+          "published": "2026-05-06",
+          "title": "Suspected human-to-human hantavirus spread on cruise, public risk low: WHO",
+          "url": "https://www.koreatimes.co.kr/world/20260506/suspected-human-to-human-hantavirus-spread-on-cruise-public-risk-low-who",
+          "source_type": "wire",
+          "credited_origin": "Reuters",
+          "edge_tags": [
+            "syndication",
+            "risk_level",
+            "attribution"
+          ]
+        },
+        {
+          "id": "hanta-vi-tuoitre",
+          "source_language": "vi",
+          "publisher": "Tuổi Trẻ",
+          "published": "2026-05-13",
+          "title": "Chùm ca nhiễm virus Hanta trên tàu du lịch: Bộ Y tế phát khuyến cáo khẩn",
+          "url": "https://tuoitre.vn/nld/chum-ca-nhiem-virus-hanta-tren-tau-du-lich-bo-y-te-phat-khuyen-cao-khan-196260513175156206.htm",
+          "source_type": "independent",
+          "credited_origin": "Vietnam Ministry of Health",
+          "edge_tags": [
+            "temporal_update",
+            "risk_level",
+            "numeric_precision"
+          ]
+        },
+        {
+          "id": "hanta-ko-yonhap",
+          "source_language": "ko",
+          "publisher": "Yonhap News Agency",
+          "published": "2026-05-08",
+          "title": "크루즈선 한타바이러스 확진 5건으로 늘어…확산 우려",
+          "url": "https://www.yna.co.kr/view/AKR20260508000900085",
+          "source_type": "wire",
+          "credited_origin": null,
+          "edge_tags": [
+            "temporal_update",
+            "numeric_precision",
+            "headline_certainty"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "artemis-ii-launch",
+      "topic": "science_climate",
+      "profile": "clean",
+      "event_date": "2026-04-01",
+      "selection_reason": "Provides a clean factual baseline with a primary source, concrete mission details, and predictable differences in historical framing.",
+      "primary_facts": [
+        "NASA launched Artemis II with four astronauts on April 1, 2026.",
+        "The mission was the first crewed Artemis mission around the Moon.",
+        "Reports described a mission lasting roughly ten days."
+      ],
+      "edge_tags": [
+        "date",
+        "numeric_precision",
+        "historical_framing",
+        "primary_source"
+      ],
+      "trace_cases": [
+        {
+          "id": "artemis-ko-mission",
+          "seed_language": "ko",
+          "seed_claim": "아르테미스 2호는 네 명의 우주비행사를 태우고 약 열흘간 달 주변 임무를 수행한다.",
+          "expected_focus": [
+            "crew_count",
+            "duration",
+            "mission_scope"
+          ]
+        },
+        {
+          "id": "artemis-en-first",
+          "seed_language": "en",
+          "seed_claim": "Artemis II was NASA's first crewed Artemis mission around the Moon.",
+          "expected_focus": [
+            "historical_first",
+            "mission_scope",
+            "attribution"
+          ]
+        }
+      ],
+      "articles": [
+        {
+          "id": "artemis-en-nasa",
+          "source_language": "en",
+          "publisher": "NASA",
+          "published": "2026-04-01",
+          "title": "Liftoff! NASA Launches Astronauts on Historic Artemis Moon Mission",
+          "url": "https://www.nasa.gov/news-release/liftoff-nasa-launches-astronauts-on-historic-artemis-moon-mission/",
+          "source_type": "primary",
+          "credited_origin": null,
+          "edge_tags": [
+            "primary_source",
+            "historical_framing"
+          ]
+        },
+        {
+          "id": "artemis-vi-vnexpress",
+          "source_language": "vi",
+          "publisher": "VnExpress",
+          "published": "2026-04-02",
+          "title": "NASA phóng thành công tàu chở người tới Mặt Trăng sau 54 năm",
+          "url": "https://vnexpress.net/nasa-phong-thanh-cong-tau-cho-nguoi-toi-mat-trang-sau-54-nam-5057388.html",
+          "source_type": "independent",
+          "credited_origin": null,
+          "edge_tags": [
+            "historical_framing",
+            "numeric_precision"
+          ]
+        },
+        {
+          "id": "artemis-ko-newsis",
+          "source_language": "ko",
+          "publisher": "Newsis",
+          "published": "2026-04-02",
+          "title": "달로 떠난 아르테미스 2호…열흘 간 어떤 임무 수행할까",
+          "url": "https://www.newsis.com/view/NISX20260402_0003574559",
+          "source_type": "independent",
+          "credited_origin": null,
+          "edge_tags": [
+            "mission_scope",
+            "duration"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wmo-five-year-temperature-outlook",
+      "topic": "science_climate",
+      "profile": "challenging",
+      "event_date": "2026-05-28",
+      "selection_reason": "Tests whether probabilities, forecast horizons, baselines, and scientific uncertainty survive translation and summary.",
+      "primary_facts": [
+        "WMO published a five-year global temperature outlook.",
+        "The report expressed outcomes as probabilities rather than certainties.",
+        "Different percentages referred to different temperature thresholds or time frames."
+      ],
+      "edge_tags": [
+        "forecast_modality",
+        "numeric_precision",
+        "scope",
+        "scientific_uncertainty"
+      ],
+      "trace_cases": [
+        {
+          "id": "wmo-vi-probability",
+          "seed_language": "vi",
+          "seed_claim": "WMO dự báo với xác suất cụ thể rằng các kỷ lục nhiệt độ toàn cầu có thể bị phá trong 5 năm tới.",
+          "expected_focus": [
+            "forecast_modality",
+            "probability",
+            "time_horizon"
+          ]
+        },
+        {
+          "id": "wmo-ko-threshold",
+          "seed_language": "ko",
+          "seed_claim": "WMO의 여러 확률 수치는 서로 다른 온도 기준과 기간을 가리킨다.",
+          "expected_focus": [
+            "numeric_precision",
+            "temperature_baseline",
+            "scope"
+          ]
+        }
+      ],
+      "articles": [
+        {
+          "id": "wmo-en-primary",
+          "source_language": "en",
+          "publisher": "World Meteorological Organization",
+          "published": "2026-05-28",
+          "title": "New report suggests more global temperature records ahead",
+          "url": "https://wmo.int/media/news/new-report-suggests-more-global-temperature-records-ahead",
+          "source_type": "primary",
+          "credited_origin": null,
+          "edge_tags": [
+            "primary_source",
+            "forecast_modality",
+            "numeric_precision"
+          ]
+        },
+        {
+          "id": "wmo-vi-vtv",
+          "source_language": "vi",
+          "publisher": "VTV",
+          "published": "2026-05-29",
+          "title": "Nhiệt độ toàn cầu có thể liên tiếp vượt ngưỡng nguy hiểm trong 5 năm tới",
+          "url": "https://vtv.vn/nhiet-do-toan-cau-co-the-lien-tiep-vuot-nguong-nguy-hiem-trong-5-nam-toi-100260528130754683.htm",
+          "source_type": "independent",
+          "credited_origin": "World Meteorological Organization",
+          "edge_tags": [
+            "forecast_modality",
+            "threshold_language"
+          ]
+        },
+        {
+          "id": "wmo-ko-yonhap",
+          "source_language": "ko",
+          "publisher": "Yonhap News Agency",
+          "published": "2026-05-28",
+          "title": "5년 내 '가장 더운 해' 기록 깨진다…가장 유력한 때는 '내년'",
+          "url": "https://www.yna.co.kr/view/AKR20260528096200530",
+          "source_type": "wire",
+          "credited_origin": "World Meteorological Organization",
+          "edge_tags": [
+            "headline_certainty",
+            "forecast_modality",
+            "numeric_precision"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nvidia-gtc-vera-rubin",
+      "topic": "technology_economy",
+      "profile": "challenging",
+      "event_date": "2026-03-16",
+      "selection_reason": "Tests source-lineage detection when a corporate announcement is localized and then covered by another outlet.",
+      "primary_facts": [
+        "NVIDIA announced the Vera Rubin platform at GTC 2026.",
+        "The company made performance and efficiency claims about the platform.",
+        "Multiple language versions may share NVIDIA as their underlying source and must not count as independent confirmation."
+      ],
+      "edge_tags": [
+        "source_lineage",
+        "syndication",
+        "performance_claim",
+        "attribution"
+      ],
+      "trace_cases": [
+        {
+          "id": "nvidia-en-announcement",
+          "seed_language": "en",
+          "seed_claim": "NVIDIA announced the Vera Rubin platform at GTC 2026.",
+          "expected_focus": [
+            "announcement",
+            "date",
+            "source_lineage"
+          ]
+        },
+        {
+          "id": "nvidia-vi-performance",
+          "seed_language": "vi",
+          "seed_claim": "Các tuyên bố về hiệu năng của Vera Rubin bắt nguồn từ Nvidia và chưa phải là xác nhận độc lập.",
+          "expected_focus": [
+            "attribution",
+            "source_lineage",
+            "performance_claim"
+          ]
+        }
+      ],
+      "articles": [
+        {
+          "id": "nvidia-en-primary",
+          "source_language": "en",
+          "publisher": "NVIDIA",
+          "published": "2026-03-16",
+          "title": "NVIDIA Vera Rubin Opens Agentic AI Frontier",
+          "url": "https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Vera-Rubin-Opens-Agentic-AI-Frontier/",
+          "source_type": "primary",
+          "credited_origin": null,
+          "edge_tags": [
+            "primary_source",
+            "performance_claim"
+          ]
+        },
+        {
+          "id": "nvidia-vi-vietnamplus",
+          "source_language": "vi",
+          "publisher": "VietnamPlus",
+          "published": "2026-03-17",
+          "title": "GTC 2026: Nvidia 'tung' loạt công nghệ AI mới",
+          "url": "https://www.vietnamplus.vn/gtc-2026-nvidia-tung-loat-cong-nghe-ai-moi-post1099510.amp",
+          "source_type": "wire",
+          "credited_origin": "Vietnam News Agency",
+          "edge_tags": [
+            "performance_claim",
+            "attribution"
+          ]
+        },
+        {
+          "id": "nvidia-ko-localized",
+          "source_language": "ko",
+          "publisher": "NVIDIA Korea",
+          "published": "2026-03-17",
+          "title": "에이전틱 AI 시대의 개막, NVIDIA Vera Rubin",
+          "url": "https://blogs.nvidia.co.kr/blog/nvidia-vera-rubin-platform/",
+          "source_type": "localized_primary",
+          "credited_origin": "NVIDIA",
+          "edge_tags": [
+            "source_lineage",
+            "localized_primary",
+            "performance_claim"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "apple-wwdc26-siri",
+      "topic": "technology_economy",
+      "profile": "clean",
+      "event_date": "2026-06-08",
+      "selection_reason": "Tests product-feature wording, promises versus shipped capability, and secondary reports with shared Reuters lineage.",
+      "primary_facts": [
+        "Apple presented a rebuilt Siri at WWDC 2026.",
+        "Reports described new AI-assisted capabilities.",
+        "Some descriptions concerned planned availability and should retain future modality."
+      ],
+      "edge_tags": [
+        "future_modality",
+        "attribution",
+        "product_claim",
+        "source_lineage"
+      ],
+      "trace_cases": [
+        {
+          "id": "siri-ko-features",
+          "seed_language": "ko",
+          "seed_claim": "애플은 WWDC 2026에서 AI 기능이 강화된 시리를 공개했다.",
+          "expected_focus": [
+            "announcement",
+            "feature_scope",
+            "availability"
+          ]
+        },
+        {
+          "id": "siri-en-timing",
+          "seed_language": "en",
+          "seed_claim": "Some newly announced Siri capabilities were described as future availability rather than already shipped features.",
+          "expected_focus": [
+            "future_modality",
+            "release_timing",
+            "attribution"
+          ]
+        }
+      ],
+      "articles": [
+        {
+          "id": "siri-en-reuters-tuoitre",
+          "source_language": "en",
+          "publisher": "Tuổi Trẻ News",
+          "published": "2026-06-09",
+          "title": "Apple bets on overdue Siri fix to close AI gap",
+          "url": "https://news.tuoitre.vn/apple-bets-on-overdue-siri-fix-to-close-ai-gap-10326060910492925.htm",
+          "source_type": "wire",
+          "credited_origin": "Reuters",
+          "edge_tags": [
+            "syndication",
+            "future_modality",
+            "product_claim"
+          ]
+        },
+        {
+          "id": "siri-vi-vnexpress",
+          "source_language": "vi",
+          "publisher": "VnExpress",
+          "published": "2026-06-10",
+          "title": "Apple: Siri được 'đập đi xây lại'",
+          "url": "https://vnexpress.net/apple-siri-duoc-dap-di-xay-lai-5083868.html",
+          "source_type": "independent",
+          "credited_origin": null,
+          "edge_tags": [
+            "figurative_language",
+            "product_claim",
+            "future_modality"
+          ]
+        },
+        {
+          "id": "siri-ko-zdnet",
+          "source_language": "ko",
+          "publisher": "ZDNet Korea",
+          "published": "2026-06-09",
+          "title": "AI 만난 애플 '시리' 더 강해졌다…어떤 점 달라졌나",
+          "url": "https://zdnet.co.kr/view/?no=20260609075032",
+          "source_type": "independent",
+          "credited_origin": null,
+          "edge_tags": [
+            "product_claim",
+            "headline_certainty",
+            "feature_scope"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "qs-world-university-rankings-2027",
+      "topic": "education_society",
+      "profile": "challenging",
+      "event_date": "2026-06-18",
+      "selection_reason": "Tests ranking numbers, institution-specific local framing, omitted global context, and comparability of different rank claims.",
+      "primary_facts": [
+        "QS released its World University Rankings 2027 in June 2026.",
+        "Vietnamese and Korean coverage foregrounded different local universities.",
+        "Institution-specific ranking movement is not a contradiction when the subject changes."
+      ],
+      "edge_tags": [
+        "local_framing",
+        "numeric_precision",
+        "scope",
+        "omission"
+      ],
+      "trace_cases": [
+        {
+          "id": "qs-vi-vnu",
+          "seed_language": "vi",
+          "seed_claim": "ĐHQGHN tăng hạng trong QS World University Rankings 2027.",
+          "expected_focus": [
+            "institution",
+            "ranking_year",
+            "rank_change"
+          ]
+        },
+        {
+          "id": "qs-ko-unist",
+          "seed_language": "ko",
+          "seed_claim": "UNIST는 QS 세계대학평가 2027에서 299위를 기록했다.",
+          "expected_focus": [
+            "institution",
+            "ranking_number",
+            "local_framing"
+          ]
+        }
+      ],
+      "articles": [
+        {
+          "id": "qs-en-prnewswire",
+          "source_language": "en",
+          "publisher": "PR Newswire",
+          "published": "2026-06-17",
+          "title": "World's Best Universities Revealed",
+          "url": "https://www.prnewswire.com/news-releases/worlds-best-universities-revealed-302803262.html",
+          "source_type": "wire",
+          "credited_origin": "QS",
+          "edge_tags": [
+            "source_lineage",
+            "global_scope"
+          ]
+        },
+        {
+          "id": "qs-vi-vnu",
+          "source_language": "vi",
+          "publisher": "Vietnam National University, Hanoi",
+          "published": "2026-06-18",
+          "title": "QS World University Rankings 2027: ĐHQGHN tăng hạng năm thứ 4 liên tiếp",
+          "url": "https://vnu.edu.vn/qs-world-university-rankings-2027-dhqghn-tang-hang-nam-thu-4-lien-tiep-dan-dau-viet-nam-o-tieu-chi-ket-qua-tuyen-dung-va-phat-trien-ben-vung-post40164.html",
+          "source_type": "primary",
+          "credited_origin": "QS",
+          "edge_tags": [
+            "local_framing",
+            "institution_self_report",
+            "numeric_precision"
+          ]
+        },
+        {
+          "id": "qs-ko-yonhap",
+          "source_language": "ko",
+          "publisher": "Yonhap News Agency",
+          "published": "2026-06-19",
+          "title": "UNIST, QS 세계대학평가서 299위…11계단 상승",
+          "url": "https://www.yna.co.kr/view/AKR20260619045500057",
+          "source_type": "wire",
+          "credited_origin": "QS",
+          "edge_tags": [
+            "local_framing",
+            "numeric_precision",
+            "scope"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "world-happiness-report-2026",
+      "topic": "education_society",
+      "profile": "clean",
+      "event_date": "2026-03-19",
+      "selection_reason": "Tests ranking methodology, country-specific framing, and whether similar-looking rank numbers are bound to the correct country and edition.",
+      "primary_facts": [
+        "The World Happiness Report 2026 was released in March 2026.",
+        "Different language reports highlighted different countries and social explanations.",
+        "Rank statements require the country, edition, and metric to remain attached."
+      ],
+      "edge_tags": [
+        "local_framing",
+        "numeric_precision",
+        "methodology",
+        "scope"
+      ],
+      "trace_cases": [
+        {
+          "id": "happiness-en-report",
+          "seed_language": "en",
+          "seed_claim": "The 2026 World Happiness Report linked its rankings to measures of life evaluation and social context.",
+          "expected_focus": [
+            "methodology",
+            "attribution",
+            "edition"
+          ]
+        },
+        {
+          "id": "happiness-vi-rank",
+          "seed_language": "vi",
+          "seed_claim": "Việt Nam đứng thứ 45 trong Báo cáo Hạnh phúc Thế giới 2026.",
+          "expected_focus": [
+            "country",
+            "ranking_number",
+            "edition"
+          ]
+        }
+      ],
+      "articles": [
+        {
+          "id": "happiness-en-ap",
+          "source_language": "en",
+          "publisher": "Associated Press",
+          "published": "2026-03-19",
+          "title": "What the World Happiness Report reveals about social media and the world's happiest country",
+          "url": "https://apnews.com/article/bf3b4dae7fcfe2842ea2bd47f88b3c4b",
+          "source_type": "wire",
+          "credited_origin": "World Happiness Report",
+          "edge_tags": [
+            "methodology",
+            "global_scope"
+          ]
+        },
+        {
+          "id": "happiness-vi-gov",
+          "source_language": "vi",
+          "publisher": "Vietnam Government News",
+          "published": "2026-03-19",
+          "title": "Việt Nam tăng bậc trong danh sách hạnh phúc toàn cầu",
+          "url": "https://baochinhphu.vn/viet-nam-tang-bac-trong-danh-sach-hanh-phuc-toan-cau-102260319145022001.htm",
+          "source_type": "official_analysis",
+          "credited_origin": "World Happiness Report",
+          "edge_tags": [
+            "local_framing",
+            "numeric_precision"
+          ]
+        },
+        {
+          "id": "happiness-ko-moneytoday",
+          "source_language": "ko",
+          "publisher": "Money Today",
+          "published": "2026-03-28",
+          "title": "\"일본·중국보다 낮다\" 한국 행복 순위 67위…역대 최저",
+          "url": "https://www.mt.co.kr/society/2026/03/28/2026032610372914973",
+          "source_type": "independent",
+          "credited_origin": "World Happiness Report",
+          "edge_tags": [
+            "local_framing",
+            "comparison",
+            "headline_certainty"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "winter-olympics-opening-2026",
+      "topic": "culture_sports",
+      "profile": "challenging",
+      "event_date": "2026-02-06",
+      "selection_reason": "Tests place, ceremony, and schedule scope in the first geographically distributed Winter Olympics opening.",
+      "primary_facts": [
+        "The Milano Cortina 2026 Winter Olympics opened on February 6, 2026.",
+        "The opening was distributed across locations and used two cauldrons.",
+        "Reports framed the duration and geography differently without necessarily contradicting each other."
+      ],
+      "edge_tags": [
+        "geographic_scope",
+        "date",
+        "numeric_precision",
+        "local_framing"
+      ],
+      "trace_cases": [
+        {
+          "id": "olympics-ko-distributed",
+          "seed_language": "ko",
+          "seed_claim": "2026 동계올림픽 개회식은 여러 도시에서 분산 개최되고 두 개의 성화대를 사용했다.",
+          "expected_focus": [
+            "geographic_scope",
+            "cauldron_count",
+            "ceremony_scope"
+          ]
+        },
+        {
+          "id": "olympics-en-opening",
+          "seed_language": "en",
+          "seed_claim": "The Milano Cortina Winter Olympics officially opened on February 6, 2026.",
+          "expected_focus": [
+            "date",
+            "event_state",
+            "timezone"
+          ]
+        }
+      ],
+      "articles": [
+        {
+          "id": "olympics-en-euronews",
+          "source_language": "en",
+          "publisher": "Euronews",
+          "published": "2026-02-07",
+          "title": "Winter Olympics officially open in Milan and Cortina, with two cauldrons lit to start the games",
+          "url": "https://www.euronews.com/2026/02/07/winter-olympics-officially-open-in-milan-and-cortina-with-two-cauldrons-lit-to-start-the-g",
+          "source_type": "independent",
+          "credited_origin": null,
+          "edge_tags": [
+            "geographic_scope",
+            "numeric_precision"
+          ]
+        },
+        {
+          "id": "olympics-vi-kbs",
+          "source_language": "vi",
+          "publisher": "KBS World Vietnamese",
+          "published": "2026-02-07",
+          "title": "Thế vận hội mùa đông Milano Cortina 2026 bắt đầu 17 ngày tranh tài",
+          "url": "https://world.kbs.co.kr/service/news_view.htm?Seq_Code=69320&lang=v",
+          "source_type": "localized_primary",
+          "credited_origin": "KBS",
+          "edge_tags": [
+            "numeric_precision",
+            "localized_primary",
+            "schedule"
+          ]
+        },
+        {
+          "id": "olympics-ko-newsis",
+          "source_language": "ko",
+          "publisher": "Newsis",
+          "published": "2026-02-07",
+          "title": "두 도시·두 성화대…첫 분산 개회식 '이탈리아의 조화'",
+          "url": "https://www.newsis.com/view/NISX20260207_0003506316",
+          "source_type": "independent",
+          "credited_origin": null,
+          "edge_tags": [
+            "geographic_scope",
+            "numeric_precision",
+            "ceremony_scope"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "world-cup-final-2026",
+      "topic": "culture_sports",
+      "profile": "clean",
+      "event_date": "2026-07-19",
+      "selection_reason": "Provides a clean, recent event with an exact score, scorer, match minute, and historical records that can expose number drift.",
+      "primary_facts": [
+        "Spain beat Argentina 1-0 after extra time in the 2026 World Cup final.",
+        "Ferran Torres scored the winning goal in the 106th minute.",
+        "Spain won its second men's World Cup title."
+      ],
+      "edge_tags": [
+        "numeric_precision",
+        "date",
+        "sports_result",
+        "historical_record"
+      ],
+      "trace_cases": [
+        {
+          "id": "world-cup-vi-result",
+          "seed_language": "vi",
+          "seed_claim": "Tây Ban Nha thắng Argentina 1-0 sau hiệp phụ để vô địch World Cup 2026.",
+          "expected_focus": [
+            "score",
+            "match_state",
+            "winner"
+          ]
+        },
+        {
+          "id": "world-cup-ko-goal",
+          "seed_language": "ko",
+          "seed_claim": "페란 토레스가 연장전 106분에 결승골을 넣었다.",
+          "expected_focus": [
+            "scorer",
+            "minute",
+            "match"
+          ]
+        }
+      ],
+      "articles": [
+        {
+          "id": "world-cup-en-guardian",
+          "source_language": "en",
+          "publisher": "The Guardian",
+          "published": "2026-07-19",
+          "title": "Spain win World Cup after Ferran Torres breaks 10-man Argentina's resistance",
+          "url": "https://www.theguardian.com/football/2026/jul/19/spain-win-world-cup-argentina-final-match-report",
+          "source_type": "independent",
+          "credited_origin": null,
+          "edge_tags": [
+            "sports_result",
+            "numeric_precision"
+          ]
+        },
+        {
+          "id": "world-cup-vi-vnexpress",
+          "source_language": "vi",
+          "publisher": "VnExpress",
+          "published": "2026-07-20",
+          "title": "Tây Ban Nha vô địch World Cup 2026",
+          "url": "https://vnexpress.net/ket-qua-tay-ban-nha-argentina-5099246-tong-thuat.html",
+          "source_type": "independent",
+          "credited_origin": null,
+          "edge_tags": [
+            "live_update",
+            "sports_result",
+            "numeric_precision"
+          ]
+        },
+        {
+          "id": "world-cup-ko-newsis",
+          "source_language": "ko",
+          "publisher": "Newsis",
+          "published": "2026-07-20",
+          "title": "메시 울린 스페인 '질식 수비'…역대 최소 실점으로 우승",
+          "url": "https://www.newsis.com/view/NISX20260720_0003714704",
+          "source_type": "independent",
+          "credited_origin": null,
+          "edge_tags": [
+            "sports_result",
+            "historical_record",
+            "numeric_precision"
+          ]
+        }
+      ]
+    }
+  ]
+}

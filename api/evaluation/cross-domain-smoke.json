@@ -1,0 +1,67 @@
+{
+  "prepared": "2026-07-24",
+  "purpose": "Low-stakes extraction, translation, claim-selection, and UX smoke set outside entertainment news.",
+  "selection_rules": [
+    "Two source articles per language.",
+    "Published within six months of 2026-07-24.",
+    "Public HTML that the bounded extractor can read without login.",
+    "No medical, personal-finance, crime allegation, or private-person claim.",
+    "Contains concrete names, dates, numbers, or attributed statements."
+  ],
+  "cases": [
+    {
+      "id": "en-euclid-quasars",
+      "source_language": "en",
+      "topic": "space science",
+      "published": "2026-07-06",
+      "url": "https://science.nasa.gov/blogs/science-news/2026/07/06/esas-euclid-space-telescope-finds-universes-most-ancient-quasars/",
+      "verified_extracted_words": 262,
+      "edges": ["large quantities", "dates", "scientific attribution"]
+    },
+    {
+      "id": "en-pristine-meteorite",
+      "source_language": "en",
+      "topic": "space science",
+      "published": "2026-07-15",
+      "url": "https://science.nasa.gov/science-research/astromaterials/nasa-study-of-pristine-meteorite-adds-to-story-of-ancient-asteroids/",
+      "verified_extracted_words": 1035,
+      "edges": ["causal language", "quoted experts", "scientific uncertainty"]
+    },
+    {
+      "id": "vi-science-book-exhibition",
+      "source_language": "vi",
+      "topic": "education and culture",
+      "published": "2026-05-14",
+      "url": "https://baochinhphu.vn/trien-lam-sach-khoa-hoc-va-cong-nghe-2026-ket-noi-tri-thuc-du-lieu-va-cong-nghe-102260514111148213.htm",
+      "verified_extracted_words": 916,
+      "edges": ["event details", "institution names", "attributed goals"]
+    },
+    {
+      "id": "vi-graduation-exam-subjects",
+      "source_language": "vi",
+      "topic": "education",
+      "published": "2026-06-04",
+      "url": "https://baochinhphu.vn/thi-tot-nghiep-thpt-nam-2026-hoc-sinh-khong-con-tap-trung-vao-cac-to-hop-quen-thuoc-102260604171432766.htm",
+      "verified_extracted_words": 1013,
+      "edges": ["year-on-year figures", "trend interpretation", "attribution"]
+    },
+    {
+      "id": "ko-seoul-photo-festival",
+      "source_language": "ko",
+      "topic": "culture",
+      "published": "2026-04-06",
+      "url": "https://www.seoul.go.kr/news/news_report.do?nttNo=455905&srchCtgry=466",
+      "verified_extracted_words": 904,
+      "edges": ["event dates", "venue", "figurative title"]
+    },
+    {
+      "id": "ko-hangang-festival",
+      "source_language": "ko",
+      "topic": "public recreation",
+      "published": "2026-05-28",
+      "url": "https://scpm.seoul.go.kr/seoul-policy/evt0275",
+      "verified_extracted_words": 993,
+      "edges": ["attendance figure", "schedule", "safety advice"]
+    }
+  ]
+}

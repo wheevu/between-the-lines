@@ -1,0 +1,26 @@
+[
+  {
+    "id": "synthetic-en-transit",
+    "analysis_id": "87c08075-7123-4cc3-85e6-49b5f2d00dde",
+    "source_language": "en",
+    "finding_count": 6,
+    "meaning_risk_count": 2,
+    "review_url": "http://127.0.0.1:5173/?analysis=87c08075-7123-4cc3-85e6-49b5f2d00dde&reviewer=author"
+  },
+  {
+    "id": "synthetic-vi-library",
+    "analysis_id": "d7cda277-3d35-4304-9b11-b8653d041cbf",
+    "source_language": "vi",
+    "finding_count": 8,
+    "meaning_risk_count": 5,
+    "review_url": "http://127.0.0.1:5173/?analysis=d7cda277-3d35-4304-9b11-b8653d041cbf&reviewer=author"
+  },
+  {
+    "id": "synthetic-ko-garden",
+    "analysis_id": "e9eea3ba-fc94-45d0-91c0-21a91cadedb0",
+    "source_language": "ko",
+    "finding_count": 8,
+    "meaning_risk_count": 4,
+    "review_url": "http://127.0.0.1:5173/?analysis=e9eea3ba-fc94-45d0-91c0-21a91cadedb0&reviewer=author"
+  }
+]

@@ -1,0 +1,312 @@
+{
+  "cases": [
+    {
+      "case_id": "korea-ai-act-en-core",
+      "source_language": "en",
+      "topic": "public_policy",
+      "match_policy": "any",
+      "retrieved_pages": 1,
+      "candidate_chunks": 7,
+      "retrieval_failures": 0,
+      "gold": [
+        {
+          "article_id": "korea-ai-basic-act-implementation-en-robust-1",
+          "quote_sha256": "ae4ccceb4f210846a90b77c303077e2e3ee7ef2b811d24e1704fa5a439ccfc10",
+          "page_readable": true,
+          "gold_in_page": true,
+          "gold_in_chunk": true,
+          "best_raw_rank": 1,
+          "selected_top_six": true
+        }
+      ],
+      "failure_stage": "passed"
+    },
+    {
+      "case_id": "vietnam-ai-law-ko-core",
+      "source_language": "ko",
+      "topic": "public_policy",
+      "match_policy": "any",
+      "retrieved_pages": 1,
+      "candidate_chunks": 1,
+      "retrieval_failures": 0,
+      "gold": [
+        {
+          "article_id": "vietnam-ai-law-effective-ko-robust-2",
+          "quote_sha256": "3fc6f208d87fd00f7eeeaa04c57c7336e2ee432b8194d6cc39fb721887097783",
+          "page_readable": true,
+          "gold_in_page": true,
+          "gold_in_chunk": true,
+          "best_raw_rank": 1,
+          "selected_top_six": true
+        }
+      ],
+      "failure_stage": "passed"
+    },
+    {
+      "case_id": "nipah-vi-case-count",
+      "source_language": "vi",
+      "topic": "health",
+      "match_policy": "any",
+      "retrieved_pages": 1,
+      "candidate_chunks": 4,
+      "retrieval_failures": 0,
+      "gold": [
+        {
+          "article_id": "nipah-india-outbreak-en-robust-2",
+          "quote_sha256": "468f6da4ce9c61eb0faa91e5b38671a95553dab1aa3b768be612f3bfcce036d4",
+          "page_readable": true,
+          "gold_in_page": true,
+          "gold_in_chunk": true,
+          "best_raw_rank": 1,
+          "selected_top_six": true
+        }
+      ],
+      "failure_stage": "passed"
+    },
+    {
+      "case_id": "hanta-en-risk",
+      "source_language": "en",
+      "topic": "health",
+      "match_policy": "any",
+      "retrieved_pages": 1,
+      "candidate_chunks": 6,
+      "retrieval_failures": 0,
+      "gold": [
+        {
+          "article_id": "hantavirus-cruise-ship-en-robust-2",
+          "quote_sha256": "8e69e43d08673f1d803bf4b24ea69d9ed91ceaaab08d050cc61028fc715f816e",
+          "page_readable": true,
+          "gold_in_page": true,
+          "gold_in_chunk": true,
+          "best_raw_rank": 3,
+          "selected_top_six": false
+        }
+      ],
+      "failure_stage": "ranking"
+    },
+    {
+      "case_id": "artemis-ko-mission",
+      "source_language": "ko",
+      "topic": "science_climate",
+      "match_policy": "any",
+      "retrieved_pages": 1,
+      "candidate_chunks": 4,
+      "retrieval_failures": 0,
+      "gold": [
+        {
+          "article_id": "artemis-ii-launch-en-robust-2",
+          "quote_sha256": "22886f09b84f70e20ddfbd0e453a1b616f466f51d40e735c4c15c018203c2ea2",
+          "page_readable": true,
+          "gold_in_page": true,
+          "gold_in_chunk": true,
+          "best_raw_rank": 1,
+          "selected_top_six": true
+        }
+      ],
+      "failure_stage": "passed"
+    },
+    {
+      "case_id": "wmo-vi-probability",
+      "source_language": "vi",
+      "topic": "science_climate",
+      "match_policy": "any",
+      "retrieved_pages": 0,
+      "candidate_chunks": 0,
+      "retrieval_failures": 1,
+      "gold": [
+        {
+          "article_id": "wmo-five-year-temperature-outlook-ko-robust-2",
+          "quote_sha256": "6e68d220b7112220ddea1095ecf04020bfe72c5c61a3294cfec30a7bfb7a9d42",
+          "page_readable": false,
+          "gold_in_page": false,
+          "gold_in_chunk": false,
+          "best_raw_rank": null,
+          "selected_top_six": false
+        },
+        {
+          "article_id": "wmo-five-year-temperature-outlook-ko-robust-2",
+          "quote_sha256": "4eadfe1ff23e0612b6bac9a16c7f7db7291ed7a6f93b36f51aa16ff2ab1b8d39",
+          "page_readable": false,
+          "gold_in_page": false,
+          "gold_in_chunk": false,
+          "best_raw_rank": null,
+          "selected_top_six": false
+        }
+      ],
+      "failure_stage": "extraction"
+    },
+    {
+      "case_id": "nvidia-en-announcement",
+      "source_language": "en",
+      "topic": "technology_economy",
+      "match_policy": "all",
+      "retrieved_pages": 1,
+      "candidate_chunks": 4,
+      "retrieval_failures": 0,
+      "gold": [
+        {
+          "article_id": "nvidia-gtc-vera-rubin-vi-robust-1",
+          "quote_sha256": "769070875f3bfe166cd09baa98f8d94af8b3ece8286227883025950bc54190b8",
+          "page_readable": true,
+          "gold_in_page": true,
+          "gold_in_chunk": true,
+          "best_raw_rank": 2,
+          "selected_top_six": true
+        },
+        {
+          "article_id": "nvidia-gtc-vera-rubin-vi-robust-1",
+          "quote_sha256": "8ddb6066b6443be8747975aadeb6574fc804cd24b9aa3c457d935af12e5bb0d5",
+          "page_readable": true,
+          "gold_in_page": true,
+          "gold_in_chunk": true,
+          "best_raw_rank": 1,
+          "selected_top_six": true
+        }
+      ],
+      "failure_stage": "passed"
+    },
+    {
+      "case_id": "siri-ko-features",
+      "source_language": "ko",
+      "topic": "technology_economy",
+      "match_policy": "any",
+      "retrieved_pages": 1,
+      "candidate_chunks": 9,
+      "retrieval_failures": 0,
+      "gold": [
+        {
+          "article_id": "apple-wwdc26-siri-en-robust-1",
+          "quote_sha256": "6aecca0a6739d2d8264a41624a77c041a478b6fc2923edffcf4b0ed82132754c",
+          "page_readable": true,
+          "gold_in_page": true,
+          "gold_in_chunk": true,
+          "best_raw_rank": 1,
+          "selected_top_six": true
+        }
+      ],
+      "failure_stage": "passed"
+    },
+    {
+      "case_id": "qs-vi-vnu",
+      "source_language": "vi",
+      "topic": "education_society",
+      "match_policy": "any",
+      "retrieved_pages": 1,
+      "candidate_chunks": 4,
+      "retrieval_failures": 0,
+      "gold": [
+        {
+          "article_id": "qs-world-university-rankings-2027-vi-robust-1",
+          "quote_sha256": "bf6a0559c53da6714e3354c6c588abb51b62853584b6921d5d86a94c977cb04f",
+          "page_readable": true,
+          "gold_in_page": true,
+          "gold_in_chunk": true,
+          "best_raw_rank": 2,
+          "selected_top_six": true
+        }
+      ],
+      "failure_stage": "passed"
+    },
+    {
+      "case_id": "happiness-en-report",
+      "source_language": "en",
+      "topic": "education_society",
+      "match_policy": "all",
+      "retrieved_pages": 1,
+      "candidate_chunks": 3,
+      "retrieval_failures": 0,
+      "gold": [
+        {
+          "article_id": "world-happiness-report-2026-vi-robust-2",
+          "quote_sha256": "3fdcdce4744d61d1a9d975c6dcfa6318279bdf21983833cbf801ba7e6869e99b",
+          "page_readable": true,
+          "gold_in_page": true,
+          "gold_in_chunk": true,
+          "best_raw_rank": 2,
+          "selected_top_six": true
+        },
+        {
+          "article_id": "world-happiness-report-2026-vi-robust-2",
+          "quote_sha256": "ded17224fb1e9cdbd11ed14410ac0129e21952b63b33d87066d08ff01ffa6e24",
+          "page_readable": true,
+          "gold_in_page": true,
+          "gold_in_chunk": true,
+          "best_raw_rank": 2,
+          "selected_top_six": true
+        }
+      ],
+      "failure_stage": "passed"
+    },
+    {
+      "case_id": "olympics-ko-distributed",
+      "source_language": "ko",
+      "topic": "culture_sports",
+      "match_policy": "any",
+      "retrieved_pages": 1,
+      "candidate_chunks": 2,
+      "retrieval_failures": 0,
+      "gold": [
+        {
+          "article_id": "winter-olympics-opening-2026-en-robust-1",
+          "quote_sha256": "bc55c09930542c812d7a64795fe338937aa62e32f9526826dbe894fc76aa8ab7",
+          "page_readable": true,
+          "gold_in_page": true,
+          "gold_in_chunk": true,
+          "best_raw_rank": 1,
+          "selected_top_six": true
+        }
+      ],
+      "failure_stage": "passed"
+    },
+    {
+      "case_id": "world-cup-vi-result",
+      "source_language": "vi",
+      "topic": "culture_sports",
+      "match_policy": "any",
+      "retrieved_pages": 1,
+      "candidate_chunks": 2,
+      "retrieval_failures": 0,
+      "gold": [
+        {
+          "article_id": "world-cup-final-2026-ko-robust-3",
+          "quote_sha256": "0717386f8d69ea9be9d2510f8c68ab722844602c6c428f4ab2c380b5106ab467",
+          "page_readable": true,
+          "gold_in_page": true,
+          "gold_in_chunk": true,
+          "best_raw_rank": 1,
+          "selected_top_six": true
+        }
+      ],
+      "failure_stage": "passed"
+    }
+  ],
+  "summary": {
+    "cases": 12,
+    "stage_failures": {
+      "extraction": 1,
+      "passed": 10,
+      "ranking": 1
+    },
+    "extraction_recall": {
+      "passed": 11,
+      "eligible": 12,
+      "rate": 0.9167
+    },
+    "chunk_coverage": {
+      "passed": 11,
+      "eligible": 12,
+      "rate": 0.9167
+    },
+    "ranking_recall_at_six": {
+      "passed": 10,
+      "eligible": 12,
+      "rate": 0.8333
+    }
+  },
+  "schema_version": 1,
+  "generated_at": "2026-07-26T01:01:12.944223+00:00",
+  "corpus_sha256": "a7584a6c3a99e1605562d4e6dc80e1983dc742e8e2a061cf0d6b20338f5761ad",
+  "holdout_sha256": "4a9c58f3015ec08ffe027ae9e9219a3bd48bd351cd6f79dfae5c2b01fbae3993",
+  "embedding_backend": "torch",
+  "stores_article_text": false
+}

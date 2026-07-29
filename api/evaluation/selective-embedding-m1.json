@@ -1,0 +1,137 @@
+{
+  "purpose": "Measure the local E5 stage independently of Gemini and extraction.",
+  "manifest_sha256": "025b41bc257a3b8aa20ce7caf643a2ad8c98ad33d73b96885f2d09a796eb8584",
+  "embedding_backend": "torch",
+  "machine": {
+    "platform": "macOS-26.5.2-arm64-arm-64bit-Mach-O",
+    "machine": "arm64",
+    "processor": "arm"
+  },
+  "warmup_excluded": true,
+  "runs_per_article": 5,
+  "cases": [
+    {
+      "article_id": "korea-ai-act-en-msit",
+      "source_language": "en",
+      "segments": 17,
+      "locally_checked_segments": 5,
+      "local_model_segment_share": 0.2941,
+      "selective_median_ms": 64.94,
+      "full_median_ms": 246.97
+    },
+    {
+      "article_id": "korea-ai-act-vi-moj",
+      "source_language": "vi",
+      "segments": 24,
+      "locally_checked_segments": 7,
+      "local_model_segment_share": 0.2917,
+      "selective_median_ms": 68.63,
+      "full_median_ms": 216.61
+    },
+    {
+      "article_id": "korea-ai-act-ko-yonhap",
+      "source_language": "ko",
+      "segments": 11,
+      "locally_checked_segments": 8,
+      "local_model_segment_share": 0.7273,
+      "selective_median_ms": 118.99,
+      "full_median_ms": 146.91
+    },
+    {
+      "article_id": "vietnam-ai-law-en-st",
+      "source_language": "en",
+      "segments": 23,
+      "locally_checked_segments": 10,
+      "local_model_segment_share": 0.4348,
+      "selective_median_ms": 67.52,
+      "full_median_ms": 154.98
+    },
+    {
+      "article_id": "vietnam-ai-law-vi-mst",
+      "source_language": "vi",
+      "segments": 17,
+      "locally_checked_segments": 7,
+      "local_model_segment_share": 0.4118,
+      "selective_median_ms": 83.76,
+      "full_median_ms": 241.18
+    },
+    {
+      "article_id": "vietnam-ai-law-ko-yonhap",
+      "source_language": "ko",
+      "segments": 19,
+      "locally_checked_segments": 8,
+      "local_model_segment_share": 0.4211,
+      "selective_median_ms": 84.57,
+      "full_median_ms": 169.01
+    },
+    {
+      "article_id": "nipah-en-ap",
+      "source_language": "en",
+      "segments": 22,
+      "locally_checked_segments": 11,
+      "local_model_segment_share": 0.5,
+      "selective_median_ms": 137.63,
+      "full_median_ms": 205.92
+    },
+    {
+      "article_id": "nipah-vi-vnexpress",
+      "source_language": "vi",
+      "segments": 18,
+      "locally_checked_segments": 13,
+      "local_model_segment_share": 0.7222,
+      "selective_median_ms": 228.78,
+      "full_median_ms": 310.44
+    },
+    {
+      "article_id": "nipah-ko-mbc",
+      "source_language": "ko",
+      "segments": 16,
+      "locally_checked_segments": 10,
+      "local_model_segment_share": 0.625,
+      "selective_median_ms": 147.32,
+      "full_median_ms": 286.97
+    },
+    {
+      "article_id": "hanta-en-reuters-koreatimes",
+      "source_language": "en",
+      "segments": 40,
+      "locally_checked_segments": 14,
+      "local_model_segment_share": 0.35,
+      "selective_median_ms": 286.41,
+      "full_median_ms": 554.32
+    },
+    {
+      "article_id": "hanta-vi-tuoitre",
+      "source_language": "vi",
+      "segments": 18,
+      "locally_checked_segments": 10,
+      "local_model_segment_share": 0.5556,
+      "selective_median_ms": 99.28,
+      "full_median_ms": 296.53
+    },
+    {
+      "article_id": "hanta-ko-yonhap",
+      "source_language": "ko",
+      "segments": 23,
+      "locally_checked_segments": 12,
+      "local_model_segment_share": 0.5217,
+      "selective_median_ms": 139.29,
+      "full_median_ms": 384.72
+    }
+  ],
+  "failures": [],
+  "summary": {
+    "articles": 12,
+    "segments": 248,
+    "locally_checked_segments": 115,
+    "local_model_segment_share": 0.4637,
+    "selective_median_sum_ms": 1527.12,
+    "full_median_sum_ms": 3214.56,
+    "speedup": 2.1
+  },
+  "limitations": [
+    "Identical text pairs isolate runtime; they do not measure cross-language quality.",
+    "Gemini notes can route additional passages in the live pipeline.",
+    "This Apple Silicon result cannot support an Intel performance claim."
+  ]
+}

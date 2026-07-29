@@ -1,0 +1,57 @@
+{
+  "model": "intfloat/multilingual-e5-small",
+  "backend": "openvino",
+  "precision": "runtime default; do not label INT8",
+  "machine": {
+    "platform": "macOS-26.5.2-arm64-arm-64bit-Mach-O",
+    "machine": "arm64",
+    "processor": "arm",
+    "cpu_vendor": "Apple",
+    "cpu_model": "Apple M1",
+    "fingerprint": "1c90ac2f15d75bb8d3b6703e8fa82d7e5faba1aef428563ee88d339dc3f88139",
+    "intel_hardware_detected": false
+  },
+  "software": {
+    "python": "3.14.6",
+    "sentence_transformers": "5.6.1",
+    "torch": "2.13.0",
+    "openvino": "2026.2.1"
+  },
+  "manifest_sha256": "74bb49bfb35efc9b9f9e0a0b5f35b3a281c41f5b295aa9a1d83f3ab1fb07f5f5",
+  "workload_sha256": "65d58985a0b7f7f54cd27e8d255a6b4c184f716e698ffba4aa03ad9006483f72",
+  "queries": 3,
+  "passages": 30,
+  "runs": 10,
+  "warmup_excluded": true,
+  "latency_ms": {
+    "median": 2160.39,
+    "minimum": 2045.3,
+    "maximum": 2556.4
+  },
+  "passages_per_second": 13.89,
+  "top_5_passage_indexes": [
+    [
+      0,
+      1,
+      3,
+      4,
+      6
+    ],
+    [
+      13,
+      16,
+      15,
+      17,
+      14
+    ],
+    [
+      24,
+      27,
+      29,
+      26,
+      25
+    ]
+  ],
+  "intel_performance_claim_allowed": false,
+  "claim_limitation": "A single backend result cannot support an Intel performance claim. Compare both backends with compare_embedding_benchmarks.py."
+}

@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "measured": "2026-07-24",
+  "machine": "Apple M1 MacBook Air, 16 GB",
+  "article_id": "wmo-en-primary",
+  "article_url": "https://wmo.int/media/news/new-report-suggests-more-global-temperature-records-ahead",
+  "source_segments": 18,
+  "target_translations": 36,
+  "baseline": {
+    "decoder": "beam search",
+    "num_beams": 2,
+    "runtime_seconds": 131.3,
+    "similarity_min": 0.9034997224807739,
+    "similarity_median": 0.9447646737098694,
+    "similarity_mean": 0.9430281735128827,
+    "flag_count": 8,
+    "flag_categories": {
+      "number": 8
+    }
+  },
+  "candidate": {
+    "decoder": "greedy",
+    "num_beams": 1,
+    "runtime_seconds": 78.9,
+    "similarity_min": 0.9034606218338013,
+    "similarity_median": 0.9484264254570007,
+    "similarity_mean": 0.9454603840907415,
+    "flag_count": 8,
+    "flag_categories": {
+      "number": 8
+    }
+  },
+  "runtime_reduction": 0.3991,
+  "acceptance": {
+    "same_flag_count": true,
+    "same_flag_categories": true,
+    "median_similarity_not_lower": true,
+    "accepted": true
+  },
+  "limitations": [
+    "This is one development article, not a representative latency distribution.",
+    "The primary displayed translations were produced by the same Gemini model in both runs.",
+    "This result supports the local decoder choice on the development Mac only; it is not an Intel performance claim."
+  ]
+}

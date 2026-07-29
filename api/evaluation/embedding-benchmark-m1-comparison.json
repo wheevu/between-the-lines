@@ -1,0 +1,22 @@
+{
+  "torch_result": "evaluation/embedding-benchmark-m1-torch.json",
+  "openvino_result": "evaluation/embedding-benchmark-m1-openvino.json",
+  "workload_sha256": "65d58985a0b7f7f54cd27e8d255a6b4c184f716e698ffba4aa03ad9006483f72",
+  "same_machine": true,
+  "intel_hardware_detected": false,
+  "runs": {
+    "torch": 10,
+    "openvino": 10
+  },
+  "median_latency_ms": {
+    "torch": 1703.19,
+    "openvino": 2160.39
+  },
+  "torch_to_openvino_speed_ratio": 0.788,
+  "top_5_exact_agreement": 1.0,
+  "intel_performance_claim_allowed": false,
+  "intel_speedup_claim_allowed": false,
+  "limitations": [
+    "The recorded CPU is not explicitly identified as Intel."
+  ]
+}

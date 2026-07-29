@@ -1,0 +1,12 @@
+{
+  "date": "2026-07-25",
+  "model": "intfloat/multilingual-e5-small",
+  "purpose": "Test whether direct source-to-translation similarity can replace shadow translation.",
+  "cases": 18,
+  "clean_range": [0.8539, 0.9004],
+  "deliberate_meaning_change_range": [0.8053, 0.8859],
+  "cultural_note_range": [0.8385, 0.8976],
+  "result": "rejected",
+  "reason": "The score ranges overlap too heavily to justify a translation-warning threshold on this controlled set.",
+  "decision": "Remove direct E5 comparison from the translation path. Retain E5 for evidence retrieval and ranking."
+}

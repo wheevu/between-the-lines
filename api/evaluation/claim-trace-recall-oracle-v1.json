@@ -1,0 +1,428 @@
+{
+  "schema_version": 1,
+  "frozen_at": "2026-07-26",
+  "corpus_sha256": "025b41bc257a3b8aa20ce7caf643a2ad8c98ad33d73b96885f2d09a796eb8584",
+  "reviewer_role": "author",
+  "construction_note": "Sixteen answerable-case anchors were seeded from stored aligned output to support retrospective stage localization; two missed answerable cases and six unanswerable cases were manually audited against current comparison pages. Do not use this oracle as unbiased retrieval or alignment accuracy.",
+  "purpose": "Development oracle for answerability-adjusted, stage-level Claim Trace recall. It is not independent accuracy evidence.",
+  "cases": [
+    {
+      "case_id": "korea-ai-act-en-core",
+      "answerability": "answerable",
+      "reviewed_article_ids": [
+        "korea-ai-act-vi-moj",
+        "korea-ai-act-ko-yonhap"
+      ],
+      "gold_passages": [
+        {
+          "article_id": "korea-ai-act-vi-moj",
+          "quote": "Đạo luật AI Basic Act có hiệu lực từ ngày 22/1/2026"
+        }
+      ],
+      "rationale": "At least one comparison article contains a literal passage expressing the claim or a material comparable part of it."
+    },
+    {
+      "case_id": "korea-ai-act-vi-labeling",
+      "answerability": "answerable",
+      "reviewed_article_ids": [
+        "korea-ai-act-en-msit",
+        "korea-ai-act-ko-yonhap"
+      ],
+      "gold_passages": [
+        {
+          "article_id": "korea-ai-act-ko-yonhap",
+          "quote": "딥페이크 영상·이미지에 AI로 만든 것임을 밝히도록 한 제31조 인공지능 투명성 확보 의무"
+        }
+      ],
+      "rationale": "At least one comparison article contains a literal passage expressing the claim or a material comparable part of it."
+    },
+    {
+      "case_id": "vietnam-ai-law-ko-core",
+      "answerability": "answerable",
+      "reviewed_article_ids": [
+        "vietnam-ai-law-en-st",
+        "vietnam-ai-law-vi-mst"
+      ],
+      "gold_passages": [
+        {
+          "article_id": "vietnam-ai-law-vi-mst",
+          "quote": "Luật Trí tuệ nhân tạo có hiệu lực từ ngày 01/3/2026"
+        },
+        {
+          "article_id": "vietnam-ai-law-en-st",
+          "quote": "A law regulating artificial intelligence (AI) went into effect in Vietnam on March 1"
+        }
+      ],
+      "rationale": "At least one comparison article contains a literal passage expressing the claim or a material comparable part of it."
+    },
+    {
+      "case_id": "vietnam-ai-law-en-human",
+      "answerability": "answerable",
+      "reviewed_article_ids": [
+        "vietnam-ai-law-vi-mst",
+        "vietnam-ai-law-ko-yonhap"
+      ],
+      "gold_passages": [
+        {
+          "article_id": "vietnam-ai-law-vi-mst",
+          "quote": "quyết định cuối cùng trong những vấn đề quan trọng của xã hội vẫn phải do con người đảm trách"
+        },
+        {
+          "article_id": "vietnam-ai-law-ko-yonhap",
+          "quote": "인간의 감독·통제를 요구하고 있다고 설명했다"
+        },
+        {
+          "article_id": "vietnam-ai-law-vi-mst",
+          "quote": "Những hệ thống rủi ro cao phải đáp ứng yêu cầu nghiêm ngặt về minh bạch, an toàn và trách nhiệm giải trình"
+        }
+      ],
+      "rationale": "At least one comparison article contains a literal passage expressing the claim or a material comparable part of it."
+    },
+    {
+      "case_id": "nipah-vi-case-count",
+      "answerability": "unanswerable",
+      "reviewed_article_ids": [
+        "nipah-en-ap",
+        "nipah-ko-mbc"
+      ],
+      "gold_passages": [],
+      "rationale": "Neither comparison article contains WHO’s assessment that the outbreak showed no sign of wider spread; they discuss containment, transmission, and fatality instead."
+    },
+    {
+      "case_id": "nipah-ko-early-count",
+      "answerability": "answerable",
+      "reviewed_article_ids": [
+        "nipah-en-ap",
+        "nipah-vi-vnexpress"
+      ],
+      "gold_passages": [
+        {
+          "article_id": "nipah-en-ap",
+          "quote": "The safety measures were put in place after early media reports from India suggested a surge in cases, but health authorities said those figures were “speculative and incorrect.”"
+        }
+      ],
+      "rationale": "At least one comparison article contains a literal passage expressing the claim or a material comparable part of it."
+    },
+    {
+      "case_id": "hanta-en-risk",
+      "answerability": "answerable",
+      "reviewed_article_ids": [
+        "hanta-vi-tuoitre",
+        "hanta-ko-yonhap"
+      ],
+      "gold_passages": [
+        {
+          "article_id": "hanta-vi-tuoitre",
+          "quote": "WHO đánh giá nguy cơ đối với hành khách và thủy thủ đoàn ở mức trung bình, trong khi nguy cơ với cộng đồng toàn cầu ở mức thấp."
+        },
+        {
+          "article_id": "hanta-ko-yonhap",
+          "quote": "WHO는 공중 보건 위험이 낮다고 평가한다"
+        }
+      ],
+      "rationale": "At least one comparison article contains a literal passage expressing the claim or a material comparable part of it."
+    },
+    {
+      "case_id": "hanta-vi-count",
+      "answerability": "answerable",
+      "reviewed_article_ids": [
+        "hanta-en-reuters-koreatimes",
+        "hanta-ko-yonhap"
+      ],
+      "gold_passages": [
+        {
+          "article_id": "hanta-ko-yonhap",
+          "quote": "전날 발표에선 발생 8건 중 확진 사례 3건이었는데 의심 사례 2건이 확진으로 판명된 것이다."
+        },
+        {
+          "article_id": "hanta-en-reuters-koreatimes",
+          "quote": "hit by seven confirmed or suspected cases"
+        }
+      ],
+      "rationale": "At least one comparison article contains a literal passage expressing the claim or a material comparable part of it."
+    },
+    {
+      "case_id": "artemis-ko-mission",
+      "answerability": "answerable",
+      "reviewed_article_ids": [
+        "artemis-en-nasa",
+        "artemis-vi-vnexpress"
+      ],
+      "gold_passages": [
+        {
+          "article_id": "artemis-vi-vnexpress",
+          "quote": "Phi hành đoàn sẽ không hạ cánh mà bay 10 ngày vòng quanh phía xa của Mặt Trăng"
+        },
+        {
+          "article_id": "artemis-en-nasa",
+          "quote": "sending four astronauts aboard the Orion spacecraft on a planned test flight around the Moon and back"
+        },
+        {
+          "article_id": "artemis-vi-vnexpress",
+          "quote": "đưa bốn phi hành gia bay quanh Mặt Trăng"
+        },
+        {
+          "article_id": "artemis-en-nasa",
+          "quote": "The successful launch is the beginning of an approximately 10-day mission for NASA astronauts Reid Wiseman, Victor Glover, Christina Koch, and CSA (Canadian Space Agency) astronaut Jeremy Hansen."
+        }
+      ],
+      "rationale": "At least one comparison article contains a literal passage expressing the claim or a material comparable part of it."
+    },
+    {
+      "case_id": "artemis-en-first",
+      "answerability": "answerable",
+      "reviewed_article_ids": [
+        "artemis-vi-vnexpress",
+        "artemis-ko-newsis"
+      ],
+      "gold_passages": [
+        {
+          "article_id": "artemis-vi-vnexpress",
+          "quote": "Artemis II là nhiệm vụ có người lái đầu tiên trong chương trình Artemis của NASA."
+        },
+        {
+          "article_id": "artemis-vi-vnexpress",
+          "quote": "đánh dấu sứ mệnh có người lái đầu tiên của NASA vượt ra ngoài quỹ đạo Trái Đất tầm thấp"
+        },
+        {
+          "article_id": "artemis-ko-newsis",
+          "quote": "이번 임무는 4명의 승무원이 탑승해 약 열흘(10.3일) 동안 달 궤도를 선회하고 돌아오는 유인 비행 테스트다."
+        }
+      ],
+      "rationale": "At least one comparison article contains a literal passage expressing the claim or a material comparable part of it."
+    },
+    {
+      "case_id": "wmo-vi-probability",
+      "answerability": "answerable",
+      "reviewed_article_ids": [
+        "wmo-en-primary",
+        "wmo-ko-yonhap"
+      ],
+      "gold_passages": [
+        {
+          "article_id": "wmo-en-primary",
+          "quote": "It is likely (86% chance) that one year between 2026 and 2030 will surpass 2024 as the warmest year on record"
+        },
+        {
+          "article_id": "wmo-en-primary",
+          "quote": "There is an El Niño predicted for the end of 2026, which increases the chances of the following year, 2027, being the next record-breaking year."
+        },
+        {
+          "article_id": "wmo-ko-yonhap",
+          "quote": "2026년부터 2030년까지 5년 중 한 해라도 연평균 기온이 역대 가장 높았던 2024년을 웃돌 가능성은 86%에 달한다고 밝혔다."
+        }
+      ],
+      "rationale": "At least one comparison article contains a literal passage expressing the claim or a material comparable part of it."
+    },
+    {
+      "case_id": "wmo-ko-threshold",
+      "answerability": "answerable",
+      "reviewed_article_ids": [
+        "wmo-en-primary",
+        "wmo-vi-vtv"
+      ],
+      "gold_passages": [
+        {
+          "article_id": "wmo-en-primary",
+          "quote": "It is likely (86% chance) that one year between 2026 and 2030 will surpass 2024 as the warmest year on record, according to the update."
+        },
+        {
+          "article_id": "wmo-en-primary",
+          "quote": "It is very likely (91% chance) that the global mean near-surface temperature will temporarily exceed 1.5°C above the 1850-1900 average levels for at least one year between 2026 and 2030."
+        },
+        {
+          "article_id": "wmo-vi-vtv",
+          "quote": "Tổ chức Khí tượng Thế giới (WMO), cơ quan chuyên trách của Liên hợp quốc về khí tượng, cho biết có 75% khả năng nhiệt độ trung bình toàn cầu trong giai đoạn 2026-2030 sẽ vượt 1,5 độ C so với thời kỳ tiền công nghiệp."
+        }
+      ],
+      "rationale": "At least one comparison article contains a literal passage expressing the claim or a material comparable part of it."
+    },
+    {
+      "case_id": "nvidia-en-announcement",
+      "answerability": "unanswerable",
+      "reviewed_article_ids": [
+        "nvidia-vi-vietnamplus",
+        "nvidia-ko-localized"
+      ],
+      "gold_passages": [],
+      "rationale": "The comparison articles describe Vera Rubin and GTC products but do not literally state that the Vera Rubin platform itself was announced at GTC 2026."
+    },
+    {
+      "case_id": "nvidia-vi-performance",
+      "answerability": "unanswerable",
+      "reviewed_article_ids": [
+        "nvidia-en-primary",
+        "nvidia-ko-localized"
+      ],
+      "gold_passages": [],
+      "rationale": "The comparison articles contain Nvidia performance claims but do not establish the compound assertion that those claims lack independent confirmation."
+    },
+    {
+      "case_id": "siri-ko-features",
+      "answerability": "answerable",
+      "reviewed_article_ids": [
+        "siri-en-reuters-tuoitre",
+        "siri-vi-vnexpress"
+      ],
+      "gold_passages": [
+        {
+          "article_id": "siri-en-reuters-tuoitre",
+          "quote": "The revamp, unveiled at its annual Worldwide Developers Conference in Cupertino, California, introduces \"Siri AI,\""
+        },
+        {
+          "article_id": "siri-en-reuters-tuoitre",
+          "quote": "Smarter 'Siri AI' raises some privacy concerns"
+        },
+        {
+          "article_id": "siri-vi-vnexpress",
+          "quote": "Siri mới vẫn đảm bảo tính bảo mật và nhất quán"
+        }
+      ],
+      "rationale": "At least one comparison article contains a literal passage expressing the claim or a material comparable part of it."
+    },
+    {
+      "case_id": "siri-en-timing",
+      "answerability": "answerable",
+      "reviewed_article_ids": [
+        "siri-vi-vnexpress",
+        "siri-ko-zdnet"
+      ],
+      "gold_passages": [
+        {
+          "article_id": "siri-ko-zdnet",
+          "quote": "애플은 이날부터 개발자 베타 버전을 배포했으며, iOS 27을 포함한 차세대 운영체제는 올가을 정식 출시할 계획이다."
+        }
+      ],
+      "rationale": "At least one comparison article contains a literal passage expressing the claim or a material comparable part of it."
+    },
+    {
+      "case_id": "qs-vi-vnu",
+      "answerability": "unanswerable",
+      "reviewed_article_ids": [
+        "qs-en-prnewswire",
+        "qs-ko-yonhap"
+      ],
+      "gold_passages": [],
+      "rationale": "The comparison articles cover the global ranking release and UNIST, not VNU Hanoi’s movement in the ranking."
+    },
+    {
+      "case_id": "qs-ko-unist",
+      "answerability": "unanswerable",
+      "reviewed_article_ids": [
+        "qs-en-prnewswire",
+        "qs-vi-vnu"
+      ],
+      "gold_passages": [],
+      "rationale": "The comparison articles cover the global ranking release and VNU Hanoi, not UNIST’s 299th-place result."
+    },
+    {
+      "case_id": "happiness-en-report",
+      "answerability": "answerable",
+      "reviewed_article_ids": [
+        "happiness-vi-gov",
+        "happiness-ko-moneytoday"
+      ],
+      "gold_passages": [
+        {
+          "article_id": "happiness-ko-moneytoday",
+          "quote": "행복 점수는 △1인당 국내총생산(GDP) △기대수명 △사회적 지원 △선택의 자유 △관용(기부) △부패 인식 등 6개 항목을 토대로 산출된다."
+        },
+        {
+          "article_id": "happiness-vi-gov",
+          "quote": "Bảng xếp hạng được xác định dựa trên chỉ số hạnh phúc trung bình trong 3 năm, với 6 tiêu chí gồm thu nhập bình quân đầu người, tuổi thọ, hỗ trợ xã hội, quyền tự quyết trong đời sống, sự hào phóng và nhận thức về tham nhũng."
+        }
+      ],
+      "rationale": "At least one comparison article contains a literal passage expressing the claim or a material comparable part of it."
+    },
+    {
+      "case_id": "happiness-vi-rank",
+      "answerability": "unanswerable",
+      "reviewed_article_ids": [
+        "happiness-en-ap",
+        "happiness-ko-moneytoday"
+      ],
+      "gold_passages": [],
+      "rationale": "The comparison articles discuss other countries and report methodology but do not state Vietnam’s 45th-place ranking."
+    },
+    {
+      "case_id": "olympics-ko-distributed",
+      "answerability": "answerable",
+      "reviewed_article_ids": [
+        "olympics-en-euronews",
+        "olympics-vi-kbs"
+      ],
+      "gold_passages": [
+        {
+          "article_id": "olympics-en-euronews",
+          "quote": "It culminated in the lighting of two cauldrons, one at Milan's Arch of Peace and one in Cortina d'Ampezzo"
+        }
+      ],
+      "rationale": "At least one comparison article contains a literal passage expressing the claim or a material comparable part of it."
+    },
+    {
+      "case_id": "olympics-en-opening",
+      "answerability": "answerable",
+      "reviewed_article_ids": [
+        "olympics-vi-kbs",
+        "olympics-ko-newsis"
+      ],
+      "gold_passages": [
+        {
+          "article_id": "olympics-vi-kbs",
+          "quote": "Lễ khai mạc Thế vận hội mùa đông Milano Cortina 2026 đã diễn ra vào lúc 8 giờ tối ngày 6/2"
+        },
+        {
+          "article_id": "olympics-ko-newsis",
+          "quote": "7일 오전 4시(한국 시간) 이탈리아 밀라노의 산시로 올림픽 스타디움에서 성대하게 개막했다"
+        }
+      ],
+      "rationale": "At least one comparison article contains a literal passage expressing the claim or a material comparable part of it."
+    },
+    {
+      "case_id": "world-cup-vi-result",
+      "answerability": "answerable",
+      "reviewed_article_ids": [
+        "world-cup-en-guardian",
+        "world-cup-ko-newsis"
+      ],
+      "gold_passages": [
+        {
+          "article_id": "world-cup-ko-newsis",
+          "quote": "아르헨티나는 연장전 막판에 가서야 겨우 슈팅 2개를 기록했으나"
+        },
+        {
+          "article_id": "world-cup-en-guardian",
+          "quote": "The goal came in the 106th minute"
+        },
+        {
+          "article_id": "world-cup-ko-newsis",
+          "quote": "연장 승부 끝에 '디펜딩 챔피언' 아르헨티나를 1-0으로 꺾었다"
+        },
+        {
+          "article_id": "world-cup-en-guardian",
+          "quote": "Spain captain, Rodri, got his hands on those six kilograms of solid gold bliss"
+        }
+      ],
+      "rationale": "At least one comparison article contains a literal passage expressing the claim or a material comparable part of it."
+    },
+    {
+      "case_id": "world-cup-ko-goal",
+      "answerability": "answerable",
+      "reviewed_article_ids": [
+        "world-cup-en-guardian",
+        "world-cup-vi-vnexpress"
+      ],
+      "gold_passages": [
+        {
+          "article_id": "world-cup-en-guardian",
+          "quote": "The goal came in the 106th minute and it was nothing less than they deserved."
+        },
+        {
+          "article_id": "world-cup-en-guardian",
+          "quote": "It teed up another replacement, Ferran Torres, for the opportunity of his lifetime."
+        }
+      ],
+      "rationale": "At least one comparison article contains a literal passage expressing the claim or a material comparable part of it."
+    }
+  ]
+}

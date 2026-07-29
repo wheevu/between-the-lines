@@ -1,0 +1,895 @@
+{
+  "cases": [
+    {
+      "case_id": "korea-ai-act-en-core",
+      "source_language": "en",
+      "answerability": "answerable",
+      "retrieved_pages": 2,
+      "candidate_chunks": 6,
+      "retrieval_failures": 0,
+      "gold": [
+        {
+          "article_id": "korea-ai-act-vi-moj",
+          "quote_sha256": "d29206ee21d8566bcced236d6a7752089de9b5493e8ff5dd1e2dc8803fa4606e",
+          "page_readable": true,
+          "gold_in_page": true,
+          "gold_in_chunk": true,
+          "best_raw_rank": 1,
+          "selected_top_six": true,
+          "strictly_aligned": true,
+          "aligned_or_partial": true,
+          "alignment_states": [
+            "aligned",
+            "not-aligned"
+          ]
+        }
+      ],
+      "failure_stage": "passed"
+    },
+    {
+      "case_id": "korea-ai-act-vi-labeling",
+      "source_language": "vi",
+      "answerability": "answerable",
+      "retrieved_pages": 1,
+      "candidate_chunks": 2,
+      "retrieval_failures": 1,
+      "gold": [
+        {
+          "article_id": "korea-ai-act-ko-yonhap",
+          "quote_sha256": "b300ff64d92b737efa37168762b97973195331174fbd6bbc4ff3c10f659685c7",
+          "page_readable": true,
+          "gold_in_page": true,
+          "gold_in_chunk": true,
+          "best_raw_rank": 1,
+          "selected_top_six": true,
+          "strictly_aligned": true,
+          "aligned_or_partial": true,
+          "alignment_states": [
+            "aligned",
+            "not-aligned"
+          ]
+        }
+      ],
+      "failure_stage": "passed"
+    },
+    {
+      "case_id": "vietnam-ai-law-ko-core",
+      "source_language": "ko",
+      "answerability": "answerable",
+      "retrieved_pages": 2,
+      "candidate_chunks": 7,
+      "retrieval_failures": 0,
+      "gold": [
+        {
+          "article_id": "vietnam-ai-law-vi-mst",
+          "quote_sha256": "dbf0f9b3d7edd0fd66bf937b1aa4eadc949ab78583684a3ac8575a8fc1ef8d54",
+          "page_readable": true,
+          "gold_in_page": true,
+          "gold_in_chunk": true,
+          "best_raw_rank": 1,
+          "selected_top_six": true,
+          "strictly_aligned": true,
+          "aligned_or_partial": true,
+          "alignment_states": [
+            "aligned",
+            "not-aligned"
+          ]
+        },
+        {
+          "article_id": "vietnam-ai-law-en-st",
+          "quote_sha256": "4b99eb2ae7e922838fe773f2f16e06671916c4e11e98a0348b294b89c1be816d",
+          "page_readable": true,
+          "gold_in_page": true,
+          "gold_in_chunk": true,
+          "best_raw_rank": 3,
+          "selected_top_six": true,
+          "strictly_aligned": true,
+          "aligned_or_partial": true,
+          "alignment_states": [
+            "aligned",
+            "not-aligned"
+          ]
+        }
+      ],
+      "failure_stage": "passed"
+    },
+    {
+      "case_id": "vietnam-ai-law-en-human",
+      "source_language": "en",
+      "answerability": "answerable",
+      "retrieved_pages": 2,
+      "candidate_chunks": 6,
+      "retrieval_failures": 0,
+      "gold": [
+        {
+          "article_id": "vietnam-ai-law-vi-mst",
+          "quote_sha256": "2f343a277f26cc30b953788fbfb77fa75a15ed6960d155845aec6a733cf1aa3b",
+          "page_readable": true,
+          "gold_in_page": true,
+          "gold_in_chunk": true,
+          "best_raw_rank": 1,
+          "selected_top_six": true,
+          "strictly_aligned": true,
+          "aligned_or_partial": true,
+          "alignment_states": [
+            "aligned",
+            "partial"
+          ]
+        },
+        {
+          "article_id": "vietnam-ai-law-ko-yonhap",
+          "quote_sha256": "69d65a918f57101465265bd1e11096a0c421d99e08b519ef30df403260950390",
+          "page_readable": true,
+          "gold_in_page": true,
+          "gold_in_chunk": true,
+          "best_raw_rank": 2,
+          "selected_top_six": true,
+          "strictly_aligned": true,
+          "aligned_or_partial": true,
+          "alignment_states": [
+            "aligned",
+            "not-aligned"
+          ]
+        },
+        {
+          "article_id": "vietnam-ai-law-vi-mst",
+          "quote_sha256": "49e877c6a9df6f05230050d64377f5da41a58b57e69c3178ef24146bdd2bd4c2",
+          "page_readable": true,
+          "gold_in_page": true,
+          "gold_in_chunk": true,
+          "best_raw_rank": 4,
+          "selected_top_six": true,
+          "strictly_aligned": true,
+          "aligned_or_partial": true,
+          "alignment_states": [
+            "aligned",
+            "partial"
+          ]
+        }
+      ],
+      "failure_stage": "passed"
+    },
+    {
+      "case_id": "nipah-vi-case-count",
+      "source_language": "vi",
+      "answerability": "unanswerable",
+      "retrieved_pages": 2,
+      "candidate_chunks": 4,
+      "retrieval_failures": 0,
+      "gold": [],
+      "failure_stage": "not_applicable"
+    },
+    {
+      "case_id": "nipah-ko-early-count",
+      "source_language": "ko",
+      "answerability": "answerable",
+      "retrieved_pages": 2,
+      "candidate_chunks": 6,
+      "retrieval_failures": 0,
+      "gold": [
+        {
+          "article_id": "nipah-en-ap",
+          "quote_sha256": "ac920806fdb0448d37b2e54bd6a575d3055d0041fb129036be6ebac740e1c414",
+          "page_readable": true,
+          "gold_in_page": true,
+          "gold_in_chunk": true,
+          "best_raw_rank": 3,
+          "selected_top_six": true,
+          "strictly_aligned": true,
+          "aligned_or_partial": true,
+          "alignment_states": [
+            "aligned",
+            "not-aligned"
+          ]
+        }
+      ],
+      "failure_stage": "passed"
+    },
+    {
+      "case_id": "hanta-en-risk",
+      "source_language": "en",
+      "answerability": "answerable",
+      "retrieved_pages": 2,
+      "candidate_chunks": 5,
+      "retrieval_failures": 0,
+      "gold": [
+        {
+          "article_id": "hanta-vi-tuoitre",
+          "quote_sha256": "bcf1fdafad409b8b40047b98d15f328d5adb66eb8519c89d54d66aaefa69ad14",
+          "page_readable": true,
+          "gold_in_page": true,
+          "gold_in_chunk": true,
+          "best_raw_rank": 1,
+          "selected_top_six": true,
+          "strictly_aligned": true,
+          "aligned_or_partial": true,
+          "alignment_states": [
+            "aligned",
+            "not-aligned"
+          ]
+        },
+        {
+          "article_id": "hanta-ko-yonhap",
+          "quote_sha256": "21dc726e48318a7c22830eb81de1d808ec48ec217ea3ef4f8bb41466964a9a09",
+          "page_readable": true,
+          "gold_in_page": true,
+          "gold_in_chunk": true,
+          "best_raw_rank": 4,
+          "selected_top_six": true,
+          "strictly_aligned": true,
+          "aligned_or_partial": true,
+          "alignment_states": [
+            "aligned",
+            "not-aligned"
+          ]
+        }
+      ],
+      "failure_stage": "passed"
+    },
+    {
+      "case_id": "hanta-vi-count",
+      "source_language": "vi",
+      "answerability": "answerable",
+      "retrieved_pages": 2,
+      "candidate_chunks": 6,
+      "retrieval_failures": 0,
+      "gold": [
+        {
+          "article_id": "hanta-ko-yonhap",
+          "quote_sha256": "b5e982ad33ad26c45bded19f8d4112779168518bed4ba3de238292c58166f883",
+          "page_readable": true,
+          "gold_in_page": true,
+          "gold_in_chunk": true,
+          "best_raw_rank": 1,
+          "selected_top_six": true,
+          "strictly_aligned": true,
+          "aligned_or_partial": true,
+          "alignment_states": [
+            "aligned",
+            "not-aligned"
+          ]
+        },
+        {
+          "article_id": "hanta-en-reuters-koreatimes",
+          "quote_sha256": "9dbd476e7445916decd883c16c28e292f13fc1ce6d5bc830dd974c16a5a39f9b",
+          "page_readable": true,
+          "gold_in_page": true,
+          "gold_in_chunk": true,
+          "best_raw_rank": 3,
+          "selected_top_six": true,
+          "strictly_aligned": true,
+          "aligned_or_partial": true,
+          "alignment_states": [
+            "aligned",
+            "not-aligned"
+          ]
+        }
+      ],
+      "failure_stage": "passed"
+    },
+    {
+      "case_id": "artemis-ko-mission",
+      "source_language": "ko",
+      "answerability": "answerable",
+      "retrieved_pages": 2,
+      "candidate_chunks": 12,
+      "retrieval_failures": 0,
+      "gold": [
+        {
+          "article_id": "artemis-vi-vnexpress",
+          "quote_sha256": "4d9b2de2f4f2a49043d9e9c632a2d1643b62c332447549c4f9ccfb7b2800257a",
+          "page_readable": true,
+          "gold_in_page": true,
+          "gold_in_chunk": true,
+          "best_raw_rank": 1,
+          "selected_top_six": true,
+          "strictly_aligned": true,
+          "aligned_or_partial": true,
+          "alignment_states": [
+            "aligned",
+            "partial"
+          ]
+        },
+        {
+          "article_id": "artemis-en-nasa",
+          "quote_sha256": "23c60f7140d83e2fbef3ba01947f774df2e12b4c89c2b71961e27b9ce4dfafc1",
+          "page_readable": true,
+          "gold_in_page": true,
+          "gold_in_chunk": true,
+          "best_raw_rank": 2,
+          "selected_top_six": true,
+          "strictly_aligned": true,
+          "aligned_or_partial": true,
+          "alignment_states": [
+            "aligned",
+            "partial"
+          ]
+        },
+        {
+          "article_id": "artemis-vi-vnexpress",
+          "quote_sha256": "e336ac02122bbb4320816764794a12dc013f6ee3785c354ad37e9e9718ff42ee",
+          "page_readable": true,
+          "gold_in_page": true,
+          "gold_in_chunk": true,
+          "best_raw_rank": 3,
+          "selected_top_six": true,
+          "strictly_aligned": true,
+          "aligned_or_partial": true,
+          "alignment_states": [
+            "aligned",
+            "partial"
+          ]
+        },
+        {
+          "article_id": "artemis-en-nasa",
+          "quote_sha256": "bdc5891783e4d3201606805d710d51d20960ed64d5afd8623eb387eb50d0d23f",
+          "page_readable": true,
+          "gold_in_page": true,
+          "gold_in_chunk": true,
+          "best_raw_rank": 5,
+          "selected_top_six": true,
+          "strictly_aligned": true,
+          "aligned_or_partial": true,
+          "alignment_states": [
+            "aligned",
+            "partial"
+          ]
+        }
+      ],
+      "failure_stage": "passed"
+    },
+    {
+      "case_id": "artemis-en-first",
+      "source_language": "en",
+      "answerability": "answerable",
+      "retrieved_pages": 2,
+      "candidate_chunks": 10,
+      "retrieval_failures": 0,
+      "gold": [
+        {
+          "article_id": "artemis-vi-vnexpress",
+          "quote_sha256": "5470810228df0822d96eaa2bf2888e0b3eac002429699ddea18c3228e0b57319",
+          "page_readable": true,
+          "gold_in_page": true,
+          "gold_in_chunk": true,
+          "best_raw_rank": 1,
+          "selected_top_six": true,
+          "strictly_aligned": true,
+          "aligned_or_partial": true,
+          "alignment_states": [
+            "aligned"
+          ]
+        },
+        {
+          "article_id": "artemis-vi-vnexpress",
+          "quote_sha256": "f449fb5a2e183e78cb7018edb7e4641cfe654dac5dae5af4666ec8f08f9a4aef",
+          "page_readable": true,
+          "gold_in_page": true,
+          "gold_in_chunk": true,
+          "best_raw_rank": 2,
+          "selected_top_six": true,
+          "strictly_aligned": true,
+          "aligned_or_partial": true,
+          "alignment_states": [
+            "aligned"
+          ]
+        },
+        {
+          "article_id": "artemis-ko-newsis",
+          "quote_sha256": "ef2e0f4ec078a010ff1a1322f9fdfdf31f8f71bd17dc60f46adb88dff59b71ec",
+          "page_readable": true,
+          "gold_in_page": true,
+          "gold_in_chunk": true,
+          "best_raw_rank": 6,
+          "selected_top_six": true,
+          "strictly_aligned": true,
+          "aligned_or_partial": true,
+          "alignment_states": [
+            "aligned",
+            "not-aligned"
+          ]
+        }
+      ],
+      "failure_stage": "passed"
+    },
+    {
+      "case_id": "wmo-vi-probability",
+      "source_language": "vi",
+      "answerability": "answerable",
+      "retrieved_pages": 2,
+      "candidate_chunks": 6,
+      "retrieval_failures": 0,
+      "gold": [
+        {
+          "article_id": "wmo-en-primary",
+          "quote_sha256": "87020a2165b9b730af62cb8ffb340fd42ccbdf9e91d5ba6b904fe1d92d793b31",
+          "page_readable": true,
+          "gold_in_page": true,
+          "gold_in_chunk": true,
+          "best_raw_rank": 1,
+          "selected_top_six": true,
+          "strictly_aligned": true,
+          "aligned_or_partial": true,
+          "alignment_states": [
+            "aligned"
+          ]
+        },
+        {
+          "article_id": "wmo-en-primary",
+          "quote_sha256": "97b9612998414dc3849d58379da4bc96597eee74ebc70b68694f4712caed0632",
+          "page_readable": true,
+          "gold_in_page": true,
+          "gold_in_chunk": true,
+          "best_raw_rank": 2,
+          "selected_top_six": true,
+          "strictly_aligned": true,
+          "aligned_or_partial": true,
+          "alignment_states": [
+            "aligned"
+          ]
+        },
+        {
+          "article_id": "wmo-ko-yonhap",
+          "quote_sha256": "92e521ff5d99f043f0d9f942f0ccd8d7c1f78c33494e89afb34397e9b7182abc",
+          "page_readable": true,
+          "gold_in_page": true,
+          "gold_in_chunk": true,
+          "best_raw_rank": 3,
+          "selected_top_six": true,
+          "strictly_aligned": true,
+          "aligned_or_partial": true,
+          "alignment_states": [
+            "aligned",
+            "not-aligned"
+          ]
+        }
+      ],
+      "failure_stage": "passed"
+    },
+    {
+      "case_id": "wmo-ko-threshold",
+      "source_language": "ko",
+      "answerability": "answerable",
+      "retrieved_pages": 2,
+      "candidate_chunks": 6,
+      "retrieval_failures": 0,
+      "gold": [
+        {
+          "article_id": "wmo-en-primary",
+          "quote_sha256": "33906f67e33c0cfa2618b5437536745eb58774007195558b62331852da6affb9",
+          "page_readable": true,
+          "gold_in_page": true,
+          "gold_in_chunk": true,
+          "best_raw_rank": 1,
+          "selected_top_six": true,
+          "strictly_aligned": false,
+          "aligned_or_partial": false,
+          "alignment_states": [
+            "uncertain"
+          ]
+        },
+        {
+          "article_id": "wmo-en-primary",
+          "quote_sha256": "0b305fc4cf6a70afe73ea7c474d69915493ac8735b24661201d57c78c797bfa9",
+          "page_readable": true,
+          "gold_in_page": true,
+          "gold_in_chunk": true,
+          "best_raw_rank": 1,
+          "selected_top_six": true,
+          "strictly_aligned": false,
+          "aligned_or_partial": false,
+          "alignment_states": [
+            "uncertain"
+          ]
+        },
+        {
+          "article_id": "wmo-vi-vtv",
+          "quote_sha256": "edf62f115b359363de1bc516ea53b122552a429c0b5c562aaefbb12b766343eb",
+          "page_readable": true,
+          "gold_in_page": true,
+          "gold_in_chunk": true,
+          "best_raw_rank": 5,
+          "selected_top_six": true,
+          "strictly_aligned": false,
+          "aligned_or_partial": false,
+          "alignment_states": [
+            "not-aligned",
+            "uncertain"
+          ]
+        }
+      ],
+      "failure_stage": "alignment"
+    },
+    {
+      "case_id": "nvidia-en-announcement",
+      "source_language": "en",
+      "answerability": "unanswerable",
+      "retrieved_pages": 2,
+      "candidate_chunks": 10,
+      "retrieval_failures": 0,
+      "gold": [],
+      "failure_stage": "not_applicable"
+    },
+    {
+      "case_id": "nvidia-vi-performance",
+      "source_language": "vi",
+      "answerability": "unanswerable",
+      "retrieved_pages": 2,
+      "candidate_chunks": 17,
+      "retrieval_failures": 0,
+      "gold": [],
+      "failure_stage": "not_applicable"
+    },
+    {
+      "case_id": "siri-ko-features",
+      "source_language": "ko",
+      "answerability": "answerable",
+      "retrieved_pages": 2,
+      "candidate_chunks": 11,
+      "retrieval_failures": 0,
+      "gold": [
+        {
+          "article_id": "siri-en-reuters-tuoitre",
+          "quote_sha256": "557c7b264b067a213478484b1f7e7e09fa28dafdbe41b6367e855ea62257739c",
+          "page_readable": true,
+          "gold_in_page": true,
+          "gold_in_chunk": true,
+          "best_raw_rank": 1,
+          "selected_top_six": true,
+          "strictly_aligned": true,
+          "aligned_or_partial": true,
+          "alignment_states": [
+            "aligned"
+          ]
+        },
+        {
+          "article_id": "siri-en-reuters-tuoitre",
+          "quote_sha256": "b339a013199dc5d05bbbe289ca8cf1a3838a0adad0afa3bd980314a4493e0057",
+          "page_readable": true,
+          "gold_in_page": true,
+          "gold_in_chunk": true,
+          "best_raw_rank": 3,
+          "selected_top_six": true,
+          "strictly_aligned": true,
+          "aligned_or_partial": true,
+          "alignment_states": [
+            "aligned"
+          ]
+        },
+        {
+          "article_id": "siri-vi-vnexpress",
+          "quote_sha256": "a2ac887efebdfe19fdbcc0e8e29609488d7b17716257bb92539f7e19694798ef",
+          "page_readable": true,
+          "gold_in_page": true,
+          "gold_in_chunk": true,
+          "best_raw_rank": 4,
+          "selected_top_six": true,
+          "strictly_aligned": true,
+          "aligned_or_partial": true,
+          "alignment_states": [
+            "aligned",
+            "uncertain"
+          ]
+        }
+      ],
+      "failure_stage": "passed"
+    },
+    {
+      "case_id": "siri-en-timing",
+      "source_language": "en",
+      "answerability": "answerable",
+      "retrieved_pages": 2,
+      "candidate_chunks": 11,
+      "retrieval_failures": 0,
+      "gold": [
+        {
+          "article_id": "siri-ko-zdnet",
+          "quote_sha256": "06145fdbad513391f1f787dd187e9a4fba81d96da7f4cc8af8010823c54416a4",
+          "page_readable": true,
+          "gold_in_page": true,
+          "gold_in_chunk": true,
+          "best_raw_rank": 2,
+          "selected_top_six": true,
+          "strictly_aligned": true,
+          "aligned_or_partial": true,
+          "alignment_states": [
+            "aligned",
+            "not-aligned"
+          ]
+        }
+      ],
+      "failure_stage": "passed"
+    },
+    {
+      "case_id": "qs-vi-vnu",
+      "source_language": "vi",
+      "answerability": "unanswerable",
+      "retrieved_pages": 2,
+      "candidate_chunks": 3,
+      "retrieval_failures": 0,
+      "gold": [],
+      "failure_stage": "not_applicable"
+    },
+    {
+      "case_id": "qs-ko-unist",
+      "source_language": "ko",
+      "answerability": "unanswerable",
+      "retrieved_pages": 2,
+      "candidate_chunks": 7,
+      "retrieval_failures": 0,
+      "gold": [],
+      "failure_stage": "not_applicable"
+    },
+    {
+      "case_id": "happiness-en-report",
+      "source_language": "en",
+      "answerability": "answerable",
+      "retrieved_pages": 2,
+      "candidate_chunks": 4,
+      "retrieval_failures": 0,
+      "gold": [
+        {
+          "article_id": "happiness-ko-moneytoday",
+          "quote_sha256": "78f544b704166666a883cc00f2fdc06f98338296ed47e036434d327fd912078c",
+          "page_readable": true,
+          "gold_in_page": true,
+          "gold_in_chunk": true,
+          "best_raw_rank": 2,
+          "selected_top_six": true,
+          "strictly_aligned": true,
+          "aligned_or_partial": true,
+          "alignment_states": [
+            "aligned"
+          ]
+        },
+        {
+          "article_id": "happiness-vi-gov",
+          "quote_sha256": "15d7ee38d30103fab019221f7664de9bb5a4e849493879fe0ec5f909eba9b410",
+          "page_readable": true,
+          "gold_in_page": true,
+          "gold_in_chunk": true,
+          "best_raw_rank": 3,
+          "selected_top_six": true,
+          "strictly_aligned": true,
+          "aligned_or_partial": true,
+          "alignment_states": [
+            "aligned",
+            "uncertain"
+          ]
+        }
+      ],
+      "failure_stage": "passed"
+    },
+    {
+      "case_id": "happiness-vi-rank",
+      "source_language": "vi",
+      "answerability": "unanswerable",
+      "retrieved_pages": 2,
+      "candidate_chunks": 6,
+      "retrieval_failures": 0,
+      "gold": [],
+      "failure_stage": "not_applicable"
+    },
+    {
+      "case_id": "olympics-ko-distributed",
+      "source_language": "ko",
+      "answerability": "answerable",
+      "retrieved_pages": 2,
+      "candidate_chunks": 5,
+      "retrieval_failures": 0,
+      "gold": [
+        {
+          "article_id": "olympics-en-euronews",
+          "quote_sha256": "8a764345b86e2b3141e8ce6a0176506e4b6a41b9a8e650ad1ee301c63439d879",
+          "page_readable": true,
+          "gold_in_page": true,
+          "gold_in_chunk": true,
+          "best_raw_rank": 3,
+          "selected_top_six": true,
+          "strictly_aligned": true,
+          "aligned_or_partial": true,
+          "alignment_states": [
+            "aligned",
+            "not-aligned"
+          ]
+        }
+      ],
+      "failure_stage": "passed"
+    },
+    {
+      "case_id": "olympics-en-opening",
+      "source_language": "en",
+      "answerability": "answerable",
+      "retrieved_pages": 2,
+      "candidate_chunks": 5,
+      "retrieval_failures": 0,
+      "gold": [
+        {
+          "article_id": "olympics-vi-kbs",
+          "quote_sha256": "fc6975762c503f420b93d5764d79fcb2d538dcfa5380bdace9bf792302f457b3",
+          "page_readable": true,
+          "gold_in_page": true,
+          "gold_in_chunk": true,
+          "best_raw_rank": 1,
+          "selected_top_six": true,
+          "strictly_aligned": true,
+          "aligned_or_partial": true,
+          "alignment_states": [
+            "aligned",
+            "not-aligned"
+          ]
+        },
+        {
+          "article_id": "olympics-ko-newsis",
+          "quote_sha256": "2fc154b1efa33d221add08104768e7ec22759b8a7531bc753f7d9fa1c0fe896c",
+          "page_readable": true,
+          "gold_in_page": true,
+          "gold_in_chunk": true,
+          "best_raw_rank": 2,
+          "selected_top_six": true,
+          "strictly_aligned": false,
+          "aligned_or_partial": true,
+          "alignment_states": [
+            "not-aligned",
+            "partial"
+          ]
+        }
+      ],
+      "failure_stage": "passed"
+    },
+    {
+      "case_id": "world-cup-vi-result",
+      "source_language": "vi",
+      "answerability": "answerable",
+      "retrieved_pages": 2,
+      "candidate_chunks": 8,
+      "retrieval_failures": 0,
+      "gold": [
+        {
+          "article_id": "world-cup-ko-newsis",
+          "quote_sha256": "31519bcbd3ca971a0bb42de71c8347ffd33460d8e551c367a9fd13f7be2fdc49",
+          "page_readable": true,
+          "gold_in_page": true,
+          "gold_in_chunk": true,
+          "best_raw_rank": 1,
+          "selected_top_six": true,
+          "strictly_aligned": true,
+          "aligned_or_partial": true,
+          "alignment_states": [
+            "aligned"
+          ]
+        },
+        {
+          "article_id": "world-cup-en-guardian",
+          "quote_sha256": "b34d5cb433603b3bc119f04fcdf76ade3d31442e7ac9a94ac1cf72cda376fdf8",
+          "page_readable": true,
+          "gold_in_page": true,
+          "gold_in_chunk": true,
+          "best_raw_rank": 2,
+          "selected_top_six": true,
+          "strictly_aligned": true,
+          "aligned_or_partial": true,
+          "alignment_states": [
+            "aligned",
+            "partial"
+          ]
+        },
+        {
+          "article_id": "world-cup-ko-newsis",
+          "quote_sha256": "a3e64e6a4b42e17e7c088edd9d4fcdfb3c55c6e9f9aeb2c3caf71274d4584fd6",
+          "page_readable": true,
+          "gold_in_page": true,
+          "gold_in_chunk": true,
+          "best_raw_rank": 3,
+          "selected_top_six": true,
+          "strictly_aligned": true,
+          "aligned_or_partial": true,
+          "alignment_states": [
+            "aligned"
+          ]
+        },
+        {
+          "article_id": "world-cup-en-guardian",
+          "quote_sha256": "e7f7a2ea49d933c7def77f2f2f3a8f7588205a33e8032d79a1b62668455ace00",
+          "page_readable": true,
+          "gold_in_page": true,
+          "gold_in_chunk": true,
+          "best_raw_rank": 4,
+          "selected_top_six": true,
+          "strictly_aligned": true,
+          "aligned_or_partial": true,
+          "alignment_states": [
+            "aligned",
+            "partial"
+          ]
+        }
+      ],
+      "failure_stage": "passed"
+    },
+    {
+      "case_id": "world-cup-ko-goal",
+      "source_language": "ko",
+      "answerability": "answerable",
+      "retrieved_pages": 2,
+      "candidate_chunks": 13,
+      "retrieval_failures": 0,
+      "gold": [
+        {
+          "article_id": "world-cup-en-guardian",
+          "quote_sha256": "2159ea198873261fc928b80212db1113a1a1cff7fbd1a4d836bfbf665d363ebf",
+          "page_readable": true,
+          "gold_in_page": true,
+          "gold_in_chunk": true,
+          "best_raw_rank": 2,
+          "selected_top_six": true,
+          "strictly_aligned": false,
+          "aligned_or_partial": true,
+          "alignment_states": [
+            "partial",
+            "uncertain"
+          ]
+        },
+        {
+          "article_id": "world-cup-en-guardian",
+          "quote_sha256": "4e245b96000b1ad768f5eaaee7a7bd90c0615312b4f4b205ce18621e17637e58",
+          "page_readable": true,
+          "gold_in_page": true,
+          "gold_in_chunk": true,
+          "best_raw_rank": 2,
+          "selected_top_six": true,
+          "strictly_aligned": false,
+          "aligned_or_partial": true,
+          "alignment_states": [
+            "partial",
+            "uncertain"
+          ]
+        }
+      ],
+      "failure_stage": "partial_alignment"
+    }
+  ],
+  "summary": {
+    "cases": 24,
+    "answerable_cases": 18,
+    "unanswerable_cases": 6,
+    "uncertain_cases": 0,
+    "stage_failures": {
+      "alignment": 1,
+      "not_applicable": 6,
+      "partial_alignment": 1,
+      "passed": 16
+    },
+    "extraction_recall": {
+      "passed": 18,
+      "eligible": 18,
+      "rate": 1.0
+    },
+    "chunk_coverage": {
+      "passed": 18,
+      "eligible": 18,
+      "rate": 1.0
+    },
+    "ranking_recall_at_six": {
+      "passed": 18,
+      "eligible": 18,
+      "rate": 1.0
+    },
+    "strict_aligned_recall": {
+      "passed": 16,
+      "eligible": 18,
+      "rate": 0.8889
+    },
+    "aligned_or_partial_recall": {
+      "passed": 17,
+      "eligible": 18,
+      "rate": 0.9444
+    }
+  },
+  "schema_version": 1,
+  "generated_at": "2026-07-26T01:00:33.952647+00:00",
+  "corpus_sha256": "025b41bc257a3b8aa20ce7caf643a2ad8c98ad33d73b96885f2d09a796eb8584",
+  "oracle_sha256": "9e99a4df49e20019aca8cba3b888afcec46ef7389ea86b7f1916900252c3c596",
+  "baseline_sha256": "c2941a62e3742551605eab5eb0b4b6a64d1414d3fd99c1a24a21cbc675a530c5",
+  "embedding_backend": "torch",
+  "stores_article_text": false
+}

@@ -1,0 +1,3100 @@
+{
+  "schema_version": 1,
+  "corpus_sha256": "025b41bc257a3b8aa20ce7caf643a2ad8c98ad33d73b96885f2d09a796eb8584",
+  "case_ids": [
+    "korea-ai-act-en-core",
+    "korea-ai-act-vi-labeling",
+    "vietnam-ai-law-ko-core",
+    "vietnam-ai-law-en-human",
+    "nipah-vi-case-count",
+    "nipah-ko-early-count",
+    "hanta-en-risk",
+    "hanta-vi-count",
+    "artemis-ko-mission",
+    "artemis-en-first",
+    "wmo-vi-probability",
+    "wmo-ko-threshold",
+    "nvidia-en-announcement",
+    "nvidia-vi-performance",
+    "siri-ko-features",
+    "siri-en-timing",
+    "qs-vi-vnu",
+    "qs-ko-unist",
+    "happiness-en-report",
+    "happiness-vi-rank",
+    "olympics-ko-distributed",
+    "olympics-en-opening",
+    "world-cup-vi-result",
+    "world-cup-ko-goal"
+  ],
+  "purpose": "24-case Claim Trace full using frozen, known cross-language source triples. Discovery is intentionally excluded so alignment and source-lineage handling can be evaluated separately from search availability.",
+  "started_at": "2026-07-25T02:36:16.866024+00:00",
+  "updated_at": "2026-07-25T02:38:57.868748+00:00",
+  "generated_at": "2026-07-25T02:38:57.868533+00:00",
+  "complete": true,
+  "stopped_at": null,
+  "pause_reason": null,
+  "results": [
+    {
+      "case_id": "korea-ai-act-en-core",
+      "topic": "public_policy",
+      "profile": "challenging",
+      "source_article_id": "korea-ai-act-en-msit",
+      "source_language": "en",
+      "claim": {
+        "source_quote": "South Korea's comprehensive AI legal framework took effect in January 2026.",
+        "segment_ids": [
+          "frozen-benchmark-claim"
+        ],
+        "standalone_claim": "South Korea's comprehensive AI legal framework took effect in January 2026.",
+        "claim_type": "fact",
+        "entities": [],
+        "dates": [],
+        "numbers": [
+          "2026."
+        ],
+        "facets": {
+          "attribution": null,
+          "modality": "asserted",
+          "legal_state": null
+        },
+        "reason": "Human-frozen benchmark proposition for cross-language alignment; claim extraction is evaluated separately.",
+        "id": "closed-korea-ai-act-en-core",
+        "source_language": "en"
+      },
+      "runtime_seconds": 29.985,
+      "assessment": {
+        "claim_id": "closed-korea-ai-act-en-core",
+        "status": "insufficient",
+        "explanation": "Relevant sources were found, but they were not independent enough to resolve the claim.",
+        "support_evidence_ids": [
+          "evidence-129f13cbe62c"
+        ],
+        "challenge_evidence_ids": [],
+        "context_evidence_ids": [
+          "evidence-ca3605d0fe5e"
+        ],
+        "limitations": [
+          "Fewer than two distinct publishers were found.",
+          "No original record or direct statement was found."
+        ]
+      },
+      "trace": {
+        "evidence_state": "unresolved",
+        "article_count": 1,
+        "independent_lineages": 1,
+        "languages": [
+          "vi"
+        ],
+        "meaning_deltas": [
+          {
+            "type": "date",
+            "description": "The claim specifies January 2026 generally, while the evidence specifies the exact effective date as January 22, 2026."
+          }
+        ]
+      },
+      "evidence": [
+        {
+          "id": "evidence-129f13cbe62c",
+          "url": "https://cntt.moj.gov.vn/portal/tin-tuc/chi-tiet/han-quoc-tien-phong-ban-hanh-luat-su-dung-ai-an-toan-tcsrtzda49.html?handler=ThongKeTruyCap",
+          "title": "Hàn Quốc tiên phong ban hành luật sử dụng AI an toàn",
+          "publisher": "Vietnam Ministry of Justice",
+          "language": "vi",
+          "published_at": "2026-07-25",
+          "source_type": "secondary-commentary",
+          "direct": false,
+          "stance": "supports",
+          "stance_reason": "The excerpt confirms the AI Basic Act was enacted and took effect on January 22, 2026, describing it as a comprehensive legal framework.",
+          "alignment_state": "aligned",
+          "aligned_quote": "Đạo luật AI Basic Act có hiệu lực từ ngày 22/1/2026",
+          "meaning_deltas": [
+            {
+              "type": "date",
+              "description": "The claim specifies January 2026 generally, while the evidence specifies the exact effective date as January 22, 2026."
+            }
+          ],
+          "credited_origin": null,
+          "cluster_id": "b2edaed48273e0bc885d94d257a92bad97097f2dee075c8dea40dad0fe371805",
+          "mismatch": null
+        },
+        {
+          "id": "evidence-ca3605d0fe5e",
+          "url": "https://cntt.moj.gov.vn/portal/tin-tuc/chi-tiet/han-quoc-tien-phong-ban-hanh-luat-su-dung-ai-an-toan-tcsrtzda49.html?handler=ThongKeTruyCap",
+          "title": "Hàn Quốc tiên phong ban hành luật sử dụng AI an toàn",
+          "publisher": "Vietnam Ministry of Justice",
+          "language": "vi",
+          "published_at": "2026-07-25",
+          "source_type": "secondary-commentary",
+          "direct": false,
+          "stance": "context",
+          "stance_reason": "This excerpt discusses the goals and strategic importance of the AI legislation but does not explicitly state the effective date.",
+          "alignment_state": "not-aligned",
+          "aligned_quote": null,
+          "meaning_deltas": [],
+          "credited_origin": null,
+          "cluster_id": "01ae03a3246e06d0f3c71d0f06902e915de68e996bbc65da029c90da560ec6b2",
+          "mismatch": null
+        }
+      ],
+      "retrieval_failures": [
+        {
+          "url": "https://yna.co.kr/view/AKR20260203053900017",
+          "reason": "The page could not be read safely."
+        }
+      ]
+    },
+    {
+      "case_id": "korea-ai-act-vi-labeling",
+      "topic": "public_policy",
+      "profile": "challenging",
+      "source_article_id": "korea-ai-act-vi-moj",
+      "source_language": "vi",
+      "claim": {
+        "source_quote": "Luật AI của Hàn Quốc đặt ra nghĩa vụ minh bạch hoặc ghi nhãn đối với một số nội dung do AI tạo ra.",
+        "segment_ids": [
+          "frozen-benchmark-claim"
+        ],
+        "standalone_claim": "Luật AI của Hàn Quốc đặt ra nghĩa vụ minh bạch hoặc ghi nhãn đối với một số nội dung do AI tạo ra.",
+        "claim_type": "fact",
+        "entities": [],
+        "dates": [],
+        "numbers": [],
+        "facets": {
+          "attribution": null,
+          "modality": "asserted",
+          "legal_state": null
+        },
+        "reason": "Human-frozen benchmark proposition for cross-language alignment; claim extraction is evaluated separately.",
+        "id": "closed-korea-ai-act-vi-labeling",
+        "source_language": "vi"
+      },
+      "runtime_seconds": 7.74,
+      "assessment": {
+        "claim_id": "closed-korea-ai-act-vi-labeling",
+        "status": "insufficient",
+        "explanation": "Relevant sources were found, but they were not independent enough to resolve the claim.",
+        "support_evidence_ids": [
+          "evidence-a5ef581f948d"
+        ],
+        "challenge_evidence_ids": [],
+        "context_evidence_ids": [],
+        "limitations": [
+          "The available sources may repeat the same original report.",
+          "Fewer than two distinct publishers were found.",
+          "No original record or direct statement was found."
+        ]
+      },
+      "trace": {
+        "evidence_state": "unresolved",
+        "article_count": 1,
+        "independent_lineages": 1,
+        "languages": [
+          "ko"
+        ],
+        "meaning_deltas": []
+      },
+      "evidence": [
+        {
+          "id": "evidence-a5ef581f948d",
+          "url": "https://yna.co.kr/view/AKR20260203053900017",
+          "title": "AI기본법 상담 열흘, 기업 질문 절반이 'AI 생성물 표시' | 연합뉴스",
+          "publisher": "Yonhap News Agency",
+          "language": "ko",
+          "published_at": "2026-02-03",
+          "source_type": "secondary-commentary",
+          "direct": false,
+          "stance": "supports",
+          "stance_reason": "The excerpt confirms the existence of the AI Basic Act and specifically mentions Article 31 regarding the obligation to label AI-generated content like deepfakes.",
+          "alignment_state": "aligned",
+          "aligned_quote": "딥페이크 영상·이미지에 AI로 만든 것임을 밝히도록 한 제31조 인공지능 투명성 확보 의무",
+          "meaning_deltas": [],
+          "credited_origin": null,
+          "cluster_id": "lineage-63be35ecc2cc",
+          "mismatch": null
+        },
+        {
+          "id": "evidence-71aa36cceea9",
+          "url": "https://yna.co.kr/view/AKR20260203053900017",
+          "title": "AI기본법 상담 열흘, 기업 질문 절반이 'AI 생성물 표시' | 연합뉴스",
+          "publisher": "Yonhap News Agency",
+          "language": "ko",
+          "published_at": "2026-02-03",
+          "source_type": "secondary-commentary",
+          "direct": false,
+          "stance": "irrelevant",
+          "stance_reason": "This excerpt discusses the administrative procedures of the support desk and future plans for Q&A guides, but does not contain information about the labeling obligations themselves.",
+          "alignment_state": "not-aligned",
+          "aligned_quote": null,
+          "meaning_deltas": [],
+          "credited_origin": "과기정통부",
+          "cluster_id": "lineage-63be35ecc2cc",
+          "mismatch": null
+        }
+      ],
+      "retrieval_failures": [
+        {
+          "url": "https://korea.net/Government/Briefing-Room/Press-Releases/view?articleId=8554&type=O",
+          "reason": "The page could not be read safely."
+        }
+      ]
+    },
+    {
+      "case_id": "vietnam-ai-law-ko-core",
+      "topic": "public_policy",
+      "profile": "clean",
+      "source_article_id": "vietnam-ai-law-ko-yonhap",
+      "source_language": "ko",
+      "claim": {
+        "source_quote": "베트남 인공지능법은 2026년 3월 1일부터 시행됐다.",
+        "segment_ids": [
+          "frozen-benchmark-claim"
+        ],
+        "standalone_claim": "베트남 인공지능법은 2026년 3월 1일부터 시행됐다.",
+        "claim_type": "fact",
+        "entities": [],
+        "dates": [],
+        "numbers": [
+          "2026",
+          "3",
+          "1"
+        ],
+        "facets": {
+          "attribution": null,
+          "modality": "asserted",
+          "legal_state": null
+        },
+        "reason": "Human-frozen benchmark proposition for cross-language alignment; claim extraction is evaluated separately.",
+        "id": "closed-vietnam-ai-law-ko-core",
+        "source_language": "ko"
+      },
+      "runtime_seconds": 4.866,
+      "assessment": {
+        "claim_id": "closed-vietnam-ai-law-ko-core",
+        "status": "supported",
+        "explanation": "At least two independent sources support this claim. No equally strong contradiction was found.",
+        "support_evidence_ids": [
+          "evidence-33de8cc247f7",
+          "evidence-363cf3e9ff5e"
+        ],
+        "challenge_evidence_ids": [],
+        "context_evidence_ids": [],
+        "limitations": [
+          "Lineage grouping can miss uncredited or undetected reuse."
+        ]
+      },
+      "trace": {
+        "evidence_state": "corroborated",
+        "article_count": 2,
+        "independent_lineages": 2,
+        "languages": [
+          "en",
+          "vi"
+        ],
+        "meaning_deltas": []
+      },
+      "evidence": [
+        {
+          "id": "evidence-33de8cc247f7",
+          "url": "https://mst.gov.vn/ai-la-cong-cu-ho-tro-quyet-dinh-cuoi-cung-van-la-con-nguoi-19726030111172663.htm",
+          "title": "Luật Trí tuệ nhân tạo chính thức có hiệu lực từ 1/3",
+          "publisher": "Vietnam Ministry of Science and Technology",
+          "language": "vi",
+          "published_at": "2026-03-01",
+          "source_type": "primary",
+          "direct": true,
+          "stance": "supports",
+          "stance_reason": "The excerpt explicitly states that the AI law is effective from March 1, 2026.",
+          "alignment_state": "aligned",
+          "aligned_quote": "Luật Trí tuệ nhân tạo có hiệu lực từ ngày 01/3/2026",
+          "meaning_deltas": [],
+          "credited_origin": null,
+          "cluster_id": "0be6023445eecb845547a254735b763408d16ddcf5782183c96b440180fb692e",
+          "mismatch": null
+        },
+        {
+          "id": "evidence-8c3344d8fbdf",
+          "url": "https://straitstimes.com/asia/se-asia/vietnam-ai-law-takes-effect-first-in-south-east-asia",
+          "title": "Vietnam AI law takes effect, first in South-east Asia",
+          "publisher": "The Straits Times",
+          "language": "en",
+          "published_at": "2026-03-01",
+          "source_type": "secondary-commentary",
+          "direct": false,
+          "stance": "irrelevant",
+          "stance_reason": "The excerpt discusses the scope and context of the law but does not explicitly confirm the effective date.",
+          "alignment_state": "not-aligned",
+          "aligned_quote": null,
+          "meaning_deltas": [],
+          "credited_origin": null,
+          "cluster_id": "47a84e5cbbb4db6d1c9e5f179cc86fa92f3761437f6c6fea3bfc65cfacf40cf6",
+          "mismatch": null
+        },
+        {
+          "id": "evidence-363cf3e9ff5e",
+          "url": "https://straitstimes.com/asia/se-asia/vietnam-ai-law-takes-effect-first-in-south-east-asia",
+          "title": "Vietnam AI law takes effect, first in South-east Asia",
+          "publisher": "The Straits Times",
+          "language": "en",
+          "published_at": "2026-03-01",
+          "source_type": "secondary-commentary",
+          "direct": false,
+          "stance": "supports",
+          "stance_reason": "The excerpt confirms that the law went into effect in Vietnam on March 1, 2026.",
+          "alignment_state": "aligned",
+          "aligned_quote": "A law regulating artificial intelligence (AI) went into effect in Vietnam on March 1",
+          "meaning_deltas": [],
+          "credited_origin": null,
+          "cluster_id": "638305bd979a4d122ba6b69703b49986603e733a651a0df62ea855a20c9bff81",
+          "mismatch": null
+        },
+        {
+          "id": "evidence-c891a5761a73",
+          "url": "https://mst.gov.vn/ai-la-cong-cu-ho-tro-quyet-dinh-cuoi-cung-van-la-con-nguoi-19726030111172663.htm",
+          "title": "Luật Trí tuệ nhân tạo chính thức có hiệu lực từ 1/3",
+          "publisher": "Vietnam Ministry of Science and Technology",
+          "language": "vi",
+          "published_at": "2026-03-01",
+          "source_type": "secondary-commentary",
+          "direct": false,
+          "stance": "irrelevant",
+          "stance_reason": "The excerpt discusses the content and purpose of the law but does not mention the effective date.",
+          "alignment_state": "not-aligned",
+          "aligned_quote": null,
+          "meaning_deltas": [],
+          "credited_origin": null,
+          "cluster_id": "500e8e7639eaae9262a1c96bacb20fdcfdd2ae8b4cc13af3d46e40318fb070bb",
+          "mismatch": null
+        }
+      ],
+      "retrieval_failures": []
+    },
+    {
+      "case_id": "vietnam-ai-law-en-human",
+      "topic": "public_policy",
+      "profile": "clean",
+      "source_article_id": "vietnam-ai-law-en-st",
+      "source_language": "en",
+      "claim": {
+        "source_quote": "Vietnam's AI law keeps final responsibility for consequential decisions with people.",
+        "segment_ids": [
+          "frozen-benchmark-claim"
+        ],
+        "standalone_claim": "Vietnam's AI law keeps final responsibility for consequential decisions with people.",
+        "claim_type": "fact",
+        "entities": [],
+        "dates": [],
+        "numbers": [],
+        "facets": {
+          "attribution": null,
+          "modality": "asserted",
+          "legal_state": null
+        },
+        "reason": "Human-frozen benchmark proposition for cross-language alignment; claim extraction is evaluated separately.",
+        "id": "closed-vietnam-ai-law-en-human",
+        "source_language": "en"
+      },
+      "runtime_seconds": 6.276,
+      "assessment": {
+        "claim_id": "closed-vietnam-ai-law-en-human",
+        "status": "supported",
+        "explanation": "At least two independent sources support this claim. No equally strong contradiction was found.",
+        "support_evidence_ids": [
+          "evidence-c891a5761a73",
+          "evidence-1238af3d56b0"
+        ],
+        "challenge_evidence_ids": [],
+        "context_evidence_ids": [
+          "evidence-c648d3524199"
+        ],
+        "limitations": [
+          "Lineage grouping can miss uncredited or undetected reuse."
+        ]
+      },
+      "trace": {
+        "evidence_state": "corroborated",
+        "article_count": 2,
+        "independent_lineages": 2,
+        "languages": [
+          "vi",
+          "ko"
+        ],
+        "meaning_deltas": [
+          {
+            "type": "scope",
+            "description": "The excerpt focuses on accountability for high-risk systems rather than a general requirement for human decision-making in all consequential decisions."
+          }
+        ]
+      },
+      "evidence": [
+        {
+          "id": "evidence-c891a5761a73",
+          "url": "https://mst.gov.vn/ai-la-cong-cu-ho-tro-quyet-dinh-cuoi-cung-van-la-con-nguoi-19726030111172663.htm",
+          "title": "Luật Trí tuệ nhân tạo chính thức có hiệu lực từ 1/3",
+          "publisher": "Vietnam Ministry of Science and Technology",
+          "language": "vi",
+          "published_at": "2026-03-01",
+          "source_type": "primary",
+          "direct": true,
+          "stance": "supports",
+          "stance_reason": "The Minister of Science and Technology explicitly states that AI is a support tool and final decisions on important social issues remain the responsibility of humans.",
+          "alignment_state": "aligned",
+          "aligned_quote": "quyết định cuối cùng trong những vấn đề quan trọng của xã hội vẫn phải do con người đảm trách",
+          "meaning_deltas": [],
+          "credited_origin": "Bộ trưởng Bộ KH&CN Nguyễn Mạnh Hùng",
+          "cluster_id": "lineage-180d9945d7ad",
+          "mismatch": null
+        },
+        {
+          "id": "evidence-1238af3d56b0",
+          "url": "https://yna.co.kr/amp/view/AKR20260301033200084",
+          "title": "베트남, 동남아 첫 '포괄적 AI 규제법' 시행…콘텐츠에 워터마크 | 연합뉴스",
+          "publisher": "Yonhap News Agency",
+          "language": "ko",
+          "published_at": "2026-03-01",
+          "source_type": "secondary-commentary",
+          "direct": false,
+          "stance": "supports",
+          "stance_reason": "The excerpt reports that the law requires human oversight and control, similar to the EU AI Act.",
+          "alignment_state": "aligned",
+          "aligned_quote": "인간의 감독·통제를 요구하고 있다고 설명했다",
+          "meaning_deltas": [],
+          "credited_origin": "AFP",
+          "cluster_id": "lineage-3d5b25960d5e",
+          "mismatch": null
+        },
+        {
+          "id": "evidence-d2e3e11128e0",
+          "url": "https://yna.co.kr/amp/view/AKR20260301033200084",
+          "title": "베트남, 동남아 첫 '포괄적 AI 규제법' 시행…콘텐츠에 워터마크 | 연합뉴스",
+          "publisher": "Yonhap News Agency",
+          "language": "ko",
+          "published_at": "2026-03-01",
+          "source_type": "secondary-commentary",
+          "direct": false,
+          "stance": "irrelevant",
+          "stance_reason": "The excerpt discusses the general nature of the law and comparisons to other countries but does not address the specific requirement for human responsibility in decision-making.",
+          "alignment_state": "not-aligned",
+          "aligned_quote": null,
+          "meaning_deltas": [],
+          "credited_origin": null,
+          "cluster_id": "lineage-3d5b25960d5e",
+          "mismatch": null
+        },
+        {
+          "id": "evidence-c648d3524199",
+          "url": "https://mst.gov.vn/ai-la-cong-cu-ho-tro-quyet-dinh-cuoi-cung-van-la-con-nguoi-19726030111172663.htm",
+          "title": "Luật Trí tuệ nhân tạo chính thức có hiệu lực từ 1/3",
+          "publisher": "Vietnam Ministry of Science and Technology",
+          "language": "vi",
+          "published_at": "2026-03-01",
+          "source_type": "primary",
+          "direct": true,
+          "stance": "context",
+          "stance_reason": "The excerpt describes the risk-based management approach and accountability requirements for high-risk AI systems, providing context for how responsibility is structured.",
+          "alignment_state": "partial",
+          "aligned_quote": "Những hệ thống rủi ro cao phải đáp ứng yêu cầu nghiêm ngặt về minh bạch, an toàn và trách nhiệm giải trình",
+          "meaning_deltas": [
+            {
+              "type": "scope",
+              "description": "The excerpt focuses on accountability for high-risk systems rather than a general requirement for human decision-making in all consequential decisions."
+            }
+          ],
+          "credited_origin": "Luật Trí tuệ nhân tạo",
+          "cluster_id": "lineage-180d9945d7ad",
+          "mismatch": null
+        }
+      ],
+      "retrieval_failures": []
+    },
+    {
+      "case_id": "nipah-vi-case-count",
+      "topic": "health",
+      "profile": "challenging",
+      "source_article_id": "nipah-vi-vnexpress",
+      "source_language": "vi",
+      "claim": {
+        "source_quote": "WHO cho biết ổ dịch Nipah tại Ấn Độ không có dấu hiệu lan rộng.",
+        "segment_ids": [
+          "frozen-benchmark-claim"
+        ],
+        "standalone_claim": "WHO cho biết ổ dịch Nipah tại Ấn Độ không có dấu hiệu lan rộng.",
+        "claim_type": "fact",
+        "entities": [],
+        "dates": [],
+        "numbers": [],
+        "facets": {
+          "attribution": null,
+          "modality": "asserted",
+          "legal_state": null
+        },
+        "reason": "Human-frozen benchmark proposition for cross-language alignment; claim extraction is evaluated separately.",
+        "id": "closed-nipah-vi-case-count",
+        "source_language": "vi"
+      },
+      "runtime_seconds": 5.377,
+      "assessment": {
+        "claim_id": "closed-nipah-vi-case-count",
+        "status": "insufficient",
+        "explanation": "No relevant, readable evidence was found for this claim.",
+        "support_evidence_ids": [],
+        "challenge_evidence_ids": [],
+        "context_evidence_ids": [],
+        "limitations": [
+          "The available sources may repeat the same original report.",
+          "Fewer than two distinct publishers were found.",
+          "No original record or direct statement was found."
+        ]
+      },
+      "trace": {
+        "evidence_state": "unresolved",
+        "article_count": 0,
+        "independent_lineages": 0,
+        "languages": [],
+        "meaning_deltas": []
+      },
+      "evidence": [
+        {
+          "id": "evidence-8ef1ffdc4f83",
+          "url": "https://apnews.com/article/india-nipah-virus-outbreak-contained-asia-166df6c637780b99ede380bf4ddccfcc",
+          "title": "India says it has contained Nipah virus outbreak as some Asian countries ramp up health screenings",
+          "publisher": "Associated Press",
+          "language": "en",
+          "published_at": "2026-01-28",
+          "source_type": "secondary-commentary",
+          "direct": false,
+          "stance": "irrelevant",
+          "stance_reason": "The excerpt reports on the Indian government's statement regarding containment, but does not mention any statement from the WHO regarding the spread of the outbreak.",
+          "alignment_state": "not-aligned",
+          "aligned_quote": null,
+          "meaning_deltas": [],
+          "credited_origin": null,
+          "cluster_id": "lineage-6cb88a7e5dbd",
+          "mismatch": null
+        },
+        {
+          "id": "evidence-1a1ae7e4ba03",
+          "url": "https://imnews.imbc.com/replay/2026/nwtoday/article/6796201_37012.html",
+          "title": "[이 시각 세계] '치사율 75%' 바이러스 인도 동부서 확산 조짐",
+          "publisher": "MBC",
+          "language": "ko",
+          "published_at": "2026-01-26",
+          "source_type": "secondary-commentary",
+          "direct": false,
+          "stance": "irrelevant",
+          "stance_reason": "The excerpt discusses the outbreak in West Bengal and local health responses, but contains no information regarding the WHO's assessment of the situation.",
+          "alignment_state": "not-aligned",
+          "aligned_quote": null,
+          "meaning_deltas": [],
+          "credited_origin": "MBC",
+          "cluster_id": "lineage-21d8f666c5c6",
+          "mismatch": null
+        },
+        {
+          "id": "evidence-05d3bc105509",
+          "url": "https://apnews.com/article/india-nipah-virus-outbreak-contained-asia-166df6c637780b99ede380bf4ddccfcc",
+          "title": "India says it has contained Nipah virus outbreak as some Asian countries ramp up health screenings",
+          "publisher": "Associated Press",
+          "language": "en",
+          "published_at": "2026-01-28",
+          "source_type": "secondary-commentary",
+          "direct": false,
+          "stance": "irrelevant",
+          "stance_reason": "The excerpt provides historical context on Nipah outbreaks and China's response, but does not mention the WHO or its assessment of the current outbreak's spread.",
+          "alignment_state": "not-aligned",
+          "aligned_quote": null,
+          "meaning_deltas": [],
+          "credited_origin": "Associated Press",
+          "cluster_id": "lineage-6cb88a7e5dbd",
+          "mismatch": null
+        }
+      ],
+      "retrieval_failures": []
+    },
+    {
+      "case_id": "nipah-ko-early-count",
+      "topic": "health",
+      "profile": "challenging",
+      "source_article_id": "nipah-ko-mbc",
+      "source_language": "ko",
+      "claim": {
+        "source_quote": "인도 동부 니파바이러스 발생과 관련해 초기 보도와 후속 보도의 확진자 수가 달랐다.",
+        "segment_ids": [
+          "frozen-benchmark-claim"
+        ],
+        "standalone_claim": "인도 동부 니파바이러스 발생과 관련해 초기 보도와 후속 보도의 확진자 수가 달랐다.",
+        "claim_type": "fact",
+        "entities": [],
+        "dates": [],
+        "numbers": [],
+        "facets": {
+          "attribution": null,
+          "modality": "asserted",
+          "legal_state": null
+        },
+        "reason": "Human-frozen benchmark proposition for cross-language alignment; claim extraction is evaluated separately.",
+        "id": "closed-nipah-ko-early-count",
+        "source_language": "ko"
+      },
+      "runtime_seconds": 4.879,
+      "assessment": {
+        "claim_id": "closed-nipah-ko-early-count",
+        "status": "insufficient",
+        "explanation": "Relevant sources were found, but they were not independent enough to resolve the claim.",
+        "support_evidence_ids": [
+          "evidence-13e06a7d79ef"
+        ],
+        "challenge_evidence_ids": [],
+        "context_evidence_ids": [],
+        "limitations": [
+          "The available sources may repeat the same original report.",
+          "Fewer than two distinct publishers were found.",
+          "No original record or direct statement was found."
+        ]
+      },
+      "trace": {
+        "evidence_state": "unresolved",
+        "article_count": 1,
+        "independent_lineages": 1,
+        "languages": [
+          "en"
+        ],
+        "meaning_deltas": []
+      },
+      "evidence": [
+        {
+          "id": "evidence-05d3bc105509",
+          "url": "https://apnews.com/article/india-nipah-virus-outbreak-contained-asia-166df6c637780b99ede380bf4ddccfcc",
+          "title": "India says it has contained Nipah virus outbreak as some Asian countries ramp up health screenings",
+          "publisher": "Associated Press",
+          "language": "en",
+          "published_at": "2026-01-28",
+          "source_type": "secondary-commentary",
+          "direct": false,
+          "stance": "irrelevant",
+          "stance_reason": "The excerpt discusses historical Nipah outbreaks in West Bengal and Kerala but does not mention discrepancies in media reporting on case counts.",
+          "alignment_state": "not-aligned",
+          "aligned_quote": null,
+          "meaning_deltas": [],
+          "credited_origin": null,
+          "cluster_id": "lineage-428437522fcf",
+          "mismatch": null
+        },
+        {
+          "id": "evidence-b92b7d4bbb1e",
+          "url": "https://vnexpress.net/who-noi-virus-nipah-khong-co-dau-hieu-lan-rong-5012181.html",
+          "title": "WHO nói virus Nipah 'không có dấu hiệu lan rộng'",
+          "publisher": "VnExpress",
+          "language": "vi",
+          "published_at": "2026-01-31",
+          "source_type": "secondary-commentary",
+          "direct": false,
+          "stance": "irrelevant",
+          "stance_reason": "The excerpt focuses on WHO assessments and the status of contacts in a recent outbreak, not on media reporting discrepancies.",
+          "alignment_state": "not-aligned",
+          "aligned_quote": null,
+          "meaning_deltas": [],
+          "credited_origin": null,
+          "cluster_id": "10b244b0c9fabec63ba7915b7af81adb49b40f7f305fff2a6bdd08e87e621983",
+          "mismatch": null
+        },
+        {
+          "id": "evidence-13e06a7d79ef",
+          "url": "https://apnews.com/article/india-nipah-virus-outbreak-contained-asia-166df6c637780b99ede380bf4ddccfcc",
+          "title": "India says it has contained Nipah virus outbreak as some Asian countries ramp up health screenings",
+          "publisher": "Associated Press",
+          "language": "en",
+          "published_at": "2026-01-28",
+          "source_type": "secondary-commentary",
+          "direct": false,
+          "stance": "supports",
+          "stance_reason": "The excerpt confirms that early media reports suggested a surge in cases that health authorities later labeled as speculative and incorrect, supporting the claim that initial and subsequent reports differed.",
+          "alignment_state": "aligned",
+          "aligned_quote": "The safety measures were put in place after early media reports from India suggested a surge in cases, but health authorities said those figures were “speculative and incorrect.”",
+          "meaning_deltas": [],
+          "credited_origin": "health authorities",
+          "cluster_id": "lineage-428437522fcf",
+          "mismatch": null
+        },
+        {
+          "id": "evidence-26c000758533",
+          "url": "https://vnexpress.net/who-noi-virus-nipah-khong-co-dau-hieu-lan-rong-5012181.html",
+          "title": "WHO nói virus Nipah 'không có dấu hiệu lan rộng'",
+          "publisher": "VnExpress",
+          "language": "vi",
+          "published_at": "2026-01-31",
+          "source_type": "secondary-commentary",
+          "direct": false,
+          "stance": "irrelevant",
+          "stance_reason": "The excerpt discusses regional screening measures and potential transmission theories, not media reporting discrepancies.",
+          "alignment_state": "not-aligned",
+          "aligned_quote": null,
+          "meaning_deltas": [],
+          "credited_origin": null,
+          "cluster_id": "54e392e01ef7daebb093faa3b89bf027dde3fa0b167e528955deaf54b366d72a",
+          "mismatch": null
+        }
+      ],
+      "retrieval_failures": []
+    },
+    {
+      "case_id": "hanta-en-risk",
+      "topic": "health",
+      "profile": "clean",
+      "source_article_id": "hanta-en-reuters-koreatimes",
+      "source_language": "en",
+      "claim": {
+        "source_quote": "WHO assessed the risk to the wider public from the MV Hondius Hantavirus cluster as low.",
+        "segment_ids": [
+          "frozen-benchmark-claim"
+        ],
+        "standalone_claim": "WHO assessed the risk to the wider public from the MV Hondius Hantavirus cluster as low.",
+        "claim_type": "attributed",
+        "entities": [],
+        "dates": [],
+        "numbers": [],
+        "facets": {
+          "attribution": "WHO",
+          "modality": "asserted",
+          "legal_state": null
+        },
+        "reason": "Human-frozen benchmark proposition for cross-language alignment; claim extraction is evaluated separately.",
+        "id": "closed-hanta-en-risk",
+        "source_language": "en"
+      },
+      "runtime_seconds": 5.486,
+      "assessment": {
+        "claim_id": "closed-hanta-en-risk",
+        "status": "supported",
+        "explanation": "At least two independent sources support this claim. No equally strong contradiction was found.",
+        "support_evidence_ids": [
+          "evidence-6d5344123779",
+          "evidence-e6afb529e7f1"
+        ],
+        "challenge_evidence_ids": [],
+        "context_evidence_ids": [],
+        "limitations": [
+          "Lineage grouping can miss uncredited or undetected reuse.",
+          "No original record or direct statement was found.",
+          "This checks whether the statement was made, not whether an allegation inside it is true."
+        ]
+      },
+      "trace": {
+        "evidence_state": "corroborated",
+        "article_count": 2,
+        "independent_lineages": 2,
+        "languages": [
+          "vi",
+          "ko"
+        ],
+        "meaning_deltas": []
+      },
+      "evidence": [
+        {
+          "id": "evidence-6d5344123779",
+          "url": "https://tuoitre.vn/nld/chum-ca-nhiem-virus-hanta-tren-tau-du-lich-bo-y-te-phat-khuyen-cao-khan-196260513175156206.htm",
+          "title": "Chùm ca nhiễm virus Hanta trên tàu du lịch: Bộ Y tế phát khuyến cáo khẩn",
+          "publisher": "Tuổi Trẻ",
+          "language": "vi",
+          "published_at": "2026-05-13",
+          "source_type": "secondary-commentary",
+          "direct": false,
+          "stance": "supports",
+          "stance_reason": "The excerpt explicitly states that the WHO assessed the risk to the global community as low.",
+          "alignment_state": "aligned",
+          "aligned_quote": "WHO đánh giá nguy cơ đối với hành khách và thủy thủ đoàn ở mức trung bình, trong khi nguy cơ với cộng đồng toàn cầu ở mức thấp.",
+          "meaning_deltas": [],
+          "credited_origin": "Tổ chức Y tế thế giới (WHO)",
+          "cluster_id": "lineage-11581b12e571",
+          "mismatch": null
+        },
+        {
+          "id": "evidence-800bd419962f",
+          "url": "https://yna.co.kr/view/AKR20260508000900085",
+          "title": "크루즈선 한타바이러스 확진 5건으로 늘어…확산 우려 | 연합뉴스",
+          "publisher": "Yonhap News Agency",
+          "language": "ko",
+          "published_at": "2026-05-08",
+          "source_type": "secondary-commentary",
+          "direct": false,
+          "stance": "irrelevant",
+          "stance_reason": "The excerpt discusses the number of cases and the potential for limited spread but does not explicitly state the WHO's assessment of the risk to the wider public as low.",
+          "alignment_state": "not-aligned",
+          "aligned_quote": null,
+          "meaning_deltas": [],
+          "credited_origin": null,
+          "cluster_id": "7592ec17bb89271a64763a2488173422576153c22fa24ac70bbbc921233309af",
+          "mismatch": null
+        },
+        {
+          "id": "evidence-7135d2ea3b89",
+          "url": "https://tuoitre.vn/nld/chum-ca-nhiem-virus-hanta-tren-tau-du-lich-bo-y-te-phat-khuyen-cao-khan-196260513175156206.htm",
+          "title": "Chùm ca nhiễm virus Hanta trên tàu du lịch: Bộ Y tế phát khuyến cáo khẩn",
+          "publisher": "Tuổi Trẻ",
+          "language": "vi",
+          "published_at": "2026-05-13",
+          "source_type": "secondary-commentary",
+          "direct": false,
+          "stance": "irrelevant",
+          "stance_reason": "The excerpt focuses on health recommendations and monitoring protocols rather than the WHO's risk assessment for the wider public.",
+          "alignment_state": "not-aligned",
+          "aligned_quote": null,
+          "meaning_deltas": [],
+          "credited_origin": null,
+          "cluster_id": "lineage-11581b12e571",
+          "mismatch": null
+        },
+        {
+          "id": "evidence-e6afb529e7f1",
+          "url": "https://yna.co.kr/view/AKR20260508000900085",
+          "title": "크루즈선 한타바이러스 확진 5건으로 늘어…확산 우려 | 연합뉴스",
+          "publisher": "Yonhap News Agency",
+          "language": "ko",
+          "published_at": "2026-05-08",
+          "source_type": "secondary-commentary",
+          "direct": true,
+          "stance": "supports",
+          "stance_reason": "The excerpt quotes the WHO Director-General stating that the WHO assesses the public health risk as low.",
+          "alignment_state": "aligned",
+          "aligned_quote": "WHO는 공중 보건 위험이 낮다고 평가한다",
+          "meaning_deltas": [],
+          "credited_origin": null,
+          "cluster_id": "1087bcc69f89f521ee5c02c3ec313faa5c4db658d6daab29390256786792d6c7",
+          "mismatch": null
+        }
+      ],
+      "retrieval_failures": []
+    },
+    {
+      "case_id": "hanta-vi-count",
+      "topic": "health",
+      "profile": "clean",
+      "source_article_id": "hanta-vi-tuoitre",
+      "source_language": "vi",
+      "claim": {
+        "source_quote": "Các bản tin về ổ dịch trên tàu MV Hondius nêu số ca theo những mốc thời gian khác nhau.",
+        "segment_ids": [
+          "frozen-benchmark-claim"
+        ],
+        "standalone_claim": "Các bản tin về ổ dịch trên tàu MV Hondius nêu số ca theo những mốc thời gian khác nhau.",
+        "claim_type": "fact",
+        "entities": [],
+        "dates": [],
+        "numbers": [],
+        "facets": {
+          "attribution": null,
+          "modality": "asserted",
+          "legal_state": null
+        },
+        "reason": "Human-frozen benchmark proposition for cross-language alignment; claim extraction is evaluated separately.",
+        "id": "closed-hanta-vi-count",
+        "source_language": "vi"
+      },
+      "runtime_seconds": 5.769,
+      "assessment": {
+        "claim_id": "closed-hanta-vi-count",
+        "status": "supported",
+        "explanation": "At least two independent sources support this claim. No equally strong contradiction was found.",
+        "support_evidence_ids": [
+          "evidence-800bd419962f",
+          "evidence-bfb584635bbb"
+        ],
+        "challenge_evidence_ids": [],
+        "context_evidence_ids": [],
+        "limitations": [
+          "Lineage grouping can miss uncredited or undetected reuse.",
+          "No original record or direct statement was found."
+        ]
+      },
+      "trace": {
+        "evidence_state": "corroborated",
+        "article_count": 2,
+        "independent_lineages": 2,
+        "languages": [
+          "en",
+          "ko"
+        ],
+        "meaning_deltas": [
+          {
+            "type": "number",
+            "description": "The excerpt reports a combined total of seven confirmed or suspected cases, whereas other reports distinguish between confirmed and suspected counts."
+          }
+        ]
+      },
+      "evidence": [
+        {
+          "id": "evidence-800bd419962f",
+          "url": "https://yna.co.kr/view/AKR20260508000900085",
+          "title": "크루즈선 한타바이러스 확진 5건으로 늘어…확산 우려 | 연합뉴스",
+          "publisher": "Yonhap News Agency",
+          "language": "ko",
+          "published_at": "2026-05-08",
+          "source_type": "secondary-commentary",
+          "direct": false,
+          "stance": "supports",
+          "stance_reason": "The excerpt explicitly mentions that the number of confirmed cases changed from 3 to 5 between the previous day's announcement and the current report.",
+          "alignment_state": "aligned",
+          "aligned_quote": "전날 발표에선 발생 8건 중 확진 사례 3건이었는데 의심 사례 2건이 확진으로 판명된 것이다.",
+          "meaning_deltas": [],
+          "credited_origin": null,
+          "cluster_id": "7592ec17bb89271a64763a2488173422576153c22fa24ac70bbbc921233309af",
+          "mismatch": null
+        },
+        {
+          "id": "evidence-e6afb529e7f1",
+          "url": "https://yna.co.kr/view/AKR20260508000900085",
+          "title": "크루즈선 한타바이러스 확진 5건으로 늘어…확산 우려 | 연합뉴스",
+          "publisher": "Yonhap News Agency",
+          "language": "ko",
+          "published_at": "2026-05-08",
+          "source_type": "secondary-commentary",
+          "direct": false,
+          "stance": "irrelevant",
+          "stance_reason": "This excerpt discusses WHO risk assessments and ship movements rather than the specific reporting of case counts over time.",
+          "alignment_state": "not-aligned",
+          "aligned_quote": null,
+          "meaning_deltas": [],
+          "credited_origin": null,
+          "cluster_id": "1087bcc69f89f521ee5c02c3ec313faa5c4db658d6daab29390256786792d6c7",
+          "mismatch": null
+        },
+        {
+          "id": "evidence-bfb584635bbb",
+          "url": "https://koreatimes.co.kr/world/20260506/suspected-human-to-human-hantavirus-spread-on-cruise-public-risk-low-who",
+          "title": "Suspected human-to-human hantavirus spread on cruise, public risk low: WHO - The Korea Times",
+          "publisher": "The Korea Times",
+          "language": "en",
+          "published_at": "2026-05-05",
+          "source_type": "secondary-commentary",
+          "direct": false,
+          "stance": "supports",
+          "stance_reason": "The excerpt reports a total of seven confirmed or suspected cases, which differs from the count provided in other reports at different times.",
+          "alignment_state": "aligned",
+          "aligned_quote": "hit by seven confirmed or suspected cases",
+          "meaning_deltas": [
+            {
+              "type": "number",
+              "description": "The excerpt reports a combined total of seven confirmed or suspected cases, whereas other reports distinguish between confirmed and suspected counts."
+            }
+          ],
+          "credited_origin": null,
+          "cluster_id": "f8b0cf7acb455c7a571c255da82220b7773f775832509696a4e889a048c9a1db",
+          "mismatch": null
+        },
+        {
+          "id": "evidence-bfdbf8c2a728",
+          "url": "https://koreatimes.co.kr/world/20260506/suspected-human-to-human-hantavirus-spread-on-cruise-public-risk-low-who",
+          "title": "Suspected human-to-human hantavirus spread on cruise, public risk low: WHO - The Korea Times",
+          "publisher": "The Korea Times",
+          "language": "en",
+          "published_at": "2026-05-05",
+          "source_type": "secondary-commentary",
+          "direct": false,
+          "stance": "irrelevant",
+          "stance_reason": "This excerpt focuses on the transmission method and the ship's origin rather than the timeline of case count reporting.",
+          "alignment_state": "not-aligned",
+          "aligned_quote": null,
+          "meaning_deltas": [],
+          "credited_origin": null,
+          "cluster_id": "647dc549bc6833020ce819e62421787f1e02f035ea2ddbf591d65901356e655f",
+          "mismatch": null
+        }
+      ],
+      "retrieval_failures": []
+    },
+    {
+      "case_id": "artemis-ko-mission",
+      "topic": "science_climate",
+      "profile": "clean",
+      "source_article_id": "artemis-ko-newsis",
+      "source_language": "ko",
+      "claim": {
+        "source_quote": "아르테미스 2호는 네 명의 우주비행사를 태우고 약 열흘간 달 주변 임무를 수행한다.",
+        "segment_ids": [
+          "frozen-benchmark-claim"
+        ],
+        "standalone_claim": "아르테미스 2호는 네 명의 우주비행사를 태우고 약 열흘간 달 주변 임무를 수행한다.",
+        "claim_type": "fact",
+        "entities": [],
+        "dates": [],
+        "numbers": [
+          "2"
+        ],
+        "facets": {
+          "attribution": null,
+          "modality": "asserted",
+          "legal_state": null
+        },
+        "reason": "Human-frozen benchmark proposition for cross-language alignment; claim extraction is evaluated separately.",
+        "id": "closed-artemis-ko-mission",
+        "source_language": "ko"
+      },
+      "runtime_seconds": 7.182,
+      "assessment": {
+        "claim_id": "closed-artemis-ko-mission",
+        "status": "insufficient",
+        "explanation": "Relevant sources were found, but they were not independent enough to resolve the claim.",
+        "support_evidence_ids": [
+          "evidence-9e587f10cc49",
+          "evidence-f95183bc4110"
+        ],
+        "challenge_evidence_ids": [],
+        "context_evidence_ids": [
+          "evidence-f52ca2c28838",
+          "evidence-67af7e2485f0"
+        ],
+        "limitations": [
+          "The available sources may repeat the same original report.",
+          "Lineage grouping can miss uncredited or undetected reuse.",
+          "No original record or direct statement was found."
+        ]
+      },
+      "trace": {
+        "evidence_state": "unresolved",
+        "article_count": 2,
+        "independent_lineages": 1,
+        "languages": [
+          "en",
+          "vi"
+        ],
+        "meaning_deltas": [
+          {
+            "type": "scope",
+            "description": "The excerpt does not specify the 10-day duration mentioned in the claim."
+          }
+        ]
+      },
+      "evidence": [
+        {
+          "id": "evidence-9e587f10cc49",
+          "url": "https://vnexpress.net/nasa-phong-thanh-cong-tau-cho-nguoi-toi-mat-trang-sau-54-nam-5057388.html",
+          "title": "NASA phóng thành công tàu chở người tới Mặt Trăng sau 54 năm",
+          "publisher": "VnExpress",
+          "language": "vi",
+          "published_at": "2026-04-02",
+          "source_type": "secondary-commentary",
+          "direct": false,
+          "stance": "supports",
+          "stance_reason": "The excerpt confirms the mission involves four astronauts and a 10-day flight around the Moon.",
+          "alignment_state": "aligned",
+          "aligned_quote": "Phi hành đoàn sẽ không hạ cánh mà bay 10 ngày vòng quanh phía xa của Mặt Trăng",
+          "meaning_deltas": [],
+          "credited_origin": "NASA",
+          "cluster_id": "lineage-7aef8868e35c",
+          "mismatch": null
+        },
+        {
+          "id": "evidence-f52ca2c28838",
+          "url": "https://nasa.gov/news-release/liftoff-nasa-launches-astronauts-on-historic-artemis-moon-mission",
+          "title": "Liftoff! NASA Launches Astronauts on Historic Artemis Moon Mission - NASA",
+          "publisher": "NASA",
+          "language": "en",
+          "published_at": "2026-04-01",
+          "source_type": "secondary-commentary",
+          "direct": true,
+          "stance": "context",
+          "stance_reason": "The excerpt confirms the mission carries four astronauts around the Moon but does not explicitly state the 10-day duration.",
+          "alignment_state": "partial",
+          "aligned_quote": "sending four astronauts aboard the Orion spacecraft on a planned test flight around the Moon and back",
+          "meaning_deltas": [
+            {
+              "type": "scope",
+              "description": "The excerpt does not specify the 10-day duration mentioned in the claim."
+            }
+          ],
+          "credited_origin": "NASA",
+          "cluster_id": "lineage-7aef8868e35c",
+          "mismatch": "The excerpt mentions the mission is a test flight around the Moon with four astronauts but omits the specific duration."
+        },
+        {
+          "id": "evidence-67af7e2485f0",
+          "url": "https://vnexpress.net/nasa-phong-thanh-cong-tau-cho-nguoi-toi-mat-trang-sau-54-nam-5057388.html",
+          "title": "NASA phóng thành công tàu chở người tới Mặt Trăng sau 54 năm",
+          "publisher": "VnExpress",
+          "language": "vi",
+          "published_at": "2026-04-02",
+          "source_type": "secondary-commentary",
+          "direct": false,
+          "stance": "context",
+          "stance_reason": "The excerpt confirms the mission carries four astronauts around the Moon but does not mention the 10-day duration.",
+          "alignment_state": "partial",
+          "aligned_quote": "đưa bốn phi hành gia bay quanh Mặt Trăng",
+          "meaning_deltas": [
+            {
+              "type": "scope",
+              "description": "The excerpt does not specify the 10-day duration mentioned in the claim."
+            }
+          ],
+          "credited_origin": "NASA",
+          "cluster_id": "lineage-7aef8868e35c",
+          "mismatch": "The excerpt confirms the crew size and destination but lacks the mission duration."
+        },
+        {
+          "id": "evidence-f95183bc4110",
+          "url": "https://nasa.gov/news-release/liftoff-nasa-launches-astronauts-on-historic-artemis-moon-mission",
+          "title": "Liftoff! NASA Launches Astronauts on Historic Artemis Moon Mission - NASA",
+          "publisher": "NASA",
+          "language": "en",
+          "published_at": "2026-04-01",
+          "source_type": "secondary-commentary",
+          "direct": true,
+          "stance": "supports",
+          "stance_reason": "The excerpt explicitly states the mission is approximately 10 days long and involves four specific astronauts.",
+          "alignment_state": "aligned",
+          "aligned_quote": "The successful launch is the beginning of an approximately 10-day mission for NASA astronauts Reid Wiseman, Victor Glover, Christina Koch, and CSA (Canadian Space Agency) astronaut Jeremy Hansen.",
+          "meaning_deltas": [],
+          "credited_origin": "NASA",
+          "cluster_id": "lineage-7aef8868e35c",
+          "mismatch": null
+        }
+      ],
+      "retrieval_failures": []
+    },
+    {
+      "case_id": "artemis-en-first",
+      "topic": "science_climate",
+      "profile": "clean",
+      "source_article_id": "artemis-en-nasa",
+      "source_language": "en",
+      "claim": {
+        "source_quote": "Artemis II was NASA's first crewed Artemis mission around the Moon.",
+        "segment_ids": [
+          "frozen-benchmark-claim"
+        ],
+        "standalone_claim": "Artemis II was NASA's first crewed Artemis mission around the Moon.",
+        "claim_type": "fact",
+        "entities": [],
+        "dates": [],
+        "numbers": [],
+        "facets": {
+          "attribution": null,
+          "modality": "asserted",
+          "legal_state": null
+        },
+        "reason": "Human-frozen benchmark proposition for cross-language alignment; claim extraction is evaluated separately.",
+        "id": "closed-artemis-en-first",
+        "source_language": "en"
+      },
+      "runtime_seconds": 5.144,
+      "assessment": {
+        "claim_id": "closed-artemis-en-first",
+        "status": "supported",
+        "explanation": "At least two independent sources support this claim. No equally strong contradiction was found.",
+        "support_evidence_ids": [
+          "evidence-9e587f10cc49",
+          "evidence-67af7e2485f0",
+          "evidence-365397bdfdea"
+        ],
+        "challenge_evidence_ids": [],
+        "context_evidence_ids": [
+          "evidence-d0eddbdabcc9"
+        ],
+        "limitations": [
+          "Lineage grouping can miss uncredited or undetected reuse.",
+          "No original record or direct statement was found."
+        ]
+      },
+      "trace": {
+        "evidence_state": "corroborated",
+        "article_count": 2,
+        "independent_lineages": 2,
+        "languages": [
+          "vi",
+          "ko"
+        ],
+        "meaning_deltas": []
+      },
+      "evidence": [
+        {
+          "id": "evidence-9e587f10cc49",
+          "url": "https://vnexpress.net/nasa-phong-thanh-cong-tau-cho-nguoi-toi-mat-trang-sau-54-nam-5057388.html",
+          "title": "NASA phóng thành công tàu chở người tới Mặt Trăng sau 54 năm",
+          "publisher": "VnExpress",
+          "language": "vi",
+          "published_at": "2026-04-02",
+          "source_type": "secondary-commentary",
+          "direct": false,
+          "stance": "supports",
+          "stance_reason": "The excerpt explicitly states that Artemis II is the first crewed mission in NASA's Artemis program.",
+          "alignment_state": "aligned",
+          "aligned_quote": "Artemis II là nhiệm vụ có người lái đầu tiên trong chương trình Artemis của NASA.",
+          "meaning_deltas": [],
+          "credited_origin": null,
+          "cluster_id": "831332e9cfd50662cebe9de1c36c3a7165eaa33e565096ea44d36f696c98e9cf",
+          "mismatch": null
+        },
+        {
+          "id": "evidence-67af7e2485f0",
+          "url": "https://vnexpress.net/nasa-phong-thanh-cong-tau-cho-nguoi-toi-mat-trang-sau-54-nam-5057388.html",
+          "title": "NASA phóng thành công tàu chở người tới Mặt Trăng sau 54 năm",
+          "publisher": "VnExpress",
+          "language": "vi",
+          "published_at": "2026-04-02",
+          "source_type": "secondary-commentary",
+          "direct": false,
+          "stance": "supports",
+          "stance_reason": "The excerpt describes Artemis II as the first crewed mission to go beyond low Earth orbit in 54 years, confirming its status as a crewed mission.",
+          "alignment_state": "aligned",
+          "aligned_quote": "đánh dấu sứ mệnh có người lái đầu tiên của NASA vượt ra ngoài quỹ đạo Trái Đất tầm thấp",
+          "meaning_deltas": [],
+          "credited_origin": null,
+          "cluster_id": "35fb21b74f8f1414b9b6996cbfa2096bac634a0f75463ca9527e0ba491e7cdc7",
+          "mismatch": null
+        },
+        {
+          "id": "evidence-d0eddbdabcc9",
+          "url": "https://newsis.com/view/NISX20260402_0003574559",
+          "title": "달로 떠난 아르테미스 2호…열흘 간 어떤 임무 수행할까",
+          "publisher": "Newsis",
+          "language": "ko",
+          "published_at": "2026-04-02",
+          "source_type": "secondary-commentary",
+          "direct": false,
+          "stance": "context",
+          "stance_reason": "The excerpt discusses the mission's success and future Artemis missions but does not explicitly define Artemis II as the first crewed mission of the program.",
+          "alignment_state": "not-aligned",
+          "aligned_quote": null,
+          "meaning_deltas": [],
+          "credited_origin": null,
+          "cluster_id": "fb06e65c72992568683a82d3c51632b729d65dd474a70ea2302709a4ba6a6d19",
+          "mismatch": null
+        },
+        {
+          "id": "evidence-365397bdfdea",
+          "url": "https://newsis.com/view/NISX20260402_0003574559",
+          "title": "달로 떠난 아르테미스 2호…열흘 간 어떤 임무 수행할까",
+          "publisher": "Newsis",
+          "language": "ko",
+          "published_at": "2026-04-02",
+          "source_type": "secondary-commentary",
+          "direct": false,
+          "stance": "supports",
+          "stance_reason": "The excerpt confirms Artemis II is a crewed flight test involving four astronauts orbiting the Moon.",
+          "alignment_state": "aligned",
+          "aligned_quote": "이번 임무는 4명의 승무원이 탑승해 약 열흘(10.3일) 동안 달 궤도를 선회하고 돌아오는 유인 비행 테스트다.",
+          "meaning_deltas": [],
+          "credited_origin": null,
+          "cluster_id": "039ed60675127fac3e207d63bdcab586db2d26a3fbb36e20b21a8a8be4089375",
+          "mismatch": null
+        }
+      ],
+      "retrieval_failures": []
+    },
+    {
+      "case_id": "wmo-vi-probability",
+      "topic": "science_climate",
+      "profile": "challenging",
+      "source_article_id": "wmo-vi-vtv",
+      "source_language": "vi",
+      "claim": {
+        "source_quote": "WMO dự báo với xác suất cụ thể rằng các kỷ lục nhiệt độ toàn cầu có thể bị phá trong 5 năm tới.",
+        "segment_ids": [
+          "frozen-benchmark-claim"
+        ],
+        "standalone_claim": "WMO dự báo với xác suất cụ thể rằng các kỷ lục nhiệt độ toàn cầu có thể bị phá trong 5 năm tới.",
+        "claim_type": "attributed",
+        "entities": [],
+        "dates": [],
+        "numbers": [
+          "5"
+        ],
+        "facets": {
+          "attribution": "WMO",
+          "modality": "future",
+          "legal_state": null
+        },
+        "reason": "Human-frozen benchmark proposition for cross-language alignment; claim extraction is evaluated separately.",
+        "id": "closed-wmo-vi-probability",
+        "source_language": "vi"
+      },
+      "runtime_seconds": 6.149,
+      "assessment": {
+        "claim_id": "closed-wmo-vi-probability",
+        "status": "insufficient",
+        "explanation": "Relevant sources were found, but they were not independent enough to resolve the claim.",
+        "support_evidence_ids": [
+          "evidence-f1ef9233865a",
+          "evidence-f3498b0c2f8e",
+          "evidence-77f6dc38731c"
+        ],
+        "challenge_evidence_ids": [],
+        "context_evidence_ids": [
+          "evidence-a5a911bf7fa4"
+        ],
+        "limitations": [
+          "The available sources may repeat the same original report.",
+          "Lineage grouping can miss uncredited or undetected reuse.",
+          "No original record or direct statement was found.",
+          "This checks whether the statement was made, not whether an allegation inside it is true."
+        ]
+      },
+      "trace": {
+        "evidence_state": "unresolved",
+        "article_count": 2,
+        "independent_lineages": 1,
+        "languages": [
+          "en",
+          "ko"
+        ],
+        "meaning_deltas": []
+      },
+      "evidence": [
+        {
+          "id": "evidence-f1ef9233865a",
+          "url": "https://wmo.int/media/news/new-report-suggests-more-global-temperature-records-ahead",
+          "title": "New report suggests more global temperature records ahead",
+          "publisher": "World Meteorological Organization",
+          "language": "en",
+          "published_at": "2026-05-26",
+          "source_type": "secondary-commentary",
+          "direct": false,
+          "stance": "supports",
+          "stance_reason": "The WMO report explicitly predicts an 86% chance that a year between 2026 and 2030 will surpass the 2024 record.",
+          "alignment_state": "aligned",
+          "aligned_quote": "It is likely (86% chance) that one year between 2026 and 2030 will surpass 2024 as the warmest year on record",
+          "meaning_deltas": [],
+          "credited_origin": "World Meteorological Organization",
+          "cluster_id": "lineage-32735ecd373b",
+          "mismatch": null
+        },
+        {
+          "id": "evidence-f3498b0c2f8e",
+          "url": "https://wmo.int/media/news/new-report-suggests-more-global-temperature-records-ahead",
+          "title": "New report suggests more global temperature records ahead",
+          "publisher": "World Meteorological Organization",
+          "language": "en",
+          "published_at": "2026-05-26",
+          "source_type": "secondary-commentary",
+          "direct": false,
+          "stance": "supports",
+          "stance_reason": "The report provides specific probability-based forecasts for temperature records over the next five years.",
+          "alignment_state": "aligned",
+          "aligned_quote": "There is an El Niño predicted for the end of 2026, which increases the chances of the following year, 2027, being the next record-breaking year.",
+          "meaning_deltas": [],
+          "credited_origin": null,
+          "cluster_id": "lineage-32735ecd373b",
+          "mismatch": null
+        },
+        {
+          "id": "evidence-77f6dc38731c",
+          "url": "https://yna.co.kr/view/AKR20260528096200530",
+          "title": "5년 내 '가장 더운 해' 기록 깨진다…가장 유력한 때는 '내년' | 연합뉴스",
+          "publisher": "Yonhap News Agency",
+          "language": "ko",
+          "published_at": "2026-05-28",
+          "source_type": "secondary-commentary",
+          "direct": false,
+          "stance": "supports",
+          "stance_reason": "The article reports that the WMO predicts an 86% chance of breaking the record for the hottest year within the next five years.",
+          "alignment_state": "aligned",
+          "aligned_quote": "2026년부터 2030년까지 5년 중 한 해라도 연평균 기온이 역대 가장 높았던 2024년을 웃돌 가능성은 86%에 달한다고 밝혔다.",
+          "meaning_deltas": [],
+          "credited_origin": "세계기상기구(WMO)",
+          "cluster_id": "lineage-32735ecd373b",
+          "mismatch": null
+        },
+        {
+          "id": "evidence-a5a911bf7fa4",
+          "url": "https://yna.co.kr/view/AKR20260528096200530",
+          "title": "5년 내 '가장 더운 해' 기록 깨진다…가장 유력한 때는 '내년' | 연합뉴스",
+          "publisher": "Yonhap News Agency",
+          "language": "ko",
+          "published_at": "2026-05-28",
+          "source_type": "secondary-commentary",
+          "direct": false,
+          "stance": "context",
+          "stance_reason": "This excerpt discusses Arctic temperature anomalies and expert commentary on the WMO report rather than the specific probability of breaking global records.",
+          "alignment_state": "not-aligned",
+          "aligned_quote": null,
+          "meaning_deltas": [],
+          "credited_origin": null,
+          "cluster_id": "lineage-32735ecd373b",
+          "mismatch": null
+        }
+      ],
+      "retrieval_failures": []
+    },
+    {
+      "case_id": "wmo-ko-threshold",
+      "topic": "science_climate",
+      "profile": "challenging",
+      "source_article_id": "wmo-ko-yonhap",
+      "source_language": "ko",
+      "claim": {
+        "source_quote": "WMO의 여러 확률 수치는 서로 다른 온도 기준과 기간을 가리킨다.",
+        "segment_ids": [
+          "frozen-benchmark-claim"
+        ],
+        "standalone_claim": "WMO의 여러 확률 수치는 서로 다른 온도 기준과 기간을 가리킨다.",
+        "claim_type": "fact",
+        "entities": [],
+        "dates": [],
+        "numbers": [],
+        "facets": {
+          "attribution": null,
+          "modality": "asserted",
+          "legal_state": null
+        },
+        "reason": "Human-frozen benchmark proposition for cross-language alignment; claim extraction is evaluated separately.",
+        "id": "closed-wmo-ko-threshold",
+        "source_language": "ko"
+      },
+      "runtime_seconds": 3.871,
+      "assessment": {
+        "claim_id": "closed-wmo-ko-threshold",
+        "status": "insufficient",
+        "explanation": "Relevant sources were found, but they were not independent enough to resolve the claim.",
+        "support_evidence_ids": [],
+        "challenge_evidence_ids": [],
+        "context_evidence_ids": [
+          "evidence-f1ef9233865a",
+          "evidence-f3498b0c2f8e",
+          "evidence-1dff8234cd1d"
+        ],
+        "limitations": [
+          "Lineage grouping can miss uncredited or undetected reuse.",
+          "No original record or direct statement was found."
+        ]
+      },
+      "trace": {
+        "evidence_state": "unresolved",
+        "article_count": 2,
+        "independent_lineages": 2,
+        "languages": [
+          "en",
+          "vi"
+        ],
+        "meaning_deltas": []
+      },
+      "evidence": [
+        {
+          "id": "evidence-f1ef9233865a",
+          "url": "https://wmo.int/media/news/new-report-suggests-more-global-temperature-records-ahead",
+          "title": "New report suggests more global temperature records ahead",
+          "publisher": "World Meteorological Organization",
+          "language": "en",
+          "published_at": "2026-05-26",
+          "source_type": "secondary-commentary",
+          "direct": false,
+          "stance": "context",
+          "stance_reason": "The comparison could not be anchored to an exact source quotation.",
+          "alignment_state": "uncertain",
+          "aligned_quote": null,
+          "meaning_deltas": [],
+          "credited_origin": "World Meteorological Organization",
+          "cluster_id": "lineage-75f79c9486df",
+          "mismatch": "No literal aligned quote could be anchored in this excerpt."
+        },
+        {
+          "id": "evidence-f3498b0c2f8e",
+          "url": "https://wmo.int/media/news/new-report-suggests-more-global-temperature-records-ahead",
+          "title": "New report suggests more global temperature records ahead",
+          "publisher": "World Meteorological Organization",
+          "language": "en",
+          "published_at": "2026-05-26",
+          "source_type": "secondary-commentary",
+          "direct": false,
+          "stance": "context",
+          "stance_reason": "The comparison could not be anchored to an exact source quotation.",
+          "alignment_state": "uncertain",
+          "aligned_quote": null,
+          "meaning_deltas": [],
+          "credited_origin": null,
+          "cluster_id": "lineage-75f79c9486df",
+          "mismatch": "No literal aligned quote could be anchored in this excerpt."
+        },
+        {
+          "id": "evidence-cb7272ca9ee0",
+          "url": "https://vtv.vn/nhiet-do-toan-cau-co-the-lien-tiep-vuot-nguong-nguy-hiem-trong-5-nam-toi-100260528130754683.htm",
+          "title": "Nhiệt độ toàn cầu có thể liên tiếp vượt ngưỡng nguy hiểm trong 5 năm tới",
+          "publisher": "VTV",
+          "language": "vi",
+          "published_at": "2026-05-29",
+          "source_type": "secondary-commentary",
+          "direct": false,
+          "stance": "irrelevant",
+          "stance_reason": "The excerpt discusses temperature projections and climate impacts but does not explicitly compare or list multiple probability figures with varying thresholds or timeframes.",
+          "alignment_state": "not-aligned",
+          "aligned_quote": null,
+          "meaning_deltas": [],
+          "credited_origin": null,
+          "cluster_id": "5808f509e2ddeae37a8f498ebd988a11f5f6bace29eb2aada173508504da9b6e",
+          "mismatch": null
+        },
+        {
+          "id": "evidence-1dff8234cd1d",
+          "url": "https://vtv.vn/nhiet-do-toan-cau-co-the-lien-tiep-vuot-nguong-nguy-hiem-trong-5-nam-toi-100260528130754683.htm",
+          "title": "Nhiệt độ toàn cầu có thể liên tiếp vượt ngưỡng nguy hiểm trong 5 năm tới",
+          "publisher": "VTV",
+          "language": "vi",
+          "published_at": "2026-05-29",
+          "source_type": "secondary-commentary",
+          "direct": false,
+          "stance": "context",
+          "stance_reason": "The comparison could not be anchored to an exact source quotation.",
+          "alignment_state": "uncertain",
+          "aligned_quote": null,
+          "meaning_deltas": [],
+          "credited_origin": null,
+          "cluster_id": "b487df35a065d1a5ee7445c6f5b1927a37499beef4a2965f403c7fffb84163d5",
+          "mismatch": "No literal aligned quote could be anchored in this excerpt."
+        }
+      ],
+      "retrieval_failures": []
+    },
+    {
+      "case_id": "nvidia-en-announcement",
+      "topic": "technology_economy",
+      "profile": "challenging",
+      "source_article_id": "nvidia-en-primary",
+      "source_language": "en",
+      "claim": {
+        "source_quote": "NVIDIA announced the Vera Rubin platform at GTC 2026.",
+        "segment_ids": [
+          "frozen-benchmark-claim"
+        ],
+        "standalone_claim": "NVIDIA announced the Vera Rubin platform at GTC 2026.",
+        "claim_type": "fact",
+        "entities": [],
+        "dates": [],
+        "numbers": [
+          "2026."
+        ],
+        "facets": {
+          "attribution": null,
+          "modality": "asserted",
+          "legal_state": null
+        },
+        "reason": "Human-frozen benchmark proposition for cross-language alignment; claim extraction is evaluated separately.",
+        "id": "closed-nvidia-en-announcement",
+        "source_language": "en"
+      },
+      "runtime_seconds": 7.718,
+      "assessment": {
+        "claim_id": "closed-nvidia-en-announcement",
+        "status": "insufficient",
+        "explanation": "Relevant sources were found, but they were not independent enough to resolve the claim.",
+        "support_evidence_ids": [],
+        "challenge_evidence_ids": [],
+        "context_evidence_ids": [
+          "evidence-c03a42147213",
+          "evidence-6160272d4874",
+          "evidence-30dcbc9d531b"
+        ],
+        "limitations": [
+          "Lineage grouping can miss uncredited or undetected reuse.",
+          "No original record or direct statement was found."
+        ]
+      },
+      "trace": {
+        "evidence_state": "unresolved",
+        "article_count": 2,
+        "independent_lineages": 2,
+        "languages": [
+          "vi",
+          "ko"
+        ],
+        "meaning_deltas": []
+      },
+      "evidence": [
+        {
+          "id": "evidence-c03a42147213",
+          "url": "https://blogs.nvidia.co.kr/blog/nvidia-vera-rubin-platform",
+          "title": "에이전틱 AI 시대의 개막, NVIDIA Vera Rubin - NVIDIA Blog Korea",
+          "publisher": "NVIDIA Korea",
+          "language": "ko",
+          "published_at": "2026-03-17",
+          "source_type": "secondary-commentary",
+          "direct": false,
+          "stance": "context",
+          "stance_reason": "The excerpt describes the technical specifications and capabilities of the Vera Rubin platform but does not explicitly state that it was announced at GTC 2026.",
+          "alignment_state": "not-aligned",
+          "aligned_quote": null,
+          "meaning_deltas": [],
+          "credited_origin": null,
+          "cluster_id": "50f73a78e49f1c12681c6a1448b37e2e5cd01ac320e0871a1d369b5897ac2f74",
+          "mismatch": null
+        },
+        {
+          "id": "evidence-64b81ae18c90",
+          "url": "https://blogs.nvidia.co.kr/blog/nvidia-vera-rubin-platform",
+          "title": "에이전틱 AI 시대의 개막, NVIDIA Vera Rubin - NVIDIA Blog Korea",
+          "publisher": "NVIDIA Korea",
+          "language": "ko",
+          "published_at": "2026-03-17",
+          "source_type": "secondary-commentary",
+          "direct": false,
+          "stance": "irrelevant",
+          "stance_reason": "The excerpt discusses LPU fleets and storage racks without mentioning the announcement of the Vera Rubin platform at GTC 2026.",
+          "alignment_state": "not-aligned",
+          "aligned_quote": null,
+          "meaning_deltas": [],
+          "credited_origin": null,
+          "cluster_id": "66b7d23f09603c44dd6456c4d3c72f56b582127892c455b7ac49c5cbd0e221ce",
+          "mismatch": null
+        },
+        {
+          "id": "evidence-6160272d4874",
+          "url": "https://vietnamplus.vn/gtc-2026-nvidia-tung-loat-cong-nghe-ai-moi-post1099510.amp",
+          "title": "GTC 2026: Nvidia \"tung\" loạt công nghệ AI mới",
+          "publisher": "VietnamPlus",
+          "language": "vi",
+          "published_at": "2026-03-17",
+          "source_type": "secondary-commentary",
+          "direct": false,
+          "stance": "context",
+          "stance_reason": "The excerpt mentions Nvidia expects to launch the Vera Rubin platform later in the year, but does not confirm it was announced at GTC 2026.",
+          "alignment_state": "not-aligned",
+          "aligned_quote": null,
+          "meaning_deltas": [],
+          "credited_origin": null,
+          "cluster_id": "8b6d32afea15f13f197ba4dfb4061ce6167d6f0b1270efe398252dbdf9dfc7d5",
+          "mismatch": null
+        },
+        {
+          "id": "evidence-30dcbc9d531b",
+          "url": "https://vietnamplus.vn/gtc-2026-nvidia-tung-loat-cong-nghe-ai-moi-post1099510.amp",
+          "title": "GTC 2026: Nvidia \"tung\" loạt công nghệ AI mới",
+          "publisher": "VietnamPlus",
+          "language": "vi",
+          "published_at": "2026-03-17",
+          "source_type": "secondary-commentary",
+          "direct": false,
+          "stance": "context",
+          "stance_reason": "The excerpt mentions GTC 2026 in the context of other product announcements (Groq 3 LPU) but does not explicitly state that Vera Rubin was announced at this specific event.",
+          "alignment_state": "not-aligned",
+          "aligned_quote": null,
+          "meaning_deltas": [],
+          "credited_origin": null,
+          "cluster_id": "84594619f3b372774c477915b3016bb3777fc0c884eaabf27145524464cc1fb5",
+          "mismatch": null
+        }
+      ],
+      "retrieval_failures": []
+    },
+    {
+      "case_id": "nvidia-vi-performance",
+      "topic": "technology_economy",
+      "profile": "challenging",
+      "source_article_id": "nvidia-vi-vietnamplus",
+      "source_language": "vi",
+      "claim": {
+        "source_quote": "Các tuyên bố về hiệu năng của Vera Rubin bắt nguồn từ Nvidia và chưa phải là xác nhận độc lập.",
+        "segment_ids": [
+          "frozen-benchmark-claim"
+        ],
+        "standalone_claim": "Các tuyên bố về hiệu năng của Vera Rubin bắt nguồn từ Nvidia và chưa phải là xác nhận độc lập.",
+        "claim_type": "fact",
+        "entities": [],
+        "dates": [],
+        "numbers": [],
+        "facets": {
+          "attribution": null,
+          "modality": "asserted",
+          "legal_state": null
+        },
+        "reason": "Human-frozen benchmark proposition for cross-language alignment; claim extraction is evaluated separately.",
+        "id": "closed-nvidia-vi-performance",
+        "source_language": "vi"
+      },
+      "runtime_seconds": 8.411,
+      "assessment": {
+        "claim_id": "closed-nvidia-vi-performance",
+        "status": "insufficient",
+        "explanation": "Relevant sources were found, but they were not independent enough to resolve the claim.",
+        "support_evidence_ids": [],
+        "challenge_evidence_ids": [],
+        "context_evidence_ids": [
+          "evidence-d7fa887fa24d"
+        ],
+        "limitations": [
+          "The available sources may repeat the same original report.",
+          "Fewer than two distinct publishers were found.",
+          "No original record or direct statement was found."
+        ]
+      },
+      "trace": {
+        "evidence_state": "unresolved",
+        "article_count": 1,
+        "independent_lineages": 1,
+        "languages": [
+          "en"
+        ],
+        "meaning_deltas": []
+      },
+      "evidence": [
+        {
+          "id": "evidence-d7fa887fa24d",
+          "url": "https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Vera-Rubin-Opens-Agentic-AI-Frontier",
+          "title": "NVIDIA Vera Rubin Opens Agentic AI Frontier",
+          "publisher": "NVIDIA",
+          "language": "en",
+          "published_at": "2026-03-16",
+          "source_type": "secondary-commentary",
+          "direct": false,
+          "stance": "context",
+          "stance_reason": "The comparison could not be anchored to an exact source quotation.",
+          "alignment_state": "uncertain",
+          "aligned_quote": null,
+          "meaning_deltas": [],
+          "credited_origin": "NVIDIA",
+          "cluster_id": "lineage-984533f4bd63",
+          "mismatch": "No literal aligned quote could be anchored in this excerpt."
+        },
+        {
+          "id": "evidence-c03a42147213",
+          "url": "https://blogs.nvidia.co.kr/blog/nvidia-vera-rubin-platform",
+          "title": "에이전틱 AI 시대의 개막, NVIDIA Vera Rubin - NVIDIA Blog Korea",
+          "publisher": "NVIDIA Korea",
+          "language": "ko",
+          "published_at": "2026-03-17",
+          "source_type": "secondary-commentary",
+          "direct": false,
+          "stance": "irrelevant",
+          "stance_reason": "This excerpt provides technical specifications and marketing claims about the Vera Rubin platform but does not address the origin or independent verification status of those claims.",
+          "alignment_state": "not-aligned",
+          "aligned_quote": null,
+          "meaning_deltas": [],
+          "credited_origin": null,
+          "cluster_id": "50f73a78e49f1c12681c6a1448b37e2e5cd01ac320e0871a1d369b5897ac2f74",
+          "mismatch": null
+        },
+        {
+          "id": "evidence-f4abade0bb3e",
+          "url": "https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Vera-Rubin-Opens-Agentic-AI-Frontier",
+          "title": "NVIDIA Vera Rubin Opens Agentic AI Frontier",
+          "publisher": "NVIDIA",
+          "language": "en",
+          "published_at": "2026-03-16",
+          "source_type": "secondary-commentary",
+          "direct": true,
+          "stance": "irrelevant",
+          "stance_reason": "The excerpt contains promotional quotes from NVIDIA and partner CEOs but does not discuss the verification status of performance claims.",
+          "alignment_state": "not-aligned",
+          "aligned_quote": null,
+          "meaning_deltas": [],
+          "credited_origin": "NVIDIA",
+          "cluster_id": "lineage-984533f4bd63",
+          "mismatch": null
+        },
+        {
+          "id": "evidence-de60a2e44129",
+          "url": "https://blogs.nvidia.co.kr/blog/nvidia-vera-rubin-platform",
+          "title": "에이전틱 AI 시대의 개막, NVIDIA Vera Rubin - NVIDIA Blog Korea",
+          "publisher": "NVIDIA Korea",
+          "language": "ko",
+          "published_at": "2026-03-17",
+          "source_type": "secondary-commentary",
+          "direct": false,
+          "stance": "irrelevant",
+          "stance_reason": "This excerpt describes the components and marketing narrative of the Vera Rubin platform without addressing the source or verification of performance metrics.",
+          "alignment_state": "not-aligned",
+          "aligned_quote": null,
+          "meaning_deltas": [],
+          "credited_origin": null,
+          "cluster_id": "21d0912e7f8ac927d35d923b3566cf55bdb0a7061c6cd7cf9219881dbf57a0a5",
+          "mismatch": null
+        }
+      ],
+      "retrieval_failures": []
+    },
+    {
+      "case_id": "siri-ko-features",
+      "topic": "technology_economy",
+      "profile": "clean",
+      "source_article_id": "siri-ko-zdnet",
+      "source_language": "ko",
+      "claim": {
+        "source_quote": "애플은 WWDC 2026에서 AI 기능이 강화된 시리를 공개했다.",
+        "segment_ids": [
+          "frozen-benchmark-claim"
+        ],
+        "standalone_claim": "애플은 WWDC 2026에서 AI 기능이 강화된 시리를 공개했다.",
+        "claim_type": "fact",
+        "entities": [],
+        "dates": [],
+        "numbers": [
+          "2026"
+        ],
+        "facets": {
+          "attribution": null,
+          "modality": "asserted",
+          "legal_state": null
+        },
+        "reason": "Human-frozen benchmark proposition for cross-language alignment; claim extraction is evaluated separately.",
+        "id": "closed-siri-ko-features",
+        "source_language": "ko"
+      },
+      "runtime_seconds": 6.205,
+      "assessment": {
+        "claim_id": "closed-siri-ko-features",
+        "status": "insufficient",
+        "explanation": "Relevant sources were found, but they were not independent enough to resolve the claim.",
+        "support_evidence_ids": [
+          "evidence-524a90edf3f3"
+        ],
+        "challenge_evidence_ids": [],
+        "context_evidence_ids": [
+          "evidence-0f8a9fe049fa",
+          "evidence-eb145966529f",
+          "evidence-9104854d0fa4"
+        ],
+        "limitations": [
+          "Lineage grouping can miss uncredited or undetected reuse.",
+          "No original record or direct statement was found."
+        ]
+      },
+      "trace": {
+        "evidence_state": "unresolved",
+        "article_count": 2,
+        "independent_lineages": 2,
+        "languages": [
+          "en",
+          "vi"
+        ],
+        "meaning_deltas": []
+      },
+      "evidence": [
+        {
+          "id": "evidence-524a90edf3f3",
+          "url": "https://news.tuoitre.vn/apple-bets-on-overdue-siri-fix-to-close-ai-gap-10326060910492925.htm",
+          "title": "Apple bets on overdue Siri fix to close AI gap",
+          "publisher": "Tuổi Trẻ News",
+          "language": "en",
+          "published_at": "2026-06-09",
+          "source_type": "secondary-commentary",
+          "direct": false,
+          "stance": "supports",
+          "stance_reason": "The excerpt confirms that Apple unveiled a revamped 'Siri AI' at its annual Worldwide Developers Conference.",
+          "alignment_state": "aligned",
+          "aligned_quote": "The revamp, unveiled at its annual Worldwide Developers Conference in Cupertino, California, introduces \"Siri AI,\"",
+          "meaning_deltas": [],
+          "credited_origin": null,
+          "cluster_id": "a42764e2cb51441e25c0833cad0a1533163b047c2690a0593615787b359d9550",
+          "mismatch": null
+        },
+        {
+          "id": "evidence-0f8a9fe049fa",
+          "url": "https://vnexpress.net/apple-siri-duoc-dap-di-xay-lai-5083868.html",
+          "title": "Apple: Siri được 'đập đi xây lại'",
+          "publisher": "VnExpress",
+          "language": "vi",
+          "published_at": "2026-06-10",
+          "source_type": "secondary-commentary",
+          "direct": false,
+          "stance": "context",
+          "stance_reason": "The comparison could not be anchored to an exact source quotation.",
+          "alignment_state": "uncertain",
+          "aligned_quote": null,
+          "meaning_deltas": [],
+          "credited_origin": null,
+          "cluster_id": "18e326be6edd13d833f33aebaee29b49c7d5cbdd7d4e8b0844f0dfbe3b912ab5",
+          "mismatch": "No literal aligned quote could be anchored in this excerpt."
+        },
+        {
+          "id": "evidence-eb145966529f",
+          "url": "https://news.tuoitre.vn/apple-bets-on-overdue-siri-fix-to-close-ai-gap-10326060910492925.htm",
+          "title": "Apple bets on overdue Siri fix to close AI gap",
+          "publisher": "Tuổi Trẻ News",
+          "language": "en",
+          "published_at": "2026-06-09",
+          "source_type": "secondary-commentary",
+          "direct": false,
+          "stance": "context",
+          "stance_reason": "The excerpt discusses the reception and technical approach of the new Siri AI features announced by Apple.",
+          "alignment_state": "aligned",
+          "aligned_quote": "Smarter 'Siri AI' raises some privacy concerns",
+          "meaning_deltas": [],
+          "credited_origin": null,
+          "cluster_id": "336ff90736e38d7e27da49cc650724593c6367a5049bfc1f41927bd950bc8e30",
+          "mismatch": null
+        },
+        {
+          "id": "evidence-9104854d0fa4",
+          "url": "https://vnexpress.net/apple-siri-duoc-dap-di-xay-lai-5083868.html",
+          "title": "Apple: Siri được 'đập đi xây lại'",
+          "publisher": "VnExpress",
+          "language": "vi",
+          "published_at": "2026-06-10",
+          "source_type": "secondary-commentary",
+          "direct": false,
+          "stance": "context",
+          "stance_reason": "The excerpt describes the capabilities and privacy features of the new Siri demonstrated at the event.",
+          "alignment_state": "aligned",
+          "aligned_quote": "Siri mới vẫn đảm bảo tính bảo mật và nhất quán",
+          "meaning_deltas": [],
+          "credited_origin": null,
+          "cluster_id": "d43eb8b64d718eadb9621673207be1a1c5cbd9f7855dbd601d50f8e39358f6c0",
+          "mismatch": null
+        }
+      ],
+      "retrieval_failures": []
+    },
+    {
+      "case_id": "siri-en-timing",
+      "topic": "technology_economy",
+      "profile": "clean",
+      "source_article_id": "siri-en-reuters-tuoitre",
+      "source_language": "en",
+      "claim": {
+        "source_quote": "Some newly announced Siri capabilities were described as future availability rather than already shipped features.",
+        "segment_ids": [
+          "frozen-benchmark-claim"
+        ],
+        "standalone_claim": "Some newly announced Siri capabilities were described as future availability rather than already shipped features.",
+        "claim_type": "fact",
+        "entities": [],
+        "dates": [],
+        "numbers": [],
+        "facets": {
+          "attribution": null,
+          "modality": "asserted",
+          "legal_state": null
+        },
+        "reason": "Human-frozen benchmark proposition for cross-language alignment; claim extraction is evaluated separately.",
+        "id": "closed-siri-en-timing",
+        "source_language": "en"
+      },
+      "runtime_seconds": 6.29,
+      "assessment": {
+        "claim_id": "closed-siri-en-timing",
+        "status": "insufficient",
+        "explanation": "Relevant sources were found, but they were not independent enough to resolve the claim.",
+        "support_evidence_ids": [
+          "evidence-fccaf6b5c37d"
+        ],
+        "challenge_evidence_ids": [],
+        "context_evidence_ids": [],
+        "limitations": [
+          "The available sources may repeat the same original report.",
+          "Fewer than two distinct publishers were found.",
+          "No original record or direct statement was found."
+        ]
+      },
+      "trace": {
+        "evidence_state": "unresolved",
+        "article_count": 1,
+        "independent_lineages": 1,
+        "languages": [
+          "ko"
+        ],
+        "meaning_deltas": [
+          {
+            "type": "date",
+            "description": "The excerpt specifies a future release date (fall) for the operating system containing the features, rather than immediate availability."
+          }
+        ]
+      },
+      "evidence": [
+        {
+          "id": "evidence-36d8cbcc7ca0",
+          "url": "https://zdnet.co.kr/view?no=20260609075032",
+          "title": "AI 만난 애플 '시리' 더 강해졌다…어떤 점 달라졌나",
+          "publisher": "ZDNet Korea",
+          "language": "ko",
+          "published_at": "2026-06-09",
+          "source_type": "secondary-commentary",
+          "direct": false,
+          "stance": "irrelevant",
+          "stance_reason": "The excerpt describes new Siri features but does not mention their availability timeline or distinguish between current and future release status.",
+          "alignment_state": "not-aligned",
+          "aligned_quote": null,
+          "meaning_deltas": [],
+          "credited_origin": null,
+          "cluster_id": "dee71c0797b3170b9c5b0be411aeba78af302716183a0e830a1fef378bf70aae",
+          "mismatch": null
+        },
+        {
+          "id": "evidence-fccaf6b5c37d",
+          "url": "https://zdnet.co.kr/view?no=20260609075032",
+          "title": "AI 만난 애플 '시리' 더 강해졌다…어떤 점 달라졌나",
+          "publisher": "ZDNet Korea",
+          "language": "ko",
+          "published_at": "2026-06-09",
+          "source_type": "secondary-commentary",
+          "direct": false,
+          "stance": "supports",
+          "stance_reason": "The excerpt confirms that while developer betas are available, the operating systems containing these features are planned for a future release in the fall.",
+          "alignment_state": "aligned",
+          "aligned_quote": "애플은 이날부터 개발자 베타 버전을 배포했으며, iOS 27을 포함한 차세대 운영체제는 올가을 정식 출시할 계획이다.",
+          "meaning_deltas": [
+            {
+              "type": "date",
+              "description": "The excerpt specifies a future release date (fall) for the operating system containing the features, rather than immediate availability."
+            }
+          ],
+          "credited_origin": null,
+          "cluster_id": "f1af1d81d474f71e99d4bdcd5b0f22b86f71529bef99f59242c822eefc72ce28",
+          "mismatch": null
+        },
+        {
+          "id": "evidence-5a3ef33994fc",
+          "url": "https://vnexpress.net/apple-siri-duoc-dap-di-xay-lai-5083868.html",
+          "title": "Apple: Siri được 'đập đi xây lại'",
+          "publisher": "VnExpress",
+          "language": "vi",
+          "published_at": "2026-06-10",
+          "source_type": "secondary-commentary",
+          "direct": false,
+          "stance": "irrelevant",
+          "stance_reason": "The excerpt discusses the capabilities of the new Siri but does not address the timing or availability of these features.",
+          "alignment_state": "not-aligned",
+          "aligned_quote": null,
+          "meaning_deltas": [],
+          "credited_origin": null,
+          "cluster_id": "24995e4d28afda9985d0098ae44f0c6deb7cc76ac52c4606477125d66348e100",
+          "mismatch": null
+        },
+        {
+          "id": "evidence-9104854d0fa4",
+          "url": "https://vnexpress.net/apple-siri-duoc-dap-di-xay-lai-5083868.html",
+          "title": "Apple: Siri được 'đập đi xây lại'",
+          "publisher": "VnExpress",
+          "language": "vi",
+          "published_at": "2026-06-10",
+          "source_type": "secondary-commentary",
+          "direct": false,
+          "stance": "irrelevant",
+          "stance_reason": "The excerpt focuses on the functionality and privacy aspects of the new Siri without mentioning release timelines.",
+          "alignment_state": "not-aligned",
+          "aligned_quote": null,
+          "meaning_deltas": [],
+          "credited_origin": null,
+          "cluster_id": "d43eb8b64d718eadb9621673207be1a1c5cbd9f7855dbd601d50f8e39358f6c0",
+          "mismatch": null
+        }
+      ],
+      "retrieval_failures": []
+    },
+    {
+      "case_id": "qs-vi-vnu",
+      "topic": "education_society",
+      "profile": "challenging",
+      "source_article_id": "qs-vi-vnu",
+      "source_language": "vi",
+      "claim": {
+        "source_quote": "ĐHQGHN tăng hạng trong QS World University Rankings 2027.",
+        "segment_ids": [
+          "frozen-benchmark-claim"
+        ],
+        "standalone_claim": "ĐHQGHN tăng hạng trong QS World University Rankings 2027.",
+        "claim_type": "fact",
+        "entities": [],
+        "dates": [],
+        "numbers": [
+          "2027."
+        ],
+        "facets": {
+          "attribution": null,
+          "modality": "asserted",
+          "legal_state": null
+        },
+        "reason": "Human-frozen benchmark proposition for cross-language alignment; claim extraction is evaluated separately.",
+        "id": "closed-qs-vi-vnu",
+        "source_language": "vi"
+      },
+      "runtime_seconds": 5.243,
+      "assessment": {
+        "claim_id": "closed-qs-vi-vnu",
+        "status": "insufficient",
+        "explanation": "No relevant, readable evidence was found for this claim.",
+        "support_evidence_ids": [],
+        "challenge_evidence_ids": [],
+        "context_evidence_ids": [],
+        "limitations": [
+          "The available sources may repeat the same original report.",
+          "Fewer than two distinct publishers were found.",
+          "No original record or direct statement was found."
+        ]
+      },
+      "trace": {
+        "evidence_state": "unresolved",
+        "article_count": 0,
+        "independent_lineages": 0,
+        "languages": [],
+        "meaning_deltas": []
+      },
+      "evidence": [
+        {
+          "id": "evidence-6fa7d0076ee3",
+          "url": "https://prnewswire.com/news-releases/worlds-best-universities-revealed-302803262.html",
+          "title": "World's Best Universities Revealed",
+          "publisher": "PR Newswire",
+          "language": "en",
+          "published_at": "2026-06-17",
+          "source_type": "secondary-commentary",
+          "direct": false,
+          "stance": "irrelevant",
+          "stance_reason": "The excerpt discusses the release of the QS World University Rankings 2027 and general regional trends but does not mention ĐHQGHN (Vietnam National University).",
+          "alignment_state": "not-aligned",
+          "aligned_quote": null,
+          "meaning_deltas": [],
+          "credited_origin": null,
+          "cluster_id": "ed0b790cb35878dd88f67f18b1eb74bb27bdc9608dc6b9f87f432ff9fe00b2e9",
+          "mismatch": null
+        },
+        {
+          "id": "evidence-b22f06c50dec",
+          "url": "https://prnewswire.com/news-releases/worlds-best-universities-revealed-302803262.html",
+          "title": "World's Best Universities Revealed",
+          "publisher": "PR Newswire",
+          "language": "en",
+          "published_at": "2026-06-17",
+          "source_type": "secondary-commentary",
+          "direct": false,
+          "stance": "irrelevant",
+          "stance_reason": "The excerpt provides specific rankings for various universities globally but does not mention ĐHQGHN.",
+          "alignment_state": "not-aligned",
+          "aligned_quote": null,
+          "meaning_deltas": [],
+          "credited_origin": null,
+          "cluster_id": "dff8b826031e01eaa647c4145a3a10a9b1f48929dfa3fa20446d4436881838ef",
+          "mismatch": null
+        },
+        {
+          "id": "evidence-54042372228c",
+          "url": "https://yna.co.kr/view/AKR20260619045500057",
+          "title": "UNIST, QS 세계대학평가서 299위…11계단 상승 | 연합뉴스",
+          "publisher": "Yonhap News Agency",
+          "language": "ko",
+          "published_at": "2026-06-19",
+          "source_type": "secondary-commentary",
+          "direct": false,
+          "stance": "irrelevant",
+          "stance_reason": "The excerpt discusses the ranking of UNIST (Ulsan National Institute of Science and Technology) in the QS World University Rankings 2027 and does not mention ĐHQGHN.",
+          "alignment_state": "not-aligned",
+          "aligned_quote": null,
+          "meaning_deltas": [],
+          "credited_origin": null,
+          "cluster_id": "432d00d2c12d05da707f62659178b0baed6e9abbd35f4fdef352260c066a01c3",
+          "mismatch": null
+        }
+      ],
+      "retrieval_failures": []
+    },
+    {
+      "case_id": "qs-ko-unist",
+      "topic": "education_society",
+      "profile": "challenging",
+      "source_article_id": "qs-ko-yonhap",
+      "source_language": "ko",
+      "claim": {
+        "source_quote": "UNIST는 QS 세계대학평가 2027에서 299위를 기록했다.",
+        "segment_ids": [
+          "frozen-benchmark-claim"
+        ],
+        "standalone_claim": "UNIST는 QS 세계대학평가 2027에서 299위를 기록했다.",
+        "claim_type": "fact",
+        "entities": [],
+        "dates": [],
+        "numbers": [
+          "2027",
+          "299"
+        ],
+        "facets": {
+          "attribution": null,
+          "modality": "asserted",
+          "legal_state": null
+        },
+        "reason": "Human-frozen benchmark proposition for cross-language alignment; claim extraction is evaluated separately.",
+        "id": "closed-qs-ko-unist",
+        "source_language": "ko"
+      },
+      "runtime_seconds": 4.805,
+      "assessment": {
+        "claim_id": "closed-qs-ko-unist",
+        "status": "insufficient",
+        "explanation": "No relevant, readable evidence was found for this claim.",
+        "support_evidence_ids": [],
+        "challenge_evidence_ids": [],
+        "context_evidence_ids": [],
+        "limitations": [
+          "The available sources may repeat the same original report.",
+          "Fewer than two distinct publishers were found.",
+          "No original record or direct statement was found."
+        ]
+      },
+      "trace": {
+        "evidence_state": "unresolved",
+        "article_count": 0,
+        "independent_lineages": 0,
+        "languages": [],
+        "meaning_deltas": []
+      },
+      "evidence": [
+        {
+          "id": "evidence-6fa7d0076ee3",
+          "url": "https://prnewswire.com/news-releases/worlds-best-universities-revealed-302803262.html",
+          "title": "World's Best Universities Revealed",
+          "publisher": "PR Newswire",
+          "language": "en",
+          "published_at": "2026-06-17",
+          "source_type": "secondary-commentary",
+          "direct": false,
+          "stance": "irrelevant",
+          "stance_reason": "The excerpt discusses the release of the QS World University Rankings 2027 but does not mention UNIST or its specific ranking.",
+          "alignment_state": "not-aligned",
+          "aligned_quote": null,
+          "meaning_deltas": [],
+          "credited_origin": null,
+          "cluster_id": "ed0b790cb35878dd88f67f18b1eb74bb27bdc9608dc6b9f87f432ff9fe00b2e9",
+          "mismatch": null
+        },
+        {
+          "id": "evidence-b22f06c50dec",
+          "url": "https://prnewswire.com/news-releases/worlds-best-universities-revealed-302803262.html",
+          "title": "World's Best Universities Revealed",
+          "publisher": "PR Newswire",
+          "language": "en",
+          "published_at": "2026-06-17",
+          "source_type": "secondary-commentary",
+          "direct": false,
+          "stance": "irrelevant",
+          "stance_reason": "The excerpt lists various university rankings for the 2027 edition but does not mention UNIST.",
+          "alignment_state": "not-aligned",
+          "aligned_quote": null,
+          "meaning_deltas": [],
+          "credited_origin": null,
+          "cluster_id": "dff8b826031e01eaa647c4145a3a10a9b1f48929dfa3fa20446d4436881838ef",
+          "mismatch": null
+        },
+        {
+          "id": "evidence-2585d2105ef4",
+          "url": "https://vnu.edu.vn/qs-world-university-rankings-2027-dhqghn-tang-hang-nam-thu-4-lien-tiep-dan-dau-viet-nam-o-tieu-chi-ket-qua-tuyen-dung-va-phat-trien-ben-vung-post40164.html",
+          "title": "QS World University Rankings 2027: ĐHQGHN tăng hạng năm thứ 4 liên tiếp, dẫn đầu Việt Nam ở tiêu chí Kết quả tuyển dụng và Phát triển bền vững",
+          "publisher": "Vietnam National University, Hanoi",
+          "language": "vi",
+          "published_at": "2026-06-18",
+          "source_type": "secondary-commentary",
+          "direct": false,
+          "stance": "irrelevant",
+          "stance_reason": "The excerpt discusses the ranking of Vietnam National University in the QS WUR 2027 and does not mention UNIST.",
+          "alignment_state": "not-aligned",
+          "aligned_quote": null,
+          "meaning_deltas": [],
+          "credited_origin": null,
+          "cluster_id": "fd826a2efaf1de0267baeb1a9c57da7d91c2f8725c3ce83061849845601367f3",
+          "mismatch": null
+        },
+        {
+          "id": "evidence-145b087a5163",
+          "url": "https://vnu.edu.vn/qs-world-university-rankings-2027-dhqghn-tang-hang-nam-thu-4-lien-tiep-dan-dau-viet-nam-o-tieu-chi-ket-qua-tuyen-dung-va-phat-trien-ben-vung-post40164.html",
+          "title": "QS World University Rankings 2027: ĐHQGHN tăng hạng năm thứ 4 liên tiếp, dẫn đầu Việt Nam ở tiêu chí Kết quả tuyển dụng và Phát triển bền vững",
+          "publisher": "Vietnam National University, Hanoi",
+          "language": "vi",
+          "published_at": "2026-06-18",
+          "source_type": "secondary-commentary",
+          "direct": false,
+          "stance": "irrelevant",
+          "stance_reason": "The excerpt describes the methodology of the QS WUR 2027 and lists universities in Southeast Asia, but does not mention UNIST or its ranking.",
+          "alignment_state": "not-aligned",
+          "aligned_quote": null,
+          "meaning_deltas": [],
+          "credited_origin": null,
+          "cluster_id": "f5c44c2274527129096a0c9725d4fcc5fb9ea868b925a48cf8d1c4d9b393f466",
+          "mismatch": null
+        }
+      ],
+      "retrieval_failures": []
+    },
+    {
+      "case_id": "happiness-en-report",
+      "topic": "education_society",
+      "profile": "clean",
+      "source_article_id": "happiness-en-ap",
+      "source_language": "en",
+      "claim": {
+        "source_quote": "The 2026 World Happiness Report linked its rankings to measures of life evaluation and social context.",
+        "segment_ids": [
+          "frozen-benchmark-claim"
+        ],
+        "standalone_claim": "The 2026 World Happiness Report linked its rankings to measures of life evaluation and social context.",
+        "claim_type": "fact",
+        "entities": [],
+        "dates": [],
+        "numbers": [
+          "2026"
+        ],
+        "facets": {
+          "attribution": null,
+          "modality": "asserted",
+          "legal_state": null
+        },
+        "reason": "Human-frozen benchmark proposition for cross-language alignment; claim extraction is evaluated separately.",
+        "id": "closed-happiness-en-report",
+        "source_language": "en"
+      },
+      "runtime_seconds": 4.503,
+      "assessment": {
+        "claim_id": "closed-happiness-en-report",
+        "status": "supported",
+        "explanation": "At least two independent sources support this claim. No equally strong contradiction was found.",
+        "support_evidence_ids": [
+          "evidence-cceef92c9184",
+          "evidence-4ce6b40f3430"
+        ],
+        "challenge_evidence_ids": [],
+        "context_evidence_ids": [
+          "evidence-515031e71a67"
+        ],
+        "limitations": [
+          "Lineage grouping can miss uncredited or undetected reuse.",
+          "No original record or direct statement was found."
+        ]
+      },
+      "trace": {
+        "evidence_state": "corroborated",
+        "article_count": 2,
+        "independent_lineages": 2,
+        "languages": [
+          "vi",
+          "ko"
+        ],
+        "meaning_deltas": []
+      },
+      "evidence": [
+        {
+          "id": "evidence-515031e71a67",
+          "url": "https://baochinhphu.vn/viet-nam-tang-bac-trong-danh-sach-hanh-phuc-toan-cau-102260319145022001.htm",
+          "title": "Việt Nam tăng bậc trong danh sách hạnh phúc toàn cầu",
+          "publisher": "Vietnam Government News",
+          "language": "vi",
+          "published_at": "2026-03-19",
+          "source_type": "secondary-commentary",
+          "direct": false,
+          "stance": "context",
+          "stance_reason": "The comparison could not be anchored to an exact source quotation.",
+          "alignment_state": "uncertain",
+          "aligned_quote": null,
+          "meaning_deltas": [],
+          "credited_origin": null,
+          "cluster_id": "lineage-c65ae31a8fce",
+          "mismatch": "No literal aligned quote could be anchored in this excerpt."
+        },
+        {
+          "id": "evidence-cceef92c9184",
+          "url": "https://mt.co.kr/society/2026/03/28/2026032610372914973",
+          "title": "[더차트] \"일본·중국보다 낮다\" 한국 행복 순위 67위…역대 최저 - 머니투데이",
+          "publisher": "Money Today",
+          "language": "ko",
+          "published_at": "2026-03-28",
+          "source_type": "secondary-commentary",
+          "direct": false,
+          "stance": "supports",
+          "stance_reason": "The excerpt lists specific factors used to calculate the 2026 rankings, including social support, which aligns with the claim's mention of social context.",
+          "alignment_state": "aligned",
+          "aligned_quote": "행복 점수는 △1인당 국내총생산(GDP) △기대수명 △사회적 지원 △선택의 자유 △관용(기부) △부패 인식 등 6개 항목을 토대로 산출된다.",
+          "meaning_deltas": [],
+          "credited_origin": "갤럽",
+          "cluster_id": "lineage-b6ee495a98bd",
+          "mismatch": null
+        },
+        {
+          "id": "evidence-4ce6b40f3430",
+          "url": "https://baochinhphu.vn/viet-nam-tang-bac-trong-danh-sach-hanh-phuc-toan-cau-102260319145022001.htm",
+          "title": "Việt Nam tăng bậc trong danh sách hạnh phúc toàn cầu",
+          "publisher": "Vietnam Government News",
+          "language": "vi",
+          "published_at": "2026-03-19",
+          "source_type": "secondary-commentary",
+          "direct": false,
+          "stance": "supports",
+          "stance_reason": "The excerpt confirms the 2026 report uses six criteria for rankings, including social support, which corresponds to the claim's reference to social context.",
+          "alignment_state": "aligned",
+          "aligned_quote": "Bảng xếp hạng được xác định dựa trên chỉ số hạnh phúc trung bình trong 3 năm, với 6 tiêu chí gồm thu nhập bình quân đầu người, tuổi thọ, hỗ trợ xã hội, quyền tự quyết trong đời sống, sự hào phóng và nhận thức về tham nhũng.",
+          "meaning_deltas": [],
+          "credited_origin": "Liên Hợp Quốc",
+          "cluster_id": "lineage-c65ae31a8fce",
+          "mismatch": null
+        }
+      ],
+      "retrieval_failures": []
+    },
+    {
+      "case_id": "happiness-vi-rank",
+      "topic": "education_society",
+      "profile": "clean",
+      "source_article_id": "happiness-vi-gov",
+      "source_language": "vi",
+      "claim": {
+        "source_quote": "Việt Nam đứng thứ 45 trong Báo cáo Hạnh phúc Thế giới 2026.",
+        "segment_ids": [
+          "frozen-benchmark-claim"
+        ],
+        "standalone_claim": "Việt Nam đứng thứ 45 trong Báo cáo Hạnh phúc Thế giới 2026.",
+        "claim_type": "fact",
+        "entities": [],
+        "dates": [],
+        "numbers": [
+          "45",
+          "2026."
+        ],
+        "facets": {
+          "attribution": null,
+          "modality": "asserted",
+          "legal_state": null
+        },
+        "reason": "Human-frozen benchmark proposition for cross-language alignment; claim extraction is evaluated separately.",
+        "id": "closed-happiness-vi-rank",
+        "source_language": "vi"
+      },
+      "runtime_seconds": 4.979,
+      "assessment": {
+        "claim_id": "closed-happiness-vi-rank",
+        "status": "insufficient",
+        "explanation": "No relevant, readable evidence was found for this claim.",
+        "support_evidence_ids": [],
+        "challenge_evidence_ids": [],
+        "context_evidence_ids": [],
+        "limitations": [
+          "The available sources may repeat the same original report.",
+          "Fewer than two distinct publishers were found.",
+          "No original record or direct statement was found."
+        ]
+      },
+      "trace": {
+        "evidence_state": "unresolved",
+        "article_count": 0,
+        "independent_lineages": 0,
+        "languages": [],
+        "meaning_deltas": []
+      },
+      "evidence": [
+        {
+          "id": "evidence-cceef92c9184",
+          "url": "https://mt.co.kr/society/2026/03/28/2026032610372914973",
+          "title": "[더차트] \"일본·중국보다 낮다\" 한국 행복 순위 67위…역대 최저 - 머니투데이",
+          "publisher": "Money Today",
+          "language": "ko",
+          "published_at": "2026-03-28",
+          "source_type": "secondary-commentary",
+          "direct": false,
+          "stance": "irrelevant",
+          "stance_reason": "The excerpt discusses the 2026 World Happiness Report rankings for South Korea and other nations but does not mention Vietnam's ranking.",
+          "alignment_state": "not-aligned",
+          "aligned_quote": null,
+          "meaning_deltas": [],
+          "credited_origin": null,
+          "cluster_id": "afdb5099df772363361c4aeb6430ea9f29ab7e18dd9f77317b6dd93959db1417",
+          "mismatch": null
+        },
+        {
+          "id": "evidence-f469ac627495",
+          "url": "https://apnews.com/article/world-happiness-finland-social-media-unhappiness-bf3b4dae7fcfe2842ea2bd47f88b3c4b",
+          "title": "What the World Happiness Report reveals about social media and the world's happiest country",
+          "publisher": "Associated Press",
+          "language": "en",
+          "published_at": "2026-03-19",
+          "source_type": "secondary-commentary",
+          "direct": false,
+          "stance": "irrelevant",
+          "stance_reason": "The excerpt discusses the 2026 World Happiness Report findings regarding social media and top-ranked countries but does not mention Vietnam.",
+          "alignment_state": "not-aligned",
+          "aligned_quote": null,
+          "meaning_deltas": [],
+          "credited_origin": null,
+          "cluster_id": "a92ff81b6c368dc8b5e5da4b91624e913b2860c5f67d71be8d3a2b68f4b5a694",
+          "mismatch": null
+        },
+        {
+          "id": "evidence-b17c9cc16110",
+          "url": "https://apnews.com/article/world-happiness-finland-social-media-unhappiness-bf3b4dae7fcfe2842ea2bd47f88b3c4b",
+          "title": "What the World Happiness Report reveals about social media and the world's happiest country",
+          "publisher": "Associated Press",
+          "language": "en",
+          "published_at": "2026-03-19",
+          "source_type": "secondary-commentary",
+          "direct": false,
+          "stance": "irrelevant",
+          "stance_reason": "The excerpt discusses the 2026 World Happiness Report findings regarding social media and specific English-speaking countries but does not mention Vietnam.",
+          "alignment_state": "not-aligned",
+          "aligned_quote": null,
+          "meaning_deltas": [],
+          "credited_origin": null,
+          "cluster_id": "1e2a2b55428f83fc68dd207af20012c2b0f3033aed4616f9d3eefcc9e6376d1a",
+          "mismatch": null
+        }
+      ],
+      "retrieval_failures": []
+    },
+    {
+      "case_id": "olympics-ko-distributed",
+      "topic": "culture_sports",
+      "profile": "challenging",
+      "source_article_id": "olympics-ko-newsis",
+      "source_language": "ko",
+      "claim": {
+        "source_quote": "2026 동계올림픽 개회식은 여러 도시에서 분산 개최되고 두 개의 성화대를 사용했다.",
+        "segment_ids": [
+          "frozen-benchmark-claim"
+        ],
+        "standalone_claim": "2026 동계올림픽 개회식은 여러 도시에서 분산 개최되고 두 개의 성화대를 사용했다.",
+        "claim_type": "fact",
+        "entities": [],
+        "dates": [],
+        "numbers": [
+          "2026"
+        ],
+        "facets": {
+          "attribution": null,
+          "modality": "asserted",
+          "legal_state": null
+        },
+        "reason": "Human-frozen benchmark proposition for cross-language alignment; claim extraction is evaluated separately.",
+        "id": "closed-olympics-ko-distributed",
+        "source_language": "ko"
+      },
+      "runtime_seconds": 6.005,
+      "assessment": {
+        "claim_id": "closed-olympics-ko-distributed",
+        "status": "insufficient",
+        "explanation": "Relevant sources were found, but they were not independent enough to resolve the claim.",
+        "support_evidence_ids": [
+          "evidence-a7d9a5687127"
+        ],
+        "challenge_evidence_ids": [],
+        "context_evidence_ids": [
+          "evidence-5fcf652afcb7"
+        ],
+        "limitations": [
+          "Lineage grouping can miss uncredited or undetected reuse.",
+          "No original record or direct statement was found."
+        ]
+      },
+      "trace": {
+        "evidence_state": "unresolved",
+        "article_count": 2,
+        "independent_lineages": 2,
+        "languages": [
+          "en",
+          "vi"
+        ],
+        "meaning_deltas": []
+      },
+      "evidence": [
+        {
+          "id": "evidence-5fcf652afcb7",
+          "url": "https://world.kbs.co.kr/service/news_view.htm?Seq_Code=69320&lang=v",
+          "title": "Thế vận hội mùa đông Milano Cortina 2026 bắt đầu 17 ngày tranh tài",
+          "publisher": "KBS World Vietnamese",
+          "language": "vi",
+          "published_at": "2026-07-10",
+          "source_type": "secondary-commentary",
+          "direct": false,
+          "stance": "context",
+          "stance_reason": "The excerpt confirms the 2026 Winter Olympics were held in both Milan and Cortina d'Ampezzo but does not mention the opening ceremony structure or the cauldrons.",
+          "alignment_state": "not-aligned",
+          "aligned_quote": null,
+          "meaning_deltas": [],
+          "credited_origin": null,
+          "cluster_id": "e90874d79f60c4aae9427b012c351d2997e75ae2ecdc4c6547336ca77f8d2d41",
+          "mismatch": null
+        },
+        {
+          "id": "evidence-de2da573b441",
+          "url": "https://world.kbs.co.kr/service/news_view.htm?Seq_Code=69320&lang=v",
+          "title": "Thế vận hội mùa đông Milano Cortina 2026 bắt đầu 17 ngày tranh tài",
+          "publisher": "KBS World Vietnamese",
+          "language": "vi",
+          "published_at": "2026-07-10",
+          "source_type": "secondary-commentary",
+          "direct": false,
+          "stance": "irrelevant",
+          "stance_reason": "The excerpt discusses the theme of the opening ceremony and the South Korean team but does not address the ceremony's location or the number of cauldrons.",
+          "alignment_state": "not-aligned",
+          "aligned_quote": null,
+          "meaning_deltas": [],
+          "credited_origin": null,
+          "cluster_id": "b7e4106a6d2272412efd07ddabf495106dc1eeb80cb6d52eb4e14bf78ca1a096",
+          "mismatch": null
+        },
+        {
+          "id": "evidence-a7d9a5687127",
+          "url": "https://euronews.com/2026/02/07/winter-olympics-officially-open-in-milan-and-cortina-with-two-cauldrons-lit-to-start-the-g",
+          "title": "Winter Olympics officially open in Milan and Cortina",
+          "publisher": "Euronews",
+          "language": "en",
+          "published_at": "2026-02-07",
+          "source_type": "secondary-commentary",
+          "direct": true,
+          "stance": "supports",
+          "stance_reason": "The excerpt confirms the Olympics were geographically widespread and that two cauldrons were lit, one in Milan and one in Cortina d'Ampezzo.",
+          "alignment_state": "aligned",
+          "aligned_quote": "It culminated in the lighting of two cauldrons, one at Milan's Arch of Peace and one in Cortina d'Ampezzo",
+          "meaning_deltas": [],
+          "credited_origin": null,
+          "cluster_id": "45c001f680896bbe03d6d873bba9c629aa488c39c1b51df176b32cbff78c58ab",
+          "mismatch": null
+        },
+        {
+          "id": "evidence-5613119006bc",
+          "url": "https://euronews.com/2026/02/07/winter-olympics-officially-open-in-milan-and-cortina-with-two-cauldrons-lit-to-start-the-g",
+          "title": "Winter Olympics officially open in Milan and Cortina",
+          "publisher": "Euronews",
+          "language": "en",
+          "published_at": "2026-02-07",
+          "source_type": "secondary-commentary",
+          "direct": false,
+          "stance": "irrelevant",
+          "stance_reason": "The excerpt focuses on spectator reactions and security concerns rather than the logistics of the opening ceremony.",
+          "alignment_state": "not-aligned",
+          "aligned_quote": null,
+          "meaning_deltas": [],
+          "credited_origin": null,
+          "cluster_id": "6ccc6c2abba819c404f811dfb3a08eadf39d9aaa80cdeb9cd2f21c54f1e4d305",
+          "mismatch": null
+        }
+      ],
+      "retrieval_failures": []
+    },
+    {
+      "case_id": "olympics-en-opening",
+      "topic": "culture_sports",
+      "profile": "challenging",
+      "source_article_id": "olympics-en-euronews",
+      "source_language": "en",
+      "claim": {
+        "source_quote": "The Milano Cortina Winter Olympics officially opened on February 6, 2026.",
+        "segment_ids": [
+          "frozen-benchmark-claim"
+        ],
+        "standalone_claim": "The Milano Cortina Winter Olympics officially opened on February 6, 2026.",
+        "claim_type": "fact",
+        "entities": [],
+        "dates": [],
+        "numbers": [
+          "6,",
+          "2026."
+        ],
+        "facets": {
+          "attribution": null,
+          "modality": "asserted",
+          "legal_state": null
+        },
+        "reason": "Human-frozen benchmark proposition for cross-language alignment; claim extraction is evaluated separately.",
+        "id": "closed-olympics-en-opening",
+        "source_language": "en"
+      },
+      "runtime_seconds": 4.725,
+      "assessment": {
+        "claim_id": "closed-olympics-en-opening",
+        "status": "insufficient",
+        "explanation": "Relevant sources were found, but they were not independent enough to resolve the claim.",
+        "support_evidence_ids": [
+          "evidence-5fcf652afcb7"
+        ],
+        "challenge_evidence_ids": [
+          "evidence-663df2be4031"
+        ],
+        "context_evidence_ids": [],
+        "limitations": [
+          "Lineage grouping can miss uncredited or undetected reuse.",
+          "No original record or direct statement was found."
+        ]
+      },
+      "trace": {
+        "evidence_state": "unresolved",
+        "article_count": 2,
+        "independent_lineages": 2,
+        "languages": [
+          "vi",
+          "ko"
+        ],
+        "meaning_deltas": [
+          {
+            "type": "date",
+            "description": "The excerpt provides the date in Korean time (Feb 7) while the claim provides the date in local time (Feb 6)."
+          }
+        ]
+      },
+      "evidence": [
+        {
+          "id": "evidence-5fcf652afcb7",
+          "url": "https://world.kbs.co.kr/service/news_view.htm?Seq_Code=69320&lang=v",
+          "title": "Thế vận hội mùa đông Milano Cortina 2026 bắt đầu 17 ngày tranh tài",
+          "publisher": "KBS World Vietnamese",
+          "language": "vi",
+          "published_at": "2026-07-10",
+          "source_type": "secondary-commentary",
+          "direct": false,
+          "stance": "supports",
+          "stance_reason": "The excerpt explicitly states the opening ceremony took place on February 6 (local time).",
+          "alignment_state": "aligned",
+          "aligned_quote": "Lễ khai mạc Thế vận hội mùa đông Milano Cortina 2026 đã diễn ra vào lúc 8 giờ tối ngày 6/2",
+          "meaning_deltas": [],
+          "credited_origin": null,
+          "cluster_id": "e90874d79f60c4aae9427b012c351d2997e75ae2ecdc4c6547336ca77f8d2d41",
+          "mismatch": null
+        },
+        {
+          "id": "evidence-663df2be4031",
+          "url": "https://newsis.com/view/NISX20260207_0003506316",
+          "title": "두 도시·두 성화대…첫 분산 개회식 '이탈리아의 조화'[2026 동계올림픽](종합)",
+          "publisher": "Newsis",
+          "language": "ko",
+          "published_at": "2026-02-07",
+          "source_type": "secondary-commentary",
+          "direct": false,
+          "stance": "disputes",
+          "stance_reason": "The excerpt states the opening ceremony occurred on February 7 at 4 AM (Korean time), which corresponds to February 6 in Italy.",
+          "alignment_state": "partial",
+          "aligned_quote": "7일 오전 4시(한국 시간) 이탈리아 밀라노의 산시로 올림픽 스타디움에서 성대하게 개막했다",
+          "meaning_deltas": [
+            {
+              "type": "date",
+              "description": "The excerpt provides the date in Korean time (Feb 7) while the claim provides the date in local time (Feb 6)."
+            }
+          ],
+          "credited_origin": null,
+          "cluster_id": "lineage-6cf38eebb1ef",
+          "mismatch": "The excerpt specifies the date as February 7 (Korean time) while the claim specifies February 6."
+        },
+        {
+          "id": "evidence-725304b50603",
+          "url": "https://newsis.com/view/NISX20260207_0003506316",
+          "title": "두 도시·두 성화대…첫 분산 개회식 '이탈리아의 조화'[2026 동계올림픽](종합)",
+          "publisher": "Newsis",
+          "language": "ko",
+          "published_at": "2026-02-07",
+          "source_type": "secondary-commentary",
+          "direct": false,
+          "stance": "irrelevant",
+          "stance_reason": "This excerpt discusses details of the opening ceremony participants and events but does not mention the specific opening date.",
+          "alignment_state": "not-aligned",
+          "aligned_quote": null,
+          "meaning_deltas": [],
+          "credited_origin": "NEWSIS",
+          "cluster_id": "lineage-6cf38eebb1ef",
+          "mismatch": null
+        },
+        {
+          "id": "evidence-de2da573b441",
+          "url": "https://world.kbs.co.kr/service/news_view.htm?Seq_Code=69320&lang=v",
+          "title": "Thế vận hội mùa đông Milano Cortina 2026 bắt đầu 17 ngày tranh tài",
+          "publisher": "KBS World Vietnamese",
+          "language": "vi",
+          "published_at": "2026-07-10",
+          "source_type": "secondary-commentary",
+          "direct": false,
+          "stance": "irrelevant",
+          "stance_reason": "This excerpt discusses the theme of the opening ceremony and the South Korean delegation but does not mention the opening date.",
+          "alignment_state": "not-aligned",
+          "aligned_quote": null,
+          "meaning_deltas": [],
+          "credited_origin": null,
+          "cluster_id": "b7e4106a6d2272412efd07ddabf495106dc1eeb80cb6d52eb4e14bf78ca1a096",
+          "mismatch": null
+        }
+      ],
+      "retrieval_failures": []
+    },
+    {
+      "case_id": "world-cup-vi-result",
+      "topic": "culture_sports",
+      "profile": "clean",
+      "source_article_id": "world-cup-vi-vnexpress",
+      "source_language": "vi",
+      "claim": {
+        "source_quote": "Tây Ban Nha thắng Argentina 1-0 sau hiệp phụ để vô địch World Cup 2026.",
+        "segment_ids": [
+          "frozen-benchmark-claim"
+        ],
+        "standalone_claim": "Tây Ban Nha thắng Argentina 1-0 sau hiệp phụ để vô địch World Cup 2026.",
+        "claim_type": "fact",
+        "entities": [],
+        "dates": [],
+        "numbers": [
+          "1-0",
+          "2026."
+        ],
+        "facets": {
+          "attribution": null,
+          "modality": "asserted",
+          "legal_state": null
+        },
+        "reason": "Human-frozen benchmark proposition for cross-language alignment; claim extraction is evaluated separately.",
+        "id": "closed-world-cup-vi-result",
+        "source_language": "vi"
+      },
+      "runtime_seconds": 4.923,
+      "assessment": {
+        "claim_id": "closed-world-cup-vi-result",
+        "status": "supported",
+        "explanation": "At least two independent sources support this claim. No equally strong contradiction was found.",
+        "support_evidence_ids": [
+          "evidence-226f7cc072e5",
+          "evidence-9aba8a34aed2",
+          "evidence-d369bf146d2d"
+        ],
+        "challenge_evidence_ids": [],
+        "context_evidence_ids": [
+          "evidence-c05f53b0b9fc"
+        ],
+        "limitations": [
+          "Lineage grouping can miss uncredited or undetected reuse.",
+          "No original record or direct statement was found."
+        ]
+      },
+      "trace": {
+        "evidence_state": "corroborated",
+        "article_count": 2,
+        "independent_lineages": 2,
+        "languages": [
+          "en",
+          "ko"
+        ],
+        "meaning_deltas": [
+          {
+            "type": "scope",
+            "description": "The excerpt focuses on the trophy presentation and post-match behavior rather than the match result details."
+          }
+        ]
+      },
+      "evidence": [
+        {
+          "id": "evidence-226f7cc072e5",
+          "url": "https://newsis.com/view/NISX20260720_0003714704",
+          "title": "메시 울린 스페인 '질식 수비'…역대 최소 실점으로 우승[월드컵24시]",
+          "publisher": "Newsis",
+          "language": "ko",
+          "published_at": "2026-07-20",
+          "source_type": "secondary-commentary",
+          "direct": false,
+          "stance": "supports",
+          "stance_reason": "The excerpt confirms Spain defeated Argentina in the World Cup final, noting the match went into extra time.",
+          "alignment_state": "aligned",
+          "aligned_quote": "아르헨티나는 연장전 막판에 가서야 겨우 슈팅 2개를 기록했으나",
+          "meaning_deltas": [],
+          "credited_origin": "Newsis",
+          "cluster_id": "lineage-01c83d837353",
+          "mismatch": null
+        },
+        {
+          "id": "evidence-9aba8a34aed2",
+          "url": "https://theguardian.com/football/2026/jul/19/spain-win-world-cup-argentina-final-match-report",
+          "title": "Spain win World Cup after Ferran Torres breaks 10-man Argentina’s resistance",
+          "publisher": "The Guardian",
+          "language": "en",
+          "published_at": "2026-07-19",
+          "source_type": "secondary-commentary",
+          "direct": false,
+          "stance": "supports",
+          "stance_reason": "The excerpt confirms Spain won the World Cup final against Argentina with a goal in the 106th minute (extra time).",
+          "alignment_state": "aligned",
+          "aligned_quote": "The goal came in the 106th minute",
+          "meaning_deltas": [],
+          "credited_origin": null,
+          "cluster_id": "6f2862671e6c931fdf745a05b90d528481ac28257f072bfd2b46c2ac7a12668f",
+          "mismatch": null
+        },
+        {
+          "id": "evidence-d369bf146d2d",
+          "url": "https://newsis.com/view/NISX20260720_0003714704",
+          "title": "메시 울린 스페인 '질식 수비'…역대 최소 실점으로 우승[월드컵24시]",
+          "publisher": "Newsis",
+          "language": "ko",
+          "published_at": "2026-07-20",
+          "source_type": "secondary-commentary",
+          "direct": false,
+          "stance": "supports",
+          "stance_reason": "The excerpt explicitly states Spain defeated Argentina 1-0 after extra time to win the 2026 World Cup.",
+          "alignment_state": "aligned",
+          "aligned_quote": "연장 승부 끝에 '디펜딩 챔피언' 아르헨티나를 1-0으로 꺾었다",
+          "meaning_deltas": [],
+          "credited_origin": null,
+          "cluster_id": "lineage-01c83d837353",
+          "mismatch": null
+        },
+        {
+          "id": "evidence-c05f53b0b9fc",
+          "url": "https://theguardian.com/football/2026/jul/19/spain-win-world-cup-argentina-final-match-report",
+          "title": "Spain win World Cup after Ferran Torres breaks 10-man Argentina’s resistance",
+          "publisher": "The Guardian",
+          "language": "en",
+          "published_at": "2026-07-19",
+          "source_type": "secondary-commentary",
+          "direct": false,
+          "stance": "context",
+          "stance_reason": "The excerpt discusses the aftermath of the final match between Spain and Argentina but does not explicitly state the score or the extra time duration.",
+          "alignment_state": "partial",
+          "aligned_quote": "Spain captain, Rodri, got his hands on those six kilograms of solid gold bliss",
+          "meaning_deltas": [
+            {
+              "type": "scope",
+              "description": "The excerpt focuses on the trophy presentation and post-match behavior rather than the match result details."
+            }
+          ],
+          "credited_origin": null,
+          "cluster_id": "bd87cb08c01d3bdf3e680bd4ff267357ca373e18e702acf40d08b5380dbc7cf2",
+          "mismatch": null
+        }
+      ],
+      "retrieval_failures": []
+    },
+    {
+      "case_id": "world-cup-ko-goal",
+      "topic": "culture_sports",
+      "profile": "clean",
+      "source_article_id": "world-cup-ko-newsis",
+      "source_language": "ko",
+      "claim": {
+        "source_quote": "페란 토레스가 연장전 106분에 결승골을 넣었다.",
+        "segment_ids": [
+          "frozen-benchmark-claim"
+        ],
+        "standalone_claim": "페란 토레스가 연장전 106분에 결승골을 넣었다.",
+        "claim_type": "fact",
+        "entities": [],
+        "dates": [],
+        "numbers": [
+          "106"
+        ],
+        "facets": {
+          "attribution": null,
+          "modality": "asserted",
+          "legal_state": null
+        },
+        "reason": "Human-frozen benchmark proposition for cross-language alignment; claim extraction is evaluated separately.",
+        "id": "closed-world-cup-ko-goal",
+        "source_language": "ko"
+      },
+      "runtime_seconds": 4.215,
+      "assessment": {
+        "claim_id": "closed-world-cup-ko-goal",
+        "status": "insufficient",
+        "explanation": "Relevant sources were found, but they were not independent enough to resolve the claim.",
+        "support_evidence_ids": [
+          "evidence-27a3f2103f4c"
+        ],
+        "challenge_evidence_ids": [],
+        "context_evidence_ids": [
+          "evidence-fa9c070b53c8",
+          "evidence-9aba8a34aed2"
+        ],
+        "limitations": [
+          "Lineage grouping can miss uncredited or undetected reuse.",
+          "No original record or direct statement was found."
+        ]
+      },
+      "trace": {
+        "evidence_state": "unresolved",
+        "article_count": 2,
+        "independent_lineages": 2,
+        "languages": [
+          "en",
+          "vi"
+        ],
+        "meaning_deltas": [
+          {
+            "type": "scope",
+            "description": "The excerpt confirms the goal scorer but omits the specific minute in this particular sentence."
+          }
+        ]
+      },
+      "evidence": [
+        {
+          "id": "evidence-fa9c070b53c8",
+          "url": "https://vnexpress.net/ket-qua-tay-ban-nha-argentina-5099246-tong-thuat.html",
+          "title": "Tây Ban Nha vô địch World Cup 2026 - Báo VnExpress",
+          "publisher": "VnExpress",
+          "language": "vi",
+          "published_at": "2026-07-20",
+          "source_type": "secondary-commentary",
+          "direct": false,
+          "stance": "context",
+          "stance_reason": "The comparison could not be anchored to an exact source quotation.",
+          "alignment_state": "uncertain",
+          "aligned_quote": null,
+          "meaning_deltas": [],
+          "credited_origin": null,
+          "cluster_id": "68918503504d359f47c5d3a852f6fba97ee04c5c5036d9662bda34bf70b85c8a",
+          "mismatch": "No literal aligned quote could be anchored in this excerpt."
+        },
+        {
+          "id": "evidence-9aba8a34aed2",
+          "url": "https://theguardian.com/football/2026/jul/19/spain-win-world-cup-argentina-final-match-report",
+          "title": "Spain win World Cup after Ferran Torres breaks 10-man Argentina’s resistance",
+          "publisher": "The Guardian",
+          "language": "en",
+          "published_at": "2026-07-19",
+          "source_type": "secondary-commentary",
+          "direct": false,
+          "stance": "context",
+          "stance_reason": "The comparison could not be anchored to an exact source quotation.",
+          "alignment_state": "uncertain",
+          "aligned_quote": null,
+          "meaning_deltas": [],
+          "credited_origin": null,
+          "cluster_id": "6f2862671e6c931fdf745a05b90d528481ac28257f072bfd2b46c2ac7a12668f",
+          "mismatch": "No literal aligned quote could be anchored in this excerpt."
+        },
+        {
+          "id": "evidence-c7719ab363b9",
+          "url": "https://vnexpress.net/ket-qua-tay-ban-nha-argentina-5099246-tong-thuat.html",
+          "title": "Tây Ban Nha vô địch World Cup 2026 - Báo VnExpress",
+          "publisher": "VnExpress",
+          "language": "vi",
+          "published_at": "2026-07-20",
+          "source_type": "secondary-commentary",
+          "direct": false,
+          "stance": "irrelevant",
+          "stance_reason": "The excerpt discusses match events and player behavior but does not mention the specific goal scorer or the time of the goal.",
+          "alignment_state": "not-aligned",
+          "aligned_quote": null,
+          "meaning_deltas": [],
+          "credited_origin": null,
+          "cluster_id": "1be67912cfa882974702ceda8d8a130a138a33ae5bc645f20630a8a3f879611b",
+          "mismatch": null
+        },
+        {
+          "id": "evidence-27a3f2103f4c",
+          "url": "https://theguardian.com/football/2026/jul/19/spain-win-world-cup-argentina-final-match-report",
+          "title": "Spain win World Cup after Ferran Torres breaks 10-man Argentina’s resistance",
+          "publisher": "The Guardian",
+          "language": "en",
+          "published_at": "2026-07-19",
+          "source_type": "secondary-commentary",
+          "direct": false,
+          "stance": "supports",
+          "stance_reason": "The excerpt confirms Ferran Torres scored a goal, though it does not explicitly repeat the 106th-minute timestamp, it refers to the goal previously described in the match context.",
+          "alignment_state": "partial",
+          "aligned_quote": "Torres provided the release, the joy.",
+          "meaning_deltas": [
+            {
+              "type": "scope",
+              "description": "The excerpt confirms the goal scorer but omits the specific minute in this particular sentence."
+            }
+          ],
+          "credited_origin": null,
+          "cluster_id": "424ae00fec47eeaae8bdfb9b1485cc533aa6d4dc8b0090cbbc66513a5e8a5167",
+          "mismatch": null
+        }
+      ],
+      "retrieval_failures": []
+    }
+  ],
+  "summary": {
+    "cases": 24,
+    "topics": [
+      "culture_sports",
+      "education_society",
+      "health",
+      "public_policy",
+      "science_climate",
+      "technology_economy"
+    ],
+    "languages": {
+      "en": 8,
+      "ko": 8,
+      "vi": 8
+    },
+    "evidence_states": {
+      "corroborated": 7,
+      "conflicting": 0,
+      "unresolved": 17
+    },
+    "aligned_items": 30,
+    "meaning_deltas": 9,
+    "article_text_stored": false,
+    "search_discovery_used": false
+  }
+}

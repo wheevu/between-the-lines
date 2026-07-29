@@ -1,0 +1,836 @@
+{
+  "schema_version": 1,
+  "corpus_sha256": "025b41bc257a3b8aa20ce7caf643a2ad8c98ad33d73b96885f2d09a796eb8584",
+  "case_ids": [
+    "vietnam-ai-law-ko-core",
+    "hanta-en-risk",
+    "wmo-vi-probability",
+    "nvidia-en-announcement",
+    "qs-ko-unist",
+    "world-cup-vi-result"
+  ],
+  "purpose": "Six-topic Claim Trace pilot using frozen, known cross-language source triples. Discovery is intentionally excluded so alignment and source-lineage handling can be evaluated separately from search availability.",
+  "started_at": "2026-07-24T17:35:19.924282+00:00",
+  "updated_at": "2026-07-24T17:36:00.513584+00:00",
+  "generated_at": "2026-07-24T17:36:00.513530+00:00",
+  "complete": true,
+  "stopped_at": null,
+  "pause_reason": null,
+  "results": [
+    {
+      "case_id": "vietnam-ai-law-ko-core",
+      "topic": "public_policy",
+      "profile": "clean",
+      "source_article_id": "vietnam-ai-law-ko-yonhap",
+      "source_language": "ko",
+      "claim": {
+        "source_quote": "베트남 인공지능법은 2026년 3월 1일부터 시행됐다.",
+        "segment_ids": [
+          "frozen-benchmark-claim"
+        ],
+        "standalone_claim": "베트남 인공지능법은 2026년 3월 1일부터 시행됐다.",
+        "claim_type": "fact",
+        "entities": [],
+        "dates": [],
+        "numbers": [
+          "2026",
+          "3",
+          "1"
+        ],
+        "facets": {
+          "attribution": null,
+          "modality": "asserted",
+          "legal_state": null
+        },
+        "reason": "Human-frozen benchmark proposition for cross-language alignment; claim extraction is evaluated separately.",
+        "id": "closed-vietnam-ai-law-ko-core",
+        "source_language": "ko"
+      },
+      "runtime_seconds": 17.829,
+      "assessment": {
+        "claim_id": "closed-vietnam-ai-law-ko-core",
+        "status": "supported",
+        "explanation": "At least two independent sources support this claim. No equally strong contradiction was found.",
+        "support_evidence_ids": [
+          "evidence-33de8cc247f7",
+          "evidence-363cf3e9ff5e"
+        ],
+        "challenge_evidence_ids": [],
+        "context_evidence_ids": [],
+        "limitations": [
+          "Lineage grouping can miss uncredited or undetected reuse."
+        ]
+      },
+      "trace": {
+        "evidence_state": "corroborated",
+        "article_count": 2,
+        "independent_lineages": 2,
+        "languages": [
+          "en",
+          "vi"
+        ],
+        "meaning_deltas": []
+      },
+      "evidence": [
+        {
+          "id": "evidence-33de8cc247f7",
+          "url": "https://mst.gov.vn/ai-la-cong-cu-ho-tro-quyet-dinh-cuoi-cung-van-la-con-nguoi-19726030111172663.htm",
+          "title": "Luật Trí tuệ nhân tạo chính thức có hiệu lực từ 1/3",
+          "publisher": "Vietnam Ministry of Science and Technology",
+          "language": "vi",
+          "published_at": "2026-03-01",
+          "source_type": "primary",
+          "direct": true,
+          "stance": "supports",
+          "stance_reason": "The excerpt explicitly states that the AI law is effective from March 1, 2026.",
+          "alignment_state": "aligned",
+          "aligned_quote": "Luật Trí tuệ nhân tạo có hiệu lực từ ngày 01/3/2026",
+          "meaning_deltas": [],
+          "credited_origin": null,
+          "cluster_id": "0be6023445eecb845547a254735b763408d16ddcf5782183c96b440180fb692e",
+          "mismatch": null
+        },
+        {
+          "id": "evidence-8c3344d8fbdf",
+          "url": "https://straitstimes.com/asia/se-asia/vietnam-ai-law-takes-effect-first-in-south-east-asia",
+          "title": "Vietnam AI law takes effect, first in South-east Asia",
+          "publisher": "The Straits Times",
+          "language": "en",
+          "published_at": "2026-03-01",
+          "source_type": "secondary-commentary",
+          "direct": false,
+          "stance": "irrelevant",
+          "stance_reason": "The excerpt discusses the scope and context of the law but does not explicitly confirm the effective date.",
+          "alignment_state": "not-aligned",
+          "aligned_quote": null,
+          "meaning_deltas": [],
+          "credited_origin": null,
+          "cluster_id": "47a84e5cbbb4db6d1c9e5f179cc86fa92f3761437f6c6fea3bfc65cfacf40cf6",
+          "mismatch": null
+        },
+        {
+          "id": "evidence-363cf3e9ff5e",
+          "url": "https://straitstimes.com/asia/se-asia/vietnam-ai-law-takes-effect-first-in-south-east-asia",
+          "title": "Vietnam AI law takes effect, first in South-east Asia",
+          "publisher": "The Straits Times",
+          "language": "en",
+          "published_at": "2026-03-01",
+          "source_type": "secondary-commentary",
+          "direct": false,
+          "stance": "supports",
+          "stance_reason": "The excerpt confirms that the law went into effect in Vietnam on March 1, 2026.",
+          "alignment_state": "aligned",
+          "aligned_quote": "A law regulating artificial intelligence (AI) went into effect in Vietnam on March 1",
+          "meaning_deltas": [],
+          "credited_origin": null,
+          "cluster_id": "638305bd979a4d122ba6b69703b49986603e733a651a0df62ea855a20c9bff81",
+          "mismatch": null
+        },
+        {
+          "id": "evidence-c891a5761a73",
+          "url": "https://mst.gov.vn/ai-la-cong-cu-ho-tro-quyet-dinh-cuoi-cung-van-la-con-nguoi-19726030111172663.htm",
+          "title": "Luật Trí tuệ nhân tạo chính thức có hiệu lực từ 1/3",
+          "publisher": "Vietnam Ministry of Science and Technology",
+          "language": "vi",
+          "published_at": "2026-03-01",
+          "source_type": "secondary-commentary",
+          "direct": false,
+          "stance": "irrelevant",
+          "stance_reason": "The excerpt discusses the content and purpose of the law but does not mention the effective date.",
+          "alignment_state": "not-aligned",
+          "aligned_quote": null,
+          "meaning_deltas": [],
+          "credited_origin": null,
+          "cluster_id": "500e8e7639eaae9262a1c96bacb20fdcfdd2ae8b4cc13af3d46e40318fb070bb",
+          "mismatch": null
+        }
+      ],
+      "retrieval_failures": []
+    },
+    {
+      "case_id": "hanta-en-risk",
+      "topic": "health",
+      "profile": "clean",
+      "source_article_id": "hanta-en-reuters-koreatimes",
+      "source_language": "en",
+      "claim": {
+        "source_quote": "WHO assessed the risk to the wider public from the MV Hondius Hantavirus cluster as low.",
+        "segment_ids": [
+          "frozen-benchmark-claim"
+        ],
+        "standalone_claim": "WHO assessed the risk to the wider public from the MV Hondius Hantavirus cluster as low.",
+        "claim_type": "attributed",
+        "entities": [],
+        "dates": [],
+        "numbers": [],
+        "facets": {
+          "attribution": "WHO",
+          "modality": "asserted",
+          "legal_state": null
+        },
+        "reason": "Human-frozen benchmark proposition for cross-language alignment; claim extraction is evaluated separately.",
+        "id": "closed-hanta-en-risk",
+        "source_language": "en"
+      },
+      "runtime_seconds": 5.016,
+      "assessment": {
+        "claim_id": "closed-hanta-en-risk",
+        "status": "supported",
+        "explanation": "At least two independent sources support this claim. No equally strong contradiction was found.",
+        "support_evidence_ids": [
+          "evidence-6d5344123779",
+          "evidence-e6afb529e7f1"
+        ],
+        "challenge_evidence_ids": [],
+        "context_evidence_ids": [],
+        "limitations": [
+          "Lineage grouping can miss uncredited or undetected reuse.",
+          "No original record or direct statement was found.",
+          "This checks whether the statement was made, not whether an allegation inside it is true."
+        ]
+      },
+      "trace": {
+        "evidence_state": "corroborated",
+        "article_count": 2,
+        "independent_lineages": 2,
+        "languages": [
+          "vi",
+          "ko"
+        ],
+        "meaning_deltas": []
+      },
+      "evidence": [
+        {
+          "id": "evidence-6d5344123779",
+          "url": "https://tuoitre.vn/nld/chum-ca-nhiem-virus-hanta-tren-tau-du-lich-bo-y-te-phat-khuyen-cao-khan-196260513175156206.htm",
+          "title": "Chùm ca nhiễm virus Hanta trên tàu du lịch: Bộ Y tế phát khuyến cáo khẩn",
+          "publisher": "Tuổi Trẻ",
+          "language": "vi",
+          "published_at": "2026-05-13",
+          "source_type": "secondary-commentary",
+          "direct": false,
+          "stance": "supports",
+          "stance_reason": "The excerpt explicitly states that the WHO assessed the risk to the global community as low.",
+          "alignment_state": "aligned",
+          "aligned_quote": "WHO đánh giá nguy cơ đối với hành khách và thủy thủ đoàn ở mức trung bình, trong khi nguy cơ với cộng đồng toàn cầu ở mức thấp.",
+          "meaning_deltas": [],
+          "credited_origin": "Tổ chức Y tế thế giới (WHO)",
+          "cluster_id": "lineage-11581b12e571",
+          "mismatch": null
+        },
+        {
+          "id": "evidence-800bd419962f",
+          "url": "https://yna.co.kr/view/AKR20260508000900085",
+          "title": "크루즈선 한타바이러스 확진 5건으로 늘어…확산 우려 | 연합뉴스",
+          "publisher": "Yonhap News Agency",
+          "language": "ko",
+          "published_at": "2026-05-08",
+          "source_type": "secondary-commentary",
+          "direct": false,
+          "stance": "irrelevant",
+          "stance_reason": "The excerpt discusses the number of cases and the potential for limited spread but does not explicitly state the WHO's assessment of the risk to the wider public as low.",
+          "alignment_state": "not-aligned",
+          "aligned_quote": null,
+          "meaning_deltas": [],
+          "credited_origin": null,
+          "cluster_id": "7592ec17bb89271a64763a2488173422576153c22fa24ac70bbbc921233309af",
+          "mismatch": null
+        },
+        {
+          "id": "evidence-7135d2ea3b89",
+          "url": "https://tuoitre.vn/nld/chum-ca-nhiem-virus-hanta-tren-tau-du-lich-bo-y-te-phat-khuyen-cao-khan-196260513175156206.htm",
+          "title": "Chùm ca nhiễm virus Hanta trên tàu du lịch: Bộ Y tế phát khuyến cáo khẩn",
+          "publisher": "Tuổi Trẻ",
+          "language": "vi",
+          "published_at": "2026-05-13",
+          "source_type": "secondary-commentary",
+          "direct": false,
+          "stance": "irrelevant",
+          "stance_reason": "The excerpt focuses on health recommendations and monitoring protocols rather than the WHO's risk assessment for the wider public.",
+          "alignment_state": "not-aligned",
+          "aligned_quote": null,
+          "meaning_deltas": [],
+          "credited_origin": null,
+          "cluster_id": "lineage-11581b12e571",
+          "mismatch": null
+        },
+        {
+          "id": "evidence-e6afb529e7f1",
+          "url": "https://yna.co.kr/view/AKR20260508000900085",
+          "title": "크루즈선 한타바이러스 확진 5건으로 늘어…확산 우려 | 연합뉴스",
+          "publisher": "Yonhap News Agency",
+          "language": "ko",
+          "published_at": "2026-05-08",
+          "source_type": "secondary-commentary",
+          "direct": true,
+          "stance": "supports",
+          "stance_reason": "The excerpt quotes the WHO Director-General stating that the WHO assesses the public health risk as low.",
+          "alignment_state": "aligned",
+          "aligned_quote": "WHO는 공중 보건 위험이 낮다고 평가한다",
+          "meaning_deltas": [],
+          "credited_origin": null,
+          "cluster_id": "1087bcc69f89f521ee5c02c3ec313faa5c4db658d6daab29390256786792d6c7",
+          "mismatch": null
+        }
+      ],
+      "retrieval_failures": []
+    },
+    {
+      "case_id": "wmo-vi-probability",
+      "topic": "science_climate",
+      "profile": "challenging",
+      "source_article_id": "wmo-vi-vtv",
+      "source_language": "vi",
+      "claim": {
+        "source_quote": "WMO dự báo với xác suất cụ thể rằng các kỷ lục nhiệt độ toàn cầu có thể bị phá trong 5 năm tới.",
+        "segment_ids": [
+          "frozen-benchmark-claim"
+        ],
+        "standalone_claim": "WMO dự báo với xác suất cụ thể rằng các kỷ lục nhiệt độ toàn cầu có thể bị phá trong 5 năm tới.",
+        "claim_type": "attributed",
+        "entities": [],
+        "dates": [],
+        "numbers": [
+          "5"
+        ],
+        "facets": {
+          "attribution": "WMO",
+          "modality": "future",
+          "legal_state": null
+        },
+        "reason": "Human-frozen benchmark proposition for cross-language alignment; claim extraction is evaluated separately.",
+        "id": "closed-wmo-vi-probability",
+        "source_language": "vi"
+      },
+      "runtime_seconds": 5.54,
+      "assessment": {
+        "claim_id": "closed-wmo-vi-probability",
+        "status": "insufficient",
+        "explanation": "Relevant sources were found, but they were not independent enough to resolve the claim.",
+        "support_evidence_ids": [
+          "evidence-f1ef9233865a",
+          "evidence-f3498b0c2f8e",
+          "evidence-77f6dc38731c"
+        ],
+        "challenge_evidence_ids": [],
+        "context_evidence_ids": [
+          "evidence-a5a911bf7fa4"
+        ],
+        "limitations": [
+          "The available sources may repeat the same original report.",
+          "Lineage grouping can miss uncredited or undetected reuse.",
+          "No original record or direct statement was found.",
+          "This checks whether the statement was made, not whether an allegation inside it is true."
+        ]
+      },
+      "trace": {
+        "evidence_state": "unresolved",
+        "article_count": 2,
+        "independent_lineages": 1,
+        "languages": [
+          "en",
+          "ko"
+        ],
+        "meaning_deltas": []
+      },
+      "evidence": [
+        {
+          "id": "evidence-f1ef9233865a",
+          "url": "https://wmo.int/media/news/new-report-suggests-more-global-temperature-records-ahead",
+          "title": "New report suggests more global temperature records ahead",
+          "publisher": "World Meteorological Organization",
+          "language": "en",
+          "published_at": "2026-05-26",
+          "source_type": "secondary-commentary",
+          "direct": false,
+          "stance": "supports",
+          "stance_reason": "The WMO report explicitly predicts an 86% chance that a year between 2026 and 2030 will surpass the 2024 record.",
+          "alignment_state": "aligned",
+          "aligned_quote": "It is likely (86% chance) that one year between 2026 and 2030 will surpass 2024 as the warmest year on record",
+          "meaning_deltas": [],
+          "credited_origin": "World Meteorological Organization",
+          "cluster_id": "lineage-32735ecd373b",
+          "mismatch": null
+        },
+        {
+          "id": "evidence-f3498b0c2f8e",
+          "url": "https://wmo.int/media/news/new-report-suggests-more-global-temperature-records-ahead",
+          "title": "New report suggests more global temperature records ahead",
+          "publisher": "World Meteorological Organization",
+          "language": "en",
+          "published_at": "2026-05-26",
+          "source_type": "secondary-commentary",
+          "direct": false,
+          "stance": "supports",
+          "stance_reason": "The report provides specific probability-based forecasts for temperature records over the next five years.",
+          "alignment_state": "aligned",
+          "aligned_quote": "There is an El Niño predicted for the end of 2026, which increases the chances of the following year, 2027, being the next record-breaking year.",
+          "meaning_deltas": [],
+          "credited_origin": null,
+          "cluster_id": "lineage-32735ecd373b",
+          "mismatch": null
+        },
+        {
+          "id": "evidence-77f6dc38731c",
+          "url": "https://yna.co.kr/view/AKR20260528096200530",
+          "title": "5년 내 '가장 더운 해' 기록 깨진다…가장 유력한 때는 '내년' | 연합뉴스",
+          "publisher": "Yonhap News Agency",
+          "language": "ko",
+          "published_at": "2026-05-28",
+          "source_type": "secondary-commentary",
+          "direct": false,
+          "stance": "supports",
+          "stance_reason": "The article reports that the WMO predicts an 86% chance of breaking the record for the hottest year within the next five years.",
+          "alignment_state": "aligned",
+          "aligned_quote": "2026년부터 2030년까지 5년 중 한 해라도 연평균 기온이 역대 가장 높았던 2024년을 웃돌 가능성은 86%에 달한다고 밝혔다.",
+          "meaning_deltas": [],
+          "credited_origin": "세계기상기구(WMO)",
+          "cluster_id": "lineage-32735ecd373b",
+          "mismatch": null
+        },
+        {
+          "id": "evidence-a5a911bf7fa4",
+          "url": "https://yna.co.kr/view/AKR20260528096200530",
+          "title": "5년 내 '가장 더운 해' 기록 깨진다…가장 유력한 때는 '내년' | 연합뉴스",
+          "publisher": "Yonhap News Agency",
+          "language": "ko",
+          "published_at": "2026-05-28",
+          "source_type": "secondary-commentary",
+          "direct": false,
+          "stance": "context",
+          "stance_reason": "This excerpt discusses Arctic temperature anomalies and expert commentary on the WMO report rather than the specific probability of breaking global records.",
+          "alignment_state": "not-aligned",
+          "aligned_quote": null,
+          "meaning_deltas": [],
+          "credited_origin": null,
+          "cluster_id": "lineage-32735ecd373b",
+          "mismatch": null
+        }
+      ],
+      "retrieval_failures": []
+    },
+    {
+      "case_id": "nvidia-en-announcement",
+      "topic": "technology_economy",
+      "profile": "challenging",
+      "source_article_id": "nvidia-en-primary",
+      "source_language": "en",
+      "claim": {
+        "source_quote": "NVIDIA announced the Vera Rubin platform at GTC 2026.",
+        "segment_ids": [
+          "frozen-benchmark-claim"
+        ],
+        "standalone_claim": "NVIDIA announced the Vera Rubin platform at GTC 2026.",
+        "claim_type": "fact",
+        "entities": [],
+        "dates": [],
+        "numbers": [
+          "2026."
+        ],
+        "facets": {
+          "attribution": null,
+          "modality": "asserted",
+          "legal_state": null
+        },
+        "reason": "Human-frozen benchmark proposition for cross-language alignment; claim extraction is evaluated separately.",
+        "id": "closed-nvidia-en-announcement",
+        "source_language": "en"
+      },
+      "runtime_seconds": 3.729,
+      "assessment": {
+        "claim_id": "closed-nvidia-en-announcement",
+        "status": "insufficient",
+        "explanation": "Relevant sources were found, but they were not independent enough to resolve the claim.",
+        "support_evidence_ids": [],
+        "challenge_evidence_ids": [],
+        "context_evidence_ids": [
+          "evidence-c03a42147213",
+          "evidence-6160272d4874",
+          "evidence-30dcbc9d531b"
+        ],
+        "limitations": [
+          "Lineage grouping can miss uncredited or undetected reuse.",
+          "No original record or direct statement was found."
+        ]
+      },
+      "trace": {
+        "evidence_state": "unresolved",
+        "article_count": 2,
+        "independent_lineages": 2,
+        "languages": [
+          "vi",
+          "ko"
+        ],
+        "meaning_deltas": []
+      },
+      "evidence": [
+        {
+          "id": "evidence-c03a42147213",
+          "url": "https://blogs.nvidia.co.kr/blog/nvidia-vera-rubin-platform",
+          "title": "에이전틱 AI 시대의 개막, NVIDIA Vera Rubin - NVIDIA Blog Korea",
+          "publisher": "NVIDIA Korea",
+          "language": "ko",
+          "published_at": "2026-03-17",
+          "source_type": "secondary-commentary",
+          "direct": false,
+          "stance": "context",
+          "stance_reason": "The excerpt describes the technical specifications and capabilities of the Vera Rubin platform but does not explicitly state that it was announced at GTC 2026.",
+          "alignment_state": "not-aligned",
+          "aligned_quote": null,
+          "meaning_deltas": [],
+          "credited_origin": null,
+          "cluster_id": "50f73a78e49f1c12681c6a1448b37e2e5cd01ac320e0871a1d369b5897ac2f74",
+          "mismatch": null
+        },
+        {
+          "id": "evidence-64b81ae18c90",
+          "url": "https://blogs.nvidia.co.kr/blog/nvidia-vera-rubin-platform",
+          "title": "에이전틱 AI 시대의 개막, NVIDIA Vera Rubin - NVIDIA Blog Korea",
+          "publisher": "NVIDIA Korea",
+          "language": "ko",
+          "published_at": "2026-03-17",
+          "source_type": "secondary-commentary",
+          "direct": false,
+          "stance": "irrelevant",
+          "stance_reason": "The excerpt discusses LPU fleets and storage racks without mentioning the announcement of the Vera Rubin platform at GTC 2026.",
+          "alignment_state": "not-aligned",
+          "aligned_quote": null,
+          "meaning_deltas": [],
+          "credited_origin": null,
+          "cluster_id": "66b7d23f09603c44dd6456c4d3c72f56b582127892c455b7ac49c5cbd0e221ce",
+          "mismatch": null
+        },
+        {
+          "id": "evidence-6160272d4874",
+          "url": "https://vietnamplus.vn/gtc-2026-nvidia-tung-loat-cong-nghe-ai-moi-post1099510.amp",
+          "title": "GTC 2026: Nvidia \"tung\" loạt công nghệ AI mới",
+          "publisher": "VietnamPlus",
+          "language": "vi",
+          "published_at": "2026-03-17",
+          "source_type": "secondary-commentary",
+          "direct": false,
+          "stance": "context",
+          "stance_reason": "The excerpt mentions Nvidia expects to launch the Vera Rubin platform later in the year, but does not confirm it was announced at GTC 2026.",
+          "alignment_state": "not-aligned",
+          "aligned_quote": null,
+          "meaning_deltas": [],
+          "credited_origin": null,
+          "cluster_id": "8b6d32afea15f13f197ba4dfb4061ce6167d6f0b1270efe398252dbdf9dfc7d5",
+          "mismatch": null
+        },
+        {
+          "id": "evidence-30dcbc9d531b",
+          "url": "https://vietnamplus.vn/gtc-2026-nvidia-tung-loat-cong-nghe-ai-moi-post1099510.amp",
+          "title": "GTC 2026: Nvidia \"tung\" loạt công nghệ AI mới",
+          "publisher": "VietnamPlus",
+          "language": "vi",
+          "published_at": "2026-03-17",
+          "source_type": "secondary-commentary",
+          "direct": false,
+          "stance": "context",
+          "stance_reason": "The excerpt mentions GTC 2026 in the context of other product announcements (Groq 3 LPU) but does not explicitly state that Vera Rubin was announced at this specific event.",
+          "alignment_state": "not-aligned",
+          "aligned_quote": null,
+          "meaning_deltas": [],
+          "credited_origin": null,
+          "cluster_id": "84594619f3b372774c477915b3016bb3777fc0c884eaabf27145524464cc1fb5",
+          "mismatch": null
+        }
+      ],
+      "retrieval_failures": []
+    },
+    {
+      "case_id": "qs-ko-unist",
+      "topic": "education_society",
+      "profile": "challenging",
+      "source_article_id": "qs-ko-yonhap",
+      "source_language": "ko",
+      "claim": {
+        "source_quote": "UNIST는 QS 세계대학평가 2027에서 299위를 기록했다.",
+        "segment_ids": [
+          "frozen-benchmark-claim"
+        ],
+        "standalone_claim": "UNIST는 QS 세계대학평가 2027에서 299위를 기록했다.",
+        "claim_type": "fact",
+        "entities": [],
+        "dates": [],
+        "numbers": [
+          "2027",
+          "299"
+        ],
+        "facets": {
+          "attribution": null,
+          "modality": "asserted",
+          "legal_state": null
+        },
+        "reason": "Human-frozen benchmark proposition for cross-language alignment; claim extraction is evaluated separately.",
+        "id": "closed-qs-ko-unist",
+        "source_language": "ko"
+      },
+      "runtime_seconds": 3.811,
+      "assessment": {
+        "claim_id": "closed-qs-ko-unist",
+        "status": "insufficient",
+        "explanation": "No relevant, readable evidence was found for this claim.",
+        "support_evidence_ids": [],
+        "challenge_evidence_ids": [],
+        "context_evidence_ids": [],
+        "limitations": [
+          "The available sources may repeat the same original report.",
+          "Fewer than two distinct publishers were found.",
+          "No original record or direct statement was found."
+        ]
+      },
+      "trace": {
+        "evidence_state": "unresolved",
+        "article_count": 0,
+        "independent_lineages": 0,
+        "languages": [],
+        "meaning_deltas": []
+      },
+      "evidence": [
+        {
+          "id": "evidence-6fa7d0076ee3",
+          "url": "https://prnewswire.com/news-releases/worlds-best-universities-revealed-302803262.html",
+          "title": "World's Best Universities Revealed",
+          "publisher": "PR Newswire",
+          "language": "en",
+          "published_at": "2026-06-17",
+          "source_type": "secondary-commentary",
+          "direct": false,
+          "stance": "irrelevant",
+          "stance_reason": "The excerpt discusses the release of the QS World University Rankings 2027 but does not mention UNIST or its specific ranking.",
+          "alignment_state": "not-aligned",
+          "aligned_quote": null,
+          "meaning_deltas": [],
+          "credited_origin": null,
+          "cluster_id": "ed0b790cb35878dd88f67f18b1eb74bb27bdc9608dc6b9f87f432ff9fe00b2e9",
+          "mismatch": null
+        },
+        {
+          "id": "evidence-b22f06c50dec",
+          "url": "https://prnewswire.com/news-releases/worlds-best-universities-revealed-302803262.html",
+          "title": "World's Best Universities Revealed",
+          "publisher": "PR Newswire",
+          "language": "en",
+          "published_at": "2026-06-17",
+          "source_type": "secondary-commentary",
+          "direct": false,
+          "stance": "irrelevant",
+          "stance_reason": "The excerpt lists various university rankings for the 2027 edition but does not mention UNIST.",
+          "alignment_state": "not-aligned",
+          "aligned_quote": null,
+          "meaning_deltas": [],
+          "credited_origin": null,
+          "cluster_id": "dff8b826031e01eaa647c4145a3a10a9b1f48929dfa3fa20446d4436881838ef",
+          "mismatch": null
+        },
+        {
+          "id": "evidence-2585d2105ef4",
+          "url": "https://vnu.edu.vn/qs-world-university-rankings-2027-dhqghn-tang-hang-nam-thu-4-lien-tiep-dan-dau-viet-nam-o-tieu-chi-ket-qua-tuyen-dung-va-phat-trien-ben-vung-post40164.html",
+          "title": "QS World University Rankings 2027: ĐHQGHN tăng hạng năm thứ 4 liên tiếp, dẫn đầu Việt Nam ở tiêu chí Kết quả tuyển dụng và Phát triển bền vững",
+          "publisher": "Vietnam National University, Hanoi",
+          "language": "vi",
+          "published_at": "2026-06-18",
+          "source_type": "secondary-commentary",
+          "direct": false,
+          "stance": "irrelevant",
+          "stance_reason": "The excerpt discusses the ranking of Vietnam National University in the QS WUR 2027 and does not mention UNIST.",
+          "alignment_state": "not-aligned",
+          "aligned_quote": null,
+          "meaning_deltas": [],
+          "credited_origin": null,
+          "cluster_id": "fd826a2efaf1de0267baeb1a9c57da7d91c2f8725c3ce83061849845601367f3",
+          "mismatch": null
+        },
+        {
+          "id": "evidence-145b087a5163",
+          "url": "https://vnu.edu.vn/qs-world-university-rankings-2027-dhqghn-tang-hang-nam-thu-4-lien-tiep-dan-dau-viet-nam-o-tieu-chi-ket-qua-tuyen-dung-va-phat-trien-ben-vung-post40164.html",
+          "title": "QS World University Rankings 2027: ĐHQGHN tăng hạng năm thứ 4 liên tiếp, dẫn đầu Việt Nam ở tiêu chí Kết quả tuyển dụng và Phát triển bền vững",
+          "publisher": "Vietnam National University, Hanoi",
+          "language": "vi",
+          "published_at": "2026-06-18",
+          "source_type": "secondary-commentary",
+          "direct": false,
+          "stance": "irrelevant",
+          "stance_reason": "The excerpt describes the methodology of the QS WUR 2027 and lists universities in Southeast Asia, but does not mention UNIST or its ranking.",
+          "alignment_state": "not-aligned",
+          "aligned_quote": null,
+          "meaning_deltas": [],
+          "credited_origin": null,
+          "cluster_id": "f5c44c2274527129096a0c9725d4fcc5fb9ea868b925a48cf8d1c4d9b393f466",
+          "mismatch": null
+        }
+      ],
+      "retrieval_failures": []
+    },
+    {
+      "case_id": "world-cup-vi-result",
+      "topic": "culture_sports",
+      "profile": "clean",
+      "source_article_id": "world-cup-vi-vnexpress",
+      "source_language": "vi",
+      "claim": {
+        "source_quote": "Tây Ban Nha thắng Argentina 1-0 sau hiệp phụ để vô địch World Cup 2026.",
+        "segment_ids": [
+          "frozen-benchmark-claim"
+        ],
+        "standalone_claim": "Tây Ban Nha thắng Argentina 1-0 sau hiệp phụ để vô địch World Cup 2026.",
+        "claim_type": "fact",
+        "entities": [],
+        "dates": [],
+        "numbers": [
+          "1-0",
+          "2026."
+        ],
+        "facets": {
+          "attribution": null,
+          "modality": "asserted",
+          "legal_state": null
+        },
+        "reason": "Human-frozen benchmark proposition for cross-language alignment; claim extraction is evaluated separately.",
+        "id": "closed-world-cup-vi-result",
+        "source_language": "vi"
+      },
+      "runtime_seconds": 4.567,
+      "assessment": {
+        "claim_id": "closed-world-cup-vi-result",
+        "status": "supported",
+        "explanation": "At least two independent sources support this claim. No equally strong contradiction was found.",
+        "support_evidence_ids": [
+          "evidence-226f7cc072e5",
+          "evidence-9aba8a34aed2",
+          "evidence-d369bf146d2d"
+        ],
+        "challenge_evidence_ids": [],
+        "context_evidence_ids": [
+          "evidence-c05f53b0b9fc"
+        ],
+        "limitations": [
+          "Lineage grouping can miss uncredited or undetected reuse.",
+          "No original record or direct statement was found."
+        ]
+      },
+      "trace": {
+        "evidence_state": "corroborated",
+        "article_count": 2,
+        "independent_lineages": 2,
+        "languages": [
+          "en",
+          "ko"
+        ],
+        "meaning_deltas": [
+          {
+            "type": "scope",
+            "description": "The excerpt focuses on the trophy presentation and post-match behavior rather than the match result details."
+          }
+        ]
+      },
+      "evidence": [
+        {
+          "id": "evidence-226f7cc072e5",
+          "url": "https://newsis.com/view/NISX20260720_0003714704",
+          "title": "메시 울린 스페인 '질식 수비'…역대 최소 실점으로 우승[월드컵24시]",
+          "publisher": "Newsis",
+          "language": "ko",
+          "published_at": "2026-07-20",
+          "source_type": "secondary-commentary",
+          "direct": false,
+          "stance": "supports",
+          "stance_reason": "The excerpt confirms Spain defeated Argentina in the World Cup final, noting the match went into extra time.",
+          "alignment_state": "aligned",
+          "aligned_quote": "아르헨티나는 연장전 막판에 가서야 겨우 슈팅 2개를 기록했으나",
+          "meaning_deltas": [],
+          "credited_origin": "Newsis",
+          "cluster_id": "lineage-01c83d837353",
+          "mismatch": null
+        },
+        {
+          "id": "evidence-9aba8a34aed2",
+          "url": "https://theguardian.com/football/2026/jul/19/spain-win-world-cup-argentina-final-match-report",
+          "title": "Spain win World Cup after Ferran Torres breaks 10-man Argentina’s resistance",
+          "publisher": "The Guardian",
+          "language": "en",
+          "published_at": "2026-07-19",
+          "source_type": "secondary-commentary",
+          "direct": false,
+          "stance": "supports",
+          "stance_reason": "The excerpt confirms Spain won the World Cup final against Argentina with a goal in the 106th minute (extra time).",
+          "alignment_state": "aligned",
+          "aligned_quote": "The goal came in the 106th minute",
+          "meaning_deltas": [],
+          "credited_origin": null,
+          "cluster_id": "6f2862671e6c931fdf745a05b90d528481ac28257f072bfd2b46c2ac7a12668f",
+          "mismatch": null
+        },
+        {
+          "id": "evidence-d369bf146d2d",
+          "url": "https://newsis.com/view/NISX20260720_0003714704",
+          "title": "메시 울린 스페인 '질식 수비'…역대 최소 실점으로 우승[월드컵24시]",
+          "publisher": "Newsis",
+          "language": "ko",
+          "published_at": "2026-07-20",
+          "source_type": "secondary-commentary",
+          "direct": false,
+          "stance": "supports",
+          "stance_reason": "The excerpt explicitly states Spain defeated Argentina 1-0 after extra time to win the 2026 World Cup.",
+          "alignment_state": "aligned",
+          "aligned_quote": "연장 승부 끝에 '디펜딩 챔피언' 아르헨티나를 1-0으로 꺾었다",
+          "meaning_deltas": [],
+          "credited_origin": null,
+          "cluster_id": "lineage-01c83d837353",
+          "mismatch": null
+        },
+        {
+          "id": "evidence-c05f53b0b9fc",
+          "url": "https://theguardian.com/football/2026/jul/19/spain-win-world-cup-argentina-final-match-report",
+          "title": "Spain win World Cup after Ferran Torres breaks 10-man Argentina’s resistance",
+          "publisher": "The Guardian",
+          "language": "en",
+          "published_at": "2026-07-19",
+          "source_type": "secondary-commentary",
+          "direct": false,
+          "stance": "context",
+          "stance_reason": "The excerpt discusses the aftermath of the final match between Spain and Argentina but does not explicitly state the score or the extra time duration.",
+          "alignment_state": "partial",
+          "aligned_quote": "Spain captain, Rodri, got his hands on those six kilograms of solid gold bliss",
+          "meaning_deltas": [
+            {
+              "type": "scope",
+              "description": "The excerpt focuses on the trophy presentation and post-match behavior rather than the match result details."
+            }
+          ],
+          "credited_origin": null,
+          "cluster_id": "bd87cb08c01d3bdf3e680bd4ff267357ca373e18e702acf40d08b5380dbc7cf2",
+          "mismatch": null
+        }
+      ],
+      "retrieval_failures": []
+    }
+  ],
+  "summary": {
+    "cases": 6,
+    "topics": [
+      "culture_sports",
+      "education_society",
+      "health",
+      "public_policy",
+      "science_climate",
+      "technology_economy"
+    ],
+    "languages": {
+      "en": 2,
+      "ko": 2,
+      "vi": 2
+    },
+    "evidence_states": {
+      "corroborated": 3,
+      "conflicting": 0,
+      "unresolved": 3
+    },
+    "aligned_items": 10,
+    "meaning_deltas": 1,
+    "article_text_stored": false,
+    "search_discovery_used": false
+  }
+}

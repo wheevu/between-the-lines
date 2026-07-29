@@ -1,0 +1,37 @@
+{
+  "ready_for_evidence_layer_decision": true,
+  "passage_reviews": 12,
+  "passage_reviews_by_direction": {
+    "en→ko": 2,
+    "en→vi": 2,
+    "ko→en": 2,
+    "ko→vi": 2,
+    "vi→en": 2,
+    "vi→ko": 2
+  },
+  "passage_verdicts_by_direction": {
+    "en→ko": {
+      "helpful": 2
+    },
+    "en→vi": {
+      "helpful": 2
+    },
+    "ko→en": {
+      "helpful": 2
+    },
+    "ko→vi": {
+      "helpful": 2
+    },
+    "vi→en": {
+      "helpful": 2
+    },
+    "vi→ko": {
+      "helpful": 2
+    }
+  },
+  "meaning_risk_judgments": 12,
+  "decided_meaning_risk_judgments": 12,
+  "meaning_risk_helpful_rate": 1.0,
+  "written_omissions": 12,
+  "blockers": []
+}

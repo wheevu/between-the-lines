@@ -1,0 +1,84 @@
+{
+  "date": "2026-07-24",
+  "reviewer_role": "author",
+  "method": "Rebuilt ambiguity flags locally from the stored translations, similarity scores, and grounded model notes. No translation or model call was repeated. Unchanged author judgments were carried forward by exact flag content; removed false-positive judgments remain attached to the original analyses.",
+  "changes": [
+    "Recognize Vietnamese 'ngày đầu' as the ordinal equivalent of English 'first day' and Korean '첫날'.",
+    "Do not parse the syllable '두' inside Korean '모두' as the number two.",
+    "Treat Vietnamese conditional 'nếu không' and English 'otherwise' as equivalent polarity markers."
+  ],
+  "analyses": [
+    {
+      "old_analysis_id": "ab7bcad4-0742-40de-8df6-a785671e22bc",
+      "new_analysis_id": "a71895f7-930b-4be7-bbad-68ea88cdd1b4",
+      "old_findings": 0,
+      "new_findings": 0,
+      "feedback_carried_forward": 2,
+      "removed_reviewed_false_positives": 0
+    },
+    {
+      "old_analysis_id": "fd18d5e6-4a64-4827-a7bb-0042e8ec4d3c",
+      "new_analysis_id": "3ab05a64-5953-4a20-8cbf-82cc9a40612f",
+      "old_findings": 0,
+      "new_findings": 0,
+      "feedback_carried_forward": 2,
+      "removed_reviewed_false_positives": 0
+    },
+    {
+      "old_analysis_id": "85f52083-84e1-4adf-945f-8484c4f16664",
+      "new_analysis_id": "e665e2eb-d12c-4b65-9ca3-1a91bc5392bf",
+      "old_findings": 0,
+      "new_findings": 0,
+      "feedback_carried_forward": 2,
+      "removed_reviewed_false_positives": 0
+    },
+    {
+      "old_analysis_id": "93f42ef1-3449-4ce5-ae74-281ea354d9d6",
+      "new_analysis_id": "9c1e3952-03fe-4fec-98a4-0ab3b15c8303",
+      "old_findings": 1,
+      "new_findings": 1,
+      "feedback_carried_forward": 3,
+      "removed_reviewed_false_positives": 0
+    },
+    {
+      "old_analysis_id": "bce7bf4e-2420-4b52-92f2-6a7bb9a29a1c",
+      "new_analysis_id": "983be92e-efb8-485c-8ecc-709654c8bdb8",
+      "old_findings": 0,
+      "new_findings": 0,
+      "feedback_carried_forward": 2,
+      "removed_reviewed_false_positives": 0
+    },
+    {
+      "old_analysis_id": "137c8041-7cc7-4f1a-9914-473159b7e0f7",
+      "new_analysis_id": "81b9402d-2bb1-466e-a29b-3da1dd23c1b5",
+      "old_findings": 2,
+      "new_findings": 2,
+      "feedback_carried_forward": 4,
+      "removed_reviewed_false_positives": 0
+    },
+    {
+      "old_analysis_id": "86eeed07-6728-4766-979e-3b05a1f37e30",
+      "new_analysis_id": "87c08075-7123-4cc3-85e6-49b5f2d00dde",
+      "old_findings": 6,
+      "new_findings": 6,
+      "feedback_carried_forward": 2,
+      "removed_reviewed_false_positives": 0
+    },
+    {
+      "old_analysis_id": "06bb6f4c-43f7-4ac5-98f9-3d7db7392c4b",
+      "new_analysis_id": "d7cda277-3d35-4304-9b11-b8653d041cbf",
+      "old_findings": 11,
+      "new_findings": 8,
+      "feedback_carried_forward": 5,
+      "removed_reviewed_false_positives": 3
+    },
+    {
+      "old_analysis_id": "3cd49e1d-03e4-4902-bfa4-960d9c14a81a",
+      "new_analysis_id": "e9eea3ba-fc94-45d0-91c0-21a91cadedb0",
+      "old_findings": 10,
+      "new_findings": 8,
+      "feedback_carried_forward": 4,
+      "removed_reviewed_false_positives": 2
+    }
+  ]
+}

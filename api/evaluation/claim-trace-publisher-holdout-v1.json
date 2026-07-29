@@ -1,0 +1,189 @@
+{
+  "schema_version": 1,
+  "frozen_at": "2026-07-26",
+  "corpus_sha256": "a7584a6c3a99e1605562d4e6dc80e1983dc742e8e2a061cf0d6b20338f5761ad",
+  "reviewer_role": "author",
+  "purpose": "Publisher-held-out retrieval validation using robustness articles only. It is not unseen-topic or independent accuracy evidence.",
+  "cases": [
+    {
+      "case_id": "korea-ai-act-en-core",
+      "source_language": "en",
+      "topic": "public_policy",
+      "match_policy": "any",
+      "evidence_article_ids": ["korea-ai-basic-act-implementation-en-robust-1"],
+      "gold_passages": [
+        {
+          "article_id": "korea-ai-basic-act-implementation-en-robust-1",
+          "quote": "South Korea has enacted the Framework Act on the Development of Artificial Intelligence and Establishment of Trust (the “AI Basic Act” or the “Act”), which took effect on January 22, 2026."
+        }
+      ],
+      "rationale": "A held-out legal analysis states the law and effective date directly."
+    },
+    {
+      "case_id": "vietnam-ai-law-ko-core",
+      "source_language": "ko",
+      "topic": "public_policy",
+      "match_policy": "any",
+      "evidence_article_ids": ["vietnam-ai-law-effective-ko-robust-2"],
+      "gold_passages": [
+        {
+          "article_id": "vietnam-ai-law-effective-ko-robust-2",
+          "quote": "지난 3월 1일 발효된 베트남 ‘인공지능법(Artificial Intelligence Law)’은 급변하는 기술 환경에 대응하고, 혁신 촉진과 리스크 관리 사이의 균형을 맞추기 위한 베트남 최초의 전담 법률이다."
+        }
+      ],
+      "rationale": "A held-out Korean report states that the Vietnamese AI law took effect on March 1."
+    },
+    {
+      "case_id": "nipah-vi-case-count",
+      "source_language": "vi",
+      "topic": "health",
+      "match_policy": "any",
+      "evidence_article_ids": ["nipah-india-outbreak-en-robust-2"],
+      "gold_passages": [
+        {
+          "article_id": "nipah-india-outbreak-en-robust-2",
+          "quote": "The World Health Organization (WHO) reports 1 patient improving, whereas the other remains critically ill, and it characterizes the subnational risk in West Bengal as moderate but national and global risk as low."
+        }
+      ],
+      "rationale": "A held-out health report preserves WHO’s low national and global risk assessment."
+    },
+    {
+      "case_id": "hanta-en-risk",
+      "source_language": "en",
+      "topic": "health",
+      "match_policy": "any",
+      "evidence_article_ids": ["hantavirus-cruise-ship-en-robust-2"],
+      "gold_passages": [
+        {
+          "article_id": "hantavirus-cruise-ship-en-robust-2",
+          "quote": "The WHO maintains at this stage that the overall risk to public health remains low, and is in no way comparable to the situation observed during the Covid-19 pandemic."
+        }
+      ],
+      "rationale": "A held-out scientific source states WHO’s low public-health risk assessment."
+    },
+    {
+      "case_id": "artemis-ko-mission",
+      "source_language": "ko",
+      "topic": "science_climate",
+      "match_policy": "any",
+      "evidence_article_ids": ["artemis-ii-launch-en-robust-2"],
+      "gold_passages": [
+        {
+          "article_id": "artemis-ii-launch-en-robust-2",
+          "quote": "Four astronauts — NASA’s Reid Wiseman, Victor Glover and Christina Koch; and the Canadian Space Agency’s Jeremy Hansen — are set to spend 10 days in space, orbiting the Earth once before flying to the moon, around it and back."
+        }
+      ],
+      "rationale": "A held-out report states the crew size, duration, and lunar route."
+    },
+    {
+      "case_id": "wmo-vi-probability",
+      "source_language": "vi",
+      "topic": "science_climate",
+      "match_policy": "any",
+      "evidence_article_ids": ["wmo-five-year-temperature-outlook-ko-robust-2"],
+      "gold_passages": [
+        {
+          "article_id": "wmo-five-year-temperature-outlook-ko-robust-2",
+          "quote": "WMO는 2026~2030년 전체 5년 평균 전 지구 기온이 산업화 이전보다 1.5℃를 초과할 가능성을 75%로 전망했다."
+        },
+        {
+          "article_id": "wmo-five-year-temperature-outlook-ko-robust-2",
+          "quote": "기상청은 평년 대비 전 지구 평균기온이 향후 5년 중 적어도 한 번 2024년 기록을 초과할 확률을 90%로 예측했다."
+        }
+      ],
+      "rationale": "A held-out Korean report contains explicit five-year temperature probabilities."
+    },
+    {
+      "case_id": "nvidia-en-announcement",
+      "source_language": "en",
+      "topic": "technology_economy",
+      "match_policy": "all",
+      "evidence_article_ids": ["nvidia-gtc-vera-rubin-vi-robust-1"],
+      "gold_passages": [
+        {
+          "article_id": "nvidia-gtc-vera-rubin-vi-robust-1",
+          "quote": "Tại hội nghị công nghệ GTC 2026 tổ chức ở San Jose (Mỹ), NVIDIA công bố nhiều nền tảng mới nhằm thúc đẩy thế hệ trí tuệ nhân tạo có khả năng tự hành động, thường được gọi là AI agent (tác nhân AI)."
+        },
+        {
+          "article_id": "nvidia-gtc-vera-rubin-vi-robust-1",
+          "quote": "Đáng chú ý là nền tảng Vera Rubin, hệ thống hạ tầng AI tích hợp nhiều thành phần từ CPU, GPU đến mạng và lưu trữ, được thiết kế để phục vụ toàn bộ vòng đời phát triển AI."
+        }
+      ],
+      "rationale": "A held-out Vietnamese report connects GTC 2026 announcements with the Vera Rubin platform."
+    },
+    {
+      "case_id": "siri-ko-features",
+      "source_language": "ko",
+      "topic": "technology_economy",
+      "match_policy": "any",
+      "evidence_article_ids": ["apple-wwdc26-siri-en-robust-1"],
+      "gold_passages": [
+        {
+          "article_id": "apple-wwdc26-siri-en-robust-1",
+          "quote": "CUPERTINO, CALIFORNIA Today, during the Worldwide Developers Conference, Apple previewed its upcoming software releases that will deliver the next generation of Apple Intelligence and introduce Siri AI, an entirely new version of Siri that is profoundly more intelligent, knowledgeable, and capable."
+        }
+      ],
+      "rationale": "Apple’s held-out announcement directly connects WWDC with the more capable Siri AI."
+    },
+    {
+      "case_id": "qs-vi-vnu",
+      "source_language": "vi",
+      "topic": "education_society",
+      "match_policy": "any",
+      "evidence_article_ids": ["qs-world-university-rankings-2027-vi-robust-1"],
+      "gold_passages": [
+        {
+          "article_id": "qs-world-university-rankings-2027-vi-robust-1",
+          "quote": "Hai đơn vị cải thiện vị trí là Đại học Quốc gia Hà Nội, từ nhóm 761-770 lên 751-760, và Đại học Bách khoa Hà Nội, từ nhóm 1.201-1.400 lên 1.001-1.200."
+        }
+      ],
+      "rationale": "A held-out Vietnamese report states VNU Hanoi’s improved ranking band."
+    },
+    {
+      "case_id": "happiness-en-report",
+      "source_language": "en",
+      "topic": "education_society",
+      "match_policy": "all",
+      "evidence_article_ids": ["world-happiness-report-2026-vi-robust-2"],
+      "gold_passages": [
+        {
+          "article_id": "world-happiness-report-2026-vi-robust-2",
+          "quote": "Báo cáo, được công bố hàng năm vào dịp Ngày Quốc tế Hạnh phúc của Liên Hiệp Quốc 20.3, xếp hạng các quốc gia dựa trên cách người dân đánh giá cuộc sống của chính họ."
+        },
+        {
+          "article_id": "world-happiness-report-2026-vi-robust-2",
+          "quote": "Dữ liệu chủ yếu đến từ các cuộc thăm dò ý kiến cùng với nhiều phân tích của các nhà nghiên cứu về những yếu tố như hỗ trợ xã hội, tuổi thọ khỏe mạnh, tự do, sự hào phóng hay nhận thức về tham nhũng."
+        }
+      ],
+      "rationale": "A held-out article links life evaluation with the report’s social-context measures."
+    },
+    {
+      "case_id": "olympics-ko-distributed",
+      "source_language": "ko",
+      "topic": "culture_sports",
+      "match_policy": "any",
+      "evidence_article_ids": ["winter-olympics-opening-2026-en-robust-1"],
+      "gold_passages": [
+        {
+          "article_id": "winter-olympics-opening-2026-en-robust-1",
+          "quote": "For the first time in Olympic history, the Opening Ceremony will be shared across multiple locations and will include the simultaneous lighting of a cauldron in the second host city."
+        }
+      ],
+      "rationale": "A held-out Olympics source states the distributed ceremony and second cauldron."
+    },
+    {
+      "case_id": "world-cup-vi-result",
+      "source_language": "vi",
+      "topic": "culture_sports",
+      "match_policy": "any",
+      "evidence_article_ids": ["world-cup-final-2026-ko-robust-3"],
+      "gold_passages": [
+        {
+          "article_id": "world-cup-final-2026-ko-robust-3",
+          "quote": "스페인 축구대표팀이 20일(한국시각) 미국 뉴저지주 이스트러더퍼드의 뉴욕 뉴저지 스타디움에서 열린 2026 국제축구연맹(FIFA) 북중미 월드컵 결승전에서 연장 후반 터진 토레스의 결승골로 아르헨티나를 1-0으로 꺾었다."
+        }
+      ],
+      "rationale": "A held-out Korean report states the opponent, 1–0 score, extra-time goal, and final."
+    }
+  ]
+}

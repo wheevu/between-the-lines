@@ -1,0 +1,61 @@
+{
+  "purpose": "Measure only the local NLLB stage; Gemini and extraction are excluded.",
+  "manifest_sha256": "025b41bc257a3b8aa20ce7caf643a2ad8c98ad33d73b96885f2d09a796eb8584",
+  "machine": {
+    "platform": "macOS-26.5.2-arm64-arm-64bit-Mach-O",
+    "machine": "arm64",
+    "processor": "arm"
+  },
+  "warmup_excluded": true,
+  "execution_order": "selective then full for each article",
+  "cases": [
+    {
+      "article_id": "korea-ai-act-en-msit",
+      "source_language": "en",
+      "target_language": "vi",
+      "segments": 17,
+      "locally_checked_segments": 5,
+      "local_model_segment_share": 0.2941,
+      "direction_warmup_seconds_excluded": 24.129,
+      "selective_seconds": 48.828,
+      "full_seconds": 119.469
+    },
+    {
+      "article_id": "korea-ai-act-vi-moj",
+      "source_language": "vi",
+      "target_language": "ko",
+      "segments": 24,
+      "locally_checked_segments": 7,
+      "local_model_segment_share": 0.2917,
+      "direction_warmup_seconds_excluded": 0.685,
+      "selective_seconds": 9.601,
+      "full_seconds": 33.416
+    },
+    {
+      "article_id": "korea-ai-act-ko-yonhap",
+      "source_language": "ko",
+      "target_language": "en",
+      "segments": 11,
+      "locally_checked_segments": 8,
+      "local_model_segment_share": 0.7273,
+      "direction_warmup_seconds_excluded": 4.01,
+      "selective_seconds": 30.466,
+      "full_seconds": 35.906
+    }
+  ],
+  "failures": [],
+  "summary": {
+    "articles": 3,
+    "segments": 52,
+    "locally_checked_segments": 20,
+    "local_model_segment_share": 0.3846,
+    "selective_seconds": 88.895,
+    "full_seconds": 188.791,
+    "speedup": 2.12
+  },
+  "limitations": [
+    "Gemini notes are unavailable before a live translation, so this benchmark routes on source-text risk markers only.",
+    "The per-article execution order can favor the selective pass through transient caching.",
+    "This Apple Silicon result cannot support an Intel performance claim."
+  ]
+}

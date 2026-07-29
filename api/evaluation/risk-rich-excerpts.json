@@ -1,0 +1,22 @@
+{
+  "prepared": "2026-07-24",
+  "provenance": "Synthetic passages authored for this evaluation; they are not reports of real events.",
+  "purpose": "Elicit translation judgments about attribution, negation, modality, quantities, dates, and idioms without adding false positives to the detector.",
+  "cases": [
+    {
+      "id": "synthetic-en-transit",
+      "source_language": "en",
+      "text": "The fictional Riverside Transit Authority said on 18 July 2026 that the Blue Loop trial may not begin until October, rather than on 30 September as an earlier notice appeared to suggest. Deputy director Mina Park did not rule out a two-week delay, but she stressed that no decision had been made. The authority expects to test at least 24 electric buses; it has not promised that all 24 will carry passengers on the first day. A contractor estimated the preliminary cost at US$1.25 million, excluding charging equipment and tax. Park described that figure as “still on the table,” which meant it remained under discussion, not that the amount had been approved. She also said the team was “not exactly starting from scratch” because route maps and accessibility checks were already complete. If overnight temperature tests meet the safety threshold, limited service could start as early as 12 October. Otherwise, the trial would move to November. The final schedule, budget, and passenger capacity will remain subject to an independent safety review."
+    },
+    {
+      "id": "synthetic-vi-library",
+      "source_language": "vi",
+      "text": "Trong bản tin giả định ngày 18/7/2026, Trung tâm Thư viện Bờ Sông cho biết phòng đọc mới có thể chưa mở trước tháng 10, chứ không khẳng định sẽ khai trương đúng ngày 30/9 như thông báo cũ từng khiến một số người hiểu. Phó giám đốc Trần Minh An nói trung tâm “không loại trừ khả năng” lùi lịch hai tuần, nhưng nhấn mạnh rằng chưa có quyết định cuối cùng. Kế hoạch hiện nêu ít nhất 24 máy tính phục vụ bạn đọc; điều đó không đồng nghĩa cả 24 máy đều hoạt động ngay ngày đầu. Đơn vị thi công ước tính chi phí sơ bộ là 1,25 tỷ đồng, chưa gồm thiết bị mạng và thuế. Ông An nói con số này “vẫn đang được đặt lên bàn”, tức còn được thảo luận chứ chưa được phê duyệt. Theo ông, nhóm dự án “không hẳn bắt đầu từ con số không” vì sơ đồ phòng và kiểm tra lối đi cho người khuyết tật đã hoàn tất. Nếu thử nghiệm an toàn ban đêm đạt yêu cầu, phòng đọc có thể mở hạn chế sớm nhất vào ngày 12/10; nếu không, lịch sẽ chuyển sang tháng 11 và tiếp tục phụ thuộc đánh giá độc lập."
+    },
+    {
+      "id": "synthetic-ko-garden",
+      "source_language": "ko",
+      "text": "가상의 강변정원 운영단은 2026년 7월 18일 발표문에서 새 야간 프로그램이 10월 전에는 시작되지 않을 수도 있다고 밝혔다. 앞선 안내문 때문에 일부 시민은 9월 30일 개장을 확정된 일정으로 받아들였지만, 운영단은 그런 뜻은 아니었다고 설명했다. 박민아 부단장은 일정을 2주 늦출 가능성을 배제하지 않았으나 아직 아무 결정도 내려지지 않았다고 강조했다. 현재 계획에는 최소 24개의 조명 구역이 포함되어 있다. 그렇다고 첫날부터 24개 구역을 모두 개방하겠다고 약속한 것은 아니다. 시공사는 네트워크 장비와 세금을 제외한 잠정 비용을 12억 5천만 원으로 추산했다. 박 부단장은 이 금액이 “아직 테이블 위에 있다”고 말했는데, 이는 승인이 끝났다는 뜻이 아니라 계속 논의 중이라는 의미라고 덧붙였다. 또한 설계도와 접근성 점검이 이미 끝났기 때문에 운영단이 “손을 놓고 있었던 것은 아니다”라고 말했다. 운영단은 보도자료에 나온 수치가 추정치이며 확정 예산으로 인용되어서는 안 된다고 다시 설명했다. 사전 신청자에게 우선 입장권을 줄 수는 있지만 신청 자체가 입장을 보장하지도 않는다. 야간 안전 시험이 기준을 충족하면 제한 운영은 빠르면 10월 12일 시작될 수 있다. 그렇지 않으면 11월로 미뤄지며 최종 일정과 예산은 독립적인 안전 검토 결과에 따라 달라진다."
+    }
+  ]
+}

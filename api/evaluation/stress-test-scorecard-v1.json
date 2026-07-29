@@ -1,0 +1,93 @@
+{
+  "version": "1.0",
+  "frozen_at": "2026-07-25",
+  "purpose": "Judge product usefulness, claim-trace safety, and technical efficiency without allowing one metric to hide another.",
+  "translation_experiment": {
+    "primary_metrics": [
+      {
+        "name": "critical_meaning_recall",
+        "definition": "Human-labeled number, negation, modality, attribution, date, entity, scope, and legal-state changes surfaced to the reader.",
+        "target": ">= 0.85"
+      },
+      {
+        "name": "warning_precision",
+        "definition": "Surfaced meaning warnings judged useful or partially useful by a bilingual reviewer.",
+        "target": ">= 0.70"
+      },
+      {
+        "name": "median_end_to_end_latency",
+        "definition": "Cold-cache time from accepted input to a readable single-target result on the reference device.",
+        "target": "<= 20 seconds"
+      },
+      {
+        "name": "blocking_local_translation_calls",
+        "definition": "NLLB translation or back-translation calls before the first readable result.",
+        "target": "0"
+      }
+    ],
+    "guardrails": [
+      "Rules still check every segment.",
+      "Numbers, negation, and protected facts receive deterministic comparison.",
+      "The interface describes model notes as prompts for review, not corrections.",
+      "Local E5 remains in Claim Trace evidence ranking, where ranking quality is measured separately."
+    ]
+  },
+  "claim_trace_experiment": {
+    "primary_metrics": [
+      {
+        "name": "aligned_evidence_recall",
+        "definition": "Cases with at least one correctly aligned evidence passage divided by cases whose frozen source set contains one.",
+        "target": ">= 0.80"
+      },
+      {
+        "name": "unsupported_verdict_rate",
+        "definition": "Supported or disputed verdicts lacking two independent lineages or aligned evidence.",
+        "target": "0"
+      },
+      {
+        "name": "lineage_precision",
+        "definition": "Pairs labeled independent that a reviewer confirms do not derive from the same report or original statement.",
+        "target": ">= 0.90"
+      },
+      {
+        "name": "median_known_source_latency",
+        "definition": "Median runtime per frozen claim case.",
+        "target": "<= 8 seconds"
+      }
+    ],
+    "status_policy": {
+      "supported_or_disputed": "Requires aligned evidence and at least two independent lineages.",
+      "mixed": "Requires aligned support and challenge evidence.",
+      "insufficient": "Correct outcome whenever coverage, alignment, or independence is inadequate."
+    }
+  },
+  "product_experiment": {
+    "tasks": [
+      "Paste an article URL and choose a reading language.",
+      "Find the first passage worth checking.",
+      "Explain what may have changed without reading methodology text.",
+      "Trace one checkable claim and distinguish evidence from repeated reporting."
+    ],
+    "metrics": [
+      {
+        "name": "task_completion",
+        "target": ">= 0.80"
+      },
+      {
+        "name": "median_time_to_translation",
+        "target": "<= 30 seconds including input"
+      },
+      {
+        "name": "false_confidence",
+        "definition": "Users interpreting an insufficient result as factually verified.",
+        "target": "0"
+      }
+    ]
+  },
+  "decision_gates": {
+    "go": "Meets all safety guardrails and at least two of three product/quality targets.",
+    "narrow": "Safe but misses recall or latency; reduce claim types or supported article domains.",
+    "pivot": "Users value translation ambiguity but not claim tracing, or vice versa.",
+    "stop": "Unsupported verdict rate is nonzero after remediation, or users cannot distinguish translation risk from factual verification."
+  }
+}

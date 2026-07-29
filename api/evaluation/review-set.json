@@ -1,0 +1,16 @@
+{
+  "news_passage_analysis_ids": [
+    "a71895f7-930b-4be7-bbad-68ea88cdd1b4",
+    "3ab05a64-5953-4a20-8cbf-82cc9a40612f",
+    "e665e2eb-d12c-4b65-9ca3-1a91bc5392bf",
+    "9c1e3952-03fe-4fec-98a4-0ab3b15c8303",
+    "983be92e-efb8-485c-8ecc-709654c8bdb8",
+    "81b9402d-2bb1-466e-a29b-3da1dd23c1b5"
+  ],
+  "risk_extension_analysis_ids": [
+    "87c08075-7123-4cc3-85e6-49b5f2d00dde",
+    "d7cda277-3d35-4304-9b11-b8653d041cbf",
+    "e9eea3ba-fc94-45d0-91c0-21a91cadedb0"
+  ],
+  "rule": "Only the six news analyses count toward passage coverage. Meaning-risk judgments may also come from the authored risk extension. These IDs are the local detector-refinement rerun recorded in translation-refinement-2026-07-24.json."
+}

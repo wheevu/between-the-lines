@@ -1,0 +1,547 @@
+{
+  "schema_version": 2,
+  "selection_sha256": "207dbd6ecf12bc35689c848aaff1e6e7b921b5c306a1ca810fd9ff890c1dc749",
+  "purpose": "Human gold evidence and status labels for the frozen 30-claim set. Do not derive these fields from Between the Lines output.",
+  "claims": [
+    {
+      "candidate_id": "claim-601c280561a5",
+      "case_id": "vi-1-yonhap-return",
+      "source_language": "vi",
+      "primary_category": "direct-announcement",
+      "claim_type": "attributed",
+      "source_quote": "Thứ Hai (27/04), công ty quản lý ADOR cho biết nhóm nhạc nữ K-pop NewJeans đang chuẩn bị trở lại với các hoạt động âm nhạc",
+      "standalone_claim": "Công ty ADOR thông báo nhóm nhạc NewJeans đang chuẩn bị trở lại với các hoạt động âm nhạc vào ngày 27/04.",
+      "gold": {
+        "expected_status": null,
+        "acceptable_evidence_sets": [],
+        "checked_at": null,
+        "rationale": "",
+        "search_notes": "",
+        "adjudicators": [],
+        "adjudication_notes": ""
+      }
+    },
+    {
+      "candidate_id": "claim-700a7c566204",
+      "case_id": "vi-1-yonhap-return",
+      "source_language": "vi",
+      "primary_category": "abstention",
+      "claim_type": "attributed",
+      "source_quote": "xác nhận chuyến thăm Copenhagen là \"một phần của quá trình tiền sản xuất trong hành trình âm nhạc mới.\"",
+      "standalone_claim": "Công ty ADOR xác nhận chuyến thăm Copenhagen của các thành viên NewJeans là một phần của quá trình tiền sản xuất âm nhạc.",
+      "gold": {
+        "expected_status": null,
+        "acceptable_evidence_sets": [],
+        "checked_at": null,
+        "rationale": "",
+        "search_notes": "",
+        "adjudicators": [],
+        "adjudication_notes": ""
+      }
+    },
+    {
+      "candidate_id": "claim-aa9ff2381fcc",
+      "case_id": "vi-2-vov-minji",
+      "source_language": "vi",
+      "primary_category": "date",
+      "claim_type": "attributed",
+      "source_quote": "Ngày 7/5, ADOR đã thận trọng giải đáp những đồn đoán về việc Minji trở lại NewJeans trong một tuyên bố được chia sẻ với kênh MK Sports: “Chúng tôi đang tiếp tục thảo luận nội bộ về các hoạt động trong tương lai”.",
+      "standalone_claim": "Vào ngày 7/5, ADOR tuyên bố với MK Sports rằng họ đang thảo luận nội bộ về các hoạt động tương lai của NewJeans.",
+      "gold": {
+        "expected_status": null,
+        "acceptable_evidence_sets": [],
+        "checked_at": null,
+        "rationale": "",
+        "search_notes": "",
+        "adjudicators": [],
+        "adjudication_notes": ""
+      }
+    },
+    {
+      "candidate_id": "claim-be18649b95a1",
+      "case_id": "vi-2-vov-minji",
+      "source_language": "vi",
+      "primary_category": "number",
+      "claim_type": "fact",
+      "source_quote": "Công ty này cũng đã đệ đơn kiện đòi bồi thường 43,1 tỷ won chống lại Danielle cùng một thành viên trong gia đình cô và Min Hee Jin.",
+      "standalone_claim": "ADOR đã đệ đơn kiện đòi bồi thường 43,1 tỷ won đối với Danielle, một thành viên gia đình cô và Min Hee Jin.",
+      "gold": {
+        "expected_status": null,
+        "acceptable_evidence_sets": [],
+        "checked_at": null,
+        "rationale": "",
+        "search_notes": "",
+        "adjudicators": [],
+        "adjudication_notes": ""
+      }
+    },
+    {
+      "candidate_id": "claim-a5f792a651c0",
+      "case_id": "vi-3-svvn-leader",
+      "source_language": "vi",
+      "primary_category": "legal-attribution",
+      "claim_type": "attributed",
+      "source_quote": "Cả hai bài hát đều sử dụng nhịp 4/4 và giọng Si giáng thứ, và có sự tương đồng ở 31 nốt nhạc trải dài khoảng tám ô nhịp",
+      "standalone_claim": "Đơn kiện cáo buộc bài hát How Sweet và bản demo của các nguyên đơn có sự tương đồng về nhịp, giọng và 31 nốt nhạc.",
+      "gold": {
+        "expected_status": null,
+        "acceptable_evidence_sets": [],
+        "checked_at": null,
+        "rationale": "",
+        "search_notes": "",
+        "adjudicators": [],
+        "adjudication_notes": ""
+      }
+    },
+    {
+      "candidate_id": "claim-7e76f85073e2",
+      "case_id": "vi-4-yonhap-four-member",
+      "source_language": "vi",
+      "primary_category": "date",
+      "claim_type": "fact",
+      "source_quote": "Thứ Tư (22/07), nhóm nhạc nữ K-pop nổi tiếng NewJeans đã bất ngờ phát hành một video và loạt ảnh có sự góp mặt của bốn thành viên, trong đó có Minji, vào dịp kỷ niệm 4 năm ra mắt",
+      "standalone_claim": "Nhóm nhạc NewJeans đã phát hành video và hình ảnh có sự góp mặt của bốn thành viên vào ngày 22 tháng 7 nhân kỷ niệm 4 năm ra mắt.",
+      "gold": {
+        "expected_status": null,
+        "acceptable_evidence_sets": [],
+        "checked_at": null,
+        "rationale": "",
+        "search_notes": "",
+        "adjudicators": [],
+        "adjudication_notes": ""
+      }
+    },
+    {
+      "candidate_id": "claim-d84bec51e2df",
+      "case_id": "vi-4-yonhap-four-member",
+      "source_language": "vi",
+      "primary_category": "direct-announcement",
+      "claim_type": "attributed",
+      "source_quote": "Sau phán quyết, các thành viên Haerin, Hyein và Hanni đều đã trở lại ADOR vào năm ngoái, trong khi công ty thông báo họ đã chấm dứt hợp đồng với thành viên thứ năm ban đầu là Danielle.",
+      "standalone_claim": "Công ty ADOR thông báo đã chấm dứt hợp đồng với thành viên Danielle của nhóm NewJeans.",
+      "gold": {
+        "expected_status": null,
+        "acceptable_evidence_sets": [],
+        "checked_at": null,
+        "rationale": "",
+        "search_notes": "",
+        "adjudicators": [],
+        "adjudication_notes": ""
+      }
+    },
+    {
+      "candidate_id": "claim-c5f4cb78e424",
+      "case_id": "vi-5-laodong-challenges",
+      "source_language": "vi",
+      "primary_category": "number",
+      "claim_type": "fact",
+      "source_quote": "Sau một ngày, 8 bài đăng trên tài khoản Instagram chính thức của NewJeans đã vượt 9,5 triệu lượt thích và thu về hơn 100.000 bình luận.",
+      "standalone_claim": "8 bài đăng trên Instagram của NewJeans đạt hơn 9,5 triệu lượt thích và hơn 100.000 bình luận sau một ngày.",
+      "gold": {
+        "expected_status": null,
+        "acceptable_evidence_sets": [],
+        "checked_at": null,
+        "rationale": "",
+        "search_notes": "",
+        "adjudicators": [],
+        "adjudication_notes": ""
+      }
+    },
+    {
+      "candidate_id": "claim-d1a5e6ffb8b7",
+      "case_id": "vi-5-laodong-challenges",
+      "source_language": "vi",
+      "primary_category": "legal-attribution",
+      "claim_type": "attributed",
+      "source_quote": "Tháng 12 năm ngoái, ADOR đã thông báo chấm dứt hợp đồng độc quyền với Danielle và hiện đang tiến hành vụ kiện đòi bồi thường thiệt hại đối với cô cùng gia đình.",
+      "standalone_claim": "ADOR đã thông báo chấm dứt hợp đồng độc quyền với Danielle vào tháng 12 năm ngoái và đang kiện đòi bồi thường thiệt hại.",
+      "gold": {
+        "expected_status": null,
+        "acceptable_evidence_sets": [],
+        "checked_at": null,
+        "rationale": "",
+        "search_notes": "",
+        "adjudicators": [],
+        "adjudication_notes": ""
+      }
+    },
+    {
+      "candidate_id": "claim-80bead3c29c1",
+      "case_id": "vi-5-laodong-challenges",
+      "source_language": "vi",
+      "primary_category": "abstention",
+      "claim_type": "attributed",
+      "source_quote": "Thực tế, nhà thiết kế Park Si Young cũng đã thẳng thắn chê bai nội dung mới của nhóm, cho rằng phần hình ảnh và thẩm mỹ không thật sự ấn tượng.",
+      "standalone_claim": "Nhà thiết kế Park Si Young đã chê bai nội dung mới của NewJeans vì cho rằng hình ảnh và thẩm mỹ không ấn tượng.",
+      "gold": {
+        "expected_status": null,
+        "acceptable_evidence_sets": [],
+        "checked_at": null,
+        "rationale": "",
+        "search_notes": "",
+        "adjudicators": [],
+        "adjudication_notes": ""
+      }
+    },
+    {
+      "candidate_id": "claim-ffbd1712c2c9",
+      "case_id": "en-1-sedaily-damages",
+      "source_language": "en",
+      "primary_category": "number",
+      "claim_type": "fact",
+      "source_quote": "Former NewJeans member Danielle and her legal team squared off against ADOR in the first pretrial hearing of a 43 billion won ($31 million) damages lawsuit",
+      "standalone_claim": "ADOR has filed a 43 billion won ($31 million) damages lawsuit against former NewJeans member Danielle.",
+      "gold": {
+        "expected_status": null,
+        "acceptable_evidence_sets": [],
+        "checked_at": null,
+        "rationale": "",
+        "search_notes": "",
+        "adjudicators": [],
+        "adjudication_notes": ""
+      }
+    },
+    {
+      "candidate_id": "claim-756550d94efe",
+      "case_id": "en-1-sedaily-damages",
+      "source_language": "en",
+      "primary_category": "abstention",
+      "claim_type": "fact",
+      "source_quote": "The remaining members — Minji, Hanni, Haerin and Hyein — have confirmed their return to ADOR.",
+      "standalone_claim": "NewJeans members Minji, Hanni, Haerin, and Hyein have confirmed their return to ADOR.",
+      "gold": {
+        "expected_status": null,
+        "acceptable_evidence_sets": [],
+        "checked_at": null,
+        "rationale": "",
+        "search_notes": "",
+        "adjudicators": [],
+        "adjudication_notes": ""
+      }
+    },
+    {
+      "candidate_id": "claim-e21253f673a1",
+      "case_id": "en-2-straits-times-trio",
+      "source_language": "en",
+      "primary_category": "date",
+      "claim_type": "fact",
+      "source_quote": "In November 2024, the members notified Ador of contract termination, citing alleged breaches of management obligations.",
+      "standalone_claim": "In November 2024, NewJeans members notified Ador of contract termination due to alleged breaches of management obligations.",
+      "gold": {
+        "expected_status": null,
+        "acceptable_evidence_sets": [],
+        "checked_at": null,
+        "rationale": "",
+        "search_notes": "",
+        "adjudicators": [],
+        "adjudication_notes": ""
+      }
+    },
+    {
+      "candidate_id": "claim-f518f5e900b7",
+      "case_id": "en-2-straits-times-trio",
+      "source_language": "en",
+      "primary_category": "direct-announcement",
+      "claim_type": "attributed",
+      "source_quote": "In November 2025, Ador confirmed the return of Hyein, Haerin and Hanni, while terminating its contract with Danielle in December 2025 and signalling plans to pursue legal action.",
+      "standalone_claim": "In November 2025, Ador confirmed the return of Hyein, Haerin, and Hanni, and terminated its contract with Danielle in December 2025.",
+      "gold": {
+        "expected_status": null,
+        "acceptable_evidence_sets": [],
+        "checked_at": null,
+        "rationale": "",
+        "search_notes": "",
+        "adjudicators": [],
+        "adjudication_notes": ""
+      }
+    },
+    {
+      "candidate_id": "claim-192d0b995f63",
+      "case_id": "en-2-straits-times-trio",
+      "source_language": "en",
+      "primary_category": "abstention",
+      "claim_type": "attributed",
+      "source_quote": "Responding to the reports, Ador said on April 27 that the visit was part of “a pre-production process to build NewJeans’ new musical narrative”.",
+      "standalone_claim": "On April 27, Ador stated that the members' visit to Copenhagen was part of a pre-production process for NewJeans' new musical narrative.",
+      "gold": {
+        "expected_status": null,
+        "acceptable_evidence_sets": [],
+        "checked_at": null,
+        "rationale": "",
+        "search_notes": "",
+        "adjudicators": [],
+        "adjudication_notes": ""
+      }
+    },
+    {
+      "candidate_id": "claim-f3c94b8905c8",
+      "case_id": "en-3-joongang-hearing",
+      "source_language": "en",
+      "primary_category": "number",
+      "claim_type": "fact",
+      "source_quote": "The first hearing in ADOR’s 43.1 billion won ($28.9 million) damages lawsuit against former NewJeans member Danielle and former ADOR CEO Min Hee-jin is set to begin on Thursday.",
+      "standalone_claim": "ADOR has filed a 43.1 billion won ($28.9 million) damages lawsuit against Danielle and Min Hee-jin, with the first hearing scheduled for Thursday.",
+      "gold": {
+        "expected_status": null,
+        "acceptable_evidence_sets": [],
+        "checked_at": null,
+        "rationale": "",
+        "search_notes": "",
+        "adjudicators": [],
+        "adjudication_notes": ""
+      }
+    },
+    {
+      "candidate_id": "claim-9402ec78844a",
+      "case_id": "en-3-joongang-hearing",
+      "source_language": "en",
+      "primary_category": "legal-attribution",
+      "claim_type": "attributed",
+      "source_quote": "Neither former ADOR CEO Min nor Danielle is expected to appear in court in person, according to the legal representatives.",
+      "standalone_claim": "Legal representatives stated that Min Hee-jin and Danielle are not expected to appear in court in person for the hearing.",
+      "gold": {
+        "expected_status": null,
+        "acceptable_evidence_sets": [],
+        "checked_at": null,
+        "rationale": "",
+        "search_notes": "",
+        "adjudicators": [],
+        "adjudication_notes": ""
+      }
+    },
+    {
+      "candidate_id": "claim-8cdb305ec75a",
+      "case_id": "en-4-koreatimes-copyright",
+      "source_language": "en",
+      "primary_category": "legal-attribution",
+      "claim_type": "fact",
+      "source_quote": "In 2024, there were allegations that \"Bubble Gum\" plagiarized \"Easier Said Than Done\" by British band Shakatak.",
+      "standalone_claim": "In 2024, allegations were made that the NewJeans song \"Bubble Gum\" plagiarized the song \"Easier Said Than Done\" by Shakatak.",
+      "gold": {
+        "expected_status": null,
+        "acceptable_evidence_sets": [],
+        "checked_at": null,
+        "rationale": "",
+        "search_notes": "",
+        "adjudicators": [],
+        "adjudication_notes": ""
+      }
+    },
+    {
+      "candidate_id": "claim-e3e622b46bfc",
+      "case_id": "en-4-koreatimes-copyright",
+      "source_language": "en",
+      "primary_category": "date",
+      "claim_type": "fact",
+      "source_quote": "NewJeans notified ADOR of the termination of its exclusive contract through a surprise press conference in November 2024.",
+      "standalone_claim": "NewJeans notified ADOR of the termination of its exclusive contract in November 2024.",
+      "gold": {
+        "expected_status": null,
+        "acceptable_evidence_sets": [],
+        "checked_at": null,
+        "rationale": "",
+        "search_notes": "",
+        "adjudicators": [],
+        "adjudication_notes": ""
+      }
+    },
+    {
+      "candidate_id": "claim-f7d581a9cd99",
+      "case_id": "en-5-yonhap-four-member",
+      "source_language": "en",
+      "primary_category": "direct-announcement",
+      "claim_type": "attributed",
+      "source_quote": "ADOR said the video was made as commemorative content for fans to celebrate NewJeans' fourth debut anniversary, adding that detailed plans for future activities would be announced once talks are completed.",
+      "standalone_claim": "ADOR stated that the video was commemorative content and that plans for future activities would be announced after talks are completed.",
+      "gold": {
+        "expected_status": null,
+        "acceptable_evidence_sets": [],
+        "checked_at": null,
+        "rationale": "",
+        "search_notes": "",
+        "adjudicators": [],
+        "adjudication_notes": ""
+      }
+    },
+    {
+      "candidate_id": "claim-9166f6a65470",
+      "case_id": "ko-1-newsis-court",
+      "source_language": "ko",
+      "primary_category": "number",
+      "claim_type": "fact",
+      "source_quote": "앞서 어도어는 지난달 초 민 전 대표를 비롯 다니엘과 다니엘 가족을 상대로 총 431억원 규모의 위약벌금과 손해배상 청구 소송을 제기했다.",
+      "standalone_claim": "어도어는 지난달 초 민희진 전 대표, 다니엘, 다니엘 가족을 상대로 총 431억 원 규모의 위약벌 및 손해배상 청구 소송을 제기했다.",
+      "gold": {
+        "expected_status": null,
+        "acceptable_evidence_sets": [],
+        "checked_at": null,
+        "rationale": "",
+        "search_notes": "",
+        "adjudicators": [],
+        "adjudication_notes": ""
+      }
+    },
+    {
+      "candidate_id": "claim-55adcf7fd9c4",
+      "case_id": "ko-1-newsis-court",
+      "source_language": "ko",
+      "primary_category": "date",
+      "claim_type": "fact",
+      "source_quote": "즉 어도어와 뉴진스 멤버 건 전속계약이 2029년 7월31일까지 유효함을 재확인했다.",
+      "standalone_claim": "법원은 어도어와 뉴진스 멤버 간의 전속계약이 2029년 7월 31일까지 유효하다고 판결했다.",
+      "gold": {
+        "expected_status": null,
+        "acceptable_evidence_sets": [],
+        "checked_at": null,
+        "rationale": "",
+        "search_notes": "",
+        "adjudicators": [],
+        "adjudication_notes": ""
+      }
+    },
+    {
+      "candidate_id": "claim-254f9658a0e6",
+      "case_id": "ko-2-insight-danielle",
+      "source_language": "ko",
+      "primary_category": "abstention",
+      "claim_type": "fact",
+      "source_quote": "지난 13일부터 16일까지 'ADOR/LL'이라는 이름으로 예약이 잡혀 있다.",
+      "standalone_claim": "덴마크 코펜하겐의 한 음악 스튜디오에 13일부터 16일까지 'ADOR/LL'이라는 이름으로 예약이 잡혀 있다.",
+      "gold": {
+        "expected_status": null,
+        "acceptable_evidence_sets": [],
+        "checked_at": null,
+        "rationale": "",
+        "search_notes": "",
+        "adjudicators": [],
+        "adjudication_notes": ""
+      }
+    },
+    {
+      "candidate_id": "claim-1b13d6fdb23e",
+      "case_id": "ko-2-insight-danielle",
+      "source_language": "ko",
+      "primary_category": "direct-announcement",
+      "claim_type": "attributed",
+      "source_quote": "뉴진스 멤버들이 스태프들과 함께 코펜하겐을 방문한 것이 맞다",
+      "standalone_claim": "어도어 측은 뉴진스 멤버들이 스태프들과 함께 코펜하겐을 방문한 사실을 인정했다.",
+      "gold": {
+        "expected_status": null,
+        "acceptable_evidence_sets": [],
+        "checked_at": null,
+        "rationale": "",
+        "search_notes": "",
+        "adjudicators": [],
+        "adjudication_notes": ""
+      }
+    },
+    {
+      "candidate_id": "claim-642dafaf6663",
+      "case_id": "ko-3-newsen-trademark",
+      "source_language": "ko",
+      "primary_category": "number",
+      "claim_type": "fact",
+      "source_quote": "어도어는 지난해 12월 29일 다니엘과의 전속계약 해지를 알렸다. 이와 함께 다니엘 등을 상대로 431억 원 규모 위약벌 및 손해배상 소송을 제기했다.",
+      "standalone_claim": "어도어는 12월 29일 다니엘과의 전속계약을 해지하고 431억 원 규모의 소송을 제기했다.",
+      "gold": {
+        "expected_status": null,
+        "acceptable_evidence_sets": [],
+        "checked_at": null,
+        "rationale": "",
+        "search_notes": "",
+        "adjudicators": [],
+        "adjudication_notes": ""
+      }
+    },
+    {
+      "candidate_id": "claim-be521855ac6f",
+      "case_id": "ko-3-newsen-trademark",
+      "source_language": "ko",
+      "primary_category": "legal-attribution",
+      "claim_type": "fact",
+      "source_quote": "민지를 포함한 뉴진스 멤버들은 지난해 10월 어도어와의 전속계약 관련 본안 소송 1심에서 패소한 후 항소하지 않았다.",
+      "standalone_claim": "뉴진스 멤버들은 지난해 10월 어도어와의 전속계약 관련 1심 소송에서 패소한 후 항소하지 않았다.",
+      "gold": {
+        "expected_status": null,
+        "acceptable_evidence_sets": [],
+        "checked_at": null,
+        "rationale": "",
+        "search_notes": "",
+        "adjudicators": [],
+        "adjudication_notes": ""
+      }
+    },
+    {
+      "candidate_id": "claim-e372a663a6ac",
+      "case_id": "ko-4-nate-copyright",
+      "source_language": "ko",
+      "primary_category": "legal-attribution",
+      "claim_type": "attributed",
+      "source_quote": "'올 서피스 퍼블리싱' 측은 뉴진스의 'ETA'가 자신들이 권리를 소유하고 있는 악곡 '사미르스 테마'(Samir's Theme)를 도용했다고 주장했다.",
+      "standalone_claim": "올 서피스 퍼블리싱은 뉴진스의 'ETA'가 자사가 권리를 가진 '사미르스 테마'를 도용했다고 주장했다.",
+      "gold": {
+        "expected_status": null,
+        "acceptable_evidence_sets": [],
+        "checked_at": null,
+        "rationale": "",
+        "search_notes": "",
+        "adjudicators": [],
+        "adjudication_notes": ""
+      }
+    },
+    {
+      "candidate_id": "claim-27aca2305448",
+      "case_id": "ko-4-nate-copyright",
+      "source_language": "ko",
+      "primary_category": "date",
+      "claim_type": "fact",
+      "source_quote": "'사미르스 테마'는 지난 2005년, 볼티모어 클럽 음악 프로듀서 디보네어 사미르(DJ Debonair Samir)가 발표한 곡이다.",
+      "standalone_claim": "디보네어 사미르가 2005년에 '사미르스 테마'를 발표했다.",
+      "gold": {
+        "expected_status": null,
+        "acceptable_evidence_sets": [],
+        "checked_at": null,
+        "rationale": "",
+        "search_notes": "",
+        "adjudicators": [],
+        "adjudication_notes": ""
+      }
+    },
+    {
+      "candidate_id": "claim-eaa929b8bf44",
+      "case_id": "ko-5-mbc-anniversary",
+      "source_language": "ko",
+      "primary_category": "direct-announcement",
+      "claim_type": "fact",
+      "source_quote": "뉴진스 소속사 어도어는 22일 0시 공식 SNS(사회관계망서비스) 등을 통해 데뷔 4주년 기념 스페셜 필름을 공개했다.",
+      "standalone_claim": "어도어가 22일 0시에 뉴진스 데뷔 4주년 기념 스페셜 필름을 공개했다.",
+      "gold": {
+        "expected_status": null,
+        "acceptable_evidence_sets": [],
+        "checked_at": null,
+        "rationale": "",
+        "search_notes": "",
+        "adjudicators": [],
+        "adjudication_notes": ""
+      }
+    },
+    {
+      "candidate_id": "claim-8586ef86a6a8",
+      "case_id": "ko-5-mbc-anniversary",
+      "source_language": "ko",
+      "primary_category": "abstention",
+      "claim_type": "attributed",
+      "source_quote": "어도어는 \"오랜 시간 기다려 주고 계신 팬분들과 데뷔일을 함께 축하하고 싶은 멤버들의 마음을 모았다. 버니즈 여러분이 반가운 마음으로 즐겨주시길 바란다\"라고 전했다.",
+      "standalone_claim": "어도어는 뉴진스 멤버들이 팬들과 데뷔일을 축하하고 싶어 한다고 밝혔다.",
+      "gold": {
+        "expected_status": null,
+        "acceptable_evidence_sets": [],
+        "checked_at": null,
+        "rationale": "",
+        "search_notes": "",
+        "adjudicators": [],
+        "adjudication_notes": ""
+      }
+    }
+  ]
+}

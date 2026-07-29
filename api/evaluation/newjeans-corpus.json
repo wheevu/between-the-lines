@@ -1,0 +1,109 @@
+{
+  "prepared": "2026-07-24",
+  "purpose": "Fifteen-article EN/VI/KO entertainment-news corpus used to build the later 30-claim adjudicated fact-check evaluation.",
+  "selection_rules": [
+    "Five source articles per language.",
+    "Published within six months of 2026-07-24.",
+    "All articles concern NewJeans but cover announcements, legal attribution, quantities, plans, and commentary.",
+    "Final verification analyses are reused from local SQLite so the claim pool matches the reviewed translation result.",
+    "The Lao Dong article uses its stored paste-fallback analysis because automated extraction was rejected."
+  ],
+  "cases": [
+    {
+      "id": "vi-1-yonhap-return",
+      "source_language": "vi",
+      "publisher": "Yonhap Vietnam",
+      "url": "https://vi.yna.co.kr/view/AVI20260427001000880"
+    },
+    {
+      "id": "vi-2-vov-minji",
+      "source_language": "vi",
+      "publisher": "VOV",
+      "url": "https://vov.vn/giai-tri/lieu-minji-co-tro-lai-newjeans-va-nhom-se-khoi-dong-lai-ma-khong-co-danielle-post1289855.vov"
+    },
+    {
+      "id": "vi-3-svvn-leader",
+      "source_language": "vi",
+      "publisher": "Sinh Vien Viet Nam",
+      "url": "https://svvn.tienphong.vn/newjeans-bao-gio-moi-thoat-duoc-2-chu-dao-nhac-post1842014.tpo"
+    },
+    {
+      "id": "vi-4-yonhap-four-member",
+      "source_language": "vi",
+      "publisher": "Yonhap Vietnam",
+      "url": "https://vi.yna.co.kr/view/AVI20260722000500880?section=%2Fhallyu%2Findex",
+      "analysis_id": "ab7bcad4-0742-40de-8df6-a785671e22bc"
+    },
+    {
+      "id": "vi-5-laodong-challenges",
+      "source_language": "vi",
+      "publisher": "Lao Dong",
+      "url": "https://laodong.vn/van-hoa-giai-tri/thach-thuc-cua-newjeans-khi-tro-lai-voi-4-thanh-vien-ma-khong-co-danielle-1739349.ldo",
+      "analysis_id": "fd18d5e6-4a64-4827-a7bb-0042e8ec4d3c"
+    },
+    {
+      "id": "en-1-sedaily-damages",
+      "source_language": "en",
+      "publisher": "Seoul Economic Daily",
+      "url": "https://en.sedaily.com/news/2026/03/26/ador-and-danielle-clash-over-43-billion-won-damages-in"
+    },
+    {
+      "id": "en-2-straits-times-trio",
+      "source_language": "en",
+      "publisher": "The Straits Times",
+      "url": "https://www.straitstimes.com/life/entertainment/are-k-pop-girl-group-newjeans-returning-as-a-trio-without-minji"
+    },
+    {
+      "id": "en-3-joongang-hearing",
+      "source_language": "en",
+      "publisher": "Korea JoongAng Daily",
+      "url": "https://www.koreajoongangdaily.com/korea/first-hearing-in-adors-lawsuit-against-min-hee-jin-ex-newjeans-member-danielle-to-begin/12578700"
+    },
+    {
+      "id": "en-4-koreatimes-copyright",
+      "source_language": "en",
+      "publisher": "The Korea Times",
+      "url": "https://www.koreatimes.co.kr/entertainment/k-pop/20260709/newjeans-sued-for-alleged-copyright-infringement-in-us",
+      "analysis_id": "85f52083-84e1-4adf-945f-8484c4f16664"
+    },
+    {
+      "id": "en-5-yonhap-four-member",
+      "source_language": "en",
+      "publisher": "Yonhap English",
+      "url": "https://en.yna.co.kr/view/AEN20260722001951315",
+      "analysis_id": "93f42ef1-3449-4ce5-ae74-281ea354d9d6"
+    },
+    {
+      "id": "ko-1-newsis-court",
+      "source_language": "ko",
+      "publisher": "Newsis",
+      "url": "https://www.newsis.com/view/NISX20260308_0003539403"
+    },
+    {
+      "id": "ko-2-insight-danielle",
+      "source_language": "ko",
+      "publisher": "Insight",
+      "url": "https://www.insight.co.kr/news/551730"
+    },
+    {
+      "id": "ko-3-newsen-trademark",
+      "source_language": "ko",
+      "publisher": "Newsen",
+      "url": "https://www.newsen.com/news_view.php?uid=202605070943050410"
+    },
+    {
+      "id": "ko-4-nate-copyright",
+      "source_language": "ko",
+      "publisher": "Nate / Dispatch",
+      "url": "https://news.nate.com/view/20260708n28577",
+      "analysis_id": "bce7bf4e-2420-4b52-92f2-6a7bb9a29a1c"
+    },
+    {
+      "id": "ko-5-mbc-anniversary",
+      "source_language": "ko",
+      "publisher": "MBC Entertainment",
+      "url": "https://enews.imbc.com/News/RetrieveNewsInfo/512260",
+      "analysis_id": "137c8041-7cc7-4f1a-9914-473159b7e0f7"
+    }
+  ]
+}
