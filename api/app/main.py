@@ -74,6 +74,11 @@ app.add_middleware(
 )
 
 
+def require_claim_trace() -> None:
+    if not settings.claim_trace_enabled:
+        raise HTTPException(status_code=404, detail="Claim Trace is disabled on this server.")
+
+
 @app.get("/api/health")
 def health() -> dict[str, str]:
     return {"status": "ok"}
@@ -115,6 +120,7 @@ def add_feedback(analysis_id: str, feedback: FeedbackCreate) -> FeedbackRecord:
     status_code=202,
 )
 def create_fact_check(analysis_id: str, tasks: BackgroundTasks) -> FactCheckJob:
+    require_claim_trace()
     analysis = store.get_analysis(analysis_id)
     if analysis is None:
         raise HTTPException(status_code=404, detail="Analysis not found.")
@@ -131,6 +137,7 @@ def create_fact_check(analysis_id: str, tasks: BackgroundTasks) -> FactCheckJob:
 
 @app.get("/api/fact-checks/{fact_check_id}", response_model=FactCheckJob)
 def get_fact_check(fact_check_id: str) -> FactCheckJob:
+    require_claim_trace()
     job = store.get_fact_check(fact_check_id)
     if job is None:
         raise HTTPException(status_code=404, detail="Fact check not found.")
@@ -145,6 +152,7 @@ def add_fact_check_feedback(
     fact_check_id: str,
     feedback: FactCheckFeedbackCreate,
 ) -> FactCheckFeedbackRecord:
+    require_claim_trace()
     job = store.get_fact_check(fact_check_id)
     if job is None:
         raise HTTPException(status_code=404, detail="Fact check not found.")
@@ -174,6 +182,7 @@ def select_fact_check_claims(
     selection: ClaimSelection,
     tasks: BackgroundTasks,
 ) -> FactCheckJob:
+    require_claim_trace()
     job = store.get_fact_check(fact_check_id)
     if job is None:
         raise HTTPException(status_code=404, detail="Fact check not found.")

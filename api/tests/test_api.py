@@ -1,3 +1,4 @@
+from dataclasses import replace
 from pathlib import Path
 
 from fastapi.testclient import TestClient
@@ -18,6 +19,10 @@ from app.models import (
     FactCheckStatus,
 )
 from app.store import Store
+
+
+def enable_claim_trace(monkeypatch) -> None:
+    monkeypatch.setattr(main, "settings", replace(main.settings, claim_trace_enabled=True))
 
 
 class FakeAnalyzer:
@@ -115,6 +120,7 @@ class FakeFactChecker:
 
 
 def test_analysis_and_feedback_http_flow(monkeypatch, tmp_path: Path) -> None:
+    enable_claim_trace(monkeypatch)
     store = Store(tmp_path / "api.sqlite3")
     monkeypatch.setattr(main, "store", store)
     monkeypatch.setattr(main, "analyzer", FakeAnalyzer(store))
@@ -195,6 +201,7 @@ def test_analysis_accepts_one_target_and_rejects_the_source_language(
 
 
 def test_fact_check_requires_a_completed_analysis(monkeypatch, tmp_path: Path) -> None:
+    enable_claim_trace(monkeypatch)
     store = Store(tmp_path / "api.sqlite3")
     monkeypatch.setattr(main, "store", store)
 
@@ -210,6 +217,7 @@ def test_ready_gate_starts_evidence_worker_and_repeated_selection_is_idempotent(
     monkeypatch,
     tmp_path: Path,
 ) -> None:
+    enable_claim_trace(monkeypatch)
     store = Store(tmp_path / "api.sqlite3")
     monkeypatch.setattr(main, "store", store)
     monkeypatch.setattr(main, "analyzer", FakeAnalyzer(store))
@@ -274,3 +282,40 @@ def test_ready_gate_starts_evidence_worker_and_repeated_selection_is_idempotent(
     assert evidence_feedback.json()["target_id"] == "evidence-1"
     assert status_feedback.status_code == 200
     assert invented_target.status_code == 422
+
+
+def test_claim_trace_routes_fail_closed_without_side_effects(monkeypatch, tmp_path: Path) -> None:
+    store = Store(tmp_path / "api.sqlite3")
+    extractor = FakeClaimExtractor(store)
+    monkeypatch.setattr(main, "settings", replace(main.settings, claim_trace_enabled=False))
+    monkeypatch.setattr(main, "store", store)
+    monkeypatch.setattr(main, "analyzer", FakeAnalyzer(store))
+    monkeypatch.setattr(main, "claim_extractor", extractor)
+
+    with TestClient(main.app) as client:
+        analysis = client.post(
+            "/api/analyses",
+            json={"source_language": "en", "text": "A short article."},
+        ).json()
+        blocked_create = client.post(f"/api/analyses/{analysis['id']}/fact-checks")
+        assert store.get_fact_check_for_analysis(analysis["id"]) is None
+
+        job, _ = store.create_or_get_fact_check(analysis["id"])
+        blocked_get = client.get(f"/api/fact-checks/{job.id}")
+        blocked_selection = client.post(
+            f"/api/fact-checks/{job.id}/selection",
+            json={"candidate_ids": ["claim-1"]},
+        )
+        blocked_feedback = client.post(
+            f"/api/fact-checks/{job.id}/feedback",
+            json={
+                "target_type": "evidence",
+                "target_id": "evidence-1",
+                "verdict": "helpful",
+            },
+        )
+
+    for response in [blocked_create, blocked_get, blocked_selection, blocked_feedback]:
+        assert response.status_code == 404
+        assert response.json()["detail"] == "Claim Trace is disabled on this server."
+    assert store.get_fact_check(job.id) == job
