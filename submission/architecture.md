@@ -2,6 +2,9 @@
 
 ## Reader workflow
 
+The Claim Trace branch is disabled unless a controlled evaluation server starts
+with `BTL_CLAIM_TRACE_ENABLED=1`. Translation remains available when it is off.
+
 ```text
 article text or bounded public URL
   │

@@ -31,10 +31,13 @@ until every required gate below has measured evidence.
 | Evidence quality | 30 adjudicated claims and the published retrieval/status gates | Worksheet frozen; 0/30 gold-ready |
 | Reader understanding | 5–8 observed sessions | Not started |
 | Intel performance | Same frozen workload, both runtimes, at least 10 runs on a named Intel CPU | No Intel run |
+| Translation + architecture recording fallback | All nine reviewer-guide analyses deserialize from an integrity-checked backup | Local backup passes 9/9; no completed Claim Trace result |
 
-Claim Trace is therefore hidden in the ordinary reader flow. Explicit
-`reviewer=author` or `reviewer=independent` URLs retain access for evaluation;
-direct fact-check URLs without a reviewer role fail closed to the input view.
+Claim Trace is therefore disabled on the server by default and hidden in the
+ordinary reader flow. Controlled evaluation runs must explicitly set
+`BTL_CLAIM_TRACE_ENABLED=1` and use a `reviewer=author` or
+`reviewer=independent` URL. The URL role is self-declared metadata, not
+authentication or evidence of independent review.
 
 Do not turn a pending cell into narrative evidence. If a gate fails, narrow the
 claim or fix the demonstrated failure and rerun a frozen evaluation.

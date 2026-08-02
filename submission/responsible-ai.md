@@ -138,6 +138,10 @@ partial failures and unsafe feedback targets. The server remains localhost-only
 because it has not received a production penetration test and a DNS rebinding
 race remains theoretically possible.
 
+Claim Trace API routes are also disabled by default and require the server-side
+`BTL_CLAIM_TRACE_ENABLED=1` switch. This limits accidental release; it is not
+authentication, and an enabled server must remain in a controlled environment.
+
 The frozen evidence runner refuses to start before the human gates, checkpoints
 atomically, caps each invocation at five new claims, and pauses instead of
 turning a quota failure into an `insufficient` result. It has no paid-service

@@ -9,10 +9,11 @@ The prototype includes a reviewer-gated Claim Trace workflow. It identifies sour
 lets the reader choose one, searches in all three languages, ranks excerpts
 locally, aligns literal passages, groups reporting that credits the same origin,
 and shows provenance, wording differences, limitations, partial failures, and
-reader feedback. The workflow is available for prototype testing through an
-explicit `?reviewer=author` or `?reviewer=independent` URL. It remains hidden in
-the ordinary reader flow until the independent factual and reader gates pass,
-and it is not presented as validated factual accuracy.
+reader feedback. The workflow is available for controlled prototype testing
+only when the backend starts with `BTL_CLAIM_TRACE_ENABLED=1` and the browser
+uses an explicit `?reviewer=author` or `?reviewer=independent` URL. It remains
+hidden in the ordinary reader flow until the independent factual and reader
+gates pass, and it is not presented as validated factual accuracy.
 
 ## How it works
 
@@ -42,6 +43,16 @@ python3 -m venv .venv
 .venv/bin/pip install -e '.[dev]'
 .venv/bin/uvicorn app.main:app --reload
 ```
+
+Claim Trace is disabled by default. For a controlled local evaluation run, use:
+
+```sh
+BTL_CLAIM_TRACE_ENABLED=1 .venv/bin/uvicorn app.main:app --reload
+```
+
+The reviewer URL records a self-declared evaluation role; it is not
+authentication or proof of independent review. When Claim Trace is enabled,
+its API routes are reachable by any client that can reach this local server.
 
 The backend reads `GOOGLE_GENERATIVE_AI_API_KEY` from the environment. It does
 not need to be placed in a project file.
