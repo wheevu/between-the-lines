@@ -19,6 +19,7 @@ const job: FactCheckJob = {
       segment_ids: ["p1s1"],
       standalone_claim: "The agency reported 20 cases.",
       claim_type: "attributed",
+      source_language: "en",
       entities: ["The agency"],
       dates: [],
       numbers: ["20"],
@@ -51,6 +52,11 @@ describe("ClaimSelectionView", () => {
     expect(radios[1]).toBeDisabled();
     expect(screen.getByRole("button", { name: "Choose a claim" })).toBeDisabled();
     expect(screen.getByText("Nothing selected")).toBeInTheDocument();
+    expect(screen.getByText("The agency reported 20 cases.", { selector: "strong" })).toHaveAttribute(
+      "lang",
+      "en"
+    );
+    expect(screen.getByText("“The agency reported 20 cases.”")).toHaveAttribute("lang", "en");
   });
 
   it("saves only the claims explicitly selected by the reader", async () => {

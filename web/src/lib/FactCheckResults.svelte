@@ -142,10 +142,14 @@
                 ? "Reported statement"
                 : "Factual claim"}
             </p>
-            <h2>{claimResult.claim.standalone_claim}</h2>
+            <h2 lang={claimResult.claim.source_language ?? undefined}>
+              {claimResult.claim.standalone_claim}
+            </h2>
             <details class="source-wording">
               <summary>See the article’s exact wording</summary>
-              <blockquote>“{claimResult.claim.source_quote}”</blockquote>
+              <blockquote lang={claimResult.claim.source_language ?? undefined}>
+                “{claimResult.claim.source_quote}”
+              </blockquote>
             </details>
             <strong class={`assessment-status ${state}`}>{evidenceStateCopy[state]}</strong>
             <p class="assessment-basis">{basisCopy(claimResult, cited)}</p>

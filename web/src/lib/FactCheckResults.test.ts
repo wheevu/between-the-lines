@@ -22,6 +22,7 @@ const job: FactCheckJob = {
           segment_ids: ["p1s1"],
           standalone_claim: "The agency reported 24 buses.",
           claim_type: "attributed",
+          source_language: "en",
           entities: ["The agency"],
           dates: [],
           numbers: ["24"],
@@ -111,6 +112,11 @@ describe("FactCheckResults", () => {
     expect(screen.getByText("Publisher’s rating")).toBeInTheDocument();
     expect(screen.getByText("발표 확인")).toBeInTheDocument();
     expect(screen.getByText("Reported statement")).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: "The agency reported 24 buses." })).toHaveAttribute(
+      "lang",
+      "en"
+    );
+    expect(screen.getByText("“The agency reported 24 buses.”")).toHaveAttribute("lang", "en");
     expect(screen.getByText("No reliable page date")).toBeInTheDocument();
     expect(screen.getByText("Exact claim match")).toBeInTheDocument();
     expect(screen.getByText("Why it matters:")).toBeInTheDocument();

@@ -97,10 +97,10 @@
                     ? "Factual claim"
                     : "Not suitable"}
               </span>
-              <strong>{candidate.standalone_claim}</strong>
+              <strong lang={candidate.source_language ?? undefined}>{candidate.standalone_claim}</strong>
             </span>
           </label>
-          <blockquote>“{candidate.source_quote}”</blockquote>
+          <blockquote lang={candidate.source_language ?? undefined}>“{candidate.source_quote}”</blockquote>
           <p id={`claim-reason-${candidate.id}`}>{candidate.reason}</p>
           {#if candidate.entities.length || candidate.dates.length || candidate.numbers.length}
             <ul class="claim-signals" aria-label="Details preserved from the quote">

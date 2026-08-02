@@ -217,6 +217,7 @@ test("starts Claim Trace from a completed translation", async ({ page }) => {
         segment_ids: ["p1s1"],
         standalone_claim: "The agency reported 20 cases.",
         claim_type: "attributed",
+        source_language: "en",
         entities: ["The agency"],
         dates: [],
         numbers: ["20"],
@@ -336,8 +337,13 @@ test("restores claim selection without choosing anything for the reader", async 
   await expect(radios.nth(0)).not.toBeChecked();
   await expect(radios.nth(1)).toBeDisabled();
 
-  await radios.nth(0).check();
-  await page.getByRole("button", { name: "Trace this claim" }).click();
+  await radios.nth(0).focus();
+  await page.keyboard.press("Space");
+  await expect(radios.nth(0)).toBeChecked();
+  const traceButton = page.getByRole("button", { name: "Trace this claim" });
+  await page.keyboard.press("Tab");
+  await expect(traceButton).toBeFocused();
+  await page.keyboard.press("Enter");
 
   await expect(page.locator(".claim-actions").getByRole("status")).toHaveText("Selection saved.");
   await expect.poll(() => selections[0]).toEqual({ candidate_ids: ["claim-1"] });
@@ -371,6 +377,7 @@ test("resumes an evidence check and keeps source feedback attached to its excerp
             segment_ids: ["p1s1"],
             standalone_claim: "The agency reported 24 buses.",
             claim_type: "attributed",
+            source_language: "en",
             entities: ["The agency"],
             dates: [],
             numbers: ["24"],
@@ -431,6 +438,10 @@ test("resumes an evidence check and keeps source feedback attached to its excerp
   await page.route("**/api/fact-checks/fact-check-running/feedback", async (route) => {
     const body = route.request().postDataJSON();
     feedbackBodies.push(body);
+    if (feedbackBodies.length === 1) {
+      await route.fulfill({ status: 503, json: { detail: "Temporary failure" } });
+      return;
+    }
     await route.fulfill({
       json: {
         id: "feedback-1",
@@ -446,20 +457,34 @@ test("resumes an evidence check and keeps source feedback attached to its excerp
   await expect(page.getByRole("progressbar")).toHaveAttribute("aria-valuenow", "72");
   await expect(page.locator(".assessment-status")).toHaveText("Still unresolved");
   await expect(page.getByText("The agency’s report")).toBeVisible();
+  const wordingDisclosure = page.getByText("See the article’s exact wording");
+  await wordingDisclosure.focus();
+  await page.keyboard.press("Enter");
+  await expect(page.getByText("“The agency reported 24 buses.”")).toBeVisible();
   await page.screenshot({ path: testInfo.outputPath("evidence-result.png"), fullPage: true });
-  await page.setViewportSize({ width: 390, height: 844 });
+  await page.setViewportSize({ width: 320, height: 844 });
+  expect(
+    await page.evaluate(
+      () => document.documentElement.scrollWidth - document.documentElement.clientWidth
+    )
+  ).toBeLessThanOrEqual(0);
   await page.screenshot({
     path: testInfo.outputPath("evidence-result-mobile.png"),
     fullPage: true
   });
 
-  await page
-    .locator(".evidence-card")
-    .getByRole("button", { name: "Yes" })
-    .click();
+  const evidenceYes = page.locator(".evidence-card").getByRole("button", { name: "Yes" });
+  await evidenceYes.focus();
+  await page.keyboard.press("Enter");
+
+  await expect(page.locator(".evidence-card").getByRole("alert")).toHaveText(
+    "Couldn’t save feedback. Try again."
+  );
+  await evidenceYes.focus();
+  await page.keyboard.press("Enter");
 
   await expect(page.locator(".evidence-card").getByRole("status")).toHaveText("Feedback saved.");
-  await expect.poll(() => feedbackBodies[0]).toEqual({
+  await expect.poll(() => feedbackBodies[1]).toEqual({
     target_type: "evidence",
     target_id: "evidence-1",
     verdict: "helpful"
