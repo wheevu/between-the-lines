@@ -48,6 +48,14 @@
     saveDraft();
   }
 
+  function hostOf(value: string): string {
+    try {
+      return new URL(value).hostname.replace(/^www\./, "");
+    } catch {
+      return value;
+    }
+  }
+
   function submit() {
     const value = mode === "text" ? textValue.trim() : urlValue.trim();
     if (!value) {
@@ -64,7 +72,9 @@
     }
     validationMessage = "";
     saveDraft();
-    onAnalyze({ mode, sourceLanguage, targetLanguage, value });
+    const fallbackUrl =
+      mode === "text" && /^https?:\/\//i.test(urlValue.trim()) ? urlValue.trim() : undefined;
+    onAnalyze({ mode, sourceLanguage, targetLanguage, value, fallbackUrl });
   }
 </script>
 
@@ -109,6 +119,12 @@
       Paste text
     </button>
   </div>
+
+  <ol class="entry-steps" aria-label="How it works">
+    <li data-step="1">Paste an article or link</li>
+    <li data-step="2">Choose your reading language</li>
+    <li data-step="3">Check the passages worth a second look</li>
+  </ol>
 
   <form on:submit|preventDefault={submit}>
     <label for="source-language">Article language</label>
@@ -156,7 +172,12 @@
         aria-describedby="input-hint validation"
         aria-invalid={Boolean(validationMessage)}
       ></textarea>
-      <p id="input-hint" class="field-hint">Headlines and photo captions are fine—we clean common paste artifacts.</p>
+      <p id="input-hint" class="field-hint">
+        Headlines and photo captions are fine—we clean common paste artifacts.
+        {#if urlValue.trim()}
+          The page link will be kept: {hostOf(urlValue)}.
+        {/if}
+      </p>
     {:else}
       <label for="article-url">Article URL</label>
       <input

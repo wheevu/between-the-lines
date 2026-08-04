@@ -64,6 +64,7 @@ class AnalysisCreate(BaseModel):
     target_language: Language | None = None
     text: str | None = None
     url: HttpUrl | None = None
+    fallback_url: HttpUrl | None = None
 
     @model_validator(mode="after")
     def validate_one_input(self) -> "AnalysisCreate":
@@ -419,3 +420,269 @@ class FactCheckJob(BaseModel):
     selected_candidate_ids: list[str] = Field(default_factory=list)
     result: FactCheckResult | None = None
     error: str | None = None
+
+
+class LedgerStatus(StrEnum):
+    UNREVIEWED = "unreviewed"
+    SUPPORTED = "supported"
+    DISPUTED = "disputed"
+    UNCLEAR = "unclear"
+    CHANGED = "changed"
+    SUPERSEDED = "superseded"
+
+
+class SourceSnapshotStatus(StrEnum):
+    AVAILABLE = "available"
+    MISSING = "missing"
+    DUPLICATE = "duplicate"
+    CHANGED = "changed"
+
+
+class EvidenceLinkRelation(StrEnum):
+    SUPPORTS = "supports"
+    CONTRADICTS = "contradicts"
+    CONTEXT = "context"
+
+
+class TranslationCheckStatus(StrEnum):
+    UNCHECKED = "unchecked"
+    PRESERVED = "preserved"
+    CHANGED = "changed"
+    UNCLEAR = "unclear"
+
+
+class RevisionEventType(StrEnum):
+    CREATED = "created"
+    SOURCE_CAPTURED = "source-captured"
+    CLAIM_REVIEWED = "claim-reviewed"
+    EDITION_DIFFED = "edition-diffed"
+    SUPERSEDED = "superseded"
+
+
+class EditionDiffCategory(StrEnum):
+    NUMBER = "number"
+    DATE = "date"
+    NEGATION = "negation"
+    NAME = "name"
+    TERMINOLOGY = "terminology"
+
+
+class EditionSignals(BaseModel):
+    numbers: list[str] = Field(default_factory=list)
+    dates: list[str] = Field(default_factory=list)
+    negations: list[str] = Field(default_factory=list)
+    names: list[str] = Field(default_factory=list)
+    terminology: list[str] = Field(default_factory=list)
+
+
+class EditionDiffChange(BaseModel):
+    category: EditionDiffCategory
+    removed: list[str] = Field(default_factory=list)
+    added: list[str] = Field(default_factory=list)
+
+
+class SourceSnapshotCreate(BaseModel):
+    url: HttpUrl | None = None
+    title: str | None = Field(default=None, max_length=300)
+    excerpt: str = Field(default="", max_length=2_000)
+    source_sha256: str | None = Field(
+        default=None,
+        min_length=64,
+        max_length=64,
+        pattern=r"(?i)^[0-9a-f]{64}$",
+    )
+    start_offset: int = Field(default=0, ge=0)
+    end_offset: int | None = Field(default=None, ge=0)
+    status: SourceSnapshotStatus = SourceSnapshotStatus.AVAILABLE
+
+
+class TranslationCheckCreate(BaseModel):
+    target_language: Language
+    translation_text: str = Field(min_length=1, max_length=2_000)
+    status: TranslationCheckStatus = TranslationCheckStatus.UNCHECKED
+    source_claim_hash: str | None = Field(
+        default=None,
+        min_length=64,
+        max_length=64,
+        pattern=r"(?i)^[0-9a-f]{64}$",
+    )
+    notes: str | None = Field(default=None, max_length=500)
+
+
+class ClaimLedgerEntryCreate(BaseModel):
+    text: str = Field(min_length=1, max_length=2_000)
+    start_offset: int = Field(default=0, ge=0)
+    end_offset: int | None = Field(default=None, ge=0)
+    segment_id: str | None = Field(default=None, max_length=200)
+    translation_checks: list[TranslationCheckCreate] = Field(default_factory=list, max_length=8)
+
+
+class ArticleEditionCreate(BaseModel):
+    title: str | None = Field(default=None, max_length=300)
+    source_language: Language
+    source_url: HttpUrl | None = None
+    source_text: str | None = Field(default=None, max_length=100_000)
+    source_sha256: str | None = Field(
+        default=None,
+        min_length=64,
+        max_length=64,
+        pattern=r"(?i)^[0-9a-f]{64}$",
+    )
+    source_excerpt: str | None = Field(default=None, max_length=2_000)
+    source_excerpt_start: int = Field(default=0, ge=0)
+    source_status: SourceSnapshotStatus = SourceSnapshotStatus.AVAILABLE
+    source_snapshots: list[SourceSnapshotCreate] = Field(default_factory=list, max_length=20)
+    claims: list[ClaimLedgerEntryCreate] = Field(default_factory=list, max_length=200)
+    supersedes_edition_id: str | None = Field(default=None, max_length=200)
+    revision_reason: str | None = Field(default=None, max_length=500)
+
+    @model_validator(mode="after")
+    def validate_source_material(self) -> "ArticleEditionCreate":
+        if not any(
+            (self.source_text, self.source_sha256, self.source_excerpt, self.source_snapshots)
+        ):
+            raise ValueError(
+                "Provide source text, a source hash, an excerpt, or source snapshots."
+            )
+        return self
+
+
+class ReviewDecisionCreate(BaseModel):
+    edition_id: str = Field(min_length=1, max_length=200)
+    claim_hash: str = Field(
+        min_length=64,
+        max_length=64,
+        pattern=r"(?i)^[0-9a-f]{64}$",
+    )
+    status: LedgerStatus
+    reviewer: str = Field(default="local-reviewer", min_length=1, max_length=200)
+    rationale: str | None = Field(default=None, max_length=1_000)
+
+    @model_validator(mode="after")
+    def validate_review_status(self) -> "ReviewDecisionCreate":
+        if self.status is LedgerStatus.UNREVIEWED:
+            raise ValueError("A review must choose a substantive ledger status.")
+        return self
+
+
+class SourceSnapshot(BaseModel):
+    id: str
+    edition_id: str
+    url: str | None = None
+    canonical_url: str | None = None
+    title: str | None = None
+    excerpt: str = Field(max_length=2_000)
+    excerpt_sha256: str
+    source_sha256: str
+    start_offset: int = Field(ge=0)
+    end_offset: int = Field(ge=0)
+    status: SourceSnapshotStatus
+    duplicate_of_id: str | None = None
+    captured_at: str
+
+
+class EvidenceLink(BaseModel):
+    id: str
+    claim_id: str
+    snapshot_id: str
+    quote: str = Field(max_length=2_000)
+    quote_sha256: str
+    start_offset: int = Field(ge=0)
+    end_offset: int = Field(ge=0)
+    relation: EvidenceLinkRelation
+    created_at: str
+
+
+class TranslationCheck(BaseModel):
+    id: str
+    claim_id: str
+    edition_id: str
+    target_language: Language
+    translation_text: str = Field(max_length=2_000)
+    translation_sha256: str
+    source_claim_hash: str
+    status: TranslationCheckStatus
+    notes: str | None = None
+    created_at: str
+
+
+class ReviewDecision(BaseModel):
+    id: str
+    claim_id: str
+    edition_id: str
+    claim_hash: str
+    status: LedgerStatus
+    reviewer: str
+    rationale: str | None = None
+    decided_at: str
+
+
+class ClaimLedgerEntry(BaseModel):
+    id: str
+    edition_id: str
+    text: str = Field(max_length=2_000)
+    claim_hash: str
+    start_offset: int = Field(ge=0)
+    end_offset: int = Field(ge=0)
+    segment_id: str | None = None
+    status: LedgerStatus
+    created_at: str
+    updated_at: str
+    evidence_links: list[EvidenceLink] = Field(default_factory=list)
+    translation_checks: list[TranslationCheck] = Field(default_factory=list)
+    review_decisions: list[ReviewDecision] = Field(default_factory=list)
+
+
+class RevisionEvent(BaseModel):
+    id: str
+    article_id: str
+    edition_id: str
+    event_type: RevisionEventType
+    summary: str
+    payload_hash: str
+    created_at: str
+
+
+class ArticleEdition(BaseModel):
+    id: str
+    article_id: str
+    version: int = Field(ge=1)
+    title: str | None = None
+    source_language: Language
+    source_url: str | None = None
+    source_sha256: str
+    source_excerpt: str = Field(max_length=2_000)
+    source_excerpt_sha256: str
+    source_excerpt_start: int = Field(ge=0)
+    source_excerpt_end: int = Field(ge=0)
+    source_status: SourceSnapshotStatus
+    signals: EditionSignals
+    created_at: str
+    supersedes_edition_id: str | None = None
+    revision_reason: str | None = None
+    source_snapshots: list[SourceSnapshot] = Field(default_factory=list)
+    claims: list[ClaimLedgerEntry] = Field(default_factory=list)
+    revision_events: list[RevisionEvent] = Field(default_factory=list)
+
+
+class ArticleLedger(BaseModel):
+    article_id: str
+    latest_edition_id: str | None = None
+    editions: list[ArticleEdition] = Field(default_factory=list)
+
+
+class ArticleExport(BaseModel):
+    schema_version: int = 1
+    article_id: str
+    exported_at: str
+    ledger: ArticleLedger
+
+
+class EditionDiff(BaseModel):
+    from_edition_id: str
+    against_edition_id: str
+    article_id: str
+    changed: bool
+    from_source_sha256: str
+    against_source_sha256: str
+    changes: list[EditionDiffChange] = Field(default_factory=list)

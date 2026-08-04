@@ -239,17 +239,15 @@
         <h2 id="findings-heading">
           {findings.length} {findings.length === 1 ? "passage" : "passages"} worth checking
         </h2>
-        <p>These are prompts to read closely, not automatic corrections.</p>
+        <p>Translation notes, not factual checks—read them closely, then judge for yourself.</p>
       </header>
       <div class="findings-list">
         {#each visibleFindings as finding}
           <div class="finding-wrapper" id={`finding-${finding.flag.id}`}>
-            <a class="finding-location" href={`#segment-${finding.segment.id}`}>
-              Show in article ↓
-            </a>
             <FlagDetails
               flag={finding.flag}
               shadowText={finding.translation.shadow_text}
+              locationHref={`#segment-${finding.segment.id}`}
               feedback={feedbackByFlag[finding.flag.id] ?? null}
               on:feedback={(event) =>
                 dispatch("feedback", { flagId: finding.flag.id, verdict: event.detail })}

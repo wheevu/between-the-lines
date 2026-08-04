@@ -204,6 +204,142 @@ export interface FactCheckJob {
   error: string | null;
 }
 
+export type LedgerStatus =
+  | "unreviewed"
+  | "supported"
+  | "disputed"
+  | "unclear"
+  | "changed"
+  | "superseded";
+export type SourceSnapshotStatus = "available" | "missing" | "duplicate";
+export type TranslationCheckStatus = "unchecked" | "preserved" | "changed" | "unclear";
+
+export interface SourceSnapshot {
+  id: string;
+  edition_id: string;
+  url: string | null;
+  canonical_url: string | null;
+  title: string | null;
+  excerpt: string;
+  excerpt_sha256: string;
+  source_sha256: string;
+  start_offset: number;
+  end_offset: number;
+  status: SourceSnapshotStatus;
+  duplicate_of_id: string | null;
+  captured_at: string;
+}
+
+export interface EvidenceLink {
+  id: string;
+  claim_id: string;
+  snapshot_id: string;
+  quote: string;
+  quote_sha256: string;
+  start_offset: number;
+  end_offset: number;
+  relation: "supports" | "contradicts" | "context";
+  created_at: string;
+}
+
+export interface TranslationCheck {
+  id: string;
+  claim_id: string;
+  edition_id: string;
+  target_language: Language;
+  translation_text: string;
+  translation_sha256: string;
+  source_claim_hash: string;
+  status: TranslationCheckStatus;
+  notes: string | null;
+  created_at: string;
+}
+
+export interface ReviewDecision {
+  id: string;
+  claim_id: string;
+  edition_id: string;
+  claim_hash: string;
+  status: Exclude<LedgerStatus, "unreviewed">;
+  reviewer: string;
+  rationale: string | null;
+  decided_at: string;
+}
+
+export interface ClaimLedgerEntry {
+  id: string;
+  edition_id: string;
+  text: string;
+  claim_hash: string;
+  start_offset: number;
+  end_offset: number;
+  segment_id: string | null;
+  status: LedgerStatus;
+  created_at: string;
+  updated_at: string;
+  evidence_links: EvidenceLink[];
+  translation_checks: TranslationCheck[];
+  review_decisions: ReviewDecision[];
+}
+
+export interface RevisionEvent {
+  id: string;
+  article_id: string;
+  edition_id: string;
+  event_type: "created" | "source-captured" | "claim-reviewed" | "edition-diffed" | "superseded";
+  summary: string;
+  payload_hash: string;
+  created_at: string;
+}
+
+export interface ArticleEdition {
+  id: string;
+  article_id: string;
+  version: number;
+  title: string | null;
+  source_language: Language;
+  source_url: string | null;
+  source_sha256: string;
+  source_excerpt: string;
+  source_excerpt_sha256: string;
+  source_excerpt_start: number;
+  source_excerpt_end: number;
+  source_status: SourceSnapshotStatus;
+  signals: {
+    numbers: string[];
+    dates: string[];
+    negations: string[];
+    names: string[];
+    terminology: string[];
+  };
+  created_at: string;
+  supersedes_edition_id: string | null;
+  revision_reason: string | null;
+  source_snapshots: SourceSnapshot[];
+  claims: ClaimLedgerEntry[];
+  revision_events: RevisionEvent[];
+}
+
+export interface ArticleLedger {
+  article_id: string;
+  latest_edition_id: string | null;
+  editions: ArticleEdition[];
+}
+
+export interface EditionDiff {
+  from_edition_id: string;
+  against_edition_id: string;
+  article_id: string;
+  changed: boolean;
+  from_source_sha256: string;
+  against_source_sha256: string;
+  changes: Array<{
+    category: "number" | "date" | "negation" | "name" | "terminology";
+    removed: string[];
+    added: string[];
+  }>;
+}
+
 export type InputMode = "text" | "url";
 
 export interface AnalysisDraft {
@@ -219,6 +355,8 @@ export interface AnalysisInput {
   sourceLanguage: Language;
   targetLanguage: Language;
   value: string;
+  /** Kept from a URL that failed extraction; links the pasted text. */
+  fallbackUrl?: string;
 }
 
 export type ViewState =

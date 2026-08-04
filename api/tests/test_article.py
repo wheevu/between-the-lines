@@ -144,6 +144,67 @@ def test_malformed_optional_metadata_does_not_discard_readable_article(
     assert "readable report contains" in result.text.lower()
 
 
+def test_metadata_only_keeps_url_and_title_when_text_cannot_extract(
+    monkeypatch: pytest.MonkeyPatch, tmp_path: Path
+) -> None:
+    real_client = httpx.Client
+    html = (
+        b"<html><head><title>Unyielding story title</title></head>"
+        b"<body><article>short</article></body></html>"
+    )
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        return httpx.Response(
+            200,
+            content=html,
+            headers={"content-type": "text/html"},
+            request=request,
+        )
+
+    def client(*args, **kwargs):
+        del args, kwargs
+        return real_client(transport=httpx.MockTransport(handler))
+
+    monkeypatch.setattr(article.httpx, "Client", client)
+    monkeypatch.setattr(article, "_validate_public_url", lambda _: None)
+    settings = Settings(
+        gemini_api_key=None,
+        gemini_model="test",
+        database_path=tmp_path / "test.sqlite3",
+    )
+
+    url, title = article.extract_metadata("https://example.com/story", settings)
+
+    assert url == "https://example.com/story"
+    assert title == "Unyielding story title"
+
+
+def test_metadata_only_tolerates_an_unreadable_page(
+    monkeypatch: pytest.MonkeyPatch, tmp_path: Path
+) -> None:
+    real_client = httpx.Client
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        return httpx.Response(404, request=request)
+
+    def client(*args, **kwargs):
+        del args, kwargs
+        return real_client(transport=httpx.MockTransport(handler))
+
+    monkeypatch.setattr(article.httpx, "Client", client)
+    monkeypatch.setattr(article, "_validate_public_url", lambda _: None)
+    settings = Settings(
+        gemini_api_key=None,
+        gemini_model="test",
+        database_path=tmp_path / "test.sqlite3",
+    )
+
+    url, title = article.extract_metadata("https://example.com/story", settings)
+
+    assert url is None
+    assert title is None
+
+
 def test_wire_footer_and_related_headlines_are_removed() -> None:
     text = """(ATTN: UPDATES headline)
 SEOUL -- Main article paragraph.

@@ -215,6 +215,217 @@ def _evidence_set_issues(
     return issues
 
 
+def _empty_gold(claim: dict[str, object]) -> bool:
+    """True when a claim's gold block still matches the prepared template."""
+    gold = claim.get("gold")
+    if not isinstance(gold, dict):
+        return False
+    return not any(
+        gold.get(key)
+        for key in (
+            "expected_status",
+            "acceptable_evidence_sets",
+            "checked_at",
+            "rationale",
+            "search_notes",
+            "adjudicators",
+        )
+    )
+
+
+def split_adjudication(template_path: Path, output_dir: Path) -> dict[str, object]:
+    """Create one review workbook per independent adjudicator.
+
+    The packets contain the same hash-bound claims with empty gold scaffolds,
+    so two reviewers can record gold labels in parallel without editing one
+    shared file. Refuses to split a template that already contains review work.
+    """
+    data = json.loads(template_path.read_text())
+    if data.get("schema_version") != 2:
+        raise ValueError("Use adjudication schema version 2.")
+    claims = data.get("claims")
+    if not isinstance(claims, list) or len(claims) != 30:
+        raise ValueError("Split exactly 30 adjudicated claims.")
+    candidate_ids = [claim.get("candidate_id") for claim in claims]
+    if len(candidate_ids) != len(set(candidate_ids)):
+        raise ValueError("The template contains duplicate claims.")
+    for claim in claims:
+        if not _empty_gold(claim):
+            raise ValueError(
+                f"Claim {claim.get('candidate_id')} already contains review work; "
+                "prepare a fresh template before splitting."
+            )
+    reviewers = [
+        {"id": "reviewer-a", "role": "independent"},
+        {"id": "reviewer-b", "role": "independent"},
+    ]
+    output_dir.mkdir(parents=True, exist_ok=True)
+    packets: dict[str, str] = {}
+    for reviewer in reviewers:
+        packet = {**data, "reviewer": reviewer}
+        path = output_dir / f"{reviewer['id']}.json"
+        path.write_text(json.dumps(packet, ensure_ascii=False, indent=2) + "\n")
+        packets[reviewer["id"]] = str(path)
+    return {"packets": packets, "claims": len(claims)}
+
+
+def merge_adjudication(
+    packet_a: Path,
+    packet_b: Path,
+    template_path: Path,
+    output_path: Path,
+    selection_path: Path,
+) -> dict[str, object]:
+    """Merge two completed review workbooks into the canonical gold file.
+
+    Hash-bound claim fields are verified against the prepared template and
+    never modified. A packet that is incomplete for any claim stops the merge.
+    Disagreements are preserved in `adjudication_notes` with the status left
+    unresolved so the validator flags exactly which claims need discussion.
+    """
+    packets = [(packet_a, "A"), (packet_b, "B")]
+    loaded: list[tuple[dict[str, object], str, dict[str, object]]] = []
+    for path, label in packets:
+        data = json.loads(path.read_text())
+        reviewer = data.get("reviewer")
+        reviewer_id = (
+            reviewer.get("id")
+            if isinstance(reviewer, dict) and isinstance(reviewer.get("id"), str)
+            else None
+        )
+        if not reviewer_id or reviewer.get("role") != "independent":
+            raise ValueError(f"Packet {label} must declare an independent reviewer.")
+        loaded.append((data, reviewer_id, data.get("claims", [])))
+    if loaded[0][1] == loaded[1][1]:
+        raise ValueError(
+            f"Both packets declare the same reviewer ({loaded[0][1]}); "
+            "merge requires two distinct independent reviewers."
+        )
+
+    template = json.loads(template_path.read_text())
+    template_claims = template.get("claims", [])
+    if len(template_claims) != 30:
+        raise ValueError("The prepared template must contain exactly 30 claims.")
+
+    merged_claims: list[dict[str, object]] = []
+    errors: list[str] = []
+    disagreements: list[str] = []
+    for index, template_claim in enumerate(template_claims):
+        candidate_id = template_claim.get("candidate_id")
+        packet_golds: list[tuple[str, dict[str, object]]] = []
+        for _data, reviewer_id, claims in loaded:
+            packet_claim = claims[index]
+            for key, expected in template_claim.items():
+                if key == "gold":
+                    continue
+                if packet_claim.get(key) != expected:
+                    errors.append(
+                        f"Claim {candidate_id} in {reviewer_id}'s packet changed {key}; "
+                        "hash-bound fields must stay frozen."
+                    )
+            gold = packet_claim.get("gold")
+            if not isinstance(gold, dict):
+                errors.append(f"Claim {candidate_id} in {reviewer_id}'s packet has no gold block.")
+                continue
+            # Each packet records one reviewer's gold label; the two-reviewer
+            # requirement is established by the merge itself.
+            issues = [
+                issue for issue in _claim_issues(packet_claim) if "adjudicators" not in issue
+            ]
+            if issues:
+                errors.append(
+                    f"{reviewer_id} left claim {candidate_id} incomplete: {'; '.join(issues)}"
+                )
+            packet_golds.append((reviewer_id, gold))
+        if errors:
+            continue
+
+        gold_a = packet_golds[0][1]
+        gold_b = packet_golds[1][1]
+        reviewer_a = packet_golds[0][0]
+        reviewer_b = packet_golds[1][0]
+        status_a = gold_a.get("expected_status")
+        status_b = gold_b.get("expected_status")
+        notes: list[str] = []
+        if status_a == status_b:
+            merged_status = status_a
+            notes.append(gold_a.get("adjudication_notes") or "")
+            notes.append(gold_b.get("adjudication_notes") or "")
+            rationale = gold_a.get("rationale")
+            search_notes = gold_a.get("search_notes") or ""
+            if gold_b.get("search_notes") and gold_b.get("search_notes") != search_notes:
+                search_notes = f"{search_notes}\n{reviewer_b}: {gold_b.get('search_notes')}"
+        else:
+            disagreements.append(str(candidate_id))
+            merged_status = None
+            rationale = ""
+            search_notes = ""
+            notes.append(
+                f"Reviewers disagree: {reviewer_a} chose {status_a} "
+                f"({gold_a.get('rationale')}); {reviewer_b} chose {status_b} "
+                f"({gold_b.get('rationale')}). Resolve the disagreement before running."
+            )
+
+        merged_claims.append(
+            {
+                **template_claim,
+                "gold": {
+                    "expected_status": merged_status,
+                    "acceptable_evidence_sets": _union_evidence_sets(
+                        gold_a.get("acceptable_evidence_sets"),
+                        gold_b.get("acceptable_evidence_sets"),
+                    ),
+                    "checked_at": max(
+                        gold_a.get("checked_at"),
+                        gold_b.get("checked_at"),
+                        key=lambda value: value or "",
+                    ),
+                    "rationale": rationale,
+                    "search_notes": search_notes,
+                    "adjudicators": [
+                        {"id": reviewer_a, "role": "independent"},
+                        {"id": reviewer_b, "role": "independent"},
+                    ],
+                    "adjudication_notes": "\n".join(note for note in notes if note),
+                },
+            }
+        )
+
+    if errors:
+        raise ValueError("Cannot merge:\n- " + "\n- ".join(errors))
+
+    merged = {
+        "schema_version": template.get("schema_version"),
+        "selection_sha256": template.get("selection_sha256"),
+        "purpose": template.get("purpose"),
+        "claims": merged_claims,
+    }
+    output_path.write_text(json.dumps(merged, ensure_ascii=False, indent=2) + "\n")
+    summary = validate_adjudication(output_path, selection_path)
+    return {
+        "output": str(output_path),
+        "disagreements": disagreements,
+        "summary": summary,
+    }
+
+
+def _union_evidence_sets(
+    sets_a: object,
+    sets_b: object,
+) -> list[object]:
+    merged: list[object] = []
+    seen: set[str] = set()
+    for collection in (sets_a, sets_b):
+        if not isinstance(collection, list):
+            continue
+        for evidence_set in collection:
+            key = json.dumps(evidence_set, sort_keys=True, ensure_ascii=False)
+            if key not in seen:
+                seen.add(key)
+                merged.append(evidence_set)
+    return merged
+
+
 def _has_timezone(value: str) -> bool:
     try:
         parsed = datetime.fromisoformat(value)

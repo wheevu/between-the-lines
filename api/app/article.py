@@ -24,6 +24,45 @@ class ArticleExtractionError(ValueError):
 
 
 def extract_article(raw_url: str, settings: Settings) -> ExtractedArticle:
+    url, html = _download_html(raw_url, settings)
+
+    extracted = trafilatura.bare_extraction(
+        html,
+        url=url,
+        include_comments=False,
+        include_tables=False,
+        favor_precision=True,
+    )
+    if not extracted or not extracted.text:
+        raise ArticleExtractionError("Couldn't find enough article text. Paste the text instead.")
+    article_text = _clean_article_text(extracted.text)
+    if len(article_text.split()) < 40:
+        raise ArticleExtractionError("Couldn't find enough article text. Paste the text instead.")
+    replacement_count = article_text.count("\ufffd")
+    if replacement_count >= 5 and replacement_count / len(article_text) > 0.005:
+        raise ArticleExtractionError(
+            "That page's text encoding couldn't be read. Paste the article text instead."
+        )
+
+    try:
+        metadata = trafilatura.extract_metadata(html, default_url=url)
+    except (TypeError, ValueError):
+        metadata = None
+    title = extracted.title or (metadata.title if metadata else None) or _fallback_title(html)
+    return ExtractedArticle(
+        url=url,
+        title=title,
+        published_at=metadata.date if metadata else None,
+        text=article_text,
+    )
+
+
+def _download_html(raw_url: str, settings: Settings) -> tuple[str, str]:
+    """Download an HTML page, following a bounded number of redirects.
+
+    Returns the final URL and the decoded HTML body. Raises
+    ArticleExtractionError for anything that cannot be read.
+    """
     url = raw_url
     try:
         with httpx.Client(timeout=10, headers={"User-Agent": USER_AGENT}) as client:
@@ -63,36 +102,40 @@ def extract_article(raw_url: str, settings: Settings) -> ExtractedArticle:
         raise ArticleExtractionError("That website took too long to respond.") from error
     except httpx.RequestError as error:
         raise ArticleExtractionError("Couldn't download that article.") from error
+    return url, html
 
-    extracted = trafilatura.bare_extraction(
-        html,
-        url=url,
-        include_comments=False,
-        include_tables=False,
-        favor_precision=True,
-    )
-    if not extracted or not extracted.text:
-        raise ArticleExtractionError("Couldn't find enough article text. Paste the text instead.")
-    article_text = _clean_article_text(extracted.text)
-    if len(article_text.split()) < 40:
-        raise ArticleExtractionError("Couldn't find enough article text. Paste the text instead.")
-    replacement_count = article_text.count("\ufffd")
-    if replacement_count >= 5 and replacement_count / len(article_text) > 0.005:
-        raise ArticleExtractionError(
-            "That page's text encoding couldn't be read. Paste the article text instead."
-        )
 
+def extract_metadata(raw_url: str, settings: Settings) -> tuple[str | None, str | None]:
+    """Best-effort (final URL, title) for a page whose article text may not extract.
+
+    Used by the paste fallback so a saved page link survives failed extraction.
+    Returns (None, None) on any failure; the caller keeps the pasted text as
+    the article body either way.
+    """
+    try:
+        url, html = _download_html(raw_url, settings)
+    except ArticleExtractionError:
+        return None, None
     try:
         metadata = trafilatura.extract_metadata(html, default_url=url)
     except (TypeError, ValueError):
         metadata = None
-    title = extracted.title or (metadata.title if metadata else None) or _fallback_title(html)
-    return ExtractedArticle(
-        url=url,
-        title=title,
-        published_at=metadata.date if metadata else None,
-        text=article_text,
+    try:
+        extracted = trafilatura.bare_extraction(
+            html,
+            url=url,
+            include_comments=False,
+            include_tables=False,
+            favor_precision=True,
+        )
+    except (TypeError, ValueError):
+        extracted = None
+    title = (
+        (extracted.title if extracted else None)
+        or (metadata.title if metadata else None)
+        or _fallback_title(html)
     )
+    return url, title
 
 
 def _clean_article_text(text: str) -> str:

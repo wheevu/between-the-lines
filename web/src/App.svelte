@@ -248,7 +248,14 @@
 
 <main id="main-content" tabindex="-1">
   <header class="app-header">
-    <button class="wordmark" type="button" on:click={newArticle}>Between the Lines</button>
+    <button class="wordmark" type="button" on:click={newArticle}>
+      <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+        <rect x="2" y="4" width="20" height="3" rx="1.5" fill="currentColor" />
+        <rect x="7" y="10.5" width="15" height="3" rx="1.5" fill="currentColor" />
+        <rect x="2" y="17" width="20" height="3" rx="1.5" fill="currentColor" />
+      </svg>
+      Between the Lines
+    </button>
     <span>English · Vietnamese · Korean</span>
   </header>
 

@@ -21,7 +21,9 @@ export async function createAnalysis(
     body: JSON.stringify({
       source_language: input.sourceLanguage,
       target_language: input.targetLanguage,
-      ...(input.mode === "text" ? { text: input.value } : { url: input.value })
+      ...(input.mode === "text"
+        ? { text: input.value, ...(input.fallbackUrl ? { fallback_url: input.fallbackUrl } : {}) }
+        : { url: input.value })
     }),
     signal
   });

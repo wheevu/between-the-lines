@@ -1,6 +1,7 @@
 # Accessibility implementation check
 
-Checked: 30 July 2026
+Checked: 30 July 2026  
+Updated: 2 August 2026 (keyboard feedback journeys, zoom reflow)
 
 This is a developer check of the current interface. It does not replace testing
 with disabled readers or establish equivalent UX for everyone.
@@ -22,8 +23,13 @@ with disabled readers or establish equivalent UX for everyone.
 - Source and translation passages use their known EN, VI, or KO language tags.
 - One Playwright journey starts with the keyboard, focuses the skip link, and
   verifies focus reaches the main region.
+- A keyboard-only journey completes the whole translation feedback flow: flag
+  verdict, passage verdict, correction text, and save — all with Enter, Tab,
+  and typing.
+- A reflow journey verifies no horizontal scrolling at 640px and 320px layout
+  widths, approximating 200% and 400% browser zoom on a 1280px desktop screen.
 
-The component suite contains 17 tests and the browser suite contains eight
+The component suite contains 18 tests and the browser suite contains ten
 journeys after this pass.
 
 ## Contrast probe
@@ -45,8 +51,8 @@ audit. Disabled buttons are not included in this contrast claim.
 ## Still required before claiming equivalent UX
 
 - VoiceOver review on macOS with a real completed translation and evidence
-  result;
-- keyboard-only completion of every feedback and error-recovery path;
-- zoom and reflow review at 200% and 400%;
+  result (manual; the keyboard-only journeys cover the same paths without a
+  screen reader);
+- zoom and reflow review on a real browser using Ctrl/Cmd + plus keys;
 - evaluation with at least one reader who uses assistive technology;
 - captions and legible on-screen text in the two-minute submission video.

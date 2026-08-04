@@ -3,6 +3,17 @@
 The deadline is close enough that every week needs a frozen output. Do not add
 new product features unless a scheduled evaluation exposes a specific failure.
 
+## Status: 2 August 2026
+
+- UI phase complete and frozen for the reader study: paste-fallback keeps the
+  page link and title, light visual refresh (segmented input control, brand
+  mark, error/empty states), label audit against the four reader tasks,
+  keyboard-only and zoom-reflow journeys added (18 component tests, ten
+  browser journeys). Reopening the interface after this point risks invalidating
+  reader-study measures.
+- Gold evidence template is hash-bound and contains all 30 claims; the `gold`
+  blocks are empty pending two independent adjudicators.
+
 ## 24–29 July — translation and claim-selection evidence
 
 - Recruit at least one strong Korean–English reader and one Vietnamese-capable

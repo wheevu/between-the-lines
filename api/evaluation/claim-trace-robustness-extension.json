@@ -1,0 +1,707 @@
+{
+  "schema_version": 1,
+  "prepared": "2026-07-25",
+  "purpose": "Robustness shell for extraction, language routing, clustering, and source-lineage stress tests; not a factual gold set.",
+  "window": {
+    "start": "2026-01-25",
+    "end": "2026-07-25"
+  },
+  "selection_rules": [
+    "Retain the 36-article frozen core.",
+    "Add unique publisher domains discovered in language-localized Google News RSS.",
+    "Resolve every aggregator wrapper to the publisher URL.",
+    "Require manual relevance review before factual scoring."
+  ],
+  "events": [
+    {
+      "id": "bok-rate-decision-2026",
+      "topic": "technology_economy",
+      "profile": "clean",
+      "event_date": "2026-02-24",
+      "selection_reason": "Tests numeric precision and attribution for a central-bank rate decision covered by wire services and local outlets in all three languages.",
+      "primary_facts": [
+        "The Bank of Korea set its base rate at a February 2026 decision.",
+        "The statement cited inflation or growth conditions for the decision.",
+        "Commentary attributed different weight to the same figures."
+      ],
+      "edge_tags": [
+        "numeric_precision",
+        "attribution",
+        "temporal_update",
+        "scope"
+      ],
+      "articles": [
+        {
+          "id": "bok-rate-decision-2026-en-base-1",
+          "source_language": "en",
+          "publisher": "CNBC",
+          "published": "2026-07-15",
+          "title": "Bank of Korea raises rates to 2.75% in first hike in over three years - CNBC",
+          "url": "https://www.cnbc.com/2026/07/16/bok-interest-rate-monetary-policy-markets-kospi-skhynix.html",
+          "source_type": "web",
+          "credited_origin": null,
+          "edge_tags": [
+            "machine_discovered",
+            "relevance_review_required"
+          ],
+          "selection": "base_candidate"
+        },
+        {
+          "id": "bok-rate-decision-2026-vi-base-1",
+          "source_language": "vi",
+          "publisher": "Vietnam+ (VietnamPlus)",
+          "published": "2026-02-21",
+          "title": "Ngân hàng Trung ương Hàn Quốc có thể tiếp tục giữ nguyên lãi suất - Vietnam+ (VietnamPlus)",
+          "url": "https://www.vietnamplus.vn/ngan-hang-trung-uong-han-quoc-co-the-tiep-tuc-giu-nguyen-lai-suat-post1094931.vnp",
+          "source_type": "web",
+          "credited_origin": null,
+          "edge_tags": [
+            "machine_discovered",
+            "relevance_review_required"
+          ],
+          "selection": "base_candidate"
+        },
+        {
+          "id": "bok-rate-decision-2026-ko-base-1",
+          "source_language": "ko",
+          "publisher": "연합뉴스",
+          "published": "2026-05-23",
+          "title": "[다음주 경제] 한은 기준금리 결정…성장률 전망 오르나 - 연합뉴스",
+          "url": "https://www.yna.co.kr/view/AKR20260523012200002",
+          "source_type": "web",
+          "credited_origin": null,
+          "edge_tags": [
+            "machine_discovered",
+            "relevance_review_required"
+          ],
+          "selection": "base_candidate"
+        },
+        {
+          "id": "bok-rate-decision-2026-en-robust-1",
+          "source_language": "en",
+          "publisher": "MUFG Research",
+          "published": "2026-02-26",
+          "title": "Asia FX Talk - Bank of Korea policy decision in focus - MUFG Research",
+          "url": "https://www.mufgresearch.com/fx/asia-fx-talk-bank-of-korea-policy-decision-in-focus-26-february-2026/",
+          "source_type": "web",
+          "credited_origin": null,
+          "edge_tags": [
+            "machine_discovered",
+            "relevance_review_required"
+          ],
+          "selection": "robustness_candidate"
+        },
+        {
+          "id": "bok-rate-decision-2026-en-robust-2",
+          "source_language": "en",
+          "publisher": "AP News",
+          "published": "2026-07-15",
+          "title": "South Korea’s central bank hikes rate for 1st time since 2023 to curb inflation, debt - AP News",
+          "url": "https://apnews.com/article/south-korea-rate-hike-inflation-semiconductor-fad756c430007b891ff275043fea1453",
+          "source_type": "web",
+          "credited_origin": null,
+          "edge_tags": [
+            "machine_discovered",
+            "relevance_review_required"
+          ],
+          "selection": "robustness_candidate"
+        },
+        {
+          "id": "bok-rate-decision-2026-en-robust-3",
+          "source_language": "en",
+          "publisher": "Statista",
+          "published": "2026-07-06",
+          "title": "Monthly central bank policy rate in South Korea 1999-2026 - Statista",
+          "url": "https://www.statista.com/statistics/1235224/south-korea-central-bank-base-rate/",
+          "source_type": "web",
+          "credited_origin": null,
+          "edge_tags": [
+            "machine_discovered",
+            "relevance_review_required"
+          ],
+          "selection": "robustness_candidate"
+        },
+        {
+          "id": "bok-rate-decision-2026-vi-robust-1",
+          "source_language": "vi",
+          "publisher": "Thời báo Tài chính Việt Nam",
+          "published": "2026-03-15",
+          "title": "Tuần từ 16 - 22/3: Một loạt ngân hàng trung ương sẽ quyết định lãi suất sau đợt tăng giá năng lượng - Thời báo Tài chính Việt Nam",
+          "url": "https://thoibaotaichinhvietnam.vn/tuan-tu-16-223-mot-loat-ngan-hang-trung-uong-se-quyet-dinh-lai-suat-sau-dot-tang-gia-nang-luong-193785.html",
+          "source_type": "web",
+          "credited_origin": null,
+          "edge_tags": [
+            "machine_discovered",
+            "relevance_review_required"
+          ],
+          "selection": "robustness_candidate"
+        },
+        {
+          "id": "bok-rate-decision-2026-vi-robust-2",
+          "source_language": "vi",
+          "publisher": "thitruongtaichinhtiente.vn",
+          "published": "2026-05-06",
+          "title": "Ngân hàng Trung ương Hàn Quốc dự báo lạm phát tháng 5 tiếp tục tăng do giá dầu cao, phát tín hiệu xem xét tăng lãi suất - thitruongtaichinhtiente.vn",
+          "url": "https://thitruongtaichinhtiente.vn/ngan-hang-trung-uong-han-quoc-du-bao-lam-phat-thang-5-tiep-tuc-tang-do-gia-dau-cao-phat-tin-hieu-xem-xet-tang-lai-suat-82653.html",
+          "source_type": "web",
+          "credited_origin": null,
+          "edge_tags": [
+            "machine_discovered",
+            "relevance_review_required"
+          ],
+          "selection": "robustness_candidate"
+        },
+        {
+          "id": "bok-rate-decision-2026-ko-robust-1",
+          "source_language": "ko",
+          "publisher": "조선일보",
+          "published": "2026-05-28",
+          "title": "신현송 한은 총재의 금통위, 연내 금리인상 신호탄 쐈다 - 조선일보",
+          "url": "https://www.chosun.com/economy/economy_general/2026/05/28/GQ7YQX52WNC2ZEUHITUBDDRRFQ/",
+          "source_type": "web",
+          "credited_origin": null,
+          "edge_tags": [
+            "machine_discovered",
+            "relevance_review_required"
+          ],
+          "selection": "robustness_candidate"
+        },
+        {
+          "id": "bok-rate-decision-2026-ko-robust-2",
+          "source_language": "ko",
+          "publisher": "yonhapnewstv.co.kr",
+          "published": "2026-07-16",
+          "title": "한은, 기준금리 2.75%로 0.25%p 인상…3년 6개월 만 긴축 - yonhapnewstv.co.kr",
+          "url": "https://www.yonhapnewstv.co.kr/news/akr20260716095057v8p",
+          "source_type": "web",
+          "credited_origin": null,
+          "edge_tags": [
+            "machine_discovered",
+            "relevance_review_required"
+          ],
+          "selection": "robustness_candidate"
+        }
+      ]
+    },
+    {
+      "id": "dengue-outbreak-2026",
+      "topic": "health",
+      "profile": "clean",
+      "event_date": "2026-05-15",
+      "selection_reason": "Tests case-count numbers and date scope in outbreak reporting where totals update daily and differ between official figures and press summaries.",
+      "primary_facts": [
+        "Health authorities reported a rising dengue case count in 2026.",
+        "Daily totals differed between official figures and press summaries.",
+        "Coverage emphasized regional hospitals and prevention campaigns."
+      ],
+      "edge_tags": [
+        "numeric_precision",
+        "temporal_update",
+        "scope",
+        "context"
+      ],
+      "articles": [
+        {
+          "id": "dengue-outbreak-2026-en-base-1",
+          "source_language": "en",
+          "publisher": "ReliefWeb",
+          "published": "2026-06-16",
+          "title": "Epidemic and emerging disease alerts in the Pacific as of 16 June 2026 - ReliefWeb",
+          "url": "https://reliefweb.int/map/world/epidemic-and-emerging-disease-alerts-pacific-16-june-2026",
+          "source_type": "web",
+          "credited_origin": null,
+          "edge_tags": [
+            "machine_discovered",
+            "relevance_review_required"
+          ],
+          "selection": "base_candidate"
+        },
+        {
+          "id": "dengue-outbreak-2026-vi-base-1",
+          "source_language": "vi",
+          "publisher": "Laodong.vn",
+          "published": "2026-06-11",
+          "title": "Sốt xuất huyết bùng phát trái quy luật, số ca mắc cao gấp 2,5 lần cùng kỳ - Laodong.vn",
+          "url": "https://laodong.vn/suc-khoe/sot-xuat-huyet-bung-phat-trai-quy-luat-so-ca-mac-cao-gap-25-lan-cung-ky-1717211.ldo",
+          "source_type": "web",
+          "credited_origin": null,
+          "edge_tags": [
+            "machine_discovered",
+            "relevance_review_required"
+          ],
+          "selection": "base_candidate"
+        },
+        {
+          "id": "dengue-outbreak-2026-ko-base-1",
+          "source_language": "ko",
+          "publisher": "연합뉴스",
+          "published": "2026-01-27",
+          "title": "니파바이러스감염증 인도서 확산 조짐…춘제 앞둔 中 우려 - 연합뉴스",
+          "url": "https://www.yna.co.kr/view/AKR20260127127700009",
+          "source_type": "web",
+          "credited_origin": null,
+          "edge_tags": [
+            "machine_discovered",
+            "relevance_review_required"
+          ],
+          "selection": "base_candidate"
+        },
+        {
+          "id": "dengue-outbreak-2026-en-robust-1",
+          "source_language": "en",
+          "publisher": "Outbreak News Today",
+          "published": "2026-06-23",
+          "title": "Sri Lanka dengue outbreak nears 50,000 cases - Outbreak News Today",
+          "url": "https://outbreaknewstoday.substack.com/p/sri-lanka-dengue-outbreak-nears-50000",
+          "source_type": "web",
+          "credited_origin": null,
+          "edge_tags": [
+            "machine_discovered",
+            "relevance_review_required"
+          ],
+          "selection": "robustness_candidate"
+        },
+        {
+          "id": "dengue-outbreak-2026-en-robust-2",
+          "source_language": "en",
+          "publisher": "Stanford Report",
+          "published": "2026-03-17",
+          "title": "How climate change is fueling disease outbreaks - Stanford Report",
+          "url": "https://news.stanford.edu/stories/2026/03/climate-change-disease-outbreaks-dengue-fever-research",
+          "source_type": "web",
+          "credited_origin": null,
+          "edge_tags": [
+            "machine_discovered",
+            "relevance_review_required"
+          ],
+          "selection": "robustness_candidate"
+        },
+        {
+          "id": "dengue-outbreak-2026-vi-robust-1",
+          "source_language": "vi",
+          "publisher": "tuoitre.vn",
+          "published": "2026-06-09",
+          "title": "Chuyên gia dịch tễ cảnh báo nguy cơ sốt xuất huyết bùng phát trên diện rộng - tuoitre.vn",
+          "url": "https://tuoitre.vn/chuyen-gia-dich-te-canh-bao-nguy-co-sot-xuat-huyet-bung-phat-tren-dien-rong-20260609155938554.htm",
+          "source_type": "web",
+          "credited_origin": null,
+          "edge_tags": [
+            "machine_discovered",
+            "relevance_review_required"
+          ],
+          "selection": "robustness_candidate"
+        },
+        {
+          "id": "dengue-outbreak-2026-vi-robust-2",
+          "source_language": "vi",
+          "publisher": "baotintuc.vn",
+          "published": "2026-06-08",
+          "title": "Cảnh báo nguy cơ dịch sốt xuất huyết bùng phát trên diện rộng - baotintuc.vn",
+          "url": "https://baotintuc.vn/dich-benh/canh-bao-nguy-co-dich-sot-xuat-huyet-bung-phat-tren-dien-rong-20260608101059707.htm",
+          "source_type": "web",
+          "credited_origin": null,
+          "edge_tags": [
+            "machine_discovered",
+            "relevance_review_required"
+          ],
+          "selection": "robustness_candidate"
+        },
+        {
+          "id": "dengue-outbreak-2026-vi-robust-3",
+          "source_language": "vi",
+          "publisher": "Báo Sức khỏe & Đời sống",
+          "published": "2026-04-13",
+          "title": "Cảnh báo nguy cơ dịch sốt xuất huyết bùng phát kỷ lục trong năm 2026 - Báo Sức khỏe & Đời sống",
+          "url": "https://suckhoedoisong.vn/canh-bao-nguy-co-dich-sot-xuat-huyet-bung-phat-ky-luc-trong-nam-2026-169260413055914087.htm",
+          "source_type": "web",
+          "credited_origin": null,
+          "edge_tags": [
+            "machine_discovered",
+            "relevance_review_required"
+          ],
+          "selection": "robustness_candidate"
+        },
+        {
+          "id": "dengue-outbreak-2026-ko-robust-1",
+          "source_language": "ko",
+          "publisher": "뉴데일리",
+          "published": "2026-07-21",
+          "title": "소아청소년병원協 \"아이 여행 상비약, 지사제 보단 경구수액 챙겨야\" - 뉴데일리",
+          "url": "https://biz.newdaily.co.kr/site/data/html/2026/07/21/2026072100059.html",
+          "source_type": "web",
+          "credited_origin": null,
+          "edge_tags": [
+            "machine_discovered",
+            "relevance_review_required"
+          ],
+          "selection": "robustness_candidate"
+        },
+        {
+          "id": "dengue-outbreak-2026-ko-robust-2",
+          "source_language": "ko",
+          "publisher": "Vietnam.vn",
+          "published": "2026-07-10",
+          "title": "뎅기열 예방을 위해 적극적인 조치가 권장됩니다. - Vietnam.vn",
+          "url": "https://www.vietnam.vn/ko/khuyen-cao-nguoi-dan-chu-dong-phong-benh-sot-xuat-huyet",
+          "source_type": "web",
+          "credited_origin": null,
+          "edge_tags": [
+            "machine_discovered",
+            "relevance_review_required"
+          ],
+          "selection": "robustness_candidate"
+        }
+      ]
+    },
+    {
+      "id": "el-nino-forecast-2026",
+      "topic": "science_climate",
+      "profile": "challenging",
+      "event_date": "2026-06-10",
+      "selection_reason": "Tests forecast modality and uncertainty wording across meteorology agencies and regional coverage.",
+      "primary_facts": [
+        "Forecast agencies projected El Nino conditions for the 2026-27 season.",
+        "Probabilities differed across agencies and update dates.",
+        "Regional reporting tied the forecast to rainfall and crop impacts."
+      ],
+      "edge_tags": [
+        "modality",
+        "uncertainty",
+        "scope",
+        "temporal_update"
+      ],
+      "articles": [
+        {
+          "id": "el-nino-forecast-2026-en-base-1",
+          "source_language": "en",
+          "publisher": "National Oceanic and Atmospheric Administration (.gov)",
+          "published": "2026-06-11",
+          "title": "El Nino forms, expected to strengthen, say NOAA forecasters - National Oceanic and Atmospheric Administration (.gov)",
+          "url": "https://www.noaa.gov/news-release/el-nino-forms-expected-to-strengthen-say-noaa-forecasters",
+          "source_type": "web",
+          "credited_origin": null,
+          "edge_tags": [
+            "machine_discovered",
+            "relevance_review_required"
+          ],
+          "selection": "base_candidate"
+        },
+        {
+          "id": "el-nino-forecast-2026-vi-base-1",
+          "source_language": "vi",
+          "publisher": "vietnamnet.vn",
+          "published": "2026-07-22",
+          "title": "Nhận diện El Niño 2026-2027: Nắng nóng cực đoan, mưa lũ dị thường - vietnamnet.vn",
+          "url": "https://vietnamnet.vn/nhan-dien-el-nio-2026-2027-nang-nong-cuc-doan-mua-lu-di-thuong-2537536.html",
+          "source_type": "web",
+          "credited_origin": null,
+          "edge_tags": [
+            "machine_discovered",
+            "relevance_review_required"
+          ],
+          "selection": "base_candidate"
+        },
+        {
+          "id": "el-nino-forecast-2026-ko-base-1",
+          "source_language": "ko",
+          "publisher": "v.daum.net",
+          "published": "2026-04-12",
+          "title": "기후 행동 뒷짐, 2026~2027년 섬뜩한 기후 찾아온다 [지금은 기후위기] - v.daum.net",
+          "url": "https://v.daum.net/v/pJI1s9IkRt",
+          "source_type": "web",
+          "credited_origin": null,
+          "edge_tags": [
+            "machine_discovered",
+            "relevance_review_required"
+          ],
+          "selection": "base_candidate"
+        },
+        {
+          "id": "el-nino-forecast-2026-en-robust-1",
+          "source_language": "en",
+          "publisher": "Yale Climate Connections",
+          "published": "2026-07-14",
+          "title": "This could be the strongest El Niño on record - Yale Climate Connections",
+          "url": "https://yaleclimateconnections.org/2026/07/this-could-be-the-strongest-el-nino-on-record/",
+          "source_type": "web",
+          "credited_origin": null,
+          "edge_tags": [
+            "machine_discovered",
+            "relevance_review_required"
+          ],
+          "selection": "robustness_candidate"
+        },
+        {
+          "id": "el-nino-forecast-2026-en-robust-2",
+          "source_language": "en",
+          "publisher": "World Meteorological Organization WMO",
+          "published": "2026-06-02",
+          "title": "WMO: Prepare for El Niño - World Meteorological Organization WMO",
+          "url": "https://wmo.int/news/media-centre/wmo-prepare-el-nino",
+          "source_type": "web",
+          "credited_origin": null,
+          "edge_tags": [
+            "machine_discovered",
+            "relevance_review_required"
+          ],
+          "selection": "robustness_candidate"
+        },
+        {
+          "id": "el-nino-forecast-2026-vi-robust-1",
+          "source_language": "vi",
+          "publisher": "vnexpress.net",
+          "published": "2026-06-17",
+          "title": "El Nino 2026 có thể mạnh nhất trong hơn 70 năm - vnexpress.net",
+          "url": "https://vnexpress.net/el-nino-2026-co-the-manh-nhat-trong-hon-70-nam-5086716.html",
+          "source_type": "web",
+          "credited_origin": null,
+          "edge_tags": [
+            "machine_discovered",
+            "relevance_review_required"
+          ],
+          "selection": "robustness_candidate"
+        },
+        {
+          "id": "el-nino-forecast-2026-vi-robust-2",
+          "source_language": "vi",
+          "publisher": "Báo Dân trí",
+          "published": "2026-07-21",
+          "title": "Dự báo hai kịch bản về El Nino năm 2026-2027 - Báo Dân trí",
+          "url": "https://dantri.com.vn/thoi-su/du-bao-hai-kich-ban-ve-el-nino-nam-2026-2027-20260721184657635.htm",
+          "source_type": "web",
+          "credited_origin": null,
+          "edge_tags": [
+            "machine_discovered",
+            "relevance_review_required"
+          ],
+          "selection": "robustness_candidate"
+        },
+        {
+          "id": "el-nino-forecast-2026-ko-robust-1",
+          "source_language": "ko",
+          "publisher": "SDG뉴스",
+          "published": "2026-04-21",
+          "title": "[기획특집, SDGs 경고] 2026 슈퍼 엘니뇨, 대한민국을 향한 마지막 골든타임 - SDG뉴스",
+          "url": "http://www.sdgnews.net/news/articleView.html?idxno=49850",
+          "source_type": "web",
+          "credited_origin": null,
+          "edge_tags": [
+            "machine_discovered",
+            "relevance_review_required"
+          ],
+          "selection": "robustness_candidate"
+        },
+        {
+          "id": "el-nino-forecast-2026-ko-robust-2",
+          "source_language": "ko",
+          "publisher": "한겨레",
+          "published": "2026-04-22",
+          "title": "2027년 ‘최악의 더위’ 신호탄…올해, 역대 두 번째 뜨거운 해 되나 - 한겨레",
+          "url": "https://www.hani.co.kr/arti/society/environment/1255414.html",
+          "source_type": "web",
+          "credited_origin": null,
+          "edge_tags": [
+            "machine_discovered",
+            "relevance_review_required"
+          ],
+          "selection": "robustness_candidate"
+        },
+        {
+          "id": "el-nino-forecast-2026-ko-robust-3",
+          "source_language": "ko",
+          "publisher": "ESG경제",
+          "published": "2026-03-24",
+          "title": "‘슈퍼 엘니뇨’ 경보… 올 여름 지구촌 역대급 폭염·폭우 오나 - ESG경제",
+          "url": "https://www.esgeconomy.com/news/articleView.html?idxno=14899",
+          "source_type": "web",
+          "credited_origin": null,
+          "edge_tags": [
+            "machine_discovered",
+            "relevance_review_required"
+          ],
+          "selection": "robustness_candidate"
+        }
+      ]
+    },
+    {
+      "id": "bts-reunion-2026",
+      "topic": "culture_sports",
+      "profile": "challenging",
+      "event_date": "2026-06-14",
+      "selection_reason": "Tests attribution and uncertainty in entertainment coverage where a reunion report was covered with conflicting sourcing and later clarifications.",
+      "primary_facts": [
+        "Media reported a BTS reunion plan with different attributions.",
+        "Agency statements and fan reporting sometimes conflicted.",
+        "Coverage mixed confirmed dates with speculation."
+      ],
+      "edge_tags": [
+        "attribution",
+        "uncertainty",
+        "denied",
+        "scope"
+      ],
+      "articles": [
+        {
+          "id": "bts-reunion-2026-en-base-1",
+          "source_language": "en",
+          "publisher": "Teen Vogue",
+          "published": "2026-03-17",
+          "title": "All You Need to Know About BTS's 'ARIRANG' Comeback - Teen Vogue",
+          "url": "https://www.teenvogue.com/story/bts-2026-arirang-comeback-tour-netflix-everything-you-need-to-know",
+          "source_type": "web",
+          "credited_origin": null,
+          "edge_tags": [
+            "machine_discovered",
+            "relevance_review_required"
+          ],
+          "selection": "base_candidate"
+        },
+        {
+          "id": "bts-reunion-2026-vi-base-1",
+          "source_language": "vi",
+          "publisher": "laodong.vn",
+          "published": "2026-02-18",
+          "title": "BTS, Blackpink và Wanna One cùng trở lại sau Tết Nguyên đán 2026 - laodong.vn",
+          "url": "https://laodong.vn/van-hoa-giai-tri/bts-blackpink-va-wanna-one-cung-tro-lai-sau-tet-nguyen-dan-2026-1657375.ldo",
+          "source_type": "web",
+          "credited_origin": null,
+          "edge_tags": [
+            "machine_discovered",
+            "relevance_review_required"
+          ],
+          "selection": "base_candidate"
+        },
+        {
+          "id": "bts-reunion-2026-ko-base-1",
+          "source_language": "ko",
+          "publisher": "이슈인사이트",
+          "published": "2026-07-06",
+          "title": "추억이 실적이 됐다…2026 상반기 K팝 '재결합 경제' 열풍 - 이슈인사이트",
+          "url": "https://www.issueinsight.co.kr/news/articleView.html?idxno=2954",
+          "source_type": "web",
+          "credited_origin": null,
+          "edge_tags": [
+            "machine_discovered",
+            "relevance_review_required"
+          ],
+          "selection": "base_candidate"
+        },
+        {
+          "id": "bts-reunion-2026-en-robust-1",
+          "source_language": "en",
+          "publisher": "Gold Derby",
+          "published": "2026-03-17",
+          "title": "BTS drops new trailer for Netflix documentary - Gold Derby",
+          "url": "https://www.goldderby.com/film/2026/bts-comeback-concert-documentary-netflix-arirang/",
+          "source_type": "web",
+          "credited_origin": null,
+          "edge_tags": [
+            "machine_discovered",
+            "relevance_review_required"
+          ],
+          "selection": "robustness_candidate"
+        },
+        {
+          "id": "bts-reunion-2026-en-robust-2",
+          "source_language": "en",
+          "publisher": "BBC",
+          "published": "2026-02-03",
+          "title": "BTS comeback show and documentary to be on Netflix - BBC",
+          "url": "https://www.bbc.com/news/articles/cvgp6115ee9o",
+          "source_type": "web",
+          "credited_origin": null,
+          "edge_tags": [
+            "machine_discovered",
+            "relevance_review_required"
+          ],
+          "selection": "robustness_candidate"
+        },
+        {
+          "id": "bts-reunion-2026-en-robust-3",
+          "source_language": "en",
+          "publisher": "Hypebae",
+          "published": "2026-03-17",
+          "title": "Everything We Know About the Upcoming BTS Documentary - Hypebae",
+          "url": "https://hypebae.com/2026/3/bts-documentary-k-pop-music-album-release-date",
+          "source_type": "web",
+          "credited_origin": null,
+          "edge_tags": [
+            "machine_discovered",
+            "relevance_review_required"
+          ],
+          "selection": "robustness_candidate"
+        },
+        {
+          "id": "bts-reunion-2026-vi-robust-1",
+          "source_language": "vi",
+          "publisher": "VOV.VN",
+          "published": "2026-03-07",
+          "title": "BTS trở lại sau gần 4 năm: Màn comeback có thể định hình lại Kpop - VOV.VN",
+          "url": "https://vov.vn/giai-tri/bts-tro-lai-sau-gan-4-nam-man-comeback-co-the-dinh-hinh-lai-kpop-post1273457.vov",
+          "source_type": "web",
+          "credited_origin": null,
+          "edge_tags": [
+            "machine_discovered",
+            "relevance_review_required"
+          ],
+          "selection": "robustness_candidate"
+        },
+        {
+          "id": "bts-reunion-2026-vi-robust-2",
+          "source_language": "vi",
+          "publisher": "tuoitre.vn",
+          "published": "2026-03-18",
+          "title": "BTS trở lại với quy mô chưa từng có: Cảnh sát ước tính 260.000 khán giả - tuoitre.vn",
+          "url": "https://tuoitre.vn/bts-tro-lai-voi-quy-mo-chua-tung-co-canh-sat-uoc-tinh-260-000-khan-gia-20260318191557164.htm",
+          "source_type": "web",
+          "credited_origin": null,
+          "edge_tags": [
+            "machine_discovered",
+            "relevance_review_required"
+          ],
+          "selection": "robustness_candidate"
+        },
+        {
+          "id": "bts-reunion-2026-ko-robust-1",
+          "source_language": "ko",
+          "publisher": "v.daum.net",
+          "published": "2026-06-30",
+          "title": "'완전체' BTS부터 '재결합' 아이오아이·워너원..멈췄던 시간 흐른다 [상반기 가요결산②] - v.daum.net",
+          "url": "https://v.daum.net/v/20260630070225694?f=p",
+          "source_type": "web",
+          "credited_origin": null,
+          "edge_tags": [
+            "machine_discovered",
+            "relevance_review_required"
+          ],
+          "selection": "robustness_candidate"
+        },
+        {
+          "id": "bts-reunion-2026-ko-robust-2",
+          "source_language": "ko",
+          "publisher": "Vietnam.vn",
+          "published": "2026-06-04",
+          "title": "BTS가 FESTA 2026을 앞두고 가족사진을 공개했다. - Vietnam.vn",
+          "url": "https://www.vietnam.vn/ko/bts-tung-bo-anh-gia-dinh-truoc-them-festa-2026",
+          "source_type": "web",
+          "credited_origin": null,
+          "edge_tags": [
+            "machine_discovered",
+            "relevance_review_required"
+          ],
+          "selection": "robustness_candidate"
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "events": 4,
+    "articles": 40,
+    "languages": {
+      "en": 14,
+      "vi": 13,
+      "ko": 13
+    },
+    "unfilled_slots": []
+  }
+}

@@ -14,14 +14,23 @@ DEFAULT_OUTPUT = Path(__file__).parents[1] / "evaluation" / "claim-trace-robustn
 WINDOW_START = "2026-01-25"
 WINDOW_END = "2026-07-25"
 
+# Domains that consistently block scripted readers (paywalls or bot walls).
+# Machine-discovered robustness candidates skip these hosts; real retrieval
+# still records them honestly as failures.
+BLOCKED_DOMAINS = {
+    "reuters.com",
+    "bloomberg.com",
+    "focus-economics.com",
+    "foeconomy.co.kr",
+}
+
 LOCALES = {
     Language.ENGLISH: ("en-US", "US", "US:en"),
     Language.VIETNAMESE: ("vi", "VN", "VN:vi"),
     Language.KOREAN: ("ko", "KR", "KR:ko"),
 }
 
-QUERIES = {
-    "korea-ai-basic-act-implementation": {
+QUERIES = {    "korea-ai-basic-act-implementation": {
         "en": "South Korea AI Basic Act",
         "vi": "Luật AI cơ bản Hàn Quốc",
         "ko": "한국 AI기본법",
@@ -81,6 +90,26 @@ QUERIES = {
         "vi": "Tây Ban Nha Argentina chung kết World Cup 2026",
         "ko": "스페인 아르헨티나 월드컵 결승 2026",
     },
+    "bok-rate-decision-2026": {
+        "en": "Bank of Korea base rate decision February 2026",
+        "vi": "Ngân hàng Trung ương Hàn Quốc quyết định lãi suất 2026",
+        "ko": "한국은행 기준금리 2026년 2월 결정",
+    },
+    "dengue-outbreak-2026": {
+        "en": "dengue fever outbreak cases 2026",
+        "vi": "sốt xuất huyết bùng phát 2026",
+        "ko": "뎅기열 유행 2026 확진자",
+    },
+    "el-nino-forecast-2026": {
+        "en": "El Nino forecast 2026 2027 season",
+        "vi": "El Nino dự báo 2026 2027",
+        "ko": "엘니뇨 전망 2026 2027",
+    },
+    "bts-reunion-2026": {
+        "en": "BTS reunion announcement 2026",
+        "vi": "BTS trở lại hoạt động 2026",
+        "ko": "BTS 재결합 2026",
+    },
 }
 
 
@@ -89,6 +118,12 @@ def parse_args() -> argparse.Namespace:
         description="Expand the frozen event corpus with resolved publisher URLs."
     )
     parser.add_argument("--output", type=Path, default=DEFAULT_OUTPUT)
+    parser.add_argument(
+        "--manifest",
+        type=Path,
+        default=SOURCE,
+        help="Event manifest; events without hand-selected articles get machine-discovered bases.",
+    )
     parser.add_argument("--decode-interval", type=float, default=0.2)
     return parser.parse_args()
 
@@ -140,8 +175,56 @@ def resolve_url(google_news_url: str, interval: float) -> str | None:
     return url if url.startswith(("http://", "https://")) and host != "news.google.com" else None
 
 
-def build(interval: float) -> dict[str, object]:
-    source = json.loads(SOURCE.read_text())
+def _host_key(url: str) -> str:
+    return (urlparse(url).hostname or "").casefold().removeprefix("www.")
+
+
+def _discover_articles(
+    event: dict[str, object],
+    language: Language,
+    needed: int,
+    interval: float,
+    seen_urls: set[str],
+    seen_hosts: set[str],
+    *,
+    kind: str,
+) -> tuple[list[dict[str, str]], int]:
+    query = QUERIES[event["id"]][language.value]
+    added_articles: list[dict[str, str]] = []
+    added = 0
+    for candidate in rss_candidates(query, language):
+        if added >= needed:
+            break
+        resolved = resolve_url(candidate["google_news_url"], interval)
+        if not resolved or resolved in seen_urls:
+            continue
+        host = _host_key(resolved)
+        if host in BLOCKED_DOMAINS or host in seen_hosts:
+            continue
+        article_id_kind = "base" if kind == "base_candidate" else "robust"
+        article_id = f"{event['id']}-{language.value}-{article_id_kind}-{added + 1}"
+        added_articles.append(
+            {
+                "id": article_id,
+                "source_language": language.value,
+                "publisher": candidate["publisher"],
+                "published": candidate["published"],
+                "title": candidate["title"],
+                "url": resolved,
+                "source_type": "web",
+                "credited_origin": None,
+                "edge_tags": ["machine_discovered", "relevance_review_required"],
+                "selection": kind,
+            }
+        )
+        seen_urls.add(resolved)
+        seen_hosts.add(host)
+        added += 1
+    return added_articles, added
+
+
+def build(manifest: Path, interval: float) -> dict[str, object]:
+    source = json.loads(manifest.read_text())
     failures = []
     events = []
     language_totals = {language.value: 0 for language in Language}
@@ -149,37 +232,42 @@ def build(interval: float) -> dict[str, object]:
         articles = [dict(article, selection="frozen_core") for article in event["articles"]]
         seen_urls = {article["url"] for article in articles}
         seen_hosts = {urlparse(article["url"]).hostname for article in articles}
+        if not articles:
+            # Events without hand-selected articles get one discovered base
+            # article per language before the rotation shell.
+            for language in Language:
+                base_articles, base_added = _discover_articles(
+                    event,
+                    language,
+                    1,
+                    interval,
+                    seen_urls,
+                    seen_hosts,
+                    kind="base_candidate",
+                )
+                articles.extend(base_articles)
+                if base_added < 1:
+                    failures.append(
+                        {
+                            "event_id": event["id"],
+                            "language": language.value,
+                            "needed": 1,
+                            "added": base_added,
+                            "kind": "base_candidate",
+                        }
+                    )
         for language_index, language in enumerate(Language):
             needed = 3 if language_index == event_index % 3 else 2
-            query = QUERIES[event["id"]][language.value]
-            added = 0
-            for candidate in rss_candidates(query, language):
-                if added >= needed:
-                    break
-                resolved = resolve_url(candidate["google_news_url"], interval)
-                if not resolved or resolved in seen_urls:
-                    continue
-                host = urlparse(resolved).hostname
-                if host in seen_hosts:
-                    continue
-                article_id = f"{event['id']}-{language.value}-robust-{added + 1}"
-                articles.append(
-                    {
-                        "id": article_id,
-                        "source_language": language.value,
-                        "publisher": candidate["publisher"],
-                        "published": candidate["published"],
-                        "title": candidate["title"],
-                        "url": resolved,
-                        "source_type": "web",
-                        "credited_origin": None,
-                        "edge_tags": ["machine_discovered", "relevance_review_required"],
-                        "selection": "robustness_candidate",
-                    }
-                )
-                seen_urls.add(resolved)
-                seen_hosts.add(host)
-                added += 1
+            added_articles, added = _discover_articles(
+                event,
+                language,
+                needed,
+                interval,
+                seen_urls,
+                seen_hosts,
+                kind="robustness_candidate",
+            )
+            articles.extend(added_articles)
             if added < needed:
                 failures.append(
                     {
@@ -187,6 +275,7 @@ def build(interval: float) -> dict[str, object]:
                         "language": language.value,
                         "needed": needed,
                         "added": added,
+                        "kind": "robustness_candidate",
                     }
                 )
         for article in articles:
@@ -222,7 +311,7 @@ def build(interval: float) -> dict[str, object]:
 
 def main() -> None:
     args = parse_args()
-    result = build(args.decode_interval)
+    result = build(args.manifest, args.decode_interval)
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n")
     print(json.dumps(result["summary"], ensure_ascii=False, indent=2))

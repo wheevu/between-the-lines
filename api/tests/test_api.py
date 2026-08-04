@@ -17,6 +17,8 @@ from app.models import (
     EvidenceStance,
     FactCheckResult,
     FactCheckStatus,
+    Language,
+    SegmentResult,
 )
 from app.store import Store
 
@@ -167,6 +169,38 @@ def test_analysis_and_feedback_http_flow(monkeypatch, tmp_path: Path) -> None:
     assert rejected_multiple.status_code == 422
     assert selected.json()["selected_candidate_ids"] == ["claim-1"]
     assert rejected_opinion.status_code == 422
+
+
+def test_ledger_read_endpoints_do_not_create_an_edition(monkeypatch, tmp_path: Path) -> None:
+    store = Store(tmp_path / "api.sqlite3")
+    monkeypatch.setattr(main, "store", store)
+
+    with TestClient(main.app) as client:
+        analysis = store.create_analysis()
+        store.update_analysis(
+            analysis.id,
+            status=AnalysisStatus.COMPLETE,
+            stage="Ready",
+            progress=100,
+            result=AnalysisResult(
+                source_language=Language.ENGLISH,
+                segments=[
+                    SegmentResult(
+                        id="p1s1",
+                        paragraph_index=0,
+                        sentence_index=0,
+                        source_text="A source-bound claim.",
+                        translations=[],
+                    )
+                ],
+            ),
+        )
+        ledger = client.get(f"/api/articles/{analysis.id}/ledger")
+        exported = client.get(f"/api/articles/{analysis.id}/export")
+
+    assert ledger.status_code == 404
+    assert exported.status_code == 404
+    assert store.get_article_ledger(analysis.id).editions == []
 
 
 def test_analysis_accepts_one_target_and_rejects_the_source_language(

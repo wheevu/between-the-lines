@@ -82,7 +82,9 @@ all pass.
 a reader chooses a quoted factual claim. Opinions and predictions are excluded,
 and attributed statements keep the name of the speaker.”
 
-Show the architecture diagram from the reader’s claim to multilingual search.
+Show the architecture diagram
+(`submission/assets/architecture.svg`) from the reader’s claim to multilingual
+search.
 
 #### 1:14–1:39 — bounded evidence handling
 

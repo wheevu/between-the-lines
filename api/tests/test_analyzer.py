@@ -1,5 +1,8 @@
 from pathlib import Path
 
+import pytest
+
+import app.analyzer as analyzer_module
 from app.analyzer import Analyzer, _public_error
 from app.config import Settings
 from app.gemini import GeminiTranslationError
@@ -149,6 +152,91 @@ def test_analysis_rejects_matching_source_and_target() -> None:
         assert "different" in str(error)
     else:
         raise AssertionError("matching source and target should fail")
+
+
+def test_analysis_rejects_fallback_url_without_pasted_text() -> None:
+    try:
+        AnalysisCreate(
+            source_language=Language.ENGLISH,
+            target_language=Language.VIETNAMESE,
+            fallback_url="https://example.com/article",
+        )
+    except ValueError as error:
+        assert "either article text or a URL" in str(error)
+    else:
+        raise AssertionError("a fallback URL without text should fail")
+
+
+def test_analyzer_keeps_fallback_page_link_for_pasted_text(
+    monkeypatch: pytest.MonkeyPatch, tmp_path: Path
+) -> None:
+    store = Store(tmp_path / "test.sqlite3")
+    store.initialize()
+    job = store.create_analysis()
+    analyzer = Analyzer(
+        settings=Settings(
+            gemini_api_key="test",
+            gemini_model="test",
+            database_path=tmp_path / "test.sqlite3",
+        ),
+        store=store,
+        gemini=FakeGemini(),
+    )
+    monkeypatch.setattr(
+        analyzer_module,
+        "extract_metadata",
+        lambda url: ("https://example.com/article", "A readable report"),
+    )
+
+    analyzer.run(
+        job.id,
+        AnalysisCreate(
+            source_language=Language.ENGLISH,
+            target_language=Language.VIETNAMESE,
+            text="The policy may change next month.",
+            fallback_url="https://example.com/article",
+        ),
+    )
+
+    completed = store.get_analysis(job.id)
+    assert completed is not None and completed.result is not None
+    assert completed.result.source_title == "A readable report"
+    assert completed.result.source_url == "https://example.com/article"
+
+
+def test_analyzer_keeps_pasted_text_when_fallback_metadata_fails(
+    monkeypatch: pytest.MonkeyPatch, tmp_path: Path
+) -> None:
+    store = Store(tmp_path / "test.sqlite3")
+    store.initialize()
+    job = store.create_analysis()
+    analyzer = Analyzer(
+        settings=Settings(
+            gemini_api_key="test",
+            gemini_model="test",
+            database_path=tmp_path / "test.sqlite3",
+        ),
+        store=store,
+        gemini=FakeGemini(),
+    )
+    monkeypatch.setattr(analyzer_module, "extract_metadata", lambda url: (None, None))
+
+    analyzer.run(
+        job.id,
+        AnalysisCreate(
+            source_language=Language.ENGLISH,
+            target_language=Language.VIETNAMESE,
+            text="The policy may change next month.",
+            fallback_url="https://example.com/article",
+        ),
+    )
+
+    completed = store.get_analysis(job.id)
+    assert completed is not None
+    assert completed.status is AnalysisStatus.COMPLETE
+    assert completed.result is not None
+    assert completed.result.source_title is None
+    assert completed.result.source_url is None
 
 
 def test_gemini_service_errors_are_safe_to_show_to_the_user() -> None:

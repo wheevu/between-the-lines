@@ -28,6 +28,13 @@ gates pass, and it is not presented as validated factual accuracy.
    written credited-origin names so translated wire reports do not count as
    independent sources. Full fetched pages are not persisted.
 
+The edition ledger follows the same bounded-storage privacy contract. A client
+may provide the SHA-256 hash of private full source material while storing only
+an excerpt. The API validates that asserted hash's format, verifies it only when
+the full source text is also supplied, and always computes a separate hash for
+the stored excerpt. Claims and evidence links are accepted only when their text
+and offsets resolve exactly against supplied source or snapshot material.
+
 The source article and selected evidence excerpts are sent to Gemini. E5
 evidence ranking, analysis results, and feedback stay on this Mac. NLLB is
 retained only in offline evaluation scripts that document a rejected

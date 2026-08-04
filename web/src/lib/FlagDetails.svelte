@@ -6,6 +6,7 @@
   export let flag: AmbiguityFlag;
   export let feedback: FeedbackVerdict | null = null;
   export let shadowText: string | null = null;
+  export let locationHref: string | null = null;
 
   const dispatch = createEventDispatcher<{ feedback: FeedbackVerdict }>();
 
@@ -21,6 +22,9 @@
     <span class="flag-kind">{labels[flag.kind]}</span>
     <span class="flag-category">{flag.category.replaceAll("-", " ")}</span>
     {#if flag.confidence}<span class="confidence">{flag.confidence} confidence</span>{/if}
+    {#if locationHref}
+      <a class="flag-location" href={locationHref}>Show in article ↓</a>
+    {/if}
   </header>
   <p>{flag.explanation}</p>
   {#if flag.alternative}

@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" role="img" aria-labelledby="title desc">
+  <title id="title">Between the Lines architecture: translation layer and Claim Trace evidence layer</title>
+  <desc id="desc">An article is translated with grounded notes and deterministic checks. A reader may then choose one quoted factual claim, which starts multilingual search, bounded extraction, duplicate grouping, local E5 ranking, alignment, lineage grouping, and an independence quorum. The reader makes the final judgment.</desc>
+
+  <rect width="1280" height="720" fill="#fbfaf6"/>
+  <g font-family="system-ui, -apple-system, 'Segoe UI', sans-serif">
+
+    <!-- Layer 1 tag -->
+    <rect x="60" y="38" width="164" height="26" rx="13" fill="#eceae4"/>
+    <text x="142" y="56" font-size="13" font-weight="650" fill="#20221f" text-anchor="middle">1 · Translation layer</text>
+
+    <!-- Translation boxes -->
+    <g>
+      <rect x="60" y="70" width="360" height="90" rx="8" fill="#ffffff" stroke="#d8d5cb" stroke-width="1.5"/>
+      <text x="240" y="106" font-size="19" font-weight="650" fill="#20221f" text-anchor="middle">Article text or public URL</text>
+      <text x="240" y="132" font-size="14" fill="#6a6f63" text-anchor="middle">bounded fetch · one chosen target language</text>
+
+      <rect x="460" y="70" width="360" height="90" rx="8" fill="#ffffff" stroke="#d8d5cb" stroke-width="1.5"/>
+      <text x="640" y="106" font-size="19" font-weight="650" fill="#20221f" text-anchor="middle">Aligned translation + grounded notes</text>
+      <text x="640" y="132" font-size="14" fill="#6a6f63" text-anchor="middle">exact quotes shown for every note</text>
+
+      <rect x="860" y="70" width="360" height="90" rx="8" fill="#ffffff" stroke="#d8d5cb" stroke-width="1.5"/>
+      <text x="1040" y="106" font-size="19" font-weight="650" fill="#20221f" text-anchor="middle">Deterministic checks</text>
+      <text x="1040" y="132" font-size="14" fill="#6a6f63" text-anchor="middle">numbers · negation · protected facts</text>
+    </g>
+
+    <!-- Arrows between translation boxes -->
+    <g stroke="#1f5a45" stroke-width="2.5" fill="none">
+      <path d="M424 115 H452" marker-end="url(#arrow)"/>
+      <path d="M824 115 H852" marker-end="url(#arrow)"/>
+    </g>
+
+    <!-- Claim selection -->
+    <g stroke="#1f5a45" stroke-width="2" fill="none" stroke-dasharray="5 5">
+      <path d="M640 164 V192" marker-end="url(#arrow)"/>
+    </g>
+    <text x="652" y="182" font-size="13" fill="#6a6f63">optional · Claim Trace path</text>
+    <rect x="410" y="200" width="460" height="44" rx="22" fill="#e8f0ea" stroke="#1f5a45" stroke-width="1.5"/>
+    <text x="640" y="227" font-size="17" font-weight="650" fill="#1f5a45" text-anchor="middle">Reader chooses one quoted factual claim</text>
+
+    <!-- Layer 2 tag -->
+    <rect x="60" y="290" width="272" height="26" rx="13" fill="#eceae4"/>
+    <text x="196" y="308" font-size="13" font-weight="650" fill="#20221f" text-anchor="middle">2 · Claim Trace — separate gated path</text>
+
+    <!-- Evidence row 1 -->
+    <g>
+      <rect x="84" y="330" width="260" height="86" rx="8" fill="#ffffff" stroke="#d8d5cb" stroke-width="1.5"/>
+      <text x="214" y="362" font-size="17" font-weight="650" fill="#20221f" text-anchor="middle">1 · EN / VI / KO queries</text>
+      <text x="214" y="388" font-size="14" fill="#6a6f63" text-anchor="middle">generated per claim</text>
+
+      <rect x="368" y="330" width="260" height="86" rx="8" fill="#ffffff" stroke="#d8d5cb" stroke-width="1.5"/>
+      <text x="498" y="362" font-size="17" font-weight="650" fill="#20221f" text-anchor="middle">2 · Discovery</text>
+      <text x="498" y="388" font-size="14" fill="#6a6f63" text-anchor="middle">fact-check tools + grounded search</text>
+
+      <rect x="652" y="330" width="260" height="86" rx="8" fill="#ffffff" stroke="#d8d5cb" stroke-width="1.5"/>
+      <text x="782" y="362" font-size="17" font-weight="650" fill="#20221f" text-anchor="middle">3 · Bounded local extraction</text>
+      <text x="782" y="388" font-size="14" fill="#6a6f63" text-anchor="middle">canonicalize · exclude self · cap pages</text>
+
+      <rect x="936" y="330" width="260" height="86" rx="8" fill="#ffffff" stroke="#d8d5cb" stroke-width="1.5"/>
+      <text x="1066" y="362" font-size="17" font-weight="650" fill="#20221f" text-anchor="middle">4 · Group exact &amp; near duplicates</text>
+      <text x="1066" y="388" font-size="14" fill="#6a6f63" text-anchor="middle">one copy, not one lineage</text>
+    </g>
+
+    <!-- Arrows row 1 -->
+    <g stroke="#1f5a45" stroke-width="2.5" fill="none">
+      <path d="M348 373 H360" marker-end="url(#arrow)"/>
+      <path d="M632 373 H644" marker-end="url(#arrow)"/>
+      <path d="M916 373 H928" marker-end="url(#arrow)"/>
+    </g>
+
+    <!-- Elbow from duplicate grouping down to ranking -->
+    <g stroke="#1f5a45" stroke-width="2.5" fill="none">
+      <path d="M1066 420 V446 H214 V462" marker-end="url(#arrow)"/>
+    </g>
+
+    <!-- Evidence row 2 -->
+    <g>
+      <rect x="84" y="470" width="260" height="86" rx="8" fill="#ffffff" stroke="#d8d5cb" stroke-width="1.5"/>
+      <text x="214" y="502" font-size="17" font-weight="650" fill="#20221f" text-anchor="middle">5 · Local E5 ranking</text>
+      <text x="214" y="528" font-size="14" fill="#6a6f63" text-anchor="middle">PyTorch or OpenVINO on the laptop</text>
+
+      <rect x="368" y="470" width="260" height="86" rx="8" fill="#ffffff" stroke="#d8d5cb" stroke-width="1.5"/>
+      <text x="498" y="502" font-size="17" font-weight="650" fill="#20221f" text-anchor="middle">6 · Claim alignment + deltas</text>
+      <text x="498" y="528" font-size="14" fill="#6a6f63" text-anchor="middle">literal wording across languages</text>
+
+      <rect x="652" y="470" width="260" height="86" rx="8" fill="#ffffff" stroke="#d8d5cb" stroke-width="1.5"/>
+      <text x="782" y="502" font-size="17" font-weight="650" fill="#20221f" text-anchor="middle">7 · Credited-origin lineages</text>
+      <text x="782" y="528" font-size="14" fill="#6a6f63" text-anchor="middle">copies grouped, not double-counted</text>
+
+      <rect x="936" y="470" width="260" height="86" rx="8" fill="#e8f0ea" stroke="#1f5a45" stroke-width="2.5"/>
+      <text x="1066" y="502" font-size="17" font-weight="650" fill="#1f5a45" text-anchor="middle">8 · Independence quorum</text>
+      <text x="1066" y="528" font-size="14" fill="#1f5a45" text-anchor="middle">2 publishers · 2 evidence clusters</text>
+    </g>
+
+    <!-- Arrows row 2 -->
+    <g stroke="#1f5a45" stroke-width="2.5" fill="none">
+      <path d="M348 513 H360" marker-end="url(#arrow)"/>
+      <path d="M632 513 H644" marker-end="url(#arrow)"/>
+      <path d="M916 513 H928" marker-end="url(#arrow)"/>
+    </g>
+
+    <!-- Boundary note -->
+    <text x="640" y="622" font-size="17" font-weight="650" fill="#20221f" text-anchor="middle">Translation notes and factual evidence are separate layers.</text>
+    <text x="640" y="650" font-size="15" fill="#6a6f63" text-anchor="middle">Missing evidence is shown as unresolved — the reader makes the final judgment.</text>
+  </g>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#1f5a45"/>
+    </marker>
+  </defs>
+</svg>

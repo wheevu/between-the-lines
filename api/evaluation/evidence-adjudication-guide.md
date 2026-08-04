@@ -9,9 +9,14 @@ system's own retrieval result as evidence.
 - Run `scripts/summarize_newjeans_claim_selection.py`. Do not continue unless
   `ready_for_evidence_adjudication` is `true`.
 - Run `scripts/prepare_evidence_adjudication.py` once.
+- Run `scripts/split_evidence_adjudication.py` to create two parallel
+  workbooks in `evaluation/adjudication-packets/`. Each reviewer completes
+  their own workbook; the merge combines them. The split refuses to run on a
+  template that already contains review work.
 - Use two independent reviewers with the language and topic knowledge needed
-  for the claim. Record pseudonymous IDs and the role `independent`; do not use
-  the project author or system output to satisfy this requirement:
+  for the claim. Each workbook declares one pseudonymous reviewer ID with the
+  role `independent`; do not use the project author or system output to
+  satisfy this requirement. The merged file records both:
 
   ```json
   "adjudicators": [
@@ -21,6 +26,8 @@ system's own retrieval result as evidence.
   ```
 - Search independently in a normal browser. Keep the claim's check date fixed
   because news evidence can change.
+- Complete every gold field in your workbook; `scripts/merge_evidence_adjudication.py`
+  refuses to merge workbooks that leave claims incomplete.
 
 ## Gold fields
 
@@ -62,7 +69,9 @@ falsehood.
 - Prefer primary records for legal rulings, company announcements, and exact
   dates or numbers. Secondary coverage may help explain context.
 - If reviewers disagree, discuss the evidence and record the final rationale.
-  Preserve unresolved disagreement in `adjudication_notes`.
+  The merge preserves unresolved disagreement in `adjudication_notes` and
+  leaves the status unresolved so the validator flags the claim for a
+  resolution session.
 - Do not change the selected claim text. If a claim is unsafe or malformed,
   return to the selection sheet and regenerate the adjudication file; its hash
   must change.

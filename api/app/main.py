@@ -1,6 +1,6 @@
 from contextlib import asynccontextmanager
 
-from fastapi import BackgroundTasks, FastAPI, HTTPException
+from fastapi import BackgroundTasks, FastAPI, HTTPException, Query
 from fastapi.middleware.cors import CORSMiddleware
 
 from app.analyzer import Analyzer
@@ -17,7 +17,12 @@ from app.models import (
     AnalysisCreate,
     AnalysisJob,
     AnalysisStatus,
+    ArticleEdition,
+    ArticleEditionCreate,
+    ArticleExport,
+    ArticleLedger,
     ClaimSelection,
+    EditionDiff,
     ExtractedArticle,
     ExtractRequest,
     FactCheckFeedbackCreate,
@@ -27,9 +32,11 @@ from app.models import (
     FactCheckStatus,
     FeedbackCreate,
     FeedbackRecord,
+    ReviewDecision,
+    ReviewDecisionCreate,
 )
 from app.query_generator import QueryGenerator
-from app.store import Store
+from app.store import LedgerHashMismatchError, LedgerNotFoundError, Store
 
 settings = load_settings()
 store = Store(settings.database_path)
@@ -112,6 +119,57 @@ def add_feedback(analysis_id: str, feedback: FeedbackCreate) -> FeedbackRecord:
     if store.get_analysis(analysis_id) is None:
         raise HTTPException(status_code=404, detail="Analysis not found.")
     return store.add_feedback(analysis_id, feedback)
+
+
+@app.post(
+    "/api/articles/{article_id}/editions",
+    response_model=ArticleEdition,
+    status_code=201,
+)
+def create_article_edition(article_id: str, request: ArticleEditionCreate) -> ArticleEdition:
+    try:
+        return store.create_article_edition(article_id, request)
+    except ValueError as error:
+        raise HTTPException(status_code=422, detail=str(error)) from error
+
+
+@app.get("/api/articles/{article_id}/ledger", response_model=ArticleLedger)
+def get_article_ledger(article_id: str) -> ArticleLedger:
+    ledger = store.get_article_ledger(article_id)
+    if not ledger.editions:
+        raise HTTPException(status_code=404, detail="Article ledger not found.")
+    return ledger
+
+
+@app.get("/api/articles/{article_id}/export", response_model=ArticleExport)
+def export_article(article_id: str) -> ArticleExport:
+    ledger = store.get_article_ledger(article_id)
+    if not ledger.editions:
+        raise HTTPException(status_code=404, detail="Article ledger not found.")
+    return store.export_article(article_id)
+
+
+@app.get("/api/editions/{edition_id}/diff", response_model=EditionDiff)
+def get_edition_diff(
+    edition_id: str,
+    against: str | None = Query(default=None, min_length=1, max_length=200),
+) -> EditionDiff:
+    try:
+        return store.get_edition_diff(edition_id, against)
+    except LedgerNotFoundError as error:
+        raise HTTPException(status_code=404, detail=str(error)) from error
+    except ValueError as error:
+        raise HTTPException(status_code=409, detail=str(error)) from error
+
+
+@app.post("/api/claims/{claim_id}/review", response_model=ReviewDecision, status_code=201)
+def review_claim(claim_id: str, review: ReviewDecisionCreate) -> ReviewDecision:
+    try:
+        return store.review_claim(claim_id, review)
+    except LedgerNotFoundError as error:
+        raise HTTPException(status_code=404, detail=str(error)) from error
+    except LedgerHashMismatchError as error:
+        raise HTTPException(status_code=409, detail=str(error)) from error
 
 
 @app.post(

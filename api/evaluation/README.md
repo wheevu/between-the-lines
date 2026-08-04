@@ -50,6 +50,27 @@ Run the non-generative ingestion preflight:
 .venv/bin/python scripts/run_claim_trace_preflight.py
 ```
 
+The robustness shell (`claim-trace-robustness-corpus.json`, 120 URLs) is
+extended by the machine-discovered [extension manifest](claim-trace-extension.json):
+four additional events across finance, health, climate forecasting, and
+entertainment, adding 40 URLs with no hand-selected articles. Rebuild and
+preflight it:
+
+```sh
+# googlenewsdecoder must be available only for the build (temp target):
+PYTHONPATH=/tmp/btl-gnd .venv/bin/python \
+  scripts/build_robustness_corpus.py \
+  --manifest evaluation/claim-trace-extension.json \
+  --output evaluation/claim-trace-robustness-extension.json
+.venv/bin/python scripts/run_claim_trace_preflight.py \
+  --manifest evaluation/claim-trace-robustness-extension.json \
+  --output evaluation/claim-trace-extension-preflight-2026-08-02.json
+```
+
+The extension preflight reports 31/40 ready; the failures are site-level bot
+walls, JavaScript-rendered pages, transient download errors, and one
+over-length article — none required an `article.py` change.
+
 Run the six-case source-known alignment and lineage pilot:
 
 ```sh
@@ -147,15 +168,23 @@ per language, all 15 articles represented, and exactly two claims per language
 in each of the five evaluation categories.
 
 After the selection summary passes, prepare the independent gold-evidence
-adjudication:
+adjudication. Reviewers work in parallel workbooks instead of editing one
+shared file:
 
 ```sh
 .venv/bin/python scripts/prepare_evidence_adjudication.py
-# Two independent reviewers complete evaluation/newjeans-evidence-adjudication.json.
+.venv/bin/python scripts/split_evidence_adjudication.py
+# Reviewer A completes evaluation/adjudication-packets/reviewer-a.json
+# and Reviewer B completes reviewer-b.json independently.
+.venv/bin/python scripts/merge_evidence_adjudication.py
 .venv/bin/python scripts/validate_evidence_adjudication.py
 ```
 
 Use the [evidence adjudication guide](evidence-adjudication-guide.md). The
+split refuses a template that already contains review work. The merge verifies
+the hash-bound claim fields against the template, requires both packets
+complete, preserves disagreements in `adjudication_notes` with the status left
+unresolved, and refuses two workbooks from the same reviewer. The
 validator ties the gold file to the exact selection sheet and requires all 30
 claims, ten per language, two distinct pseudonymous reviewers explicitly
 labeled `independent`, a timezone-aware check date, rationale,

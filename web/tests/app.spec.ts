@@ -349,6 +349,176 @@ test("restores claim selection without choosing anything for the reader", async 
   await expect.poll(() => selections[0]).toEqual({ candidate_ids: ["claim-1"] });
 });
 
+test("completes translation feedback with the keyboard only", async ({ page }) => {
+  const feedbackBodies: unknown[] = [];
+  const completedJob = {
+    id: "analysis-kbd",
+    status: "complete",
+    stage: "Ready to review",
+    progress: 100,
+    error: null,
+    result: {
+      source_language: "en",
+      source_title: "Keyboard article",
+      source_url: null,
+      segments: [
+        {
+          id: "p1s1",
+          paragraph_index: 0,
+          sentence_index: 0,
+          source_text: "Officials said the policy may begin in September.",
+          translations: [
+            {
+              language: "vi",
+              text: "Các quan chức cho biết chính sách có thể bắt đầu vào tháng 9.",
+              shadow_text: null,
+              similarity: null,
+              back_translation_similarity: null,
+              flags: [
+                {
+                  id: "flag-kbd",
+                  target_language: "vi",
+                  kind: "meaning-risk",
+                  category: "modality",
+                  confidence: "medium",
+                  source_quote: "may",
+                  translation_quote: "có thể",
+                  explanation: "The degree of certainty deserves a closer read.",
+                  alternative: null,
+                  signals: []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  };
+
+  await page.route("**/api/analyses", async (route) => {
+    await route.fulfill({
+      json: {
+        id: "analysis-kbd",
+        status: "queued",
+        stage: "Waiting to start",
+        progress: 0,
+        result: null,
+        error: null
+      },
+      status: 202
+    });
+  });
+  await page.route("**/api/analyses/analysis-kbd/feedback", async (route) => {
+    const body = route.request().postDataJSON();
+    feedbackBodies.push(body);
+    await route.fulfill({ json: { id: "feedback-1", analysis_id: "analysis-kbd", ...body } });
+  });
+  await page.route("**/api/analyses/analysis-kbd", async (route) => {
+    await route.fulfill({ json: completedJob });
+  });
+
+  await page.goto("/");
+  await page.getByRole("button", { name: "Paste text" }).click();
+  await page.getByLabel("Article text").fill(completedJob.result.segments[0].source_text);
+  await page.getByRole("button", { name: "Translate to Vietnamese" }).focus();
+  await page.keyboard.press("Enter");
+  await expect(page.getByRole("heading", { name: "Keyboard article" })).toBeVisible();
+
+  const flagYes = page.locator(".flag-detail").getByRole("button", { name: "Yes" });
+  await flagYes.focus();
+  await page.keyboard.press("Enter");
+  await expect(flagYes).toHaveAttribute("aria-pressed", "true");
+  await expect.poll(() => feedbackBodies[0]).toEqual({
+    flag_id: "flag-kbd",
+    verdict: "helpful",
+    reviewer_role: "unspecified"
+  });
+
+  const passageReview = page.locator(".passage-review");
+  await passageReview.getByRole("button", { name: "No" }).focus();
+  await page.keyboard.press("Enter");
+  const missedIssue = page.getByLabel("What changed or went missing?");
+  await expect(missedIssue).toBeVisible();
+  await missedIssue.focus();
+  await page.keyboard.type("The tone became more certain than the source.");
+  await page.keyboard.press("Tab");
+  await page.keyboard.press("Enter");
+  await expect(passageReview.getByRole("status")).toHaveText("Review saved.");
+  await expect.poll(() => feedbackBodies[1]).toEqual({
+    flag_id: "__overall__:vi",
+    verdict: "incorrect",
+    correction: "The tone became more certain than the source.",
+    reviewer_role: "unspecified"
+  });
+});
+
+test("reflows at 200% and 400% zoom widths without horizontal scroll", async ({ page }) => {
+  const completedJob = {
+    id: "analysis-zoom",
+    status: "complete",
+    stage: "Ready to review",
+    progress: 100,
+    error: null,
+    result: {
+      source_language: "en",
+      source_title: "Zoom article",
+      source_url: null,
+      segments: [
+        {
+          id: "p1s1",
+          paragraph_index: 0,
+          sentence_index: 0,
+          source_text: "Officials said the policy may begin in September.",
+          translations: [
+            {
+              language: "vi",
+              text: "Các quan chức cho biết chính sách có thể bắt đầu vào tháng 9.",
+              shadow_text: null,
+              similarity: null,
+              back_translation_similarity: null,
+              flags: []
+            }
+          ]
+        }
+      ]
+    }
+  };
+
+  await page.route("**/api/analyses", async (route) => {
+    await route.fulfill({
+      json: {
+        id: "analysis-zoom",
+        status: "queued",
+        stage: "Waiting to start",
+        progress: 0,
+        result: null,
+        error: null
+      },
+      status: 202
+    });
+  });
+  await page.route("**/api/analyses/analysis-zoom", async (route) => {
+    await route.fulfill({ json: completedJob });
+  });
+
+  await page.goto("/");
+  await page.getByRole("button", { name: "Paste text" }).click();
+  await page.getByLabel("Article text").fill(completedJob.result.segments[0].source_text);
+  await page.getByRole("button", { name: "Translate to Vietnamese" }).click();
+  await expect(page.getByRole("heading", { name: "Zoom article" })).toBeVisible();
+
+  // Browser zoom at 200% and 400% shrinks the layout viewport to about
+  // 640px and 320px on a 1280px desktop screen.
+  for (const width of [640, 320]) {
+    await page.setViewportSize({ width, height: 844 });
+    await expect(page.getByRole("heading", { name: "Zoom article" })).toBeVisible();
+    const overflow = await page.evaluate(
+      () => document.documentElement.scrollWidth - document.documentElement.clientWidth
+    );
+    expect(overflow).toBeLessThanOrEqual(0);
+  }
+});
+
 test("resumes an evidence check and keeps source feedback attached to its excerpt", async ({
   page
 }, testInfo) => {

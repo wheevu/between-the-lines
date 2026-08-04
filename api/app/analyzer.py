@@ -2,7 +2,7 @@ import logging
 from hashlib import sha256
 
 from app.ambiguity import build_flags
-from app.article import extract_article
+from app.article import extract_article, extract_metadata
 from app.config import Settings
 from app.gemini import GeminiTranslationError, GeminiTranslator
 from app.models import (
@@ -67,6 +67,10 @@ class Analyzer:
             text = article.text
         else:
             text = request.text or ""
+            if request.fallback_url is not None:
+                # The URL failed full extraction, but its link can still be
+                # kept when the reader pastes the article text instead.
+                source_url, source_title = extract_metadata(str(request.fallback_url))
 
         if len(text.split()) > self.settings.max_article_words:
             raise ValueError(f"Keep the article under {self.settings.max_article_words:,} words.")

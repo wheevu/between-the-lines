@@ -101,4 +101,34 @@ describe("ArticleForm", () => {
       url: "https://example.com/article"
     });
   });
+
+  it("sends the retained URL alongside pasted text", async () => {
+    const events: unknown[] = [];
+    render(ArticleForm, {
+      draft: {
+        mode: "text",
+        sourceLanguage: "en",
+        targetLanguage: "vi",
+        text: "",
+        url: "https://example.com/article"
+      },
+      onAnalyze: (input) => events.push(input)
+    });
+
+    await fireEvent.input(screen.getByLabelText("Article text"), {
+      target: { value: "A pasted article body." }
+    });
+    await fireEvent.click(screen.getByRole("button", { name: "Translate to Vietnamese" }));
+
+    expect(screen.getByText(/page link will be kept: example\.com/)).toBeInTheDocument();
+    expect(events).toEqual([
+      {
+        mode: "text",
+        sourceLanguage: "en",
+        targetLanguage: "vi",
+        value: "A pasted article body.",
+        fallbackUrl: "https://example.com/article"
+      }
+    ]);
+  });
 });

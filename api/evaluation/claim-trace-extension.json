@@ -1,0 +1,109 @@
+{
+  "schema_version": 1,
+  "prepared": "2026-08-02",
+  "purpose": "Robustness-corpus extension: four machine-discovered events across four new topic dimensions. The 36-article frozen core and the NewJeans fact-check corpus are not modified.",
+  "window": {
+    "start": "2026-01-25",
+    "end": "2026-07-25"
+  },
+  "design": {
+    "topics": [
+      "technology_economy",
+      "health",
+      "science_climate",
+      "culture_sports"
+    ],
+    "events": 4,
+    "articles": 36,
+    "languages": [
+      "en",
+      "vi",
+      "ko"
+    ]
+  },
+  "selection_rules": [
+    "One new event per topic across four of the six design topics.",
+    "Events carry no hand-selected articles; base and shell URLs are machine-discovered from news search.",
+    "Every article must fall inside the frozen six-month window.",
+    "Each event targets coverage with concrete numbers, dates, forecast modality, or attribution.",
+    "The extension never modifies the 36-article frozen core or the NewJeans fact-check corpus."
+  ],
+  "events": [
+    {
+      "id": "bok-rate-decision-2026",
+      "topic": "technology_economy",
+      "profile": "clean",
+      "event_date": "2026-02-24",
+      "selection_reason": "Tests numeric precision and attribution for a central-bank rate decision covered by wire services and local outlets in all three languages.",
+      "primary_facts": [
+        "The Bank of Korea set its base rate at a February 2026 decision.",
+        "The statement cited inflation or growth conditions for the decision.",
+        "Commentary attributed different weight to the same figures."
+      ],
+      "edge_tags": [
+        "numeric_precision",
+        "attribution",
+        "temporal_update",
+        "scope"
+      ],
+      "articles": []
+    },
+    {
+      "id": "dengue-outbreak-2026",
+      "topic": "health",
+      "profile": "clean",
+      "event_date": "2026-05-15",
+      "selection_reason": "Tests case-count numbers and date scope in outbreak reporting where totals update daily and differ between official figures and press summaries.",
+      "primary_facts": [
+        "Health authorities reported a rising dengue case count in 2026.",
+        "Daily totals differed between official figures and press summaries.",
+        "Coverage emphasized regional hospitals and prevention campaigns."
+      ],
+      "edge_tags": [
+        "numeric_precision",
+        "temporal_update",
+        "scope",
+        "context"
+      ],
+      "articles": []
+    },
+    {
+      "id": "el-nino-forecast-2026",
+      "topic": "science_climate",
+      "profile": "challenging",
+      "event_date": "2026-06-10",
+      "selection_reason": "Tests forecast modality and uncertainty wording across meteorology agencies and regional coverage.",
+      "primary_facts": [
+        "Forecast agencies projected El Nino conditions for the 2026-27 season.",
+        "Probabilities differed across agencies and update dates.",
+        "Regional reporting tied the forecast to rainfall and crop impacts."
+      ],
+      "edge_tags": [
+        "modality",
+        "uncertainty",
+        "scope",
+        "temporal_update"
+      ],
+      "articles": []
+    },
+    {
+      "id": "bts-reunion-2026",
+      "topic": "culture_sports",
+      "profile": "challenging",
+      "event_date": "2026-06-14",
+      "selection_reason": "Tests attribution and uncertainty in entertainment coverage where a reunion report was covered with conflicting sourcing and later clarifications.",
+      "primary_facts": [
+        "Media reported a BTS reunion plan with different attributions.",
+        "Agency statements and fan reporting sometimes conflicted.",
+        "Coverage mixed confirmed dates with speculation."
+      ],
+      "edge_tags": [
+        "attribution",
+        "uncertainty",
+        "denied",
+        "scope"
+      ],
+      "articles": []
+    }
+  ]
+}
