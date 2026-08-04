@@ -20,7 +20,22 @@ REVIEW_SET = Path(__file__).parents[1] / "evaluation" / "review-set.json"
 def summarize_database(database_path: Path) -> dict[str, object]:
     output = StringIO()
     write_feedback(database_path, output)
-    review_set = json.loads(REVIEW_SET.read_text())
+    try:
+        review_set = json.loads(REVIEW_SET.read_text())
+    except (OSError, ValueError) as error:
+        return {
+            "ready_for_evidence_layer_decision": False,
+            "passage_reviews": 0,
+            "passage_reviews_by_direction": {},
+            "passage_verdicts_by_direction": {
+                direction: {} for direction in sorted(EXPECTED_DIRECTIONS)
+            },
+            "meaning_risk_judgments": 0,
+            "decided_meaning_risk_judgments": 0,
+            "meaning_risk_helpful_rate": None,
+            "written_omissions": 0,
+            "blockers": [f"The reviewer review-set gate could not be read: {error}"],
+        }
     return summarize_rows(
         list(csv.DictReader(StringIO(output.getvalue()))),
         passage_analysis_ids=set(review_set["news_passage_analysis_ids"]),
@@ -96,6 +111,8 @@ def summarize_rows(
         "meaning_risk_judgments": len(meaning_rows),
         "decided_meaning_risk_judgments": len(decided_meaning),
         "meaning_risk_helpful_rate": helpful_rate,
-        "written_omissions": sum(bool(row["correction"].strip()) for row in passage_rows),
+        "written_omissions": sum(
+            bool((row.get("correction") or "").strip()) for row in passage_rows
+        ),
         "blockers": blockers,
     }

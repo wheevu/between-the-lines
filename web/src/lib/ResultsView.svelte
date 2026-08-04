@@ -144,7 +144,8 @@
     dispatch("feedback", {
       flagId: `${overallFeedbackPrefix}${language}`,
       verdict,
-      correction: missedIssues[language]?.trim() || undefined
+      correction:
+        verdict === "incorrect" ? missedIssues[language]?.trim() || undefined : undefined
     });
   }
 

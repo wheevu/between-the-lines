@@ -8,7 +8,33 @@ import type {
 } from "./types";
 
 interface ErrorResponse {
-  detail?: string;
+  detail?: string | Array<{ msg?: string }>;
+}
+
+function errorMessageFrom(responseBody: ErrorResponse): string | null {
+  const detail = responseBody.detail;
+  if (typeof detail === "string") return detail;
+  if (Array.isArray(detail)) {
+    const messages = detail
+      .map((entry) => entry.msg)
+      .filter((msg): msg is string => Boolean(msg));
+    if (messages.length) return messages.join(" ");
+  }
+  return null;
+}
+
+async function readResponse<T>(response: Response): Promise<T> {
+  if (!response.ok) {
+    let message = "Couldn't reach the translation service. Try again.";
+    try {
+      const body = (await response.json()) as ErrorResponse;
+      message = errorMessageFrom(body) ?? message;
+    } catch {
+      // Keep the plain fallback when the server did not return JSON.
+    }
+    throw new Error(message);
+  }
+  return (await response.json()) as T;
 }
 
 export async function createAnalysis(
@@ -114,16 +140,3 @@ export async function sendFeedback(
   await readResponse(response);
 }
 
-async function readResponse<T>(response: Response): Promise<T> {
-  if (!response.ok) {
-    let message = "Couldn't reach the translation service. Try again.";
-    try {
-      const body = (await response.json()) as ErrorResponse;
-      if (body.detail) message = body.detail;
-    } catch {
-      // Keep the plain fallback when the server did not return JSON.
-    }
-    throw new Error(message);
-  }
-  return (await response.json()) as T;
-}
