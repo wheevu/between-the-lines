@@ -7,8 +7,7 @@
 
 ## 1. Product outcome
 
-After reading a translation, a person can choose a small number of factual
-claims and see:
+After reading a translation, a person can choose one factual claim and see:
 
 - what independent sources support, dispute, or contextualize each claim;
 - the exact evidence passage, publisher, date, language, and link;
@@ -24,14 +23,14 @@ The narrow MVP workflow is:
 ```text
 translated article
   → 3–5 checkable claim candidates
-  → reader selects up to 3
+  → reader selects one
   → EN/VI/KO evidence search
   → local passage ranking and duplicate grouping
   → evidence-backed status
   → reader inspects sources and gives feedback
 ```
 
-Limiting a run to three claims keeps the interface readable, bounds search and
+Limiting a run to one claim keeps the interface readable, bounds search and
 model cost, and fits the available memory.
 
 ## 2. Reader experience
@@ -264,7 +263,9 @@ Failure behavior:
   actionable error;
 - partial completed claims remain visible if a later claim fails.
 
-## 5. File-level implementation sequence
+## 5. Original implementation sequence
+
+The sequence below is the original build plan; current implementation filenames may differ.
 
 1. **Models and storage** — extend `api/app/models.py` with claim, evidence,
    status, and feedback models; add the two SQLite tables and CRUD methods in

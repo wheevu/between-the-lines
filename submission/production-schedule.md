@@ -3,7 +3,9 @@
 The deadline is close enough that every week needs a frozen output. Do not add
 new product features unless a scheduled evaluation exposes a specific failure.
 
-## Status: 2 August 2026
+## Status snapshot: 2 August 2026
+
+This is a dated planning snapshot, not a live status report.
 
 - UI phase complete and frozen for the reader study: paste-fallback keeps the
   page link and title, light visual refresh (segmented input control, brand

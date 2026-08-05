@@ -225,7 +225,9 @@ translations from deliberate meaning changes. Both translation-review paths
 were removed. The measurements are retained as negative engineering evidence,
 not as justification for the current architecture.
 
-## Software verification
+## Software verification snapshot: 2 August 2026
+
+These results are a dated verification snapshot, not a current test run.
 
 - Backend: 221 passing tests.
 - UI components: 17 passing tests.

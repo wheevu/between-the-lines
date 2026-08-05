@@ -68,6 +68,8 @@ not need to be placed in a project file.
 lookup is skipped. The open-web evidence path still depends on available Gemini
 Google Search grounding quota.
 
+Optional local settings are `BTL_DATA_DIR` for the SQLite directory, `BTL_GEMINI_MODEL` for the Gemini model, and `BTL_EMBEDDING_BACKEND` for `torch` (default) or `openvino`.
+
 PyTorch remains the default local embedding runtime. The optional OpenVINO
 development path is documented in
 `api/evaluation/embedding-benchmark-m1.md`; it must not be presented as an
