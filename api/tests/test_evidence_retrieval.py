@@ -2,6 +2,7 @@ from pathlib import Path
 from types import SimpleNamespace
 
 import httpx
+import pytest
 
 from app.config import Settings
 from app.evidence_retrieval import (
@@ -41,6 +42,48 @@ def test_canonical_url_removes_tracking_fragment_and_default_port() -> None:
     canonical = canonicalize_url("HTTPS://WWW.Example.com:443/news/?utm_source=x&b=2&a=1#section")
 
     assert canonical == "https://example.com/news?a=1&b=2"
+
+
+def test_canonical_url_rejects_non_http_schemes() -> None:
+    for url in ("ftp://example.com/a", "mailto:user@example.com"):
+        with pytest.raises(ValueError):
+            canonicalize_url(url)
+
+
+def test_canonical_url_rejects_missing_hostname() -> None:
+    for url in ("https://", "http://?a=1"):
+        with pytest.raises(ValueError):
+            canonicalize_url(url)
+
+
+def test_canonical_url_rejects_credentials() -> None:
+    for url in ("https://user@example.com", "https://user:pass@example.com"):
+        with pytest.raises(ValueError):
+            canonicalize_url(url)
+
+
+def test_canonical_url_strips_default_ports() -> None:
+    assert canonicalize_url("http://example.com:80/a") == "http://example.com/a"
+    assert canonicalize_url("https://example.com:443/a") == "https://example.com/a"
+
+
+def test_canonical_url_preserves_non_default_port() -> None:
+    assert canonicalize_url("https://example.com:8443/a") == "https://example.com:8443/a"
+
+
+def test_canonical_url_lowercases_host_and_strips_www() -> None:
+    assert canonicalize_url("HTTPS://WWW.Example.com/a") == "https://example.com/a"
+
+
+def test_canonical_url_path_rules() -> None:
+    assert canonicalize_url("https://example.com") == "https://example.com/"
+    assert canonicalize_url("https://example.com/a/") == "https://example.com/a"
+
+
+def test_canonical_url_filters_tracking_keys_sorts_query_and_keeps_blank_values() -> None:
+    canonical = canonicalize_url("https://example.com/?utm_source=x&fbclid=y&b=2&a=1&blank=")
+
+    assert canonical == "https://example.com/?a=1&b=2&blank="
 
 
 def test_fact_check_provider_preserves_the_publishers_original_rating() -> None:
@@ -173,3 +216,33 @@ def test_one_failed_page_does_not_fail_the_retrieval_batch(tmp_path: Path) -> No
     assert len(batch.pages) == 1
     assert batch.pages[0].url == "https://good.example/b"
     assert len(batch.failures) == 1
+
+
+def test_retrieve_pages_records_invalid_provider_url_as_failure(tmp_path: Path) -> None:
+    def extractor(url: str, _: Settings) -> ExtractedArticle:
+        raise AssertionError("extractor must not run for a rejected provider URL")
+
+    batch = retrieve_pages(
+        [source("ftp://broken.example/x")],
+        input_url=None,
+        settings=settings(tmp_path),
+        extractor=extractor,
+    )
+
+    assert batch.pages == []
+    assert len(batch.failures) == 1
+    assert batch.failures[0].url is None
+    assert batch.failures[0].reason == "A provider returned an invalid URL."
+
+
+def test_retrieve_pages_malformed_input_url_raises_value_error(tmp_path: Path) -> None:
+    def extractor(url: str, _: Settings) -> ExtractedArticle:
+        raise AssertionError("extractor must not run before the input URL is canonicalized")
+
+    with pytest.raises(ValueError):
+        retrieve_pages(
+            [source("https://good.example/a")],
+            input_url="not a url at all",
+            settings=settings(tmp_path),
+            extractor=extractor,
+        )
