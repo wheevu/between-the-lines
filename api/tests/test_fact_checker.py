@@ -12,6 +12,7 @@ from app.fact_checker import (
     _claim_progress,
     _detect_language,
     _evidence_items,
+    _near_duplicate_cluster,
 )
 from app.models import (
     AnalysisResult,
@@ -268,3 +269,50 @@ def test_multi_claim_progress_never_moves_backward() -> None:
     assert values == sorted(values)
     assert values[0] == 15
     assert values[-1] < 100
+
+
+def test_near_duplicate_cluster_skips_tokenless_prior_excerpt() -> None:
+    assert (
+        _near_duplicate_cluster(
+            "The agency reported 24 buses.",
+            "hash-a",
+            [("c1", "!!! ... --")],
+        )
+        == "hash-a"
+    )
+
+
+def test_near_duplicate_cluster_skips_emoji_only_prior_excerpt() -> None:
+    assert (
+        _near_duplicate_cluster(
+            "The agency reported 24 buses.",
+            "hash-x",
+            [("c1", "\U0001F389\U0001F389\U0001F389")],
+        )
+        == "hash-x"
+    )
+
+
+def test_evidence_items_survives_tokenless_and_tokenful_pages() -> None:
+    pages = [
+        RetrievedPage(
+            source=discovered("https://emoji.example/a", "Emoji"),
+            url="https://emoji.example/a",
+            title="Emoji",
+            text="\U0001F389\U0001F389\U0001F389\U0001F389\U0001F389",
+            content_hash="emoji",
+        ),
+        RetrievedPage(
+            source=discovered("https://words.example/b", "Words"),
+            url="https://words.example/b",
+            title="Words",
+            text="The agency reported 24 buses. " * 14,
+            content_hash="words",
+        ),
+    ]
+
+    items = _evidence_items(pages)
+
+    assert len(items) == 2
+    assert {item.publisher for item in items} == {"Emoji", "Words"}
+    assert all(item.cluster_id for item in items)

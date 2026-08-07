@@ -285,6 +285,8 @@ def _near_duplicate_cluster(
         return fallback
     for cluster_id, other in previous:
         other_tokens = set(WORDS.findall(other.lower()))
+        if not other_tokens:
+            continue
         union = tokens | other_tokens
         intersection = tokens & other_tokens
         containment = len(intersection) / min(len(tokens), len(other_tokens))
