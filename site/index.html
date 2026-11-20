@@ -7,9 +7,9 @@
     <meta name="theme-color" content="#faf7f2">
     <meta
       name="description"
-      content="Between the Lines (btl): editorial proofing desk for deterministic EN/VI/KO translation drift, revision diffing, wire clustering, and passage ranking."
+      content="Between the Lines (btl): deterministic EN/VI/KO translation drift, revision diffing, wire clustering, and passage ranking."
     >
-    <title>Between the Lines · Proofing Desk</title>
+    <title>Between the Lines</title>
     <link rel="icon" href="data:,">
     <link rel="stylesheet" href="./style.css">
     <script type="module" src="./app.js"></script>
@@ -17,70 +17,34 @@
   <body>
     <div class="sheet">
       <header class="masthead">
-        <div class="masthead-top">
-          <div class="masthead-brand">
-            <span class="kicker">BTL v0.2.0 · ZERO-LLM VERIFICATION ENGINE</span>
-            <h1>Between the Lines</h1>
-          </div>
-          <div class="masthead-actions">
-            <span class="suite-pill">29 pytest · ruff clean</span>
-            <a class="repo-btn" href="https://github.com/wheevu/between-the-lines">GitHub Repo ↗</a>
-          </div>
+        <div>
+          <h1>Between the Lines</h1>
+          <p class="subtitle">
+            Six real runs from <code>btl</code>, a local zero-LLM verification tool. Text on the
+            left, audit flags on the right.
+          </p>
         </div>
-        <p class="masthead-dek">
-          Language models often sound fluent while dropping a negative, slipping a decimal, or
-          turning a rumor into a ruling. Below are six recorded runs from the local CLI and MCP
-          server, inspected like a proofreader's desk: source text on the sheet, deterministic flags
-          in the margin.
-        </p>
+        <a class="repo-link" href="https://github.com/wheevu/between-the-lines">GitHub ↗</a>
       </header>
 
-      <nav class="dossier-nav" aria-label="Recorded verification cases">
-        <div class="dossier-tabs" id="dossier-tabs" role="tablist"></div>
-        <div class="step-nav">
-          <button class="nav-btn" id="prev-btn" type="button" aria-label="Previous case">← Prev</button>
-          <span class="nav-pos" id="nav-pos">01 / 06</span>
-          <button class="nav-btn" id="next-btn" type="button" aria-label="Next case">Next →</button>
-        </div>
-      </nav>
+      <nav class="tabs" id="tabs" role="tablist" aria-label="Recorded verification runs"></nav>
 
       <main class="desk" aria-live="polite">
-        <section class="manuscript-col" aria-labelledby="case-heading">
-          <div class="manuscript-meta">
-            <span class="tool-badge" id="tool-badge">check_translation</span>
-            <h2 id="case-heading">Loading…</h2>
-            <p class="case-dek" id="case-dek"></p>
-          </div>
-
-          <div class="manuscript-sheet" id="manuscript-sheet"></div>
-
-          <details class="raw-drawer" id="raw-drawer">
-            <summary>
-              <span>Inspect CLI command &amp; verbatim JSON</span>
-              <code class="drawer-cmd-preview" id="drawer-cmd-preview"></code>
-            </summary>
+        <section class="left-col" aria-labelledby="case-heading">
+          <h2 id="case-heading">Loading…</h2>
+          <div class="manuscript" id="manuscript"></div>
+          <details class="raw-drawer">
+            <summary>CLI &amp; JSON</summary>
             <div class="drawer-body">
-              <div class="cmd-bar">
-                <span class="cmd-label">SHELL</span>
-                <code id="cli-command"></code>
-              </div>
+              <pre class="cmd-line" id="cli-command"></pre>
               <pre class="json-dump" id="json-output"></pre>
             </div>
           </details>
         </section>
 
-        <aside class="margin-col" aria-label="Proofreader's audit margin">
-          <div class="verdict-block">
-            <span class="margin-eyebrow">Audit Verdict</span>
-            <div class="verdict-stamp" id="verdict-stamp">CLEAN</div>
-          </div>
-
-          <div class="margin-notes" id="margin-notes"></div>
-
-          <div class="colophon-card">
-            <span class="margin-eyebrow">Connected MCP Harnesses</span>
-            <ul class="harness-grid" id="harness-grid"></ul>
-          </div>
+        <aside class="margin-col" aria-label="Audit findings">
+          <div class="verdict" id="verdict"></div>
+          <div class="notes" id="notes"></div>
         </aside>
       </main>
     </div>
