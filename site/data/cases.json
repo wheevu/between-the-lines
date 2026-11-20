@@ -1,0 +1,603 @@
+{
+  "version": "0.2.0",
+  "harnesses": {
+    "opencode_mcp": true,
+    "t3_antigravity_mcp": true,
+    "agy_cli_mcp": true,
+    "codex_mcp": true,
+    "shared_skill": true
+  },
+  "dependencies": {
+    "httpx": true,
+    "pydantic": true,
+    "trafilatura": true
+  },
+  "cases": [
+    {
+      "id": "ko-vi-scale-clean",
+      "category": "translation",
+      "tool": "check_translation",
+      "title": "Cross-script scale equivalence (KO -> VI)",
+      "subtitle": "1억 5000만 원 == 150 triệu won",
+      "badge": "CLEAN",
+      "tone": "clean",
+      "summary": "Normalizes Korean (억/만) and Vietnamese (triệu) number scales to exact Decimal values, avoiding false positives across scripts.",
+      "command": "./bin/btl check-translation --source-text \"예산은 4월에 1억 5000만 원에 달했다.\" --translation-text \"Ngân sách đạt 150 triệu won vào tháng 4.\"",
+      "input": {
+        "source_text": "예산은 4월에 1억 5000만 원에 달했다.",
+        "translation_text": "Ngân sách đạt 150 triệu won vào tháng 4.",
+        "source_language": "ko",
+        "target_language": "vi"
+      },
+      "highlights": {
+        "source": [
+          "1억 5000만 원"
+        ],
+        "translation": [
+          "150 triệu won"
+        ]
+      },
+      "output": {
+        "status": "clean",
+        "pair_count": 1,
+        "flagged_count": 0,
+        "pairs": [
+          {
+            "pair_id": "pair-1",
+            "source_language": "ko",
+            "target_language": "vi",
+            "status": "clean",
+            "flags": [],
+            "source_numbers": [
+              "150000000",
+              "4"
+            ],
+            "translation_numbers": [
+              "150000000",
+              "4"
+            ],
+            "source_modality": "asserted",
+            "translation_modality": "asserted",
+            "source_legal_state": null,
+            "translation_legal_state": null
+          }
+        ],
+        "truncated": false,
+        "dropped_fields": []
+      }
+    },
+    {
+      "id": "fund-allocation-drift",
+      "category": "translation",
+      "tool": "check_translation",
+      "title": "Financial & legal drift caught (EN -> VI)",
+      "subtitle": "$150M -> 15M, dropped 'not', investigation -> ruling",
+      "badge": "3 FLAGS",
+      "tone": "alert",
+      "summary": "Flags three high-impact errors in one pass: a 10x drop in capital amount, an inverted approval decision, and an elevated legal status.",
+      "command": "./bin/btl check-translation --source-text \"The fund did not approve the $150 million allocation, and regulators opened an investigation into the allegation.\" --translation-text \"Quỹ đã phê duyệt khoản phân bổ 15 triệu USD và cơ quan quản lý đã ra phán quyết về vụ việc.\"",
+      "input": {
+        "source_text": "The fund did not approve the $150 million allocation, and regulators opened an investigation into the allegation.",
+        "translation_text": "Quỹ đã phê duyệt khoản phân bổ 15 triệu USD và cơ quan quản lý đã ra phán quyết về vụ việc.",
+        "source_language": "en",
+        "target_language": "vi"
+      },
+      "highlights": {
+        "source": [
+          "did not",
+          "$150 million",
+          "investigation"
+        ],
+        "translation": [
+          "15 triệu USD",
+          "phán quyết"
+        ]
+      },
+      "output": {
+        "status": "drift_detected",
+        "pair_count": 1,
+        "flagged_count": 1,
+        "pairs": [
+          {
+            "pair_id": "pair-1",
+            "source_language": "en",
+            "target_language": "vi",
+            "status": "drift_detected",
+            "flags": [
+              {
+                "category": "number",
+                "confidence": "high",
+                "source_quote": "$150",
+                "translation_quote": "15",
+                "explanation": "Numeric or scale values differ (missing from translation: 150000000; added in translation: 15000000).",
+                "details": {
+                  "missing": [
+                    "150000000"
+                  ],
+                  "added": [
+                    "15000000"
+                  ]
+                }
+              },
+              {
+                "category": "negation",
+                "confidence": "medium",
+                "source_quote": "not",
+                "translation_quote": null,
+                "explanation": "Negation or an equivalent polarity marker appears in only one version.",
+                "details": {}
+              },
+              {
+                "category": "legal_state_shift",
+                "confidence": "high",
+                "source_quote": "The fund did not approve the $150 million allocation, and regulators opened an investigation into the allegation.",
+                "translation_quote": "Quỹ đã phê duyệt khoản phân bổ 15 triệu USD và cơ quan quản lý đã ra phán quyết về vụ việc.",
+                "explanation": "Legal stage elevated from investigation to ruling.",
+                "details": {
+                  "source": "investigation",
+                  "translation": "ruling"
+                }
+              }
+            ],
+            "source_numbers": [
+              "150000000"
+            ],
+            "translation_numbers": [
+              "15000000"
+            ],
+            "source_modality": "asserted",
+            "translation_modality": "asserted",
+            "source_legal_state": "investigation",
+            "translation_legal_state": "ruling"
+          }
+        ],
+        "truncated": false,
+        "dropped_fields": []
+      }
+    },
+    {
+      "id": "modality-unanchored-quote",
+      "category": "translation",
+      "tool": "check_translation",
+      "title": "Modality shift & unanchored quote (EN -> VI)",
+      "subtitle": "'may delay' -> 'officially approved' + missing quote",
+      "badge": "2 FLAGS",
+      "tone": "alert",
+      "summary": "Detects hedged language ('may') turned into an asserted fact and rejects a supplied citation quote that does not appear verbatim in the translation.",
+      "command": "./bin/btl check-translation --payload '{\"source_text\":\"The regulator may delay approval if filings remain incomplete.\",\"translation_text\":\"Cơ quan quản lý đã chính thức phê duyệt hồ sơ.\",...}'",
+      "input": {
+        "source_text": "The regulator may delay approval if filings remain incomplete.",
+        "translation_text": "Cơ quan quản lý đã chính thức phê duyệt hồ sơ.",
+        "source_language": "en",
+        "target_language": "vi",
+        "source_quote": "may delay approval",
+        "translation_quote": "đã phê duyệt ngay"
+      },
+      "highlights": {
+        "source": [
+          "may delay"
+        ],
+        "translation": [
+          "đã chính thức phê duyệt"
+        ]
+      },
+      "output": {
+        "status": "drift_detected",
+        "pair_count": 1,
+        "flagged_count": 1,
+        "pairs": [
+          {
+            "pair_id": "pair-1",
+            "source_language": "en",
+            "target_language": "vi",
+            "status": "drift_detected",
+            "flags": [
+              {
+                "category": "modality_shift",
+                "confidence": "medium",
+                "source_quote": "The regulator may delay approval if filings remain incomplete.",
+                "translation_quote": "Cơ quan quản lý đã chính thức phê duyệt hồ sơ.",
+                "explanation": "Modality shifted from uncertain to asserted.",
+                "details": {
+                  "source": "uncertain",
+                  "translation": "asserted"
+                }
+              },
+              {
+                "category": "unanchored_quote",
+                "confidence": "high",
+                "source_quote": null,
+                "translation_quote": "đã phê duyệt ngay",
+                "explanation": "Supplied translation_quote did not resolve in translation_text.",
+                "details": {}
+              }
+            ],
+            "source_numbers": [],
+            "translation_numbers": [],
+            "source_modality": "uncertain",
+            "translation_modality": "asserted",
+            "source_legal_state": null,
+            "translation_legal_state": null
+          }
+        ],
+        "truncated": false,
+        "dropped_fields": []
+      }
+    },
+    {
+      "id": "redemption-clause-diff",
+      "category": "diff",
+      "tool": "diff_editions",
+      "title": "Fund redemption clause revision diff",
+      "subtitle": "Number, date, negation, and terminology changes",
+      "badge": "4 CHANGES",
+      "tone": "alert",
+      "summary": "Compares two document versions with SHA-256 digests and classifies every change into numbers, dates, polarity markers, and legal/policy terminology.",
+      "command": "./bin/btl diff-editions --before-text \"Investors may not redeem shares before March 15, 2026...\" --after-text \"Investors may redeem shares after April 1, 2026...\"",
+      "input": {
+        "before_text": "Investors may not redeem shares before March 15, 2026. The minimum commitment is $250,000, and the fee waiver remains under review.",
+        "after_text": "Investors may redeem shares after April 1, 2026. The minimum commitment is $500,000, and the fee waiver is approved.",
+        "before_language": "en",
+        "after_language": "en"
+      },
+      "highlights": {
+        "before": [
+          "not",
+          "March 15, 2026",
+          "$250,000",
+          "remains under review"
+        ],
+        "after": [
+          "April 1, 2026",
+          "$500,000",
+          "approved"
+        ]
+      },
+      "output": {
+        "changed": true,
+        "before_language": "en",
+        "after_language": "en",
+        "before_sha256": "06f57adf659c8d8588e5b4c2d6286fa65c262f898476abb02d06dbefc779d7f5",
+        "after_sha256": "48f8aac04804197d1ce0b93e8f4a02f912892e72a53b2db4813dd7a450e4985c",
+        "changes": [
+          {
+            "category": "number",
+            "removed": [
+              "15",
+              "250,000"
+            ],
+            "added": [
+              "1",
+              "500,000"
+            ]
+          },
+          {
+            "category": "date",
+            "removed": [
+              "March 15, 2026"
+            ],
+            "added": [
+              "April 1, 2026"
+            ]
+          },
+          {
+            "category": "negation",
+            "removed": [
+              "not"
+            ],
+            "added": []
+          },
+          {
+            "category": "terminology",
+            "removed": [
+              "march",
+              "remains",
+              "review",
+              "under"
+            ],
+            "added": [
+              "approved",
+              "april"
+            ]
+          }
+        ],
+        "truncated": false,
+        "dropped_fields": []
+      }
+    },
+    {
+      "id": "cross-script-wire-clustering",
+      "category": "lineage",
+      "tool": "cluster_origins",
+      "title": "Cross-script wire syndication clustering",
+      "subtitle": "Reuters + 연합뉴스 + TTXVN -> 1 shared WMO origin",
+      "badge": "2 LINEAGES",
+      "tone": "clean",
+      "summary": "Resolves English, Korean (세계기상기구), and Vietnamese aliases to the same canonical origin so syndicated wire stories are not counted as independent.",
+      "command": "./bin/btl cluster-origins --payload-stdin < wire_sources.json",
+      "input": {
+        "items": [
+          {
+            "item_id": "a1",
+            "url": "https://reuters.example/1",
+            "publisher": "Reuters",
+            "title": "Global temperatures hit record",
+            "excerpt": "WMO said global temperatures reached a new peak in October.",
+            "credited_origin": "WMO"
+          },
+          {
+            "item_id": "a2",
+            "url": "https://korea.example/2",
+            "publisher": "연합뉴스",
+            "title": "기온 사상 최고",
+            "excerpt": "세계기상기구(WMO)는 10월 지구 평균 기온이 사상 최고치를 기록했다고 밝혔다.",
+            "credited_origin": "세계기상기구"
+          },
+          {
+            "item_id": "a3",
+            "url": "https://vn.example/3",
+            "publisher": "TTXVN",
+            "title": "Nhiệt độ toàn cầu lập kỷ lục",
+            "excerpt": "Tổ chức Khí tượng Thế giới (WMO) cho biết nhiệt độ tháng 10 đạt mức cao mới.",
+            "credited_origin": "WMO"
+          },
+          {
+            "item_id": "a4",
+            "url": "https://local.example/4",
+            "publisher": "Local Ledger",
+            "title": "City flood defenses",
+            "excerpt": "City engineers inspected coastal barriers ahead of November tides.",
+            "credited_origin": "City Engineering Office"
+          }
+        ],
+        "emit_research_ledger": true
+      },
+      "output": {
+        "source_count": 4,
+        "independent_lineage_count": 2,
+        "syndication_collapsed": 2,
+        "embeddings_used": false,
+        "clusters": [
+          {
+            "lineage_id": "lineage-21c7a6b018d5",
+            "canonical_origin": "World Meteorological Organization",
+            "basis": "alias",
+            "independence_hint": "resolved-shared",
+            "member_ids": [
+              "src-1",
+              "src-2",
+              "src-3"
+            ],
+            "urls": [
+              "https://reuters.example/1",
+              "https://korea.example/2",
+              "https://vn.example/3"
+            ],
+            "languages": [
+              "en",
+              "vi",
+              "ko"
+            ],
+            "origins_seen": [
+              "WMO",
+              "세계기상기구"
+            ]
+          },
+          {
+            "lineage_id": "lineage-743ad6fa4678",
+            "canonical_origin": "City Engineering Office",
+            "basis": "exact",
+            "independence_hint": "resolved-independent",
+            "member_ids": [
+              "src-4"
+            ],
+            "urls": [
+              "https://local.example/4"
+            ],
+            "languages": [
+              "en"
+            ],
+            "origins_seen": [
+              "City Engineering Office"
+            ]
+          }
+        ],
+        "research_ledger_origins": [
+          {
+            "origin_id": "src-1",
+            "basis": "syndication",
+            "independence": "resolved-independent"
+          },
+          {
+            "origin_id": "src-2",
+            "basis": "syndication",
+            "independence": "resolved-shared",
+            "canonical": "src-1"
+          },
+          {
+            "origin_id": "src-3",
+            "basis": "syndication",
+            "independence": "resolved-shared",
+            "canonical": "src-1"
+          },
+          {
+            "origin_id": "src-4",
+            "basis": "independent",
+            "independence": "resolved-independent"
+          }
+        ],
+        "truncated": false,
+        "dropped_fields": []
+      }
+    },
+    {
+      "id": "deduped-passage-ranking",
+      "category": "lineage",
+      "tool": "extract_and_rank",
+      "title": "Near-duplicate dedupe & passage ranking",
+      "subtitle": "3 docs -> mirror collapsed, 2 candidate excerpts",
+      "badge": "2 RANKED",
+      "tone": "clean",
+      "summary": "Deduplicates mirrored addendum text before ranking relevant passages against the claim, emitting candidate-only provenance records with exact character offsets.",
+      "command": "./bin/btl extract-and-rank --payload-stdin < claim_docs.json",
+      "input": {
+        "claim": "The minimum commitment increased to $500,000 after April 1, 2026.",
+        "documents": [
+          {
+            "url": "https://docs.example/memo-v2",
+            "title": "Fund Addendum v2",
+            "publisher": "Operations Desk",
+            "text": "Effective April 1, 2026, the minimum investor commitment is $500,000 and redemptions are permitted quarterly. Earlier fee waivers are now approved."
+          },
+          {
+            "url": "https://docs.example/mirror",
+            "title": "Fund Addendum Mirror",
+            "publisher": "Operations Desk",
+            "text": "Effective April 1, 2026, the minimum investor commitment is $500,000 and redemptions are permitted quarterly. Earlier fee waivers are now approved."
+          },
+          {
+            "url": "https://docs.example/faq",
+            "title": "Investor FAQ",
+            "publisher": "Client Relations",
+            "text": "Standard onboarding takes three business days once KYC verification is complete. Minimum commitment rules follow the latest addendum."
+          }
+        ],
+        "use_embeddings": false,
+        "emit_research_ledger_packet": true
+      },
+      "output": {
+        "claim": "The minimum commitment increased to $500,000 after April 1, 2026.",
+        "claim_language": "en",
+        "embeddings_used": false,
+        "documents_processed": 3,
+        "excerpts": [
+          {
+            "excerpt_id": "excerpt-f1cacc5d5099",
+            "url": "https://docs.example/memo-v2",
+            "canonical_url": "https://docs.example/memo-v2",
+            "title": "Fund Addendum v2",
+            "publisher": "Operations Desk",
+            "language": "en",
+            "published_at_unverified": null,
+            "excerpt": "Effective April 1, 2026, the minimum investor commitment is $500,000 and redemptions are permitted quarterly. Earlier fee waivers are now approved.",
+            "char_start": 0,
+            "char_end": 147,
+            "content_hash": "b21ba9960c655024b6f875a53b941892d866c2e7a2a15f04d50ebe1192b54dea",
+            "cluster_id": "cluster-b21ba9960c65",
+            "relevance": 0.82,
+            "scoring_method": "lexical"
+          },
+          {
+            "excerpt_id": "excerpt-84cb49fd9d69",
+            "url": "https://docs.example/faq",
+            "canonical_url": "https://docs.example/faq",
+            "title": "Investor FAQ",
+            "publisher": "Client Relations",
+            "language": "en",
+            "published_at_unverified": null,
+            "excerpt": "Standard onboarding takes three business days once KYC verification is complete. Minimum commitment rules follow the latest addendum.",
+            "char_start": 0,
+            "char_end": 133,
+            "content_hash": "3561131f09d6cbd904cd243ce29040927d2e6ae80d3988dc377ab8f58f5e6888",
+            "cluster_id": "cluster-3561131f09d6",
+            "relevance": 0.18,
+            "scoring_method": "lexical"
+          }
+        ],
+        "failures": [],
+        "research_ledger_packet": {
+          "task": "Retrieve candidate cross-lingual excerpts for: The minimum commitment increased to $500,000 after April 1, 2026.",
+          "wave": 1,
+          "lane": "source-researcher",
+          "research_context_used": "btl extract_and_rank (en)",
+          "summary": [
+            "Ranked 2 candidate excerpt(s) across 2 source URL(s)."
+          ],
+          "queries": [],
+          "claims": [
+            {
+              "id": "C1",
+              "text": "The minimum commitment increased to $500,000 after April 1, 2026.",
+              "load_bearing": true,
+              "claim_kind": "",
+              "scope": "",
+              "version_range": "",
+              "absence": "inconclusive",
+              "absence_detail": ""
+            }
+          ],
+          "sources": [
+            {
+              "id": "S1",
+              "url": "https://docs.example/memo-v2",
+              "title": "Fund Addendum v2",
+              "publisher": "Operations Desk",
+              "tier": 2,
+              "pub_date": "unknown",
+              "update_date": "unknown",
+              "access_date": "2026-11-20",
+              "primary": false,
+              "origin_id": "cluster-b21ba9960c65",
+              "origin_basis": "unresolved",
+              "version": "",
+              "atlas_source_id": "",
+              "source_role": "event_reporting"
+            },
+            {
+              "id": "S2",
+              "url": "https://docs.example/faq",
+              "title": "Investor FAQ",
+              "publisher": "Client Relations",
+              "tier": 2,
+              "pub_date": "unknown",
+              "update_date": "unknown",
+              "access_date": "2026-11-20",
+              "primary": false,
+              "origin_id": "cluster-3561131f09d6",
+              "origin_basis": "unresolved",
+              "version": "",
+              "atlas_source_id": "",
+              "source_role": "event_reporting"
+            }
+          ],
+          "evidence": [
+            {
+              "claim_id": "C1",
+              "source_id": "S1",
+              "status": "candidate",
+              "locator": {
+                "section": "chars 0-147"
+              },
+              "passage": "Effective April 1, 2026, the minimum investor commitment is $500,000 and redemptions are permitted quarterly. Earlier fee waivers are now approved.",
+              "interpretation": "Candidate en excerpt ranked by btl (lexical, score=0.8200).",
+              "stance": "supports",
+              "evidence_view": "event_reporting",
+              "worker": "source-researcher",
+              "wave": 1
+            },
+            {
+              "claim_id": "C1",
+              "source_id": "S2",
+              "status": "candidate",
+              "locator": {
+                "section": "chars 0-133"
+              },
+              "passage": "Standard onboarding takes three business days once KYC verification is complete. Minimum commitment rules follow the latest addendum.",
+              "interpretation": "Candidate en excerpt ranked by btl (lexical, score=0.1800).",
+              "stance": "supports",
+              "evidence_view": "event_reporting",
+              "worker": "source-researcher",
+              "wave": 1
+            }
+          ],
+          "contradictions": [],
+          "version_map": [],
+          "follow_ups": [],
+          "candidate_sources": []
+        },
+        "truncated": false,
+        "dropped_fields": []
+      }
+    }
+  ]
+}

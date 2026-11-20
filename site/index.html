@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light">
+    <meta name="theme-color" content="#f7f8f4">
+    <meta
+      name="description"
+      content="Interactive walkthrough of Between the Lines (btl): deterministic translation drift audits, revision diffing, cross-script origin clustering, and passage ranking."
+    >
+    <title>Between the Lines · btl</title>
+    <link rel="icon" href="data:,">
+    <link rel="stylesheet" href="./style.css">
+    <script type="module" src="./app.js"></script>
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="wordmark" href="./" aria-label="Between the Lines showcase home">btl<span>.</span></a>
+      <a class="repo-link" href="https://github.com/wheevu/between-the-lines">View Repo</a>
+    </header>
+
+    <main class="page-shell">
+      <section aria-labelledby="page-title">
+        <h1 id="page-title">Did the AI keep every fact?</h1>
+        <div class="intro-copy">
+          <p>
+            Language models often sound fluent while quietly dropping a negative, misconverting a
+            number scale, or elevating uncertain wording into a settled fact. Asking another model
+            to double-check adds latency and still lets silent edits slip through.
+          </p>
+          <p>
+            <strong>Between the Lines (<code>btl</code>)</strong> is a local Python verification CLI
+            and MCP server with zero external LLM calls. Below are six real runs exported straight
+            from the engine, showing how it audits translations, compares document revisions,
+            collapses syndicated wire copies, and ranks candidate evidence.
+          </p>
+        </div>
+      </section>
+
+      <section class="transport" aria-label="Case navigation and category filters">
+        <div class="filter-group" role="group" aria-label="Filter cases by capability">
+          <button class="filter-button" type="button" data-filter="all" aria-pressed="true">
+            All Cases (6)
+          </button>
+          <button class="filter-button" type="button" data-filter="translation" aria-pressed="false">
+            Translation Audit
+          </button>
+          <button class="filter-button" type="button" data-filter="diff" aria-pressed="false">
+            Revision Diff
+          </button>
+          <button class="filter-button" type="button" data-filter="lineage" aria-pressed="false">
+            Lineage &amp; Ranking
+          </button>
+        </div>
+
+        <div class="step-controls">
+          <button class="control-button" id="prev-button" type="button" aria-label="Previous case">
+            ← Previous
+          </button>
+          <span class="step-counter" id="step-counter">1 / 6</span>
+          <button class="control-button" id="next-button" type="button" aria-label="Next case">
+            Next →
+          </button>
+          <span class="keyboard-hint">← and → step through</span>
+        </div>
+      </section>
+
+      <section class="workbench" aria-label="Interactive verification inspector">
+        <div class="rail">
+          <section class="panel" aria-labelledby="cases-title">
+            <div class="panel-heading">
+              <h2 class="panel-label" id="cases-title">Recorded runs</h2>
+            </div>
+            <ol class="case-list" id="case-list" aria-label="Select a verification run"></ol>
+          </section>
+
+          <section class="panel" aria-labelledby="harness-title">
+            <div class="panel-heading">
+              <h2 class="panel-label" id="harness-title">MCP harnesses &amp; suite</h2>
+              <span class="mini-status clean" id="harness-badge">4 / 4 wired</span>
+            </div>
+            <ul class="harness-list" id="harness-list"></ul>
+            <p class="harness-foot">
+              Verified with <code>29 pytest</code> checks and clean <code>ruff</code> lint.
+            </p>
+          </section>
+        </div>
+
+        <section class="panel stage-panel" aria-labelledby="case-title" aria-live="polite">
+          <div class="stage-header">
+            <div>
+              <p class="tool-tag" id="tool-tag">btl check-translation</p>
+              <h2 class="stage-title" id="case-title">Loading cases…</h2>
+            </div>
+            <span class="outcome-badge" id="outcome-badge">CLEAN</span>
+          </div>
+          <p class="stage-summary" id="case-summary"></p>
+
+          <div id="stage-body" class="stage-body"></div>
+        </section>
+      </section>
+
+      <section class="panel code-panel" aria-labelledby="cli-title">
+        <div class="code-band">
+          <span class="band-kicker" id="cli-title">Command &amp; verbatim output</span>
+          <code class="cli-command" id="cli-command"></code>
+        </div>
+        <pre class="json-pre" id="json-output"></pre>
+      </section>
+    </main>
+  </body>
+</html>

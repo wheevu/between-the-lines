@@ -1,0 +1,45 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "between-the-lines"
+version = "0.2.0"
+description = "Local EN/VI/KO verification, cross-script origin clustering, and passage ranking CLI + MCP engine"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "httpx>=0.28,<1",
+  "pydantic>=2.11,<3",
+  "trafilatura>=2.0,<3",
+]
+
+[project.optional-dependencies]
+embeddings = [
+  "sentence-transformers>=5,<6",
+  "torch>=2.7,<3",
+]
+openvino = [
+  "sentence-transformers[openvino]>=5,<6",
+]
+dev = [
+  "pytest>=8.4,<9",
+  "ruff>=0.12,<1",
+]
+
+[project.scripts]
+btl = "btl.cli:main"
+btl-mcp = "btl.mcp_server:main"
+
+[tool.setuptools.packages.find]
+include = ["btl*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]
