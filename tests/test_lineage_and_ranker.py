@@ -140,10 +140,13 @@ def test_extract_and_rank_supports_e5_lexical_fallback_and_publisher_caps() -> N
 
 
 def test_local_embedder_skips_uncached_download_by_default(monkeypatch, tmp_path) -> None:
+    import importlib.util
+
     from btl.embeddings import EmbeddingUnavailableError, LocalEmbedder
 
     monkeypatch.setenv("HF_HOME", str(tmp_path / "empty-hf"))
     monkeypatch.delenv("BTL_ALLOW_MODEL_DOWNLOAD", raising=False)
+    monkeypatch.setattr(importlib.util, "find_spec", lambda _name: object())
     embedder = LocalEmbedder()
     assert embedder.is_cached() is False
     try:
